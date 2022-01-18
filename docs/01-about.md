@@ -2,10 +2,10 @@
 
 ![Example banner](/img/logo.png)
 
-**Power_ecosystem** is a Nextgen Layer-1 Blockchain Network.
+The Power Blockchain Ecosystem is a new generation blockchain network that forms a new layer of the whole worldwide Internet with real WEB3 infrastructure.
 
-**It supports:**
-
-- native node API
+- [Technology](/docs/technology/abstract)
+- [Power_node](/docs/technology/power-node)
+- [Power_api](/docs/api/common-terms)
 - automated Smart Contracts
 - WASM VM

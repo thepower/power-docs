@@ -62,6 +62,21 @@ const config = {
           },
           // { to: '/blog', label: 'How-to', position: 'left' },
           {
+            label: 'Power_hub',
+            href: 'https://hub.thepower.io',
+            position: 'right',
+          },
+          {
+            label: 'Power_explorer',
+            href: 'https://explorer.thepower.io',
+            position: 'right',
+          },
+          {
+            label: 'Power_faucet',
+            href: 'https://faucet.thepower.io',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/thepower',
             label: 'GitHub',
             position: 'right',
@@ -75,8 +90,24 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Power_api',
+                to: '/docs/api/common-terms',
+              },
+              {
+                label: 'Technology',
+                to: '/docs/technology/abstract',
+              },
+              {
+                label: 'About',
                 to: '/docs/about',
+              },
+              {
+                label: 'Website',
+                href: 'https://thepower.io',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/thepower',
               },
             ],
           },
@@ -98,19 +129,36 @@ const config = {
           //   ],
           // },
           {
-            title: 'More',
+            title: 'Tools',
             items: [
               {
-                label: 'Website',
-                to: 'https://thepower.io',
+                label: 'Power_hub',
+                href: 'https://hub.thepower.io',
+              },
+              {
+                label: 'Power_explorer',
+                href: 'https://explorer.thepower.io',
+              },
+              {
+                label: 'Power_faucet',
+                href: 'https://faucet.thepower.io',
               },
               // {
               //   label: 'How-to',
               //   to: '/blog',
               // },
+            ],
+          },
+          {
+            title: 'SDK',
+            items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/thepower',
+                label: 'JavaScript',
+                href: 'https://github.com/thepower/tp_sdk_js',
+              },
+              {
+                label: 'Rust',
+                href: 'https://github.com/thepower/tp_rust_lib',
               },
             ],
           },
