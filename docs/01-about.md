@@ -7,5 +7,5 @@ The Power Blockchain Ecosystem is a new generation blockchain network that forms
 - [Technology](/docs/technology/abstract)
 - [Power_node](/docs/technology/power-node)
 - [Power_api](/docs/api/common-terms)
-- automated Smart Contracts
-- WASM VM
+- [Smart Contracts](/docs/smart-contracts/environment)
+<!-- - WASM VM -->
