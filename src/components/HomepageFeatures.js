@@ -19,13 +19,13 @@ const FeatureList = [
     Svg: require('../../static/img/sdk.svg').default,
     description: (
       <>
-        JavaScript SDK for creating decetnralized applications and Rust
+        JavaScript SDK for creating decentralized applications and Rust
         libraries for smart contracts and decentralized backend.
       </>
     ),
   },
   {
-    title: 'WASM Vitrual Machine',
+    title: 'WASM Virtual Machine',
     Svg: require('../../static/img/vm.svg').default,
     description: (
       <>
