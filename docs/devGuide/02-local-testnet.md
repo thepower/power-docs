@@ -23,6 +23,23 @@ To start the testnet, ensure you have the following software installed on your m
 - git,
 - docker-compose.
 
+> **Note**
+> 
+> If you use Unix, you must be included into the user group `docker` to use `docker-compose`.
+>
+> To check the groups, you are included into, run:
+> 
+> ```bash
+> user@root:~$ groups
+> ```
+> To include your account into the group `docker`, run:
+> 
+> ```bash
+> usermod + docker
+> ```
+> 
+> This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.
+
 ### Installation
 
 To install the testnet:
