@@ -78,7 +78,11 @@ After installation is complete, you will see the following message in the consol
 
 ## Downloading and building the node
 
-After setting up the working environment, you can download and build the node.
+After setting up the working environment, you can download and build the node:
+
+> **Note**
+> 
+> Choose a project folder to clone your project into. Use this folder to build the node.
 
 1. Download the node sources from Github, using the following command:
 
