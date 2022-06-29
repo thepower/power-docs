@@ -11,12 +11,12 @@ Before you start a TP-Node using the Docker image:
 3. Check user groups you belong to by running the following command:
 
    ```bash
-   user@root:~$ groups
+   user@root:$ groups
    ```
 4. If you don't belong to the user group `docker`, you will not be able to start Docker. To resolve this problem, run:
 
    ```bash
-   usermod + docker
+   #usermod -a docker
    ```
 
 5. Ensure you have the actual `genesis.txt` and `node.config` files.
