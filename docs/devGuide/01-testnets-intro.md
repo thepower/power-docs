@@ -45,4 +45,4 @@ After you've connected your node to the testnet, it starts to take part in [Cons
 
 > **Note**
 >
-> Only the nodes specified in `genesis.txt` can participate in Consensus in this version. The functionality of connecting to chains without specifying your node in `genesis.txt` will be added in future versions.
+> Only the nodes specified in `genesis.txt` can participate in Consensus in this version. The functionality of connecting to chains without specifying your node in `genesis.txt` will be added in future releases.
