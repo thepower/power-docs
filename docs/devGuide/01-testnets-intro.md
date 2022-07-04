@@ -1,6 +1,6 @@
 # What is a testnet in DCloud?
 
-The testnet is a network consisting of three or more nodes. The testnets can be public or local.
+The testnet is a network consisting of three or more nodes. The testnets can be public or local. Technically, local testnet is a local-hosted test chain — temporary network of three local-hosted nodes used for testing. For more information about the test chain, please, refer to "Local Testnet" page.
 
 The testnet is a powerful tool aimed to help you contribute to web3 as:
 
@@ -8,19 +8,10 @@ The testnet is a powerful tool aimed to help you contribute to web3 as:
 - a developer using DCloud as a core service for app development,
 - a researcher who wants to learn something new about the technology.
 
-## Local testnet
+## Terminology
 
-A local testnet is a network consisting of nodes virtually created by you on your machine.
-
-The local testnet could be a good idea if you need to:
-
-- test how the network works,
-- run autotests for your DApps, or
-- customize your node to satisfy your needs.
-
-Before using the local testnet, you need to build and start the node from [source code](../build-and-start-a-node/02-startingTpNode_source.md) or [Docker image](../build-and-start-a-node/01-startingTpNode_docker.md).
-
-Use our [guide](./02-local-testnet.md) to start your local testnet.
+- **Community nodes** — nodes, run by users, or node providers. They form chains, that form a testnet.
+- **Node providers** — users, who connect their servers with the Power software to our network and provide their computing resources.
 
 ## Public testnet
 
@@ -33,6 +24,8 @@ Testnet allows you to:
 - run autotests for your DApps.
 
 Before using the public testnet, you need to build and start the node from [source code](../build-and-start-a-node/02-startingTpNode_source.md) or [Docker image](../build-and-start-a-node/01-startingTpNode_docker.md).
+
+Use our [guide](./03-testnet-start.md) to start your public testnet.
 
 > **Note**
 >
