@@ -1,6 +1,6 @@
 # Local testnet
 
-A local testnet is a network consisting of nodes virtually created by you on your machine.
+### Prerequisites
 
 The local testnet could be a good idea if you need to:
 
