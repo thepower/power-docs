@@ -9,10 +9,10 @@ Despite each node having the same software, there are two critical files:
     - Networking. Here you tell the node, how should it work with the network and where should it find the information about other nodes in the chain.
 
 
-## node.config description
+## `node.config` description
 
 > **Note**
->
+> 
 > `node.config` file has Erlang-formatted syntax.
 
 Here is an example of a `node.config` file:
