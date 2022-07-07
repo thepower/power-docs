@@ -15,7 +15,7 @@ The testnet is a powerful tool aimed to help you contribute to web3 as:
 
 ## Public testnet
 
-A public testnet is a network formed by user nodes.
+A public testnet is a network formed by Community nodes and run by node providers.
 
 Testnet allows you to:
 
@@ -23,18 +23,17 @@ Testnet allows you to:
 - connect your DApp to the testnet and interact with it by reading and writing the DApp frontend data using the [Power API](https://doc.thepower.io/docs/api/common-terms), or
 - run autotests for your DApps.
 
-Before using the public testnet, you need to build and start the node from [source code](../build-and-start-a-node/02-startingTpNode_source.md) or [Docker image](../build-and-start-a-node/01-startingTpNode_docker.md).
+Before using the public testnet, you need to build and start the node: 
+
+- from [source code](../build-and-start-a-node/03-startingTpNode_source.md), or 
+- from [Docker image](../build-and-start-a-node/02-startingTpNode_docker.md).
 
 Use our [guide](./03-testnet-start.md) to start your public testnet.
 
-> **Note**
->
-> You don't need to start a network if you want to use the public testnet. Just run the node and enjoy the Power!
-
 When connecting your node to the public testnet, you connect it to either a new or an existing chain.
 
-After you've connected your node to the testnet, it starts to take part in [Consensus](https://doc.thepower.io/docs/technology/resonance-consensus). You can also connect your node as a Seed node.
+After you've connected your node to the testnet, it starts to take part in [Consensus](https://doc.thepower.io/docs/technology/resonance-consensus). You can also connect your node as a [Seed node](../nodes-chains-description/01-nodes-shards-101.md#nodes).
 
 > **Note**
 >
-> Only the nodes specified in `genesis.txt` can participate in Consensus in this version. The functionality of connecting to chains without specifying your node in `genesis.txt` will be added in future releases.
+> Only the nodes specified in `genesis.txt` can participate in Consensus in this version. The functionality of connecting to a chain without specifying your node in `genesis.txt` will be added in future releases.
