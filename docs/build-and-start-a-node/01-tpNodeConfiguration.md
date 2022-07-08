@@ -24,7 +24,7 @@ Here is an example of a `node.config` file:
   #{address => "node1", port => 43217, proto => tpic},
   #{address => "node1", port => 43390, proto => apis},
   #{address => "node1", port => 43290, proto => api}
-]}}. <!-- Where do I put a cert for apis?-->
+]}}.
 {privkey, <<"670270653FBBBC3AF41EF92CECF120CFB27F3D3C8E2D6032433E60A4016BC692">>}.
 {rpcport, 43290}.
 {rpcsport, 43390}.

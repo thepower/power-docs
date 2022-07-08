@@ -8,7 +8,7 @@ The local testnet could be a good idea if you need to:
 
 Before using the local testnet, you need to build and start the node
 
-- from [source code](../build-and-start-a-node/03-startingTpNode_source.md), or 
-- from [Docker image](../build-and-start-a-node/02-startingTpNode_docker.md).
+- from [source code](../build-and-start-a-node/04-startingTpNode_source.md), or 
+- from [Docker image](../build-and-start-a-node/03-startingTpNode_docker.md).
 
 Use our [guide](./03-testnet-start.md) to start your local testnet.
