@@ -15,7 +15,7 @@ If you need an SSL certificate for your node, follow the steps below:
 
    ```bash
    acme.sh --issue --standalone -d your_node.thepower.io \
-   --renew-hook "cd /opt/c103n1; ./stop.sh; ./start.sh"
+   --renew-hook "cd /opt/your_node; ./stop.sh; ./start.sh"
    ```
 
 6. Install the certificate by running the following command:
@@ -23,14 +23,14 @@ If you need an SSL certificate for your node, follow the steps below:
    ```bash
    acme.sh --install-cert -d your_node.thepower.io \
    --fullchain-file /opt/your_node/db/cert_your_node/your_node.thepower.io.crt \
-   --key-file /opt/c103n1/db/cert_your_node/your_node.thepower.io.key  \
+   --key-file /opt/your_node/db/cert_your_node/your_node.thepower.io.key
    ```
    
 You can add Telegram notifications to promptly get information about Acme script actions. To do this, run:
 
 ```bash
-export TELEGRAM_BOT_CHATID=“Your Telegram ID”
-export TELEGRAM_BOT_APITOKEN=“Chatbot token”
+export TELEGRAM_BOT_CHATID=“Your Telegram ID” \
+export TELEGRAM_BOT_APITOKEN=“Chatbot token” \
 acme.sh --set-notify --notify-hook telegram
 ```
 

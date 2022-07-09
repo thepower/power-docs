@@ -84,7 +84,7 @@ After setting up the working environment, you can download and build the node:
 > 
 > Choose a project folder to clone your project into. Use this folder to build the node.
 
-1. Download the node sources from Github, using the following command:
+1. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
    ```bash
    git clone https://github.com/thepower/tpnode.git
