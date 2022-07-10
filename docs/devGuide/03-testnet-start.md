@@ -43,16 +43,16 @@ To start the testnet, ensure you have the following software installed on your m
 
 To install the testnet:
 
-1. Clone the `test_shard` repository into your working directory using the following command:
+1. Clone the `test_chain` repository into your working directory using the following command:
 
    ```bash
-   git clone https://github.com/thepower/test_shard.git
+   git clone https://github.com/thepower/test_chain.git
    ```
 
-2. Go to `test_shard` directory:
+2. Go to `test_chain` directory:
 
    ```bash
-   cd test_shard
+   cd test_chain
    ```
 
 ### Starting the testnet
@@ -69,6 +69,16 @@ After starting the testnet, node API is available under the following addresses:
 http://localhost:44001/api/status
 http://localhost:44002/api/status
 http://localhost:44003/api/status
+```
+
+To test your chain, run the following sequence of commands:
+
+```bash
+curl http://localhost:44001/api/node/status | jq
+```
+
+```bash
+curl http://localhost:44001/api/block/last | jq
 ```
 
 ### Stopping the testnet

@@ -7,14 +7,14 @@ If you need an SSL certificate for your node, follow the steps below:
 
    ```bash
    apt-get install socat
-   curl https://get.acme.sh | sh -s email=ext@thepower.io
+   curl https://get.acme.sh | sh -s email=my@example.com
    ```
 3. Log out of the system.
 4. Log in again.
 5. Obtain the certificate. To do this, run the following command:
 
    ```bash
-   acme.sh --issue --standalone -d your_node.thepower.io \
+   acme.sh --issue --standalone -d mynode.example.com \
    --renew-hook "cd /opt/your_node; ./stop.sh; ./start.sh"
    ```
 
