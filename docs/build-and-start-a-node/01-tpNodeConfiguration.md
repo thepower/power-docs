@@ -31,7 +31,7 @@ Here is an example of a `node.config` file:
 {tpic_port, 43217}.
 {dbsuffix,"_node1"}.
 {dbpath,"db1"}.
-{crosschain, #{ port => 43312, connect => [ {"other_chain_node.thepower.io", 43312} ] }}.
+{crosschain, #{ port => 43312, connect => [ {"other_chain_node.example.com", 43312} ] }}.
 ```
 
 | Parameter    | Description                                                                                                                                                                                                                                                                                                           | Options |

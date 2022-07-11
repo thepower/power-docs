@@ -21,9 +21,9 @@ If you need an SSL certificate for your node, follow the steps below:
 6. Install the certificate by running the following command:
 
    ```bash
-   acme.sh --install-cert -d your_node.thepower.io \
-   --fullchain-file /opt/your_node/db/cert_your_node/your_node.thepower.io.crt \
-   --key-file /opt/your_node/db/cert_your_node/your_node.thepower.io.key
+   acme.sh --install-cert -d your_node.example.com \
+   --fullchain-file /opt/your_node/db/cert_your_node/your_node.example.com.crt \
+   --key-file /opt/your_node/db/cert_your_node/your_node.example.com.key
    ```
    
 You can add Telegram notifications to promptly get information about Acme script actions. To do this, run:
@@ -37,6 +37,6 @@ acme.sh --set-notify --notify-hook telegram
 After you've installed the certificate, you can get the certificate status by running the following command:
 
 ```bash
-acme.sh --info -d your_node.thepower.io
+acme.sh --info -d your_node.example.com
 ```
 
