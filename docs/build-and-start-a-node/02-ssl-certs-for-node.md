@@ -14,7 +14,7 @@ If you need an SSL certificate for your node, follow the steps below:
 5. Obtain the certificate. To do this, run the following command:
 
    ```bash
-   acme.sh --issue --standalone -d mynode.example.com \
+   acme.sh --issue --standalone -d your_node.example.com \
    --renew-hook "cd /opt/your_node; ./stop.sh; ./start.sh"
    ```
 
