@@ -1,3 +1,19 @@
+**Table of Contents**
+
+- [How to install and start a testnet?](#how-to-install-and-start-a-testnet)
+  - [Testnet installation](#testnet-installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Starting the testnet](#starting-the-testnet)
+    - [Stopping the testnet](#stopping-the-testnet)
+  - [Setting up the environment and starting the testnet using Vagrant](#setting-up-the-environment-and-starting-the-testnet-using-vagrant)
+    - [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
+    - [Setting up the environment](#setting-up-the-environment)
+    - [Compiling and starting the node](#compiling-and-starting-the-node)
+    - [Stopping the testnet](#stopping-the-testnet-1)
+    - [Using Makefile targets](#using-makefile-targets)
+    - [Using API](#using-api)
+
 # How to install and start a testnet?
 
 This manual describes how you can configure a testnet.
@@ -89,13 +105,13 @@ Please, stop your local testnet after completing all necessary testing or develo
 docker-compose down
 ```
 
-### Setting up the environment and starting the testnet using Vagrant
+## Setting up the environment and starting the testnet using Vagrant
 
 As an option, you can use Vagrant to setup development environment.
 
 Here is an example of setting up the development environment for MacOS.
 
-#### Installation and setting up Vagrant
+### Installation and setting up Vagrant
 
 To set up Vagrant, follow the steps below:
 
@@ -125,7 +141,7 @@ To set up Vagrant, follow the steps below:
    vagrant plugin install vagrant-hostmanager
    ```
 
-#### Setting up the environment
+### Setting up the environment
 
 To set up the environment, follow the steps below:
 
@@ -159,7 +175,7 @@ To set up the environment, follow the steps below:
 
    - `-A` — key to ssh agent forwarding. You will be able to use ssh key from host machine to perform operations inside the virtual machine.
 
-#### Compiling and starting the node
+### Compiling and starting the node
 
 1. Go to the project directory:
 
@@ -178,7 +194,7 @@ To set up the environment, follow the steps below:
    ```bash
    ./bin/testnet.sh
    ```
-#### Stopping the testnet
+### Stopping the testnet
 
 To stop the testnet, run:
 
@@ -186,11 +202,11 @@ To stop the testnet, run:
 ./bin/testnet.sh stop
 ```
 
-#### Using Makefile targets
+### Using Makefile targets
 
 You can also use the Makefile targets as a reference on how to perform other tasks.
 
-#### Using API
+### Using API
 
 You can see the API ports by running:
 

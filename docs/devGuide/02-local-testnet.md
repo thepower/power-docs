@@ -1,3 +1,7 @@
+**Table of Contents**
+
+- [Local testnet](#local-testnet)
+
 # Local testnet
 
 The local testnet could be a good idea if you need to:

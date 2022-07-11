@@ -1,3 +1,9 @@
+**Table of Contents**
+
+- [What is a testnet in DCloud?](#what-is-a-testnet-in-dcloud)
+  - [Terminology](#terminology)
+  - [Public testnet](#public-testnet)
+
 # What is a testnet in DCloud?
 
 The testnet is a network consisting of three or more nodes. The testnets can be public or local. Technically, local testnet is a local-hosted test chain — temporary network of three local-hosted nodes used for testing. For more information about the test chain, please, refer to "Local Testnet" page.

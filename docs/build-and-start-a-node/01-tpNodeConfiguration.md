@@ -1,3 +1,9 @@
+**Table of Contents**
+
+- [TP-Node configuration](#tp-node-configuration)
+  - [`node.config` description](#nodeconfig-description)
+  - [Generation of `genesis.txt`](#generation-of-genesistxt)
+
 # TP-Node configuration
 
 Despite each node having the same software, there are two critical files:

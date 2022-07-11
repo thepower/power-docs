@@ -1,3 +1,12 @@
+**Table of Contents**
+
+- [How to start a TP-Node from the source?](#how-to-start-a-tp-node-from-the-source)
+  - [Setting up the environment](#setting-up-the-environment)
+  - [Downloading and building the node](#downloading-and-building-the-node)
+  - [Starting the node](#starting-the-node)
+    - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
+    - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
+
 # How to start a TP-Node from the source?
 
 TP-Node is the main module of The Power Ecosystem. In this manual, you'll learn how to start a node from the source code on Linux.
