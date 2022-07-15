@@ -226,6 +226,10 @@ where
 
 ## Generation of `genesis.txt`
 
+> **Note**
+> 
+> Before you start, ensure that you have TPNode installed on your machine.
+
 To generate `genesis.txt`:
 
 1. Ensure you have Erlang installed on your machine.

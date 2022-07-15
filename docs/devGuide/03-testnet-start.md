@@ -1,20 +1,22 @@
+# How to install and start a testnet?
+
 **Table of Contents**
 
-- [How to install and start a testnet?](#how-to-install-and-start-a-testnet)
-  - [Testnet installation](#testnet-installation)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Starting the testnet](#starting-the-testnet)
-    - [Stopping the testnet](#stopping-the-testnet)
-  - [Setting up the environment and starting the testnet using Vagrant](#setting-up-the-environment-and-starting-the-testnet-using-vagrant)
-    - [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
-    - [Setting up the environment](#setting-up-the-environment)
-    - [Compiling and starting the node](#compiling-and-starting-the-node)
-    - [Stopping the testnet](#stopping-the-testnet-1)
-    - [Using Makefile targets](#using-makefile-targets)
-    - [Using API](#using-api)
+   - [Introduction](#introduction)
+   - [Testnet installation](#testnet-installation)
+      - [Prerequisites](#prerequisites)
+      - [Installation](#installation)
+      - [Starting the testnet](#starting-the-testnet)
+      - [Stopping the testnet](#stopping-the-testnet)
+   - [Setting up the environment and starting the testnet using Vagrant](#setting-up-the-environment-and-starting-the-testnet-using-vagrant)
+      - [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
+      - [Setting up the environment](#setting-up-the-environment)
+      - [Compiling and starting the node](#compiling-and-starting-the-node)
+      - [Stopping the testnet](#stopping-the-testnet-1)
+      - [Using Makefile targets](#using-makefile-targets)
+      - [Using API](#using-api)
 
-# How to install and start a testnet?
+## Introduction
 
 This manual describes how you can configure a testnet.
 
