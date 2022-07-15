@@ -1,10 +1,12 @@
-**Table of Contents**
+# TP-Node configuration
+
+## Table of Contents
 
 - [TP-Node configuration](#tp-node-configuration)
   - [`node.config` description](#nodeconfig-description)
   - [Generation of `genesis.txt`](#generation-of-genesistxt)
 
-# TP-Node configuration
+## What is `node.config` and `genesis.txt`?
 
 Despite each node having the same software, there are two critical files:
 
@@ -15,7 +17,7 @@ Despite each node having the same software, there are two critical files:
     - Networking. Here you tell the node, how should it work with the network and where should it find the information about other nodes in the chain.
 
 
-## `node.config` description
+## `node.config` example
 
 > **Note**
 > 
@@ -55,6 +57,171 @@ Here is an example of a `node.config` file:
 | `dbsuffix`   | This parameter is used to avoid using DockerID in the directory name when using Docker.                                                                                                                                                                                                                               |
 | `dbpath`     | Path to database.                                                                                                                                                                                                                                                                                                     |
 
+
+## `genesis.txt` example
+
+```erlang
+#{bals => #{},etxs => [],failed => [],
+  hash =>
+      <<>>,
+  header =>
+      #{chain => 105,height => 0,
+        parent => <<0,0,0,0,0,0,0,0>>,
+        roots =>
+            [{setroot,<<>>}],
+        ver => 2},
+  settings =>
+      [{<<"">>,
+        #{body =>
+              <<>>,
+          kind => patch,
+          patches =>
+              [#{<<"p">> => [<<"chains">>],
+                 <<"t">> => <<"list_add">>,<<"v">> => 105},
+               #{<<"p">> => [<<"keys">>,<<"c105n1">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n10">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<2,190,116,33,130,241,25,150,102,161,1,183,199,115,181,
+                               20,233,126,51,3,16,67,157,64,59,153,151,32,24,186,28,
+                               143,223>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n2">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n3">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n4">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n5">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n6">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n7">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n8">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"keys">>,<<"c105n9">>],
+                 <<"t">> => <<"set">>,
+                 <<"v">> =>
+                     <<>>},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n1">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n10">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n2">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n3">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n4">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n5">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n6">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n7">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n8">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"nodechain">>,<<"c105n9">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"current">>,<<"chain">>,<<"blocktime">>],
+                 <<"t">> => <<"set">>,<<"v">> => 3},
+               #{<<"p">> => [<<"current">>,<<"chain">>,<<"minsig">>],
+                 <<"t">> => <<"set">>,<<"v">> => 6},
+               #{<<"p">> => [<<"current">>,<<"chain">>,<<"allowempty">>],
+                 <<"t">> => <<"set">>,<<"v">> => 0},
+               #{<<"p">> => [<<"current">>,<<"chain">>,<<"patchsigs">>],
+                 <<"t">> => <<"set">>,<<"v">> => 6},
+               #{<<"p">> => [<<"current">>,<<"allocblock">>,<<"block">>],
+                 <<"t">> => <<"set">>,<<"v">> => 105},
+               #{<<"p">> => [<<"current">>,<<"allocblock">>,<<"group">>],
+                 <<"t">> => <<"set">>,<<"v">> => 10},
+               #{<<"p">> => [<<"current">>,<<"allocblock">>,<<"last">>],
+                 <<"t">> => <<"set">>,<<"v">> => 0},
+               #{<<"p">> =>
+                     [<<"current">>,<<"endless">>,
+                      <<>>,
+                      <<"SK">>],
+                 <<"t">> => <<"set">>,<<"v">> => true},
+               #{<<"p">> =>
+                     [<<"current">>,<<"endless">>,
+                      <<>>,
+                      <<"TST">>],
+                 <<"t">> => <<"set">>,<<"v">> => true},
+               #{<<"p">> => [<<"current">>,<<"freegas">>],
+                 <<"t">> => <<"set">>,<<"v">> => 2000000},
+               #{<<"p">> => [<<"current">>,<<"gas">>,<<"SK">>],
+                 <<"t">> => <<"set">>,<<"v">> => 1000},
+               #{<<"p">> => [<<"current">>,<<"nosk">>],
+                 <<"t">> => <<"set">>,<<"v">> => 1}],
+          sig =>
+              [],
+          ver => 2}}],
+  sign =>
+      [],
+  txs => []}.
+```
+
+where 
+
+1. the node name and private key is specified:
+
+    ```erlang
+        #{<<"p">> => [<<"keys">>,<<"c103n5">> <!--Node name-->],
+                         <<"t">> => <<"set">>,
+                         <<"v">> =>
+                             <<2,190,116,33,130,241,25,150,102,161,1,183,199,115,181,
+                               20,233,126,51,3,16,67,157,64,59,153,151,32,24,186,28,
+                               143,223>>}<!--Node private key-->,
+        ```
+
+2. `minsig` parameter is specified. `minsig` is the minimum number of signatures needed for consensus in the chain. 
+    
+    > **Note**
+    > 
+    > A value of less than a half of a total number of nodes in a chain is not allowed. The value can be considered as valid if it is more than a half of a total number of nodes in the chain plus one node.
+
+    ```erlang
+    #{<<"p">> => [<<"current">>,<<"chain">>,<<"minsig">>],
+                  <<"t">> => <<"set">>,<<"v">> => 6},
+    ```
+
+3. `patchsig` parameter is specified. `patchsig` is the minimum number of signatures needed for a chain patch transaction:
+
+    ```erlang
+    #{<<"p">> => [<<"current">>,<<"chain">>,<<"patchsigs">>],
+                 <<"t">> => <<"set">>,<<"v">> => 6},
+    ```
+   
+4. `blocktime` parameter is specified. `blocktime` is the time needed to create a new block. Default time is 15 seconds:
+
+   ```erlang
+   #{<<"p">> => [<<"current">>,<<"chain">>,<<"blocktime">>],
+                 <<"t">> => <<"set">>,<<"v">> => 3},
+   ``` 
+   
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Example |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| `p`       | Path. All settings are represented as a tree, like the file system, where a file location is designated with a path                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `#{<<"p">> => [<<"current">>,<<"chain">>,<<"blocktime">>],`        |
+| `t`       | Instruction type. In example you can see the instruction type `<<"set">>, <<"v">>`, which means "Set Value"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `<<"t">> => <<"set">>,<<"v">> => 3}` |
+| `v`       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `<<"v">> => 3` |
+| `set`     | Multi-purpose working approach to such the value storage mode. There is an option to modify the chain settings by a patch. Such a patch allows you to delete variables, rename them, and update the variable values. Note, that the values are not updated or deleted during the initial setup. That is why the action type `set` is used. | `<<"t">> => <<"set">>,<<"v">> => 3}` |
 
 ## Generation of `genesis.txt`
 
@@ -203,12 +370,6 @@ After generation, Genesis will be saved into `your_chain_genesis.txt` file:
       [],
   txs => []}.
 ```
-
-Genesis file specifies `minsig` and `patchsig` parameters:
-
-- `minsig` — the minimum number of signatures needed for consensus in the chain.
-
-- `patchsig` — minimum number of signatures needed for a chain patch transaction.
 
 After you have gone through all the steps above, rename Genesis file as `genesis.txt` and copy it to all nodes in the chain.
 
