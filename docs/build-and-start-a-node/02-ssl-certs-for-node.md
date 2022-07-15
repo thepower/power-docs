@@ -1,7 +1,3 @@
-**Table of Contents**
-
-- [How to obtain an SSL certificate for a node](#how-to-obtain-an-ssl-certificate-for-a-node)
-
 # How to obtain an SSL certificate for a node
 
 If you need an SSL certificate for your node, follow the steps below:

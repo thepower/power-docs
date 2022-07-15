@@ -1,10 +1,12 @@
+# How to start a TP-Node from a Docker image?
+
 **Table of Contents**
 
-- [How to start a TP-Node from a Docker image?](#how-to-start-a-tp-node-from-a-docker-image)
-  - [Setting up the environment](#setting-up-the-environment)
-  - [Starting the node](#starting-the-node)
+   - [Introduction](#introduction)
+   - [Setting up the environment](#setting-up-the-environment)
+   - [Starting the node](#starting-the-node)
 
-# How to start a TP-Node from a Docker image?
+## Introduction
 
 You can start a TP-Node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
 

@@ -2,9 +2,10 @@
 
 ## Table of Contents
 
-- [TP-Node configuration](#tp-node-configuration)
-  - [`node.config` description](#nodeconfig-description)
-  - [Generation of `genesis.txt`](#generation-of-genesistxt)
+   - [What is `node.config` and `genesis.txt`?](#what-is-nodeconfig-and-genesistxt)
+   - [`node.config` example](#nodeconfig-description)
+   - [`genesis.txt` example](#genesistxt-example)
+   - [Generation of `genesis.txt`](#generation-of-genesistxt)
 
 ## What is `node.config` and `genesis.txt`?
 
