@@ -1,11 +1,13 @@
+# Nodes and chains one-o-one
+
 **Table of Contents**
 
-- [Nodes and chains one-o-one](#nodes-and-chains-one-o-one)
-  - [Nodes](#nodes)
-    - [TP-Node Consensus](#tp-node-consensus)
-  - [Chains](#chains)
+   - [Introduction](#introduction)
+   - [Nodes](#nodes)
+      - [TP-Node Consensus](#tp-node-consensus)
+   - [Chains](#chains)
 
-# Nodes and chains one-o-one
+## Introduction
 
 This article is aimed to help you understand the basic terms used in the Power Docs.
 
