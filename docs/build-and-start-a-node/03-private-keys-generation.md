@@ -1,4 +1,15 @@
-# Private and public keys for nodes
+# How to generate the private and public keys for nodes?
+
+**Table of Contents**
+
+   - [Introduction](#introduction)
+   - [Private key generation](#private-key-generation)
+   - [Calculation of a public key out of a private key](#calculation-of-a-public-key-out-of-a-private-key)
+   - [Extraction of the private key (HEX)](#extraction-of-the-private-key-hex)
+   - [Extraction of the public key (HEX)](#extraction-of-the-public-key-hex)
+   - [Extraction of the public key (DEC)](#extraction-of-the-public-key-dec)
+
+## Introduction
 
 This guide will help you to easily generate the private and public keys for nodes.
 

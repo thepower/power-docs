@@ -1,4 +1,4 @@
-# How to obtain an SSL certificate for a node
+# How to obtain an SSL certificate for a node?
 
 If you need an SSL certificate for your node, follow the steps below:
 

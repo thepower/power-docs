@@ -1,4 +1,4 @@
-# TP-Node configuration
+# How to configure TP-Node?
 
 ## Table of Contents
 
