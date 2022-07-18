@@ -134,7 +134,7 @@ In order to prevent mass wallets registration, we require a PoW calculation for 
 
 You can get the current difficulty of the shard by API call (GET) /api/settings. By this API call you'll get a JSON object. The value of the key settings.current.register.diff is the difficulty of this shard.
 
-For example, if difficulty was 16 you should get a sha265 hash of the transaction with 16 leading bits of 0 (i.e. two leading bytes should be equal to 0). You should change the value of the 'nonce' key of the registration transaction to get a hash with 16 leading 0 bits.
+For example, if difficulty was 16 you should get a sha512 hash of the transaction with 16 leading bits of 0 (i.e. two leading bytes should be equal to 0). You should change the value of the 'nonce' key of the registration transaction to get a hash with 16 leading 0 bits.
 
 Please note, the hash of the transaction body doesn't put in the transaction itself. In order to check if transaction meets the difficulty requirements or not, server recalculates the sha512 hash of the transaction body. As mentioned before, you should change the value of the 'nonce' key to get the transaction data with sha512 hash containing 'difficulty' of leading bits equal to 0.
 
@@ -238,7 +238,7 @@ Here is the binary data we have at this step:
 
 ```console
 tag 0x02 (public key), length of data 0x21, public key data
-tag 0x01 (timestamp), length of data 0x08, current unixtime as microseconds in unsigned int 64 format
+tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
 ```
 
 The next step is appending of data for signing to binary from the previous step.
@@ -247,7 +247,7 @@ The next step is appending of data for signing to binary from the previous step.
 # tag 0x02 (public key), length of data 0x21, public key data
 02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
 
-# tag 0x01 (timestamp), length of data 0x08, current unixtime as microseconds in unsigned int 64 format
+# tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
 01 08 00000164B250D800
 
 # 'Hello, world!' string added to the end of BSig container
@@ -329,7 +329,7 @@ Here is an example of payload (shown as JSON format):
 
 The first element is purpose (positive fixint, 0x00 - 0x7f) from JSON shown before.
 
-The second element is the currency name (binary, 0xc4). If the currency name contains only ASCII characters with codes 32-126 you also can use the string type (0xa0 - 0xbf).
+The second element is the currency name (binary, 0xc4). Even if the currency name contains only ASCII characters with codes 32-126 you still MUST use the binary type.
 
 The third element is amount (integer, 0x00 - 0x7f, 0xcc - 0xcf). This field MUST be only the integer type. You CAN NOT use here the float type or any other type.
 
