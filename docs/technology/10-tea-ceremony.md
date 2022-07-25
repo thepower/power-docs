@@ -1,6 +1,9 @@
-# Tea Ceremony
+# Tea Ceremony algorithm
 
+**Table of contents**
 
+   - [Introduction](#introduction)
+   - [Algorithm work scheme](#algorithm-work-scheme)
 
 ## Introduction
 
