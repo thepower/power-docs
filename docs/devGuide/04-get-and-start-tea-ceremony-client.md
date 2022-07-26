@@ -98,18 +98,7 @@ To get the Tea Ceremony client:
 
 ## Start the Tea Ceremony client
 
-To start the client:
-
-1. Configure the chain parameters shown in the window. To do this, check out the [`genesis.txt` description](../build-and-start-a-node/#genesistxt-example).
-2. Click the **Start Tea Ceremony** button:
-
-   ![img](./resources/start-tea-client.png)
-
-3. Get the Tea Ceremony token:
-
-   ![img](./resources/token.png)
-
-4. Open the Erlang console and run the following command:
+To start the client, open the Erlang console and run the following command:
 
 ```erlang
 ./teaclient.uu 52E616B1B48C
