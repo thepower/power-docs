@@ -1,9 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to start a client?
 
 **Table of Contents**
@@ -92,7 +86,7 @@ source /opt/erlang/activate
 To get the Tea Ceremony client:
 
 1.  Go to [https://tea.thepower.io](https://tea.thepower.io).
-2.  Click on the **Tea Client** button to download the Tea Ceremony client
+2.  Click on the **Tea Client** button to download the Tea Ceremony client.
 
     ![img](./resources/get-tea-client.png)
 
@@ -107,7 +101,7 @@ To start the client, open the Erlang console and run the following command:
 where
 
 - `teaclient.uu` — Tea Ceremony client,
-- `52E616B1B48C` — Tea Ceremony Token.
+- `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 After you have started the client, you can watch the Tea Ceremony process.
 
