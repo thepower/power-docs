@@ -83,12 +83,7 @@ source /opt/erlang/activate
 
 ## Get the Tea Ceremony client
 
-To get the Tea Ceremony client:
-
-1.  Go to [https://tea.thepower.io](https://tea.thepower.io).
-2.  Click on the **Tea Client** button to download the Tea Ceremony client.
-
-    ![img](./resources/get-tea-client.png)
+To get the Tea Ceremony client go to the [client download page](https://tea.thepower.io/teaclient.uu). The download will be started automatically.
 
 ## Start the Tea Ceremony client
 
@@ -113,11 +108,9 @@ After you have started the client, you can watch the Tea Ceremony process.
 
 After the client is started, all the nodes in the chain sign the `genesis.txt` with their private keys. After that, the ceremony ends.
 
-The Tea Ceremony has three steps. The client shows how many nodes have participated in each step.
-
 > **Note**
 >
-> You can turn the client off and turn it on again if you need to. It will slow down the Tea Ceremony, but it will not be disrupted.
+> You can shut the client down and start it up again if you need to. It will slow down the Tea Ceremony but will not disrupt it.
 
 ## After the successful ceremony
 
@@ -126,4 +119,4 @@ After the successful tea ceremony, the following files are created in the workin
 - `genesis.txt` signed with the private keys of all the nodes in the chain,
 - `node.config` containing the node private key.
 
-After that, you can start the node from the Docker image or source code using our guides.
+After the Tea Ceremony ends successfully, you can start the node from the Docker image or source code using our guides.
