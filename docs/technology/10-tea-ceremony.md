@@ -7,7 +7,17 @@
 
 ## Introduction
 
-**Tea Ceremony** is an algorithm for secure generation of [`genesis.txt`](../build-and-start-a-node/01-tpNodeConfiguration.md#generation-of-genesistxt) and [node private and public keys](../build-and-start-a-node/03-private-keys-generation.md). It allows nodes to exchange public keys without needing to exchange private keys with each other. Thanks to the Tea Ceremony algorithm, the node private keys are stored only on nodes they are generated for.
+**Tea Ceremony** is an algorithm for secure generation of [`genesis.txt`](../build-and-start-a-node/01-tpNodeConfiguration.md#generation-of-genesistxt) and [node private and public keys](../build-and-start-a-node/03-private-keys-generation.md). It allows nodes to exchange public keys without needing to exchange private keys with each other. Thanks to the Tea Ceremony algorithm, the node private keys are stored only on the nodes they are generated for.
+
+### Stages of Tea Ceremony
+
+The Tea Ceremony has three steps:
+
+1. Collection of public keys of all nodes in the chain.
+2. Signing the settings patch.
+3. Signing the block.
+
+The Tea Ceremony client shows how many nodes have participated in each step.
 
 ## Algorithm work scheme
 
