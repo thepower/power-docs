@@ -1,10 +1,10 @@
-# Nodes and chains one-o-one
+# Nodes and chains basics
 
 **Table of Contents**
 
    - [Introduction](#introduction)
    - [Nodes](#nodes)
-      - [TP-Node Consensus](#tp-node-consensus)
+      - [Power Node Consensus](#power-node-consensus)
    - [Chains](#chains)
 
 ## Introduction
@@ -13,18 +13,18 @@ This article is aimed to help you understand the basic terms used in the Power D
 
 ## Nodes
 
-Let's assume, there are several servers with the same software configuration, except for the server addresses and cryptographic keys. This software builds a decentralized network among the servers based on the blockchain technology. The servers are network nodes, called **Power Nodes**, or **TP-Nodes**.
+Let's assume, there are several servers with the same software configuration, except for the server addresses and cryptographic keys. This software builds a decentralized network among the servers based on the blockchain technology. The servers are network nodes, called **Power Nodes**.
 
-Three or more TP-nodes form a chain, or a shard. The terms "chain" and "shard" mean the same, but "chain" is more often to hear in the blockchain community. We can also say that the nodes form a testnet. Testnet consists of chains of three or more nodes.
+Three or more nodes form a chain, or a shard. The terms "chain" and "shard" mean the same, but "chain" is more often to hear in the blockchain community. We can also say that the nodes form a network. The network consists of chains of three or more nodes.
 
 There are two types of nodes:
 
 1. **Consensus node**. It is a node that connects to a chain and participate in Consensus with other Consensus nodes.
 2. **Seed node**. It is a node that connects to a chain of nodes, receives a copy of a blockchain, and can provide it to the users upon request.
 
-### TP-Node Consensus
+### Power Node Consensus
 
-To provide such kind of communication between servers, the servers must follow the consensus rules.
+To provide communication between servers, or nodes, the servers must follow the Consensus rules.
 
 The consensus is written by developers and architects. There are a lot of implementations of consensus. The Power Ecosystem uses the [Resonance Consensus Implementation](https://doc.thepower.io/docs/technology/resonance-consensus).
 
