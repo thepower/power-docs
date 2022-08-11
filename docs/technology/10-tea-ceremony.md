@@ -34,9 +34,9 @@ Tea Ceremony algorithm works as follows:
    - `https://tea.thepower.io/api/new_ceremony` — API address for Tea Ceremony initialization.
 
 2. The request returns a Ceremony token.
-3. The user starts the Tea Ceremony client on their node. All node providers in the chain must start the Tea Ceremony client on their nodes to initiate generation of `genesis txt`. Otherwise, the node public keys will not be added into `genesis.txt` and will not be trusted.
+3. The users start the Tea Ceremony client on each node in a chain. All node providers in the chain must start the Tea Ceremony client on their nodes to initiate generation of `genesis txt`. Otherwise, the node public keys will not be added into `genesis.txt` and will not be trusted.
 4. The Tea Ceremony client [generates the private keys](../build-and-start-a-node/03-private-keys-generation.md#private-key-generation) for nodes.
 5. The Tea Ceremony client waits for `genesis.txt` to sign it.
-6. The Tea Ceremony client sends the signed `genesis.txt` back to the chain.
+6. The Tea Ceremony client sends the signed `genesis.txt` back to the node, where the client was started.
 7. The Tea Ceremony client creates the node configuration files.
 8. The Tea Ceremony waits for `genesis.txt` signed by all the nodes in the chain, and saves it.
