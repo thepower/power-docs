@@ -8,7 +8,14 @@
 
 ## Introduction
 
-The testnet is a network consisting of three or more nodes. The testnets can be public or local. Technically, local testnet is a local-hosted test chain — temporary network of three local-hosted nodes used for testing. For more information about the test chain, please, refer to "Local Testnet" page.
+The testnet is a testing network, consisting of nodes divided into chains. The main purposes of testnet are to:
+
+- test the survivability of the network under different workloads; 
+- test the connectivity of nodes in different configurations; 
+- test the survivability of chains in different configurations; 
+- test different DCloud services.
+
+The testnets can be public or local. Technically, local testnet is a local-hosted test chain — temporary network of three local-hosted nodes used for testing. For more information about the test chain, please, refer to "Local Testnet" page.
 
 The testnet is a powerful tool aimed to help you contribute to web3 as:
 
