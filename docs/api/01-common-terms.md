@@ -1,6 +1,6 @@
 # Common Terms
 
-In the first version of The Power API, users interact with The Power network. The basic functionality includes the ability to conduct transactions, operations with blocks and with the wallet. In the future, the functionality will be extended.
+In the first version of The Power API, users interact with The Power network. The basic functionality includes the ability to conduct transactions, operations with blocks and with the wallet. The functionality will be extended in future releases.
 
 The browsing APIs do not require authorization. All user actions resulting in the changing of network state are performed in the form of transactions signed by the user's private key.
 
@@ -12,11 +12,13 @@ The Native node API for direct integration client applications with blockchain n
 
 Designed for remote calling of trusted procedures during the interactions of various participants in a trusted network and integration with devices and applications
 
-## API features:
+## API features
 
-- Reading and writing data in blocks
-- Blockchain node settings management
-- Work with transactions
-- Work with addresses
-- Status Checks
-- Reading blocks
+The native node API has the following features:
+
+- Reading data in blocks;
+- Reading blockchain node settings;
+- Working with transactions;
+- Working with addresses;
+- Checking the status;
+- Reading the blocks.

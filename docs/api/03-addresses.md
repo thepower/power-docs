@@ -1,25 +1,39 @@
 # Addresses
 
-Currently, addresses can be presented in two formats. One way of address presentation is created for being read by a person; in the future, we will call such a representation a textual representation or a textual format. However, inside of transactions, in the blockchain itself, etc. addresses can be presented differently. Another way of address presentation is binary one.
-It is recommended to use the text representation of the address wherever the user is supposed to work with it (interface display of the address, or when user sends the transaction to this address, etc.).
 
-**Example of address in textual representation:**
+## Introduction
+
+Currently, addresses can be represented in two following formats:
+
+1. Human-readable representation. This representation is created to be read by a human. It will be called **textual representation** or **textual format** further herein; 
+2. Machine-readable representation. This representation is created to be read by a machine and used for representation of addresses inside the transactions or the blockchain itself. It will be called **binary representation** or **binary format** further herein. 
+
+> **Note**
+> 
+> It is recommended to use the text representation of the address wherever the user is supposed to work with the addresses.
+
+**Example of a textually represented address:**
 
 ```bash
 AA100000001677722412
 ```
 
-**Example of an address in a binary representation in the form hex:**
+**Example of an address represented in binary HEX format:**
 
 ```bash
 800140000100000B
 ```
 
-Moreover, the addresses also can be public and private. Public addresses are available globally (then it is possible to make a transaction in another chain), and private addresses, which can be used only within a private chain.
+The addresses can be:
 
-## 1. Address structure in binary representation
+- Public — these addresses are available globally. It facilitates performing transactions in other chains. 
+- Private addresses — these addresses can be used only within a private chain.
 
-The address is actually 8 bytes of binary data. While encoding the address or in various transformations associated with it, the location of the BigEndian bits is used, i.e. the highest bits of the address on the left, the least significant bits of the address on the right. In binary form, the bits will have the following values:
+## Address structure in textual and binary representation
+
+### Address structure in binary representation
+
+The address actually consists of 8 bytes of binary data. While encoding the address or in various transformations associated with it, the location of the BigEndian bits is used, which means that the most significant bits of the address are on the left, and the least significant bits of the address are on the right. In binary format, the bits have the following values:
 
 ```bash
 100GGGGG GGGGGGGG GGGBBBBB BBBBBBBB BBBBBBBB AAAAAAAA AAAAAAAA AAAAAAAA
@@ -31,35 +45,46 @@ or:
 101BBBBB BBBBBBBB BBBBBBBB BBBBBBBB BBBBBBBB AAAAAAAA AAAAAAAA AAAAAAAA
 ```
 
-The three high-order bits indicate the type of the address.
+The three most significant bits indicate the type of the address:
 
-- 100 - public address
-- 101 - private
-  Any other value in the three most significant bits makes the address invalid. The remaining bits have the following meaning:
-  **G** - _the public address group ID._
-  **B** - _the identifier of the address block._
-  **A** - _the wallet identifier in the block._
+- 100 - public address;
+- 101 - private.
 
-## 2. Converting an address from a text representation to a binary one
+Any other value in three most significant bits makes the address invalid. The remaining bits have the following meaning:
 
-In the textual format, private addresses have a length of 18 characters while public addresses have 20 characters length. Moreover, they are also converted in different ways. If you want to choose proper algorithm for this transformation, first you need to define public or private address you are dealing with.
-To do this, look at the length:
+- **G** — the public address group ID.
+- **B** — the address block ID.
+- **A** — the wallet ID inside the block.
 
-- 18 characters - private (example of private address: 00000000FE00007DF0)
-- 20 characters - public (example of public address: AA100000001677722412)
-  We break the address into parts, each of which is converted into a binary form according to different rules. The public address consists of the following parts:
+### Address structure in textual representation
+
+In the textual format private and public addresses have different length in characters:
+
+
+The conversion of private and public addresses is performed in a different way also. To choose the proper algorithm for the conversion, define the type of address you are working with.
+
+- 18 characters — private address (private address example: 00000000FE00007DF0)
+- 20 characters — public address (public address example: AA100000001677722412)
+  
+It's recommended to break the address into batches, which are converted into the binary format according to different rules. The public address consists of the following batches:
 
 ```bash
 AADDLLLLLLLLLLLLLLCC
 ```
 
-**A** — _letters of the Latin alphabet;_
-**D** — _digits, together AADD encode the group identifier;_
-**L** — _digits, in this part the identifiers of the addresses block and the identifiers of a wallet block are coded;_
-**C** — _the lowest part of the address checksum (the last 2 digits of the checksum written in decimal form);_
-Let's look at how each part is coded. As already mentioned, the first 4 characters of the address in the text representation encode the identifier of the group, but the letters and digits are transformed according to different rules.
-The letters (the first 2 characters) represent a number in the 26-digit number system (ie A-0, B-1, C-2, ..., Z-25). Numbers (ie the next 2 symbols) are considered in the 10th notation.
-Example of calculating the group number for different addresses ( AA10 - group number 1010 (in decimal notation) or 10102 (in binary system), BD56 - group number 295610 or 1011100011002):
+where:
+
+**A** — letters of the Latin alphabet;
+**D** — digits, AADD together encode a group ID;
+**L** — digits, in this batch the address IDs block and the wallet block IDs are coded;
+**C** — the lowest part of the address checksum (the last 2 digits of the checksum written in decimal form).
+
+Let's look at how each batch is coded. As already mentioned, the first 4 characters of the address in the text representation encode the group ID but the letters and digits are transformed according to different rules:
+
+- The letters (the first 2 characters) represent a number in the 26-digit numbering system (ie A-0, B-1, C-2, ..., Z-25).
+- Numbers (the next 2 symbols after the letters) are considered in the decimal notation.
+
+Example of calculating the group number for different addresses ( AA10 — group number 1010 in decimal notation or 10102 in binary system, BD56 — group number 295610 or 1011100011002):
 
 <!-- <Image src="/power_address.png" alt="power address" width={789} height={130} /> -->
 

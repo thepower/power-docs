@@ -9,7 +9,9 @@ The following version of openssl is used for given examples:
 OpenSSL 1.1.1f  31 Mar 2020
 ```
 
-## How the cryptography works?
+## Full example of private and public key generation process
+
+Here is the full example of how to generate the private and public keys:
 
 ```bash
 #! /bin/sh -x
@@ -56,15 +58,17 @@ dcXQU+3MEiN67owdK2aIaTQpVRDHWA==
 Verified OK
 ```
 
+You can find the description of private and public keys in the corresponding sections below.
+
 ### Private key generation
+
+A private key is necessary for signing any data or documents. This key is the only way to perform any actions with the Power Ecosystem.
 
 Refer to the [Private key generation](../build-and-start-a-node/03-private-keys-generation.md#private-key-generation) guide to learn how to generate a private key using OpenSSL.
 
 Ensure your private key is securely stored.
 
 ### Public key generation
-
-A public key is necessary for signing any data or documents. This key is the only way to perform any actions with the Power Ecosystem.
 
 The public key is required to verify that the private key signature conforms with the information in the public key. The public key is passed to Power_ecosystem network in the moment of wallet registration. This key is kept in the blockchain and can be accessed by anyone. Use our [guide](../build-and-start-a-node/03-private-keys-generation.md#calculation-of-a-public-key-out-of-a-private-key) to get the public key as a pair for your private key.
 
