@@ -52,8 +52,14 @@ To start the testnet, ensure you have the following software installed on your m
 > To include your account into the group `docker`, run:
 > 
 > ```bash
-> usermod -a docker user
+> usermod -aG docker user
 > ```
+> 
+> > where:
+>
+> -  -G, --groups GROUPS — new list of supplementary `GROUPS`
+> -  -a, --append — append the user to the supplemental `GROUPS`. Mentioned by the `-G` option without removing
+     the user from other groups.
 > 
 > This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.
 
