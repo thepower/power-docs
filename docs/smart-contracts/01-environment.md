@@ -23,6 +23,6 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 Eventually, you need to add two libraries to the folder, in which you plan to create projects:
 
-GitHub - `https://thepower/tp_rust_lib` Rust Libraries for WASM
+GitHub - `https://github.com/thepower/tp_rust_lib.git` Rust Libraries for WASM
 
 NOTE: It is not recommended to install Rust on pure Windows. The best option for running Rust on a Windows 10 is to install Rust in Windows Subsystem for Linux.
