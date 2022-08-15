@@ -1,5 +1,13 @@
 # Common Terms
 
+**Table of Contents**
+
+- [Introduction](#introduction)
+- [Native node API](#native-node-api)
+- [API features](#api-features)
+
+## Introduction
+
 In the first version of The Power API, users interact with The Power network. The basic functionality includes the ability to conduct transactions, operations with blocks and with the wallet. The functionality will be extended in future releases.
 
 The browsing APIs do not require authorization. All user actions resulting in the changing of network state are performed in the form of transactions signed by the user's private key.

@@ -1,6 +1,18 @@
 # Cryptography
 
-Before we start talking about API methods, there is a need to deal with cryptography issues. This document will give examples of work with cryptography using openssl. Many programming languages are suitable for working with this program, thus the presented examples could be transferred to these languages without any extra difficulties.
+**Table of Contents**
+
+- [Full example of private and public key generation process](#full-example-of-private-and-public-key-generation-process)
+  - [Private key generation](#private-key-generation)
+  - [Public key generation](#public-key-generation)
+  - [Data Signature](#data-signature)
+    - [Signature verification](#signature-verification)
+- [Wallet Import Format](#wallet-import-format)
+- [Key Conversion to DER format](#key-conversion-to-der-format)
+
+## Introduction
+
+Before we start talking about API methods, there is a need to deal with cryptography issues. This document will give examples of work with cryptography using openssl. Many programming languages are suitable for working with this program, thus the presented examples could be transferred to these languages without any difficulties.
 
 The following version of openssl is used for given examples:
 
