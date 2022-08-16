@@ -2,7 +2,14 @@
 
 ## General provisions
 
-Work with the API is supported by http protocol (in the future it is also planned to support https) using GET or POST requests (for different APIs different type of requests). Thus, it is possible for you to send data to the server in one of the following ways: in the address bar as one of the URL components or as a GET parameter (ie /url/param1 or /url/?param1=123). If the API accessed using method of the POST request, then the data is encoded in the json format and placed in the body of the request. A combination of both transfer methods is also possible. For different API data is transmitted in different ways, and for each specific endpoint information on how to pass arguments will be given.
+Work with the API is supported by https protocol using `GET` or `POST` requests (there are different request types for different APIs). Thus, it is possible for you to send data to the server in one of the following ways:
+
+- in the address bar as one of the URL components;
+- as a `GET` parameter (`/url/param1` or `/url/?param1=123`). 
+
+If the API is accessed using the `POST` request method, then the data is encoded into `*.json` format and placed in the request body. 
+
+You can combine the both transfer methods. For different API data is transmitted in different ways, and for each specific endpoint information on how to pass arguments will be given.
 
 The result of the query is always placed in the body of the response from the server in json format. There are several mandatory fields that will always be present in the response when it comes to certain situations.
 

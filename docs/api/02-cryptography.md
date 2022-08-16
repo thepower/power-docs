@@ -16,7 +16,7 @@ Before we start talking about API methods, there is a need to deal with cryptogr
 
 The following version of openssl is used for given examples:
 
-```console
+```bash
 ~ openssl version
 OpenSSL 1.1.1f  31 Mar 2020
 ```
@@ -131,7 +131,7 @@ In order to register your account, you need to create a compressed public key (s
 
 Get the DER-formatted key from the private key created by openssl using the following command:
 
-```console
+```bash
 ~ openssl ec -in key.priv.pem -conv_form compressed -outform DER | dd bs=1 skip=53 > key.raw.bin
 ```
 
