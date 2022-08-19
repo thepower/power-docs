@@ -102,7 +102,7 @@ The conversion of private and public addresses is performed differently. To choo
 
 Here is an example of calculating the group number for different addresses (`AA10` — group number `0010d` in decimal notation or `1010b` in binary notation, `BD56` — group number `295610` or `1011100011002`):
 
-![Example banner](/img/power_address.png)
+![Example banner](./resources/power_address.png)
 
 The following 14 characters encode the address block and wallet ID in this block. These characters should be considered as a number in the decimal numbering system. This number needs to be converted to the binary system.
 
@@ -128,11 +128,13 @@ In this case, the address checksum in the decimal notation will be `693220412`. 
 
 ```php
 % php crc_example.php
-crc32: 693220412 [dec], 0x2951b43c [hex]
+crc32: 2271368432 [dec], 0x876254f0 [hex]
+```
 
+```php
 % cat crc_example.php
 <?php
-$addr = hex2bin("8001400001000008");
+$addr = hex2bin("A0000000FE00007D");
 $crc32 = crc32($addr);
 
 printf("crc32: $d [dec], 0x%x  [hex]\n\n", $crc32, $crc32);
