@@ -5,6 +5,7 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
+- [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1](#step-1)
   - [Step 2](#step-2)
   - [Step 3](#step-3)
@@ -77,3 +78,7 @@ Start your node. Here you have two options:
 > **Note**  
 >
 > Before starting up the node ensure, you have set up your environment.
+
+## What do I need to do if something goes wrong?
+
+If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
