@@ -7,7 +7,7 @@
 
 ## Introduction
 
-**Tea Ceremony** is an algorithm for secure generation of [`genesis.txt`](../build-and-start-a-node/01-tpNodeConfiguration.md#generation-of-genesistxt) and [node private and public keys](../build-and-start-a-node/03-private-keys-generation.md). It allows nodes to exchange public keys without needing to exchange private keys with each other. Thanks to the Tea Ceremony algorithm, the node private keys are stored only on the nodes they are generated for.
+**Tea Ceremony** is an algorithm for secure generation of [`genesis.txt`](../../Maintain/build-and-start-a-node/01-tpNodeConfiguration.md#generation-of-genesistxt) and [node private and public keys](../../Maintain/build-and-start-a-node/03-private-keys-generation.md). It allows nodes to exchange public keys without needing to exchange private keys with each other. Thanks to the Tea Ceremony algorithm, the node private keys are stored only on the nodes they are generated for.
 
 ### Stages of Tea Ceremony
 
@@ -35,7 +35,7 @@ Tea Ceremony algorithm works as follows:
 
 2. The request returns a Ceremony token.
 3. The users start the Tea Ceremony client on each node in a chain. All node providers in the chain must start the Tea Ceremony client on their nodes to initiate generation of `genesis txt`. Otherwise, the node public keys will not be added into `genesis.txt` and will not be trusted.
-4. The Tea Ceremony client [generates the private keys](../build-and-start-a-node/03-private-keys-generation.md#private-key-generation) for nodes.
+4. The Tea Ceremony client [generates the private keys](../../Maintain/build-and-start-a-node/03-private-keys-generation.md#private-key-generation) for nodes.
 5. The Tea Ceremony client waits for `genesis.txt` to sign it.
 6. The Tea Ceremony client sends the signed `genesis.txt` back to the node, where the client was started.
 7. The Tea Ceremony client creates the node configuration files.

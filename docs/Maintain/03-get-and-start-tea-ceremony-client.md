@@ -119,4 +119,4 @@ After the successful tea ceremony, the following files are created in the workin
 - `genesis.txt` signed with the private keys of all the nodes in the chain,
 - `node.config` containing the node private key.
 
-After the Tea Ceremony ends successfully, you can start the node from the [Docker image](../build-and-start-a-node/04-startingTpNode_docker.md) or [source code](../build-and-start-a-node/05-startingTpNode_source.md) using our guides.
+After the Tea Ceremony ends successfully, you can start the node from the [Docker image](build-and-start-a-node/04-startingTpNode_docker.md) or [source code](build-and-start-a-node/05-startingTpNode_source.md) using our guides.

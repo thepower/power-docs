@@ -102,7 +102,7 @@ The conversion of private and public addresses is performed differently. To choo
 
 Here is an example of calculating the group number for different addresses (`AA10` — group number `0010d` in decimal notation or `1010b` in binary notation, `BD56` — group number `295610` or `1011100011002`):
 
-![Example banner](./resources/power_address.png)
+![Example banner](resources/power_address.png)
 
 The following 14 characters encode the address block and wallet ID in this block. These characters should be considered as a number in the decimal numbering system. This number needs to be converted to the binary system.
 

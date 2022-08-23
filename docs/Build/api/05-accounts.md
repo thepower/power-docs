@@ -1,6 +1,6 @@
 # Accounts
 
-To request information about the state of the wallet, use the following API:
+Use the following API to request information about the wallet state:
 
 | Request Type | GET                                                                                                                                                                                                          |
 | :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

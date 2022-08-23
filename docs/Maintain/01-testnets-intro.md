@@ -40,14 +40,14 @@ Testnet allows you to:
 
 Before using the public testnet, you need to build and start the node: 
 
-- from [source code](../build-and-start-a-node/05-startingTpNode_source.md), or 
-- from [Docker image](../build-and-start-a-node/04-startingTpNode_docker.md).
+- from [source code](build-and-start-a-node/05-startingTpNode_source.md), or 
+- from [Docker image](build-and-start-a-node/04-startingTpNode_docker.md).
 
-Use our [guide](./03-testnet-start.md) to start your public testnet.
+Use our [guide](02-testnet-start.md) to start your public testnet.
 
 When connecting your node to the public testnet, you connect it to either a new or an existing chain.
 
-After you've connected your node to the testnet, it starts to take part in [Consensus](https://doc.thepower.io/docs/technology/resonance-consensus). You can also connect your node as a [Seed node](../nodes-chains-description/01-nodes-shards-101.md#nodes).
+After you've connected your node to the testnet, it starts to take part in [Consensus](https://doc.thepower.io/docs/technology/resonance-consensus). You can also connect your node as a [Seed node](../Explore/nodes-chains-description/01-nodes-shards-101.md#nodes).
 
 > **Note**
 >
