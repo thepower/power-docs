@@ -1,16 +1,38 @@
 # Accounts
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Request examples](#request-examples)
+   - [Valid request](#valid-request)
+      - [API request](#api-request)
+      - [API response](#api-response)
+   - [Invalid address](#invalid-address)
+       - [API request](#api-request-1)
+       - [API response](#api-response-1)
+   - [Non-existent address](#non-existent-address)
+       - [API request](#api-request-2)
+       - [API response](#api-response-2)
+   - [Description of info block fields](#description-of-info-block-fields)
+       - [Conversion of a public key into PEM format](#conversion-of-a-public-key-into-pem-format)
+       - [Working example](#working-example)
+   - [Obtaining a public key via API](#obtaining-a-public-key-via-api)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 Use the following API to request information about the wallet state:
 
-| Request type | URL                                                                                                                                                                                                          | Parameters                                                                                                                                                                                                                            |
-|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GET`          | `/api/address/{address}`                                                                                                                                                                                                             | `{address}` — wallet address in textual or binary representation in hex format. <br> Examples: `AA100000001677722412` — address in textual representation <br> `0x800140000100000B` — address in  binary representation in hex format |
+| Request type | URL                                                                                                                                                                                                          | Parameters                                                                                                                                                                                                                              |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`          | `/api/address/{address}`                                                                                                                                                                                                             | `{address}` — wallet address in textual or binary representation in hex format. </br> Examples: `AA100000001677722412` — address in textual representation </br> `0x800140000100000B` — address in  binary representation in hex format |
 
-## Request examples 
+## Request examples
 
 > **Note**
-> 
-> For `http`-requests `curl` is used. 
+>
+> For `http`-requests `curl` is used.
 > For highlighting the `json`-formatted syntax `jq`-program is used.
 
 ### Valid request
@@ -86,17 +108,19 @@ Use the following API to request information about the wallet state:
 }
 ```
 
-## Info block fields description
+## Description of info block fields
 
 | Field  | Purpose                                                                                                                                                                                                                          |
 | ------ |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `amount` | Wallet balance in various currencies. Only the transaction currencies are displayed in this field                                                                                                                                |
 | `lastblk` | Hash of the block in which the last transaction modified this wallet                                                                                                                                                             |
 | `pubkey` | The public key for this wallet in a compact `DER` format                                                                                                                                                                         |
-| `seq`    | The current value of `seq` for the address. When the transactions are executed through the API, the `seq` value should always be greater than the current value in the wallet (in other implementations the name is called `nonce`). |
+| `seq`    | The current value of `seq` for the address. When the transactions are executed through the API, the `seq` value should always be greater than the current value in the wallet (in other implementations, the name is called `nonce`). |
 | `t`      | The last transaction time in milliseconds.                                                                                                                                                                                       |
 
-Conversion of a public key into PEM format (usually this format is used for work with the openssl) can be performed as follows (example in php language):
+### Conversion of a public key into PEM format
+
+PEM format is usually used to work with openssl. Conversion can be performed as follows:
 
 ```php
 function der2pem($der_data, $type='PUBLIC KEY') {
@@ -109,9 +133,9 @@ function der2pem($der_data, $type='PUBLIC KEY') {
 }
 ```
 
-### An example of work.
+### Working example
 
-The program converts the public key of one of the wallets to PEM format, and also loads this key for further work with openssl. Execution of openssl_pkey_get_public fails due to the key problem. The resource (4) of type (OpenSSL key) row at the end says that there were no errors, the key was correctly converted and openssl accepted this key for further work.
+The program converts the public key of one of the wallets into PEM format and loads this key for further work with openssl:
 
 ```php
 <?php
@@ -133,6 +157,8 @@ var_dump($pub_key_handle);
 %>
 ```
 
+The key problem can fail execution of `openssl_pkey_get_public`. The `resource (4) of type (OpenSSL key)` row at the end means that there were no errors, the key was correctly converted, and openssl accepted this key for further work:
+
 ```bash
 ~ php example.php
 pub key:
@@ -147,11 +173,13 @@ resource(4) of type (OpenSSL key)
 
 It is also possible to obtain a public key in PEM format.
 
-**To do this, you must pass the GET parameter pubkey=pem:**
+**To do this, you must pass the `GET` parameter `pubkey=pem` using the following command:**
 
 ```bash
 ~ curl -s http://c103n10.thepower.io:49841/api/address/AA100000172805325404?pubkey=pem | jq
 ```
+
+After the command has finished execution, you'll get the following result:
 
 ```json
 {
@@ -177,3 +205,7 @@ It is also possible to obtain a public key in PEM format.
   "txtaddress": "AA100000172805325404"
 }
 ```
+
+> **Note**
+>
+> The result of command execution you get may differ from the result in the example.

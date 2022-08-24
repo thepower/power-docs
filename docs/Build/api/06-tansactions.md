@@ -2,6 +2,13 @@
 
 Any changes you want to make in the state of the blockchain can be done using transactions. There are two main types of transactions: registration transaction and generic (financial) transaction (sending token from one wallet to another). In the future, more types of transactions will be added.
 
+# MsgPack
+
+Specification of the message pack format can be found here: ['github.com/msgpack/msgpack/blob/master/spec.md'](https://github.com/msgpack/msgpack/blob/master/spec.md)
+
+There are libraries written in the most common languages.
+You can download libraries from the official site: ['msgpack.org'](https://msgpack.org/)
+
 ## 1. Transaction related API description
 
 | Url                     | Request Type | Description of parameters                                                                                                                                                                                                                                                  |
