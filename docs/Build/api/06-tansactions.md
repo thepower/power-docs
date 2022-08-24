@@ -1,20 +1,26 @@
 # Transactions
 
-Any changes you want to make in the state of the blockchain can be done using transactions. There are two main types of transactions: registration transaction and generic (financial) transaction (sending token from one wallet to another). In the future, more types of transactions will be added.
+Any changes you want to make in the state of the blockchain can be done using transactions. There are two main types of transactions: 
 
-# MsgPack
+- Registration transaction;
+- Generic (financial) transaction (sending token from one wallet to another). 
 
-Specification of the message pack format can be found here: ['github.com/msgpack/msgpack/blob/master/spec.md'](https://github.com/msgpack/msgpack/blob/master/spec.md)
+In the future, more types of transactions will be added.
 
-There are libraries written in the most common languages.
-You can download libraries from the official site: ['msgpack.org'](https://msgpack.org/)
+All transactions are stored in Message Pack.
 
-## 1. Transaction related API description
+You can find the Message Pack specification [here](https://github.com/msgpack/msgpack/blob/master/spec.md).
 
-| Url                     | Request Type | Description of parameters                                                                                                                                                                                                                                                  |
-| :---------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/api/tx/new`           | POST         | Input parameters: `{"tx": " ... packed and signed transaction ... "}` Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` - transaction identifier                                                                                                  |
-| `/api/tx/status/{txid}` | GET          | Input parameters: `{txid}` - transaction identifier you've received from the call `/api/tx/new` Response: `{"Res": null}` - the transaction has not yet included into the block (no information yet) `{"Res": {"ok": true}}` - the transaction has included into the block |
+There are libraries written in the most common types of programming languages.
+
+You can download libraries from the [official site](https://msgpack.org/).
+
+## Transaction API description
+
+| URL                    | Request type | Description of parameters                                                                                                                                                                                                                                         |
+|------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/api/tx/new`          | POST        | Input parameters: `{"tx": " ... packed and signed transaction ... "}` Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` - transaction ID                                                                                                 |
+| `/api/tx/status/{txid}` | GET         | Input parameters: `{txid}` - transaction ID you've received from calling `/api/tx/new` Response: `{"Res": null}` - the transaction has not yet included into the block (no information yet) `{"Res": {"ok": true}}` - the transaction has included into the block |
 
 Example of sending a transaction using curl (the transaction body has been shortened):
 
