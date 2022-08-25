@@ -17,10 +17,10 @@ You can download libraries from the [official site](https://msgpack.org/).
 
 ## Description of transaction API
 
-| URL                    | Request type | Description of parameters                                                                                                                                                                                                                                                     |
-|------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `/api/tx/new`          | POST        | Input parameters: `{"tx": " ... packed and signed transaction ... "}` </br> Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` (transaction ID)                                                                                                       |
-| `/api/tx/status/{txid}` | GET         | Input parameters: `{txid}` — transaction ID you've received from calling `/api/tx/new` </br> Response: `{"Res": null}` — the transaction was not included into the block yet (no information yet) </br> `{"Res": {"ok": true}}` - the transaction has included into the block |
+| URL                     | Request type | Description of parameters                                                                                                                                                                                                                                             |
+|-------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/api/tx/new`           | POST         | Input parameters: `{"tx": " ... packed and signed transaction ... "}`   Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` (transaction ID)                                                                                                   |
+| `/api/tx/status/{txid}` | GET          | Input parameters: `{txid}` — transaction ID you've received from calling `/api/tx/new`   Response: `{"Res": null}` — the transaction was not included into the block yet (no information yet)   `{"Res": {"ok": true}}` - the transaction has included into the block |
 
 Example of sending a transaction using `curl` (the transaction body in this example has been shortened for clarity):
 
