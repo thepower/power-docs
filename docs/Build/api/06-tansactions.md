@@ -3,9 +3,9 @@
 Any changes you want to make in the state of the blockchain can be done using transactions. There are two main types of transactions: 
 
 - Registration transaction;
-- Generic (financial) transaction (sending token from one wallet to another). 
-
-In the future, more types of transactions will be added.
+- Generic (financial) transaction (sending token from one wallet to another);
+- Calling smart contracts;
+- Storing smart contracts into LStore.
 
 All transactions are stored in Message Pack.
 
@@ -15,27 +15,27 @@ There are libraries written in the most common types of programming languages.
 
 You can download libraries from the [official site](https://msgpack.org/).
 
-## Transaction API description
+## Description of transaction API
 
-| URL                    | Request type | Description of parameters                                                                                                                                                                                                                                         |
-|------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `/api/tx/new`          | POST        | Input parameters: `{"tx": " ... packed and signed transaction ... "}` Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` - transaction ID                                                                                                 |
-| `/api/tx/status/{txid}` | GET         | Input parameters: `{txid}` - transaction ID you've received from calling `/api/tx/new` Response: `{"Res": null}` - the transaction has not yet included into the block (no information yet) `{"Res": {"ok": true}}` - the transaction has included into the block |
+| URL                    | Request type | Description of parameters                                                                                                                                                                                                                                                     |
+|------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/api/tx/new`          | POST        | Input parameters: `{"tx": " ... packed and signed transaction ... "}` </br> Response: `{"txid": "153B7614F8051F79-3RGPJnQuajxy1r9zj5Jb9JUr4skE-6BC2"}` (transaction ID)                                                                                                       |
+| `/api/tx/status/{txid}` | GET         | Input parameters: `{txid}` — transaction ID you've received from calling `/api/tx/new` </br> Response: `{"Res": null}` — the transaction was not included into the block yet (no information yet) </br> `{"Res": {"ok": true}}` - the transaction has included into the block |
 
-Example of sending a transaction using curl (the transaction body has been shortened):
+Example of sending a transaction using `curl` (the transaction body in this example has been shortened for clarity):
 
 ```bash
 ~ curl http://127.0.0.1/api/tx/new -d '{"tx":"g6R0eXBlo … 2MjI4X8TfA5gc"}'
 
 ```
 
-## 2. Dive into transaction format
+## Dive into transaction format
 
-In order to make a new transaction, you should send an HTTP POST request to the server. Request data should be in JSON format and contain the key 'tx' with base64-encoded transaction container.
+To make a new transaction, you should send a `POST` request to the server using https. Request data must be `JSON`-formatted and contain the `tx` key with base64-encoded transaction container.
 
-![Example banner](/img/tx-scheme.svg)
+![Example banner](./resources/tx-scheme.svg)
 
-The transaction container is a MessagePack fixmap (first byte 0x80 - 0x8f) with the following structure:
+The transaction container is a MessagePack fixmap (first byte: `0x80- 0x8f`). It has the following structure:
 
 ```json
 {
@@ -45,13 +45,13 @@ The transaction container is a MessagePack fixmap (first byte 0x80 - 0x8f) with 
 }
 ```
 
-The keys of this fixmap should be encoded as a string.
+The keys of this fixmap must be encoded as a `String`.
 
-The value of the 'body' is a MessagePack binary (0xc4 the first byte) with MessagePack encoded transaction payload (we referring it as a transaction body).
+The value of the `body` is a MessagePack binary (first byte: `0xc4`) with the MessagePack-encoded transaction payload (transaction body).
 
-The transaction body is a MessagePack map (0xde, 0x80-0x8f) with one mandatory key 'k' which value indicates transaction kind and other keys depending on transaction purpose.
+The transaction body is a MessagePack map (`0xde`, `0x80-0x8f`) with one mandatory key `k`. The value of this key indicates the type of transaction and other keys depending on transaction purpose.
 
-For the best extendability transaction kind number is unique for each kind with each transaction version. Headers with constants should be generated by scripts from supplied JSON file (priv/tx_const.json):
+For the best scaling, transaction type number is unique for each type of transaction with any version of transaction version. Headers with constants should be generated by scripts from the `JSON` file supplied in distributive (`priv/tx_const.json`):
 
 ```json
 {
@@ -71,7 +71,7 @@ For the best extendability transaction kind number is unique for each kind with 
 }
 ```
 
-The value of the 'sig' key is MessagePack array (types 0x90-0x9f or 0xdc-0xdc). Each array item contains signature for one key. Signature format (BSig) described below. A transaction might have multiple signatures.
+The value of the `sig` key is MessagePack array (types `0x90-0x9f` or `0xdc-0xdc`). Each array item contains signature for one key. Signature format (BSig) described below. A transaction might have multiple signatures.
 
 The value of the 'ver' key is an integer, which indicates a version of transaction format to specify which body decoder should be used. As for now it has to be 2 (0x02 in MessagePack).
 

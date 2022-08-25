@@ -24,9 +24,9 @@
 
 Use the following API to request information about the wallet state:
 
-| Request type | URL                                                                                                                                                                                                          | Parameters                                                                                                                                                                                                                              |
-|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `GET`          | `/api/address/{address}`                                                                                                                                                                                                             | `{address}` — wallet address in textual or binary representation in hex format. </br> Examples: `AA100000001677722412` — address in textual representation </br> `0x800140000100000B` — address in  binary representation in hex format |
+| Request type | URL                                                                                                                                                                                                          | Parameters                                                                                                                                                                                                                                    |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`          | `/api/address/{address}`                                                                                                                                                                                                             | `{address}` — wallet address in textual or binary representation in hex format. </br> Examples: </br> `AA100000001677722412` — address in textual representation </br> `0x800140000100000B` — address in  binary representation in hex format |
 
 ## Request examples
 
@@ -110,13 +110,13 @@ Use the following API to request information about the wallet state:
 
 ## Description of info block fields
 
-| Field  | Purpose                                                                                                                                                                                                                          |
-| ------ |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `amount` | Wallet balance in various currencies. Only the transaction currencies are displayed in this field                                                                                                                                |
-| `lastblk` | Hash of the block in which the last transaction modified this wallet                                                                                                                                                             |
-| `pubkey` | The public key for this wallet in a compact `DER` format                                                                                                                                                                         |
-| `seq`    | The current value of `seq` for the address. When the transactions are executed through the API, the `seq` value should always be greater than the current value in the wallet (in other implementations, the name is called `nonce`). |
-| `t`      | The last transaction time in milliseconds.                                                                                                                                                                                       |
+| Field  | Purpose                                                                                                                                                                                                                              |
+| ------ |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `amount` | Wallet balance in various currencies. Only the transaction currencies are displayed in this field                                                                                                                                    |
+| `lastblk` | Hash of the block in which the last transaction modified this wallet                                                                                                                                                                 |
+| `pubkey` | The public key for this wallet in a compact `DER` format                                                                                                                                                                             |
+| `seq`    | The current value of `seq` for the address. When the transactions are executed through the API, the `seq` value should always be greater than the current value in the wallet (in other implementations, the name is called `nonce`) |
+| `t`      | The last transaction time in milliseconds                                                                                                                                                                                            |
 
 ### Conversion of a public key into PEM format
 
