@@ -56,9 +56,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'api/common-terms',
+            docId: 'Build/api/common-terms',
             position: 'left',
-            label: 'Api',
+            label: 'API',
           },
           // { to: '/blog', label: 'How-to', position: 'left' },
           {
@@ -90,12 +90,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Power_api',
-                to: '/docs/api/common-terms',
+                label: 'API',
+                to: '/docs/Build/api/common-terms',
               },
               {
                 label: 'Technology',
-                to: '/docs/technology/abstract',
+                to: '/docs/Explore/technology/abstract',
               },
               {
                 label: 'About',
