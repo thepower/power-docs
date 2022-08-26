@@ -11,4 +11,4 @@ Before using the local testnet, you need to build and start the node
 - from [source code](../../Maintain/build-and-start-a-node/05-startingTpNode_source.md), or 
 - from [Docker image](../../Maintain/build-and-start-a-node/04-startingTpNode_docker.md).
 
-Use our [guide](./03-testnet-start.md) to start your local testnet.
+Use our [guide](../../Maintain/02-testnet-start.md) to start your local testnet.
