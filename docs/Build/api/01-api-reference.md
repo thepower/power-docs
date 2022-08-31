@@ -1,15 +1,19 @@
 # API reference
 
-- "extra" - additional information of the signing node (for example timestamp);
-- "binextra" - the same additional information in the original binary form (for verifying the signature);
-- "nodeid" - the identifier of the node that issued the signature (it is computed from pubkey);
-- "signature" - a signature.
+## The main terms
+
+- `extra` — additional information of the signing node (timestamp, for example);
+- `binextra` — the same additional information in the original binary form (for verifying the signature);
+- `nodeid` — the identifier of the node that has issued the signature. The signature is calculated from public key;
+- `signature` — a signature.
 
 ## /status
 
-Purpose: through this API you can find out your ip address.
+| Purpose        | Request type | Response                           |
+|----------------|--------------|------------------------------------|
+| The IP address | `GET`        | client (string): ip client address |
 
-Request type: GET Response: client (string): ip client address Example of use:
+Example of use:
 
 ```bash
 ~ curl http://c103n10.thepower.io:49841/api/status -s |jq
@@ -24,20 +28,17 @@ Request type: GET Response: client (string): ip client address Example of use:
 
 ## /node/status
 
-Purpose: the current status of the addressed node
-
-Request type: GET
-
-Response:
-status (object): An object with a report on the current work of the node
+| Purpose                              | Request type | Response                                                   |
+|--------------------------------------|--------------|------------------------------------------------------------|
+| Current status of the addressed node | `GET`        | status (object): An object with a current node work report |
 
 Fields of the object status:
 
-- blockchain (object):
-- nodeid (string): node identifier
-- public_key (string): public node key
-- sync_peers (array of strings): identifiers of neighboring nodes with which communication is established
-- ver (string): node software version
+- `blockchain (Object)`;
+- `nodeid (String)` — node identifier;
+- `public_key (String)` — public node key;
+- `sync_peers (array of Strings)` — identifiers of connected neighboring nodes;
+- `ver (String):` — node software version.
 
 Example of use:
 
@@ -132,15 +133,9 @@ Example of use:
 
 ## /where/`{address}`
 
-Purpose: the definition of chain belonging to address
-
-- `{address}` `(string)`: the address of the wallet in a textual or binary representation in the form of hex.
-
-Response:
-
-- chain `(integer)`: the number of the wallet related chain
-- address `(string)`: the address converted to a binary representation
-- txtaddress `(string)`: the address converted to a text representation
+| Purpose                                      | Request type | Input parameters                                                                                     | Response                                                                                                                                                                                                                                                                                                                                                                                      |
+|----------------------------------------------|--------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The definition of chain belonging to address | -            | `{address}` `(string)` — the address of the wallet in textual or binary representation in hex format | `chain (int)` — the number of the wallet-related chain address; </br> `(String)` — the address converted to binary representation; </br> `txtaddress (String)` — the address converted to textual representation                                                                                                                                                                              |
 
 Example of use:
 
@@ -172,27 +167,18 @@ Example of use:
 
 ## /address/`{address}`
 
-Purpose: information about a wallet with a given address
-
-Request type: GET Input parameters:
-
-- `{address}` `(string)`: the address of the wallet in a text or binary representation in the form of hex.
-
-Response: info (object):
-
-An object with information about the current state of the wallet.
-
-- address `(string)`: the address converted to a binary representation
-- txtaddress `(string)`: the address converted to a text representation
+| Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                               |
+|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object):` — an object with information about the current wallet state; </br> `address (String)` — the address converted to binary representation; </br> `txtaddress (String)` — the address converted to textual representation |
 
 Fields of the info:
 
-- amount `(object)`: an object with the balances of this wallet in different currencies. If no operations have been performed, it may be empty
-- lastblk `(string)`: the hash of the block in which the last transaction made changes in this wallet, i.e. this is a link to its' last change
-- preblk `(string)`: hash of the previous block there the transaction that changed this wallet happened, ie. this is a link to the penultimate change of this wallet
-- pubkey `(string)`: public wallet key in DER format
-- seq `(integer)`: seq of the last successful transaction. In a new transaction, seq must be strictly greater than this number
-- t `(integer)`: the time of the last transaction that made changes to this wallet (the time of the last transaction with the purse). Time in microseconds.
+- `amount (Object)` — an object with the wallet balances in different currencies. May be empty, if no operations have been performed;
+- `lastblk (String)` — the hash of the block in which the last transaction made changes in the wallet, i.e. a link to its' last change;
+- `preblk (String)` — hash of the previous block in which the transaction that changed this wallet happened, i.e. a link to the previous change of this wallet;
+- `pubkey (String)` — wallet public key in DER format;
+- `seq (int)` — `seq` of the last successful transaction. In a new transaction, `seq` must be greater than this number;
+- `t (int)` — the time of the last transaction that has made changes to the wallet (the time of the last transaction with the wallet). Time in microseconds.
 
 Example of use:
 
@@ -222,12 +208,9 @@ Example of use:
 
 ## /blockinfo/`{hash}`
 
-Purpose: information about the block without transactions
-
-Request type: GET Input parameters:
-`{hash}` `(string)`: the hash of the block for which display information is needed or the word last (last block)
-
-Response: Information about the assignment of fields is presented in the chapter "Operations with blocks"
+| Purpose                                          | Request type | Input parameters                                                            | Response                                                                               |
+|--------------------------------------------------|--------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| Information about the block without transactions | `GET`        | `{hash}` `(string)` — hash of the block for which the information is needed | Refer to "Block operations" section to find information about the assignment of fields |
 
 Example of use:
 
@@ -380,12 +363,9 @@ Example of use:
 
 ## /block/`{hash}`
 
-Purpose: information about the block
-
-Request type: GET Input parameters:
-`{hash}` `(string)`: the hash of the block for which display information is needed or the word last (last block)
-
-Response: Information about the assignment of fields is presented in the chapter "Operations with blocks"
+| Purpose                     | Request type | Input parameters                                                            | Response                                                                               |
+|-----------------------------|--------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| Information about the block | `GET`        | `{hash}` `(string)` — hash of the block for which the information is needed | Refer to "Block operations" section to find information about the assignment of fields |
 
 Example of use:
 
@@ -592,10 +572,9 @@ Example of use:
 
 ## /settings
 
-Purpose: parameters of the current chain
-
-Request type:
-GET Response: Information about the structure and purpose of the fields will change
+| Purpose                  | Request type | Input parameters | Response                                                                                                                                                   |
+|--------------------------|--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Current chain parameters | `GET`        | -                | You can find information about the fields structure and purpose [here](../../Maintain/build-and-start-a-node/01-tpNodeConfiguration.md#genesistxt-example) |
 
 ```bash
 % curl http://c103n10.thepower.io:49841/api/settings -s | jq

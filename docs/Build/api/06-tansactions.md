@@ -71,17 +71,17 @@ For the best scaling, transaction type number is unique for each type of transac
 }
 ```
 
-The value of the `sig` key is MessagePack array (types `0x90-0x9f` or `0xdc-0xdc`). Each array item contains signature for one key. Signature format (BSig) described below. A transaction might have multiple signatures.
+The value of the `sig` key is MessagePack array (types `0x90-0x9f` or `0xdc-0xdc`). Each array item contains signature for one key. Signature format (`BSig`) is described below. A transaction might have multiple signatures.
 
-The value of the 'ver' key is an integer, which indicates a version of transaction format to specify which body decoder should be used. As for now it has to be 2 (0x02 in MessagePack).
+The value of the `ver` key is an integer, indicating a version of transaction format. The value is used to specify the body that should be used. In this release `2` (`0x02` in MessagePack) is used.
 
-## 3. Registration Transaction
+## Registration Transaction
 
-For registration of a new wallet there is the 'register' transaction type. As we mentioned before, the transaction body is MessagePack map (or fixmap) type. The first byte of this type is the 0xDE or from a range 0x80-0x8F.
+For registration of a new wallet the `register` transaction type is used. The first byte of this type is `0xDE` or a value from a range of `0x80-0x8F`.
 
 ![Example banner](/img/tx-scheme-full.svg)
 
-Here is an example of registration transaction body content (shown as json, binary data represented as base64-encoded strings):
+Here is an example of registration transaction body content (shown as `json`. Binary data represented as `base64`-encoded strings):
 
 ```json
 {
@@ -93,59 +93,67 @@ Here is an example of registration transaction body content (shown as json, bina
 }
 ```
 
-The value of the 'k' key should always be 0x11 for registration transactions (MessagePack positive fixint type, 0x11).
+where:
 
-The value of the 't' key is a transaction creation timestamp (unixtime in milliseconds, MessagePack uint 64 type, 0xcf).
+| Value   | Description                                                                                                                                                                                                  |
+|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `k`     | Transaction type (kind). This value should always be `0x11` for registration transactions (MessagePack positive `fixint` type, `0x11`)                                                                       |
+| `t`     | Transaction creation timestamp (UNIX-time in milliseconds, MessagePack `uint` 64 bit type, `0xcf`)                                                                                                           |
+| `nonce` | This value can be of any type and should be used to change the transaction hash (see ["PoW difficulty of the registration transaction"](#pow-difficulty-of-the-registration-transaction) section below)      |
+| `h`     | This value is an `sha256`-hash of concatenated public keys sorted in an ascending manner (MessagePack binary type, `0xc4`)                                                                                   |
+| `e`     | Custom additional data included into transaction (MessagePack map or fixmap type, `0xde`, `0x80-0x8f`). Custom means that the additional data is defined by user.                                            |
 
-The value of the 'nonce' key can be any type and should be used to change the transaction hash (see comment about difficulty below).
+## Example of calculating the value of the key 'h'
 
-The value of the 'h' key is sha256 hash of concatenated public keys sorted ascending (MessagePack binary type, 0xc4).
+In this example the following algorithm is used:
 
-The value of the 'e' key is user defined extra data included into transaction (MessagePack map or fixmap type, 0xde, 0x80-0x8f).
+1. Take 3 arbitrary public keys (shown as `json`-array, binary data represented as a hex string):
 
-## 4. Example of calculating the value of the 'h' key
+  ```json
+  [
+    "025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7",
+    "0234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB",
+    "02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D7"
+  ]
+  ```
 
-Let's take 3 arbitrary public keys (shown as json array, binary data represented as hex string):
+  > **Note**
+  > 
+  > The keys should be represented as binary data (i.e. for the string `02` you should take `0x02` byte of binary data).
 
-```json
-[
-  "025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7",
-  "0234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB",
-  "02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D7"
-]
-```
+2. Sort the keys. After the keys are sorted, you will get the following order:
 
-Please note, keys should be represented as binary data (i.e. for string 02 you should take 0x02 byte of binary data).
+  ```json
+  [
+    "02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D7",
+    "0234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB",
+    "025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7"
+  ]
+  ```
 
-After sorting the keys we'll get the following order:
+3. After concatenation step you will get the following data:
 
-```json
-[
-  "02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D7",
-  "0234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB",
-  "025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7"
-]
-```
+  ```bash
+  02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D70234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7
+  ```
 
-After concatenation step we'll get the following data:
+4. Calculate the `sha256` hash of this data. 
 
-```bash
-02266C9DAA52F9BB5AD73B77A703437E27A3344F36F1D4FF0C0267C3DEA2BC91D70234326DF0BDF60DA3E6D203B73C0D0C4DEE518BD60717C3B20C0D27812C7DADEB025348F9AD2BDC8E394B7C3C69FDD221F8C7F95B458D56AACD677C4C9ABF8E1AE7
-```
+  > **Note** 
+  > 
+  > The data must be binary-formatted (i.e. string `E7` in the example should be byte `0xE7` of binary data). You will calculate the hash of binary data, **NOT** a string of ASCII symbols.
 
-The next step is calculating the sha256 hash of this data. Please note, we should deal with binary data (i.e. string E7 in the example should be byte 0xE7 of binary data). We calculate the hash of binary data, NOT the string of ASCII symbols.
+  For the data in this example the `sha256` hash is:
+  
+  ```bash
+  CB32960606B0E3846D763B8DA8FE5EF7379D89A227C2B6DBDA499F4ECEA0B071
+  ```
 
-For the data in this example the sha256 hash is
+## PoW difficulty of the registration transaction
 
-```bash
-CB32960606B0E3846D763B8DA8FE5EF7379D89A227C2B6DBDA499F4ECEA0B071
-```
+To prevent mass registration of wallets, a PoW calculation for every registration transaction is required. In this case, the PoW means you should change the transaction data to get a `sha512` hash which meets special requirements. These requirements are usually called **difficulty**.
 
-## 5. PoW difficulty of the registration transaction
-
-In order to prevent mass wallets registration, we require a PoW calculation for every registration transaction. In our case, the PoW means you should change the transaction data to get a sha512 hash which meets special requirements. These requirements usually called difficulty.
-
-You can get the current difficulty of the shard by API call (GET) /api/settings. By this API call you'll get a JSON object. The value of the key settings.current.register.diff is the difficulty of this shard.
+You can get the current difficulty of the shard by calling the `/api/settings` API. By this API call you'll get a JSON object. The value of the key settings.current.register.diff is the difficulty of this shard.
 
 For example, if difficulty was 16 you should get a sha512 hash of the transaction with 16 leading bits of 0 (i.e. two leading bytes should be equal to 0). You should change the value of the 'nonce' key of the registration transaction to get a hash with 16 leading 0 bits.
 
