@@ -133,9 +133,9 @@ Example of use:
 
 ## /where/`{address}`
 
-| Purpose                                      | Request type | Input parameters                                                                                     | Response                                                                                                                                                                                                                                                                                                                                                                                      |
-|----------------------------------------------|--------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The definition of chain belonging to address | -            | `{address}` `(string)` — the address of the wallet in textual or binary representation in hex format | `chain (int)` — the number of the wallet-related chain address; </br> `(String)` — the address converted to binary representation; </br> `txtaddress (String)` — the address converted to textual representation                                                                                                                                                                              |
+| Purpose                                      | Request type | Input parameters                                                                                     | Response                                                                                                                                                                                             |
+|----------------------------------------------|--------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The definition of chain belonging to address | -            | `{address}` `(string)` — the address of the wallet in textual or binary representation in hex format | `chain (int)` — the number of the wallet-related chain address; `(String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
 
 Example of use:
 
@@ -167,9 +167,9 @@ Example of use:
 
 ## /address/`{address}`
 
-| Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                              |
-|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state; </br> `address (String)` — the address converted to binary representation; </br> `txtaddress (String)` — the address converted to textual representation |
+| Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                  |
+|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state; `address (String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
 
 Fields of the info:
 
@@ -210,7 +210,7 @@ Example of use:
 
 | Purpose                                          | Request type | Input parameters                                                            | Response                                                                               |
 |--------------------------------------------------|--------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| Information about the block without transactions | `GET`        | `{hash}` `(string)` — hash of the block for which the information is needed | Refer to "Block operations" section to find information about the assignment of fields |
+| Information about the block without transactions | `GET`        | `{hash}` `(string)` — hash of the block for which the information is needed | To find information about the assignment of fields refer to "Block operations" section |
 
 Example of use:
 
