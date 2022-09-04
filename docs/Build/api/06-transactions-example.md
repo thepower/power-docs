@@ -1,8 +1,8 @@
 # Transactions example
 
-Here are examples how to encode registration transaction v2 and money transfer transaction v2.
+Here are the examples of how to encode registration transaction v2 and money transfer transaction v2:
 
-```js
+```javascript
 <?php
 
 // some code for data encoding to messagepack format was taken from https://github.com/rybakit/msgpack.php

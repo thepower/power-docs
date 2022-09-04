@@ -167,9 +167,9 @@ Example of use:
 
 ## /address/`{address}`
 
-| Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                  |
-|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state; `address (String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
+| Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                   |
+|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state;  `address (String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
 
 Fields of the info:
 

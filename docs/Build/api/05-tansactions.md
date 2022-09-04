@@ -153,13 +153,15 @@ In this example the following algorithm is used:
 
 To prevent mass registration of wallets, a PoW calculation for every registration transaction is required. In this case, the PoW means you should change the transaction data to get a `sha512` hash which meets special requirements. These requirements are usually called **difficulty**.
 
-You can get the current difficulty of the shard by calling the `/api/settings` API. By this API call you'll get a JSON object. The value of the key settings.current.register.diff is the difficulty of this shard.
+You can get the current difficulty of the shard by calling the `/api/settings` API. By this API call you'll get a JSON object. The value of the key `settings.current.register.diff` is the difficulty of the shard.
 
-For example, if difficulty was 16 you should get a sha512 hash of the transaction with 16 leading bits of 0 (i.e. two leading bytes should be equal to 0). You should change the value of the 'nonce' key of the registration transaction to get a hash with 16 leading 0 bits.
+For example, if difficulty is 16 you should get a `sha512` hash of the transaction with 16 leading bits of 0 (i.e. two leading bytes should be equal to 0). You should change the `nonce` key value of the registration transaction to get a hash with 16 leading 0 bits.
 
-Please note, the hash of the transaction body doesn't put in the transaction itself. In order to check if transaction meets the difficulty requirements or not, server recalculates the sha512 hash of the transaction body. As mentioned before, you should change the value of the 'nonce' key to get the transaction data with sha512 hash containing 'difficulty' of leading bits equal to 0.
+> **Note**
+> 
+> The transaction body hash can't be put into transaction itself. To check, if transaction meets the difficulty requirements, server recalculates the `sha512` hash of the transaction body. You should change the `nonce` key value of the registration transaction to get the transaction data with sha512 hash containing 'difficulty' of leading bits equal to 0.
 
-Let's take the following transaction body (shown as JSON, binary value of the 'h' key shown as hex-encoded string):
+Let's take the following transaction body (shown as `JSON`, binary value of the `h` key shown as hex-encoded string):
 
 ```json
 {
@@ -176,18 +178,18 @@ Here is the hex dump of the MessagePack-encoded transaction body:
 84a16b11a174cf00000166cec9216ba56e6f6e636500a168c420957216f45873f7d09466610b887f1634359b000820bc91119e0efea70d2de64d
 ```
 
-The sha512 hash of this transaction body is
+The sha512 hash of this transaction body is:
 
 ```bash
 3890c8e314282271d4050d049adf70722210e4147551b76edfc74e2fb9977bbf
 5ef41f4cc83d38144adc6bc52c93d3d1fb30473b043bf2f3b91c05dfcb6835a0
 ```
 
-The first byte of the hash is 0x38 or 00111000 in binary format. This means the difficulty of preparation for this transaction body is 2 (hash has 2 leading 0 bits).
+The first byte of the hash is `0x38` or `00111000` in binary format. This means the difficulty of preparation for this transaction body is `2` (hash has 2 leading 0 bits).
 
-In case we changed the value of the 'nonce' key the hash of the transaction body would change.
+In case we changed the value of the `nonce` key the hash of the transaction body would change.
 
-Here is the same transaction but we've changed the value of the 'nonce' key to 210 (shown as JSON, binary value of the 'h' key shown as hex-encoded string):
+Here is the same transaction, but the value of the `nonce` key is changed to 210 (shown as `JSON`, binary value of the `h` key shown as hex-encoded string):
 
 ```json
 {
@@ -205,139 +207,137 @@ Here is the hex dump of the MessagePack-encoded transaction body:
 73f7d09466610b887f1634359b000820bc91119e0efea70d2de64d
 ```
 
-The sha512 hash of this transaction body is
+The sha512 hash of this transaction body is:
 
 ```bash
 0014e384d970d49feb87c476720f52942dc09ee086a57e2505a32a00b1747135
 1872ea751e6b323c5d319a0fb5eb2f28c1fb2f8cad4e7d1b6ff8debbc52eb78f
 ```
 
-The binary representation of the first two bytes of that hash is
+The binary representation of the first two bytes of that hash is:
 
 ```bash
 00000000  00010100
   0x00      0x14
 ```
 
-As you can see, this hash has 11 leading 0 bits, so the difficulty of preparation for this transaction body is 11.
+This hash has 11 leading 0 bits, so the difficulty of preparation for this transaction body is 11.
 
-## 6. BSig container and signature format
+## BSig container and signature format
 
 The BSig container is a binary data of TLV format (Tag - Length - Value).
 
-![Example banner](/img/big-container.svg)
+![Example banner](./resources/big-container.svg)
 
-Each signature may contain additional data, which is signed with main payload (body, data for sign).
+Each signature may contain additional data signed with main payload (body, data to be signed).
 
-Here are predefined fields.
+Here are the predefined fields:
 
-| name           | length | tagl | type   |
-| :------------- | :----- | :--- | :----- |
-| timestamp      | 8      | 1    | uint64 |
-| pubkey         | vary   | 2    | binary |
-| createduration | 8      | 3    | uint64 |
-| OTHER          | vary   | 240  | binary |
-| purpose        | vary   | 254  | string |
-| signature      | vary   | 255  | binary |
+| Name           | Length | Tagl | Type |
+|---------------|-------|------|-----|
+| `timestamp`     | 8      | `1`    | `uint64` |
+| `pubkey`        | vary   | `2`    | `binary` |
+| `createduration` | 8      | `3`    | `uint64` |
+| `OTHER`         | vary   | `240`  | `binary` |
+| `purpose`       | vary   | `254`  | `string` |
+| `signature`      | vary   | `255`  | `binary` |
 
 The public key is mandatory. Every BSig should contain the public key tag.
 
 Let's look at the signing procedure by an example.
 
-Let's pretend that we have the private key _0102030405060708090001020304050607080900010203040506070809000102_ and we want to sign the string 'Hello, world!'.
+Let's assume you have the private key `0102030405060708090001020304050607080900010203040506070809000102`, and you want to sign the 'Hello, world!' string.
 
-First of all we need to calculate public key, for this private key it'd be _02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB_.
+1. Calculate a public key. For this private key it will be: 
 
-Also, we put the current timestamp into container.
+`02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB`
 
-Here is the binary data we have at this step:
+2. Put the current timestamp into the container.
 
-```console
-02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
-01 08 00000164B250D800
-```
+  Here is the binary data you have at this step:
+  
+  ```bash
+  02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
+  01 08 00000164B250D800
+  ```
 
-```console
-tag 0x02 (public key), length of data 0x21, public key data
-tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
-```
+  ```bash
+  tag 0x02 (public key), length of data 0x21, public key data
+  tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
+  ```
 
-The next step is appending of data for signing to binary from the previous step.
+3. The next step is appending of data for signing to binary from the previous step:
 
-```console
-# tag 0x02 (public key), length of data 0x21, public key data
-02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
+  ```bash
+  # tag 0x02 (public key), length of data 0x21, public key data
+  02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
+  
+  # tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
+  01 08 00000164B250D800
+  
+  # 'Hello, world!' string added to the end of BSig container
+  48656C6C6F2C20776F726C6421
+  ```
 
-# tag 0x01 (timestamp), length of data 0x08, current unixtime as milliseconds in unsigned int 64 format
-01 08 00000164B250D800
+  Here is the resulting binary for signing (shown as hexdump):
+  
+  ```bash
+  022102B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D
+  7548B81064CB010800000164B250D80048656C6C6F2C20776F726C6421
+  ```
 
-# 'Hello, world!' string added to the end of BSig container
-48656C6C6F2C20776F726C6421
-```
+  The sha256 hash of this whole binary will be `60C3B88A5F32816F574C8FABFB45A35338A20D7C1678F20DABDBBD7F94568F15`.
 
-Here is the resulting binary for sign (shown as hexdump):
+4. Calculate the hash signature from the previous step. The signature is:
 
-```console
-022102B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D
-7548B81064CB010800000164B250D80048656C6C6F2C20776F726C6421
-```
+  ```bash
+  304402205250D827749F285CE174137EC88B394092E43B9E6C6774045EE5E6ED502322520
+  2204D1628F019E57BF19C1A0FE37193355A059F22CF8203D85E112FF3B4873D46FE
+  ```
+  > **Note**
+  > 
+  > You always work with binary data. You should sign the hash binary data (NOT it's ASCII characters representation).
 
-**The sha256 hash of this whole binary will be 60C3B88A5F32816F574C8FABFB45A35338A20D7C1678F20DABDBBD7F94568F15.**
+5. Remove the payload you appended to container and prepend the container with the signature tag:
 
-At the next step we calculate signature of the hash from the previous step. The signature is
+  ```bash
+  FF 46 304402205250D827749F285CE174137EC88B394092E43B9E6C6774045EE5E6ED5023225202204D1628F019E57BF19C1A0FE37193355A059F22CF8203D85E112FF3B4873D46FE
+  02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
+  01 08 00000164B250D800
+  ```
 
-```bash
-304402205250D827749F285CE174137EC88B394092E43B9E6C6774045EE5E6ED502322520
-2204D1628F019E57BF19C1A0FE37193355A059F22CF8203D85E112FF3B4873D46FE
-```
+  ```bash
+  tag 0xFF (signature), length of data 0x46, binary data of signature (NOT it's ASCII)
+  tag 0x02 (public key), length of data 0x21, binary data of public key (NOT it's ASCII)
+  tag 0x01 (timestamp), length of data 0x08, current unixtime as microseconds in unsigned int 64 format
+  ```
 
-Please note, we always deal with binary data. You should sign the binary data of hash (NOT it's ASCII characters representation).
+## Generic transactions
 
-At the next step, we should remove the payload which we appended to container and prepend the container with the signature tag.
+Token transfer and/or smart contract call:
 
-```console
-FF 46 304402205250D827749F285CE174137EC88B394092E43B9E6C6774045EE5E6ED5023225202204D1628F019E57BF19C1A0FE37193355A059F22CF8203D85E112FF3B4873D46FE
-02 21 02B1912FABA80FCECD2A64C574FEFE422C61106001EC588AF1BD9D7548B81064CB
-01 08 00000164B250D800
-```
-
-```console
-tag 0xFF (signature), length of data 0x46, binary data of signature (NOT it's ASCII)
-tag 0x02 (public key), length of data 0x21, binary data of public key (NOT it's ASCII)
-tag 0x01 (timestamp), length of data 0x08, current unixtime as microseconds in unsigned int 64 format
-```
-
-## 7. Generic transactions
-
-Token transfer and/or smart contract call.
-
-<Image
-  src="/power-generic-tx.svg"
-  alt="Token transfer and/or smart contract call"
-  width={569}
-  height={737}
-/>
+![generic-tx](./resources/power-generic-tx.svg)
 
 Token transfer and smart contract calling transactions must contain the following mandatory keys:
 
-| Key           | Descripton                                                                 |
-| :------------ | :------------------------------------------------------------------------- |
-| f (from)      | source address, must be 8 byte binary (0xc4 MessagePack type)              |
-| to (to)       | destination address, must be 8 byte binary (0xc4)                          |
-| s (seq)       | tx nonce, must be positive integer (0x00 - 0x7f or 0xcc - 0xcf)            |
-| t (timestamp) | tx unixtime in milliseconds, positive integer (0x00 - 0x7f or 0xcc - 0xcf) |
-| p (payload)   | array of amounts (see below, 0xdc or 0x90 - 0x9f)                          |
+| Key | Meaning   | Descripton                                                                                        |
+|-----|-----------|---------------------------------------------------------------------------------------------------|
+| f   | from      | Source address, must be 8 byte binary (`0xc4` MessagePack type)                                   |
+| to  | to        | Destination address, must be 8 byte binary (`0xc4` MessagePack type)                              |
+| s   | seq       | Transaction (tx) nonce, must be positive integer (`0x00` - `0x7f` or `0xcc` - `0xcf`)             |
+| t   | timestamp | Transaction (tx) unix-time in milliseconds, positive integer (`0x00` - `0x7f` or `0xcc` - `0xcf`) |
+| p   | payload   | Array of amounts (see below, `0xdc` or `0x90` - `0x9f`)                                           |
 
-Also, there is a couple of optional keys:
+Optional keys:
 
-| Key           | Descripton                                                                                                                                                                                                                                                                                                                            |
-| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| c (call)      | for transaction intended to call smartcontract method. This attribute should contain 2 element array (0x92), the first element is the method name (string), the second is an array of arguments (arbitrary types, but tx call with incorrect types will be dropped by smart contract)                                                 |
-| e (extradata) | map with arbitrary extra data which might be used by smart contract or wallet application. The key 'code' is reserved for 'deploy' method and should not be used for any other purposes (types 0x80 - 0x8f or 0xde - 0xdf). In order to place some text or comment to transaction it's recommended to use the key with the name 'msg' |
+| Key | Meaning   | Description                                                                                                                                                                                                                                                                                                                              |
+|-----|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| c   | call      | This key is needed for transaction intended to call smart contract method. This attribute should contain 2 element array (`0x92`), the first element is the method name (`String`), the second is an array of arguments (arbitrary types, but tx call with incorrect types will be dropped by a smart contract)                          |
+| e   | extradata | Map with arbitrary extra data that might be used by a smart contract or a wallet application. The `code` key is reserved for `deploy` method and should not be used for any other purposes (types `0x80` - `0x8f` or `0xde` - `0xdf`). It is recommended to use the key with the name `msg` to place some text or comment to transaction |
 
-Attribute 'p' (payload) is an array of 3 element arrays (0x93).
+Attribute `p` (payload) is an array of 3 element arrays (`0x93`).
 
-Here is an example of payload (shown as JSON format):
+Here is an example of payload (shown as `JSON`):
 
 ```json
 [
@@ -348,17 +348,19 @@ Here is an example of payload (shown as JSON format):
 ]
 ```
 
-The first element is purpose (positive fixint, 0x00 - 0x7f) from JSON shown before.
+Payload has the following elements:
 
-The second element is the currency name (binary, 0xc4). Even if the currency name contains only ASCII characters with codes 32-126 you still MUST use the binary type.
+1. Purpose (positive fixint, `0x00` - `0x7f`) from a `JSON` shown before.
 
-The third element is amount (integer, 0x00 - 0x7f, 0xcc - 0xcf). This field MUST be only the integer type. You CAN NOT use here the float type or any other type.
+2. Currency name (binary, `0xc4`). Even if the currency name contains only ASCII characters with codes 32-126 you still **MUST** use the binary type.
 
-In case this array contains more than 3 elements, all extra elements should be ignored (it might be array generated by software with a newer version of the protocol, for example).
+3. Amount (integer, `0x00` - `0x7f`, `0xcc` - `0xcf`). This field MUST be only the integer type. You **CAN NOT** use the float type or any other type.
 
-Clients MUST NOT add extra fields to payload array when creating a transaction, because it might break compatibility with new versions.
+  In case this array contains more than 3 elements, all extra elements should be ignored (for example, it might be an array generated by software with a newer version of the protocol).
 
-Here is an example of whole transaction (218 bytes, shown as base64 encoded binary):
+  Clients **MUST NOT** add extra fields to payload array when creating a transaction, because it might break compatibility with new versions.
+
+Here is an example of the whole transaction (218 bytes, shown as `base64`-encoded binary):
 
 ```bash
 g6Rib2R5xFCHoWsQoWbECIAAIAACAAADonRvxAiAACAAAgAABaFzzwAFeYouTBkw
@@ -456,7 +458,7 @@ a36d7367
 a568656c6c6f
 ```
 
-Here is the sig value with comments:
+Here is the `sig` value with comments:
 
 ```bash
 # 91 = fixarray of 1 element
