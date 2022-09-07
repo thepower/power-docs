@@ -1,4 +1,4 @@
-# How to generate the private and public keys for nodes?
+# How to generate the private and public keys?
 
 **Table of Contents**
 
@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This guide will help you to easily generate the private and public keys for nodes.
+This guide will help you to easily generate the private and public keys for nodes and accounts.
 
 ## Private key generation
 
@@ -24,6 +24,12 @@ openssl ecparam -name secp256k1 -genkey -noout -out priv.key
 After the key is generated, you will see the following output:
 
 ```bash
+~ cat ./key.priv.pem
+
+ASN1 OID: secp256k1
+-----BEGIN EC PARAMETERS-----
+BgUrgQQACg==
+-----END EC PARAMETERS-----
 -----BEGIN EC PRIVATE KEY-----
 MHQCAQEEIFi3694ES2t3WIy1CbGeXsdF7jTQJgd+j9VMkWGsuY1roAcGBSuBBAAK
 oUQDQgAEO0Z9+pYftutujvJwKuWaM0L5w0jfi/fIKFypak2csE7jSCAjLDY/GV8y
@@ -31,9 +37,11 @@ oUQDQgAEO0Z9+pYftutujvJwKuWaM0L5w0jfi/fIKFypak2csE7jSCAjLDY/GV8y
 -----END EC PRIVATE KEY-----
 ```
 
+Your private key will be stored in a private key file in the directory you've specified in the command. The private key will be used later to sign all transactions you will perform.
+
 ## Calculation of a public key out of a private key
 
-To calculate the public key of the private key file `priv.key`, run:
+To calculate the public key out of the private key file `priv.key`, run:
 
 ```bash
 openssl ec -in priv.key -pubout -conv_form compressed > pub.key
@@ -92,7 +100,7 @@ After the key is extracted, you'll see the following output:
 
 > **Attention**
 > 
-> If you work with `zsh` (MacOS) this command need other cycle parameter:
+> If you work with `zsh` (MacOS) this command needs another cycle parameter:
 > 
 > ```bash
 > raw=$(openssl ec -in priv.key -noout -text -conv_form compressed 2>/dev/null | grep -A 3 '^pub:' | tail -n 3 | tr '\n' ' ' | tr -d ' ');IFS=":"; b="";for a in ${=raw}; do b="$b$((16#$a)) "; done; echo $b | sed 's/\ $//' | tr ' ' ','
