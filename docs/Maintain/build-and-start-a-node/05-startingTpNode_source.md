@@ -146,7 +146,7 @@ To start the node in Dev Mode, run:
 ```
 ### Starting the node in Release Mode
 
-1. Refer to section ["Downloading and building the node"](#downloading-and-building-the-node) above to build the node.
+1. Refer to ["Downloading and building the node"](#downloading-and-building-the-node) section above to build the node.
 2. To start the node, run:
 
    ```bash
