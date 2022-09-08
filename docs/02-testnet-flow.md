@@ -65,13 +65,19 @@ Download ThePower Node. Here you have two options:
 wget https://tea.thepower.io/teaclient.uu
   ```
 
-6. Create `db` and `log` directories in your working directory (`/opt`, for instance).
+6. Install Erlang. To do this, run:
+
+```bash
+apt-get -y install erlang-base erlang-public-key erlang-ssl
+```
+
+7. Create `db` and `log` directories in your working directory (`/opt`, for instance).
 
    > **Hint**
    >
    > You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
 
-7. Place the files `genesis.txt` and `node.config` near `db` and `log` directories.
+8. Place the files `genesis.txt` and `node.config` near `db` and `log` directories.
 
 #### Download and build the node using the source code
 
