@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This guide will help you get and start the Tea Ceremony client.
+This guide will help you get and start the Tea Ceremony client. You can find the additional information about the Tea Ceremony algorithm [here](../Explore/technology/10-tea-ceremony.md).
 
 ## Set up your environment
 
@@ -83,7 +83,11 @@ source /opt/erlang/activate
 
 ## Get the Tea Ceremony client
 
-To get the Tea Ceremony client go to the [client download page](https://tea.thepower.io/teaclient.uu). The download will be started automatically.
+Open the terminal and run the following command to get the Tea Ceremony client:
+
+```bash
+wget https://tea.thepower.io/teaclient.uu
+```
 
 ## Start the Tea Ceremony client
 

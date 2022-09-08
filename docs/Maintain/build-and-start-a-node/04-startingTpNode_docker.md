@@ -24,10 +24,10 @@ Before you start a TP-Node using the Docker image:
 4. If you don't belong to the user group `docker`, you will not be able to start Docker. To resolve this problem, run:
 
    ```bash
-   # usermod -a docker
+   $ sudo usermod -aG docker
    ```
 
-5. Ensure you have the actual `genesis.txt` and `node.config` files.
+5. Ensure you have the actual `genesis.txt` and `node.config` files. The [Tea Ceremony CLient](../03-get-and-start-tea-ceremony-client.md) will get the actual files for you.
 6. Create `db` and `log` directories in your working directory (`/opt`, for instance).
 
    > **Hint**
