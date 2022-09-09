@@ -81,22 +81,17 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
 
 #### Download and build the node using the source code
 
-1. Check if you have Git installed:
+1. Install the software you need to seamlessly install Erlang:
 
    ```bash
-   git version
-   ```
-2. If you don't have Git installed on your machine, run:
-
-   ```bash
-   apt install git
+   apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
    ```
 
-3. Install the software you need to seamlessly install Erlang:
+2. [Generate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) an SSH key and [add](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account) it to your Github account. 
 
-   ```bash
-   apt install libssl-dev make automake autoconf libncurses5-dev gcc g++
-   ```
+   > **Attention**
+   > 
+   > If you skip this step, you will NOT be able to download and build the node from source.
 
 4. Install Erlang. To do this, download the `kerl` script:
 
@@ -165,9 +160,9 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
 
 11. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
-   ```bash
-   git clone https://github.com/thepower/tpnode.git
-   ```
+    ```bash
+    git clone https://github.com/thepower/tpnode.git
+    ```
 
 12. Delete the previous builds (if present) in `/tpnode` by running the following command:
 
@@ -212,13 +207,38 @@ This and the following steps are crucial because you will NOT be able to start y
 
 [Start the Tea Ceremony client](./Maintain/03-get-and-start-tea-ceremony-client.md#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
 
+To start the client, open the Erlang console and run the following command:
+
+```erlang
+./teaclient.uu 52E616B1B48C
+```
+
+where
+
+- `teaclient.uu` — Tea Ceremony client,
+- `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
+
+> **Note**
+> 
+> Change the `teaclient` file mode to executable by running the following command:
+> 
+> `chmod +x`
+> 
+> Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#quick-troubleshooting) section for more details.
+
+After you have started the client, you can watch the Tea Ceremony process.
+
+> **Note**
+>
+> If the client is started without options, you will see a short reference on the command and options.
+
 ### Step 6: Create directories and place the files
 
 Create `db` and `log` directories in your working directory (`/opt`, for instance) and place `genesis.txt` and `node.config` near these directories.
 
 ### Step 7: Edit the file
 
-Edit `node.config` by adding the addresses of nodes. See the [example](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration) guide.
+Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration) guide.
 
 ### Step 8: Get the certificate
 
@@ -238,3 +258,68 @@ Start your node. Here you have two options:
 ## What do I need to do if something goes wrong?
 
 If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+
+### Quick troubleshooting
+
+1. You get the following error:
+
+    ```bash
+    ===> Failed to boot tpnode for reason {{{badmatch,undefined},
+    [{nodekey,get_priv,0,
+    [{file,
+    "/home/thepower/tpnode/apps/tpnode/src/nodekey.erl"},
+    {line,26}]},
+    {tpic2,certificate,0,
+    [{file,
+    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
+    {line,196}]},
+    {tpic2,
+    '-childspec/0-fun-0-',2,
+    [{file,
+    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
+    {line,217}]},
+    {tpic2,childspec,0,
+    [{file,
+    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
+    {line,229}]},
+    {tpnode_sup,init,1,
+    [{file,
+    "/home/thepower/tpnode/apps/tpnode/src/tpnode_sup.erl"},
+    {line,88}]},
+    {supervisor,init,1,
+    [{file,"supervisor.erl"},
+    {line,295}]},
+    {gen_server,init_it,2,
+    [{file,"gen_server.erl"},
+    {line,374}]},
+    {gen_server,init_it,6,
+    [{file,"gen_server.erl"},
+    {line,342}]}]},
+    {tpnode,start,[normal,[]]}}
+    ```
+   **Reason**
+   
+   You don't have `genesis.txt` and `node.config` files.
+   
+   **Solution**
+    
+   Start the Tea Ceremony client **BEFORE** starting the node. It will get proper `genesis.txt` and `node.config`.
+
+2. You get the following error when starting the Tea Ceremony client:
+
+   ```bash
+    ~/tpnode# ./teaclient.uu DEE570BD76F3
+    -bash: ./teaclient.uu: Permission denied
+   ```
+   
+   **Reason**
+   
+   Probably, you haven't changed `teaclient` file mode to executable.
+   
+   **Solution**
+
+   Change `teaclient` file mode to executable by running the following command:
+
+   ```bash
+   chmod +x tea*
+   ```
