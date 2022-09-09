@@ -193,13 +193,13 @@ Now you can start the node.
 
 ### Step 4: Get the client and token
 
-Get the Tea Ceremony client:
+Get the Tea Ceremony client by running the following command:
 
 ```bash
-wget https://tea.thepower.io/teaclient.uu
+wget https://tea.thepower.io/teaclient
 ```
 
-. Then, get the Tea Ceremony token from the testnet administrators.
+Then, get the Tea Ceremony token from the testnet administrators.
 
 This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](./Maintain/build-and-start-a-node/01-tpNodeConfiguration.md).
 

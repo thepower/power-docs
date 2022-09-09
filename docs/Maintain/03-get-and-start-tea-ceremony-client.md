@@ -86,7 +86,7 @@ source /opt/erlang/activate
 Open the terminal and run the following command to get the Tea Ceremony client:
 
 ```bash
-wget https://tea.thepower.io/teaclient.uu
+wget https://tea.thepower.io/teaclient
 ```
 
 ## Start the Tea Ceremony client
@@ -94,12 +94,12 @@ wget https://tea.thepower.io/teaclient.uu
 To start the client, open the Erlang console and run the following command:
 
 ```erlang
-./teaclient.uu 52E616B1B48C
+./teaclient 52E616B1B48C
 ```
 
 where
 
-- `teaclient.uu` — Tea Ceremony client,
+- `teaclient` — Tea Ceremony client,
 - `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 After you have started the client, you can watch the Tea Ceremony process.
