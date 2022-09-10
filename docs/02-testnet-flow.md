@@ -207,15 +207,15 @@ This and the following steps are crucial because you will NOT be able to start y
 
 [Start the Tea Ceremony client](./Maintain/03-get-and-start-tea-ceremony-client.md#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
 
-To start the client, open the Erlang console and run the following command:
+To start the client, run the following command:
 
 ```erlang
-./teaclient.uu 52E616B1B48C
+./teaclient 52E616B1B48C
 ```
 
 where
 
-- `teaclient.uu` — Tea Ceremony client,
+- `teaclient` — Tea Ceremony client,
 - `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 > **Note**

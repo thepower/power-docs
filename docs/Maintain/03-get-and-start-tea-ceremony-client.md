@@ -91,16 +91,22 @@ wget https://tea.thepower.io/teaclient
 
 ## Start the Tea Ceremony client
 
-To start the client, open the Erlang console and run the following command:
+1. Change `teaclient` file mode to executable by running the following command:
 
-```erlang
-./teaclient 52E616B1B48C
-```
+   ```bash
+   chmod +x tea*
+   ```
 
-where
+2. Run the following command to start the client:
 
-- `teaclient` — Tea Ceremony client,
-- `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
+   ```erlang
+   ./teaclient 52E616B1B48C
+   ```
+
+   where
+
+   - `teaclient` — Tea Ceremony client,
+   - `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 After you have started the client, you can watch the Tea Ceremony process.
 
