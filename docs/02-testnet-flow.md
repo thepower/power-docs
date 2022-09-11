@@ -9,13 +9,16 @@
   - [Step 1: Learn](#step-1-learn)
   - [Step 2: Register the DNS](#step-2-register-the-dns)
   - [Step 3: Download the node](#step-3-download-the-node)
-  - [Step 4: Get the client](#step-4-get-the-client)
+    - [Download and build the node using Docker](#download-and-build-the-node-using-docker)
+    - [Download and build the node using the source code](#download-and-build-the-node-using-the-source-code)
+  - [Step 4: Get the client and token](#step-4-get-the-client-and-token)
   - [Step 5: Start the client](#step-5-start-the-client)
   - [Step 6: Create directories and place the files](#step-6-create-directories-and-place-the-files)
   - [Step 7: Edit the file](#step-7-edit-the-file)
   - [Step 8: Get the certificate](#step-8-get-the-certificate)
   - [Step 9: Start the node](#step-9-start-the-node)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
+  - [Quick troubleshooting](#quick-troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -23,6 +26,18 @@
 ## Introduction
 
 This simple guide will help you participate in ThePower testnet campaign.
+
+### Prerequisites for a node
+
+#### Hardware
+
+| CPU cores | Memory       | Hard disk                     | Network    |
+|-----------|--------------|-------------------------------|------------|
+| 2         | 2 GB or more | Minimum: 20 GB, SSD preferred | 100 Mbit/s |
+
+#### Software
+
+Ubuntu 20.04
 
 ## What do I need to participate in testnet campaign?
 
@@ -93,7 +108,7 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    > 
    > If you skip this step, you will NOT be able to download and build the node from source.
 
-4. Install Erlang. To do this, download the `kerl` script:
+3. Install Erlang. To do this, download the `kerl` script:
 
    ```bash
    curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
@@ -107,24 +122,24 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    > apt purge erlang*
    > ```
 
-5. Change script mode to executable by using the following command:
+4. Change script mode to executable by using the following command:
 
    ```bash
    chmod a+x kerl
    ```
 
-6. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+5. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
 
    ```bash
    mkdir erlang
    ```
-7. Update the list of Erlang releases using the following command:
+6. Update the list of Erlang releases using the following command:
 
    ```bash
    ./kerl update releases
    ```
 
-8. Build the release 22.3.4.25 using the following command:
+7. Build the release 22.3.4.25 using the following command:
 
    ```bash
    ./kerl build 22.3.4.25
@@ -140,42 +155,42 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
       Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
       ```
 
-9. Install Erlang using the following command:
+8. Install Erlang using the following command:
 
    ```bash
    ./kerl install 22.3.4.25 /opt/erlang
    ```
 
-10. Run the following command to activate the Erlang installation:
+9. Run the following command to activate the Erlang installation:
 
-    ```bash
-    source /opt/erlang/activate
-    ```
+   ```bash
+   source /opt/erlang/activate
+   ```
 
-    After setting up the working environment, you can download and build the node:
+   After setting up the working environment, you can download and build the node:
   
    > **Note**
    >
    > Choose a project folder to clone your project into. Use this folder to build the node.
 
-11. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
+10. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
     ```bash
     git clone https://github.com/thepower/tpnode.git
     ```
 
-12. Delete the previous builds (if present) in `/tpnode` by running the following command:
+11. Go to `tpnode` directory, using the command:
 
    ```bash
-   rm -rf _build/default/*
+   cd tpnode
    ```
-
-13. Compile the node source by running the following command:
+   
+12. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-14. Pack the compiled node into a `tar` by running the following command:
+13. Pack the compiled node into a `tar` by running the following command:
 
     ```bash
     ./rebar3 tar
