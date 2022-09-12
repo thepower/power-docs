@@ -76,13 +76,13 @@ You can find the description of private and public keys in the corresponding sec
 
 A private key is necessary for signing any data or documents. This key is the only way to perform any actions with the Power Ecosystem.
 
-Refer to the [Private key generation](../../Maintain/build-and-start-a-node/03-private-keys-generation.md#private-key-generation) guide to learn how to generate a private key using OpenSSL.
+Refer to the [Private key generation](../../Maintain/build-and-start-a-node/04-private-keys-generation.md#private-key-generation) guide to learn how to generate a private key using OpenSSL.
 
 Ensure your private key is securely stored.
 
 ### Public key generation
 
-The public key is required to verify that the private key signature conforms with the information in the public key. The public key is passed to Power_ecosystem network in the moment of wallet registration. This key is kept in the blockchain and can be accessed by anyone. Use our [guide](../../Maintain/build-and-start-a-node/03-private-keys-generation.md#calculation-of-a-public-key-out-of-a-private-key) to get the public key as a pair for your private key.
+The public key is required to verify that the private key signature conforms with the information in the public key. The public key is passed to Power_ecosystem network in the moment of wallet registration. This key is kept in the blockchain and can be accessed by anyone. Use our [guide](../../Maintain/build-and-start-a-node/04-private-keys-generation.md#calculation-of-a-public-key-out-of-a-private-key) to get the public key as a pair for your private key.
 
 ### Data Signature
 

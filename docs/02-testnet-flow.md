@@ -59,7 +59,7 @@ Register your DNS. ThePower will give you the third-level domain during the test
 Download ThePower Node. Here you have two options:
 
 1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode), or
-2. Download the [source](./Maintain/build-and-start-a-node/05-startingTpNode_source.md#downloading-and-building-the-node) code and build it.
+2. Download the [source](./Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it.
 
 #### Download and build the node using Docker
 
@@ -219,7 +219,7 @@ wget https://tea.thepower.io/teaclient
 
 Then, get the Tea Ceremony token from the testnet administrators.
 
-This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](./Maintain/build-and-start-a-node/01-tpNodeConfiguration.md).
+This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](./Maintain/build-and-start-a-node/02-tpNodeConfiguration.md).
 
 ### Step 5: Start the client
 
@@ -260,14 +260,14 @@ Edit `node.config` by adding the IP-address of your node. See the [example](http
 
 ### Step 8: Get the certificate
 
-[Obtain the SSL certificate for your node](./Maintain/build-and-start-a-node/02-ssl-certs-for-node.md) and place it into the `db` directory.
+[Obtain the SSL certificate for your node](./Maintain/build-and-start-a-node/03-ssl-certs-for-node.md) and place it into the `db` directory.
 
 ### Step 9: Start the node
 
 Start your node. Here you have two options:
 
-1.  Start your node using [the Docker image](./Maintain/build-and-start-a-node/04-startingTpNode_docker.md#starting-the-node), or
-2.  Start your node from the [source code](./Maintain/build-and-start-a-node/05-startingTpNode_source.md#starting-the-node).
+1.  Start your node using [the Docker image](./Maintain/build-and-start-a-node/05-startingTpNode_docker.md#starting-the-node), or
+2.  Start your node from the [source code](./Maintain/build-and-start-a-node/06-startingTpNode_source.md#starting-the-node).
 
 > **Note**  
 >

@@ -574,7 +574,7 @@ Example of use:
 
 | Purpose                  | Request type | Input parameters | Response                                                                                                                                                   |
 |--------------------------|--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Current chain parameters | `GET`        | -                | You can find information about the fields structure and purpose [here](../../Maintain/build-and-start-a-node/01-tpNodeConfiguration.md#genesistxt-example) |
+| Current chain parameters | `GET`        | -                | You can find information about the fields structure and purpose [here](../../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md#genesistxt-example) |
 
 ```bash
 % curl http://c103n10.thepower.io:49841/api/settings -s | jq
