@@ -5,6 +5,9 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
+  - [Prerequisites for a node](#prerequisites-for-a-node)
+    - [Hardware](#hardware)
+    - [Software](#software)
 - [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1: Learn](#step-1-learn)
   - [Step 2: Register the DNS](#step-2-register-the-dns)
