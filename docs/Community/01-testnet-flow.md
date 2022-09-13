@@ -70,6 +70,9 @@ Download ThePower Node. Here you have two options:
 
 1. Ensure you have Docker installed on your machine.
 2. If not, refer to [Docker Installation Guide](https://docs.docker.com/engine/install/).
+
+**Hint:**
+
 3. Run the following command to ensure you belong the user group `docker`:
 
    ```bash
@@ -84,7 +87,7 @@ Download ThePower Node. Here you have two options:
    
    > **Note**
    > 
-   > Steps 4 and 5 are optional.
+   > Steps 3 and 4 are optional.
    
 5. Get and start the [Tea Ceremony CLient](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
 
