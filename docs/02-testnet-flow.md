@@ -20,6 +20,8 @@
   - [Step 7: Edit the file](#step-7-edit-the-file)
   - [Step 8: Get the certificate](#step-8-get-the-certificate)
   - [Step 9: Start the node](#step-9-start-the-node)
+    - [Starting the node from Docker](#starting-the-node-from-docker)
+    - [Starting the node from source code](#starting-the-node-from-source-code)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Quick troubleshooting](#quick-troubleshooting)
 
@@ -134,18 +136,30 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    chmod a+x kerl
    ```
 
-5. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+5. Go to the `/opt` directory:
+
+   ```bash
+   cd /opt
+   ```
+
+6. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
 
    ```bash
    mkdir erlang
    ```
-6. Update the list of Erlang releases using the following command:
+
+7. Go back to the root directory:
+
+   ```bash
+   cd ~
+   ```
+8. Update the list of Erlang releases using the following command:
 
    ```bash
    ./kerl update releases
    ```
 
-7. Build the release 22.3.4.25 using the following command:
+9. Build the release 22.3.4.25 using the following command:
 
    ```bash
    ./kerl build 22.3.4.25
@@ -155,48 +169,52 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    >
    > You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
 
-   After installation is complete, you will see the following message in the console:
+    After installation is complete, you will see the following message in the console:
   
-      ```text
-      Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
-      ```
+       ```text
+       Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+       ```
 
-8. Install Erlang using the following command:
+10. Install Erlang using the following command:
 
-   ```bash
-   ./kerl install 22.3.4.25 /opt/erlang
-   ```
+    ```bash
+    ./kerl install 22.3.4.25 /opt/erlang
+    ```
 
-9. Run the following command to activate the Erlang installation:
+11. Run the following command to activate the Erlang installation:
 
-   ```bash
-   source /opt/erlang/activate
-   ```
-
+    ```bash
+    source /opt/erlang/activate
+    ```
+    
+   > **Note:**
+   >
+   > If your Erlang installation is not activated, you will NOT be able to build the node.
+    
    After setting up the working environment, you can download and build the node:
   
    > **Note**
    >
    > Choose a project folder to clone your project into. Use this folder to build the node.
 
-10. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
+12. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
     ```bash
     git clone https://github.com/thepower/tpnode.git
     ```
 
-11. Go to `tpnode` directory, using the command:
+13. Go to `tpnode` directory, using the command:
 
    ```bash
    cd tpnode
    ```
    
-12. Compile the node source by running the following command:
+14. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-13. Pack the compiled node into a `tar` by running the following command:
+15. Pack the compiled node into a `tar` by running the following command:
 
     ```bash
     ./rebar3 tar
@@ -214,15 +232,25 @@ Now you can start the node.
 
 ### Step 4: Get the client and token
 
-Get the Tea Ceremony client by running the following command:
+1. Get the Tea Ceremony client by running the following command:
 
-```bash
-wget https://tea.thepower.io/teaclient
-```
+   ```bash
+   wget https://tea.thepower.io/teaclient
+   ```
 
-Then, get the Tea Ceremony token from the testnet administrators.
+2. Change the `teaclient` file mode to executable by running the following command:
 
-This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](./Maintain/build-and-start-a-node/02-tpNodeConfiguration.md).
+   ```bash
+   chmod +x
+   ```
+
+   Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#quick-troubleshooting) section for more details.
+
+3. Get the Tea Ceremony token from the testnet administrators.
+
+   > **Note**
+   > 
+   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](./Maintain/build-and-start-a-node/02-tpNodeConfiguration.md).
 
 ### Step 5: Start the client
 
@@ -239,19 +267,13 @@ where
 - `teaclient` — Tea Ceremony client,
 - `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
-> **Note**
-> 
-> Change the `teaclient` file mode to executable by running the following command:
-> 
-> `chmod +x`
-> 
-> Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#quick-troubleshooting) section for more details.
-
-After you have started the client, you can watch the Tea Ceremony process.
+After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
 > **Note**
 >
 > If the client is started without options, you will see a short reference on the command and options.
+
+If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends.
 
 ### Step 6: Create directories and place the files
 
@@ -275,6 +297,44 @@ Start your node. Here you have two options:
 > **Note**  
 >
 > Before starting up the node ensure, you have set up your environment.
+
+#### Starting the node from Docker
+
+To start the node from Docker, run:
+
+```bash
+docker run -d \
+--name tpnode \
+--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
+--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
+--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
+--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
+-p 43292:43292 \
+-p 43392:43392 \
+-p 43219:43219 \
+thepowerio/tpnode
+```
+
+where:
+
+| Command                                                                          | Description                                                                                                                                                 |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                |
+| `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                  |
+| `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                               | 
+| `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
+| `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
+| `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                         |
+| `-p 43292:43292` <br /> `-p 43392:43392` <br /> `-p 43219:43219`                 | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
+| `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
+
+#### Starting the node from source code
+
+To start the node from source code, run:
+
+   ```bash
+   ./bin/thepower foreground
+   ```
 
 ## What do I need to do if something goes wrong?
 
