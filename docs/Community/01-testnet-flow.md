@@ -169,11 +169,11 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    >
    > You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
 
-    After installation is complete, you will see the following message in the console:
+   After installation is complete, you will see the following message in the console:
   
-       ```text
-       Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
-       ```
+   ```text
+   Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+   ```
 
 10. Install Erlang using the following command:
 
