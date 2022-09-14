@@ -342,9 +342,11 @@ To start the node from source code, run:
 
 ## What do I need to do if something goes wrong?
 
-If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+> **Attention**
+> 
+> If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
 
-### Quick troubleshooting
+### Troubleshooting
 
 1. You get the following error:
 
