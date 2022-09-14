@@ -17,16 +17,18 @@ TP-Node is the main module of The Power Ecosystem. In this manual, you'll learn 
 
 Before you start your TP-Node, you need to set up the environment:
 
-1. Check if you have Git installed:
+1. Install the software you need to seamlessly install Erlang:
 
    ```bash
-   git version
+   apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
    ```
-2. If you don't have Git installed on your machine, run:
 
-   ```bash
-   apt install git
-   ```
+2. [Generate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) an SSH key and [add](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account) it to your Github account.
+
+   > **Attention**
+   >
+   > If you skip this step, you will NOT be able to download and build the node from source.
+
 
 3. Install Erlang. To do this, download the `kerl` script
 
@@ -47,18 +49,31 @@ Before you start your TP-Node, you need to set up the environment:
    chmod a+x kerl
    ```
 
-5. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+5. Go to the `/opt` directory:
+
+   ```bash
+   cd /opt
+   ```
+
+6. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
 
    ```bash
    mkdir erlang
    ```
-6. Update the list of Erlang releases using the following command:
+
+7. Go back to the root directory:
+
+   ```bash
+   cd ~
+   ```
+
+8. Update the list of Erlang releases using the following command:
 
    ```bash
    ./kerl update releases
    ```
 
-7. Build the release 22.3.4.25 using the following command:
+9. Build the release 22.3.4.25 using the following command:
 
    ```bash
    ./kerl build 22.3.4.25

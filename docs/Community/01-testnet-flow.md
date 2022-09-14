@@ -71,43 +71,39 @@ Download ThePower Node. Here you have two options:
 1. Ensure you have Docker installed on your machine.
 2. If not, refer to [Docker Installation Guide](https://docs.docker.com/engine/install/).
 
-**Hint:**
-
-3. Run the following command to ensure you belong the user group `docker`:
+   > **Hint:**
+   >
+   > If you don't use `root` account, run the following command to ensure you belong the user group `docker`:
+   >
+   > ```bash
+   > $ groups
+   > ```
+   >
+   > If you don't belong to the user group `docker`, run the following command:
+   >
+   > ```bash
+   > $ sudo usermod -aG docker
+   > ```
+   
+3. Get and start the [Tea Ceremony CLient](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
 
    ```bash
-   $ groups
+   wget https://tea.thepower.io/teaclient.uu
    ```
 
-4. If you don't belong to the user group `docker`, run the following command:
-
-   ```bash
-   $ sudo usermod -aG docker
-   ```
-   
-   > **Note**
-   > 
-   > Steps 3 and 4 are optional.
-   
-5. Get and start the [Tea Ceremony CLient](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
-
-  ```bash
-wget https://tea.thepower.io/teaclient.uu
-  ```
-
-6. Install Erlang. To do this, run:
+4. Install Erlang. To do this, run:
 
 ```bash
 apt-get -y install erlang-base erlang-public-key erlang-ssl
 ```
 
-7. Create `db` and `log` directories in your working directory (`/opt`, for instance).
+5. Create `db` and `log` directories in your working directory (`/opt`, for instance).
 
    > **Hint**
    >
    > You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
 
-8. Place the files `genesis.txt` and `node.config` near `db` and `log` directories.
+6. Place the files `genesis.txt` and `node.config` near `db` and `log` directories.
 
 #### Download and build the node using the source code
 
@@ -160,6 +156,7 @@ apt-get -y install erlang-base erlang-public-key erlang-ssl
    ```bash
    cd ~
    ```
+   
 8. Update the list of Erlang releases using the following command:
 
    ```bash
