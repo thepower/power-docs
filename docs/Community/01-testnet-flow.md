@@ -93,9 +93,9 @@ Download ThePower Node. Here you have two options:
 
 4. Install Erlang. To do this, run:
 
-```bash
-apt-get -y install erlang-base erlang-public-key erlang-ssl
-```
+   ```bash
+   apt-get -y install erlang-base erlang-public-key erlang-ssl
+   ```
 
 5. Create `db` and `log` directories in your working directory (`/opt`, for instance).
 
