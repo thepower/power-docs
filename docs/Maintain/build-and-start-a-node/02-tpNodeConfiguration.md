@@ -59,6 +59,8 @@ Here is an example of a `node.config` file:
 | `dbpath`     | Path to database.                                                                                                                                                                                                                                                                                                      |
 
 
+Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need.
+
 ## `genesis.txt` example
 
 ```erlang
@@ -223,6 +225,10 @@ where
 | `t`       | Instruction type. In example you can see the instruction type `<<"set">>, <<"v">>`, which means "Set Value"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `<<"t">> => <<"set">>,<<"v">> => 3}` |
 | `v`       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `<<"v">> => 3` |
 | `set`     | Multi-purpose working approach to such the value storage mode. There is an option to modify the chain settings by a patch. Such a patch allows you to delete variables, rename them, and update the variable values. Note, that the values are not updated or deleted during the initial setup. That is why the action type `set` is used. | `<<"t">> => <<"set">>,<<"v">> => 3}` |
+
+> **Note**
+> 
+> Don't edit `genesis.txt`. This file is signed by all nodes. Any changes in this file can make it inoperable. But you can paste it from any other node that has signed it.
 
 ## Generation of `genesis.txt`
 

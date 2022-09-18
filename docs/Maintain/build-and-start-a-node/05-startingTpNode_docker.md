@@ -42,7 +42,7 @@ Before you start a TP-Node using the Docker image:
 
 ## Starting the node
 
-To start the TP-Node run the following command:
+To start the node run the following command:
 
 ```bash
 docker run -d \
