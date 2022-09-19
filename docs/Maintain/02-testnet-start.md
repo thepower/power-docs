@@ -40,7 +40,7 @@ To start the testnet, ensure you have the following software installed on your m
 - git,
 - docker-compose.
 
-> **Note**
+> **Hint**
 > 
 > If you use Unix, you must be included into the user group `docker` to use `docker-compose`.
 >
