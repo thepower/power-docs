@@ -42,9 +42,10 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 #### Software
 
-| OS             | Erlang version | Eshell version | Docker version                         |
-|----------------|----------------|----------------|----------------------------------------|
-| Ubuntu v.20.04 | 22 or upper    | 10.4           | latest (20.10.18 as of September 2022) |
+| OS             | Erlang version | Eshell version | Docker version                         | Server           |
+|----------------|----------------|----------------|----------------------------------------|------------------|
+| Ubuntu v.20.04 | 22 or upper    | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
+
 
 
 ## What do I need to participate in testnet campaign?
