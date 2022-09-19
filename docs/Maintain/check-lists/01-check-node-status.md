@@ -1,4 +1,4 @@
-# How can I check my node address link?
+# How can I check my node status?
 
 To check address link for your node, open the terminal and run:
 
