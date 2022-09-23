@@ -89,7 +89,7 @@ Download ThePower Node. Here you have two options:
 3. Get and start the [Tea Ceremony CLient](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
 
    ```bash
-   wget https://tea.thepower.io/teaclient.uu
+   wget https://tea.thepower.io/teaclient
    ```
 
 4. Install Erlang. To do this, run:
@@ -278,11 +278,34 @@ After you have started the client, wait for other participants. Please, DON'T tu
 >
 > If the client is started without options, you will see a short reference on the command and options.
 
-If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends.
+If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
 ### Step 6: Create directories and place the files
 
-Create `db` and `log` directories in your working directory (`/opt`, for instance) and place `genesis.txt` and `node.config` near these directories.
+To create directories for files:
+
+1. Go to your working directory using the following command:
+
+   ```bash
+   cd <your_working_directory>
+   ```
+
+2. Create `db` and `log` directories in your working directory (`/opt`, for instance) using the following command:
+
+   ```bash
+   mkdir db
+   mkdir log
+   ```
+
+3. Place `genesis.txt` and `node.config` near these directories using the following commands:
+
+   ```bash
+   mv ~/example_directory/node.config /your_working_directory/node.config
+   ```
+
+   ```bash
+   mv ~/example_directory/genesis.txt /your_working_directory/genesis.txt
+   ```
 
 ### Step 7: Edit the file
 
