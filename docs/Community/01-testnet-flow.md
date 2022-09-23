@@ -286,7 +286,7 @@ Create `db` and `log` directories in your working directory (`/opt`, for instanc
 
 ### Step 7: Edit the file
 
-Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration) guide.
+Edit `node.config` by adding the IP-address of your node. See the [example](../Maintain/build-and-start-a-node/tpNodeConfiguration.md#nodeconfig-example) in [How to configure TP-Node?](../Maintain/build-and-start-a-node/tpNodeConfiguration.md) guide.
 
 ### Step 8: Get the certificate
 
