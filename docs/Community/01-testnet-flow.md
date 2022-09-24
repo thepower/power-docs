@@ -50,7 +50,7 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 ## What do I need to participate in testnet campaign?
 
-All you need to participate in ThePower testnet campaign is:
+To participate in ThePower testnet campaign you need to:
 
 ### Step 1: Learn
 
@@ -98,7 +98,7 @@ Download ThePower Node. Here you have two options:
    apt-get -y install erlang-base erlang-public-key erlang-ssl
    ```
 
-5. Create `db` and `log` directories in your working directory (`/opt`, for instance).
+5. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance).
 
    > **Hint**
    >
@@ -120,13 +120,31 @@ Download ThePower Node. Here you have two options:
    > 
    > If you skip this step, you will NOT be able to download and build the node from source.
 
-3. Install Erlang. To do this, download the `kerl` script:
+3. Create a directory, where Erlang will be installed to:
+
+   ```bash
+   mkdir /opt/erlang
+   ```
+
+4. Create a directory, where you will work with your node:
+
+   ```bash
+   mkdir /opt/<your_node>
+   ```
+
+5. Go to `/opt/erlang` directory:
+
+   ```bash
+   cd /opt/erlang
+   ```
+   
+6. Install Erlang. To do this, download the `kerl` script:
 
    ```bash
    curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
    ```
    
-   > **Note**
+   > **Hint**
    >
    > If you already have Erlang installed on your machine, we strongly recommend deleting it before the new installation, using the following command:
    >
@@ -134,35 +152,17 @@ Download ThePower Node. Here you have two options:
    > apt purge erlang*
    > ```
 
-4. Change script mode to executable by using the following command:
+7. Change script mode to executable by using the following command:
 
    ```bash
    chmod a+x kerl
    ```
 
-5. Go to the `/opt` directory:
-
-   ```bash
-   cd /opt
-   ```
-
-6. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
-
-   ```bash
-   mkdir erlang
-   ```
-
-7. Go back to the root directory:
-
-   ```bash
-   cd ~
-   ```
-   
 8. Update the list of Erlang releases using the following command:
 
-   ```bash
-   ./kerl update releases
-   ```
+    ```bash
+    ./kerl update releases
+    ```
 
 9. Build the release 22.3.4.25 using the following command:
 
@@ -174,22 +174,26 @@ Download ThePower Node. Here you have two options:
    >
    > You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
 
-   After installation is complete, you will see the following message in the console:
+    After installation is complete, you will see the following message in the console:
   
-   ```text
-   Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
-   ```
+    ```text
+    Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+    ```
+10. Create a new subdirectory in `erlang`:
 
-10. Install Erlang using the following command:
+   ```bash
+   mkdir /opt/erlang/<your_directory_name>
+   ```
+11. Install Erlang to the subdirectory you've created on step 10 using the following command:
 
     ```bash
-    ./kerl install 22.3.4.25 /opt/erlang
+    ./kerl install 22.3.4.25 /opt/erlang/<your_directory_name>
     ```
 
-11. Run the following command to activate the Erlang installation:
+12. Run the following command to activate the Erlang installation:
 
     ```bash
-    source /opt/erlang/activate
+    source /opt/erlang/<your_directory_name>/activate
     ```
     
    > **Note:**
@@ -202,32 +206,27 @@ Download ThePower Node. Here you have two options:
    >
    > Choose a project folder to clone your project into. Use this folder to build the node.
 
-12. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
+13. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
     ```bash
     git clone https://github.com/thepower/tpnode.git
     ```
 
-13. Go to `tpnode` directory, using the command:
+14. Go to `tpnode` directory, using the command:
 
    ```bash
    cd tpnode
    ```
    
-14. Compile the node source by running the following command:
+15. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-15. Pack the compiled node into a `tar` by running the following command:
+16. Pack the compiled node into a `tar` archive by running the following command:
 
     ```bash
     ./rebar3 tar
-    ```
-
-   > **Note**
-   >
-   > This step is optional. `tar`-package is needed to quickly transfer the compiled source code. However, it can be a good option if you need to download the source manifold.
 
 Now you can start the node.
 
@@ -290,7 +289,7 @@ To create directories for files:
    cd <your_working_directory>
    ```
 
-2. Create `db` and `log` directories in your working directory (`/opt`, for instance) using the following command:
+2. Create `db` and `log` directories in your working directory (`/opt/my_node`, for instance) using the following command:
 
    ```bash
    mkdir db
@@ -358,11 +357,26 @@ where:
 
 #### Starting the node from source code
 
-To start the node from source code, run:
+To start the node from source code:
 
    ```bash
    ./bin/thepower foreground
    ```
+
+#### How to check, if my node works?
+
+To check, if your node works, run:
+
+```bash
+curl http://your_node.example.com:00000/api/node/status | jq
+```
+
+where:
+
+- `your_node.example.com` — your node address;
+- `00000` — port, that your node uses.
+
+Replace the example parameters with the ones you need.
 
 ## What do I need to do if something goes wrong?
 
