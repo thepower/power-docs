@@ -22,8 +22,9 @@
   - [Step 9: Start the node](#step-9-start-the-node)
     - [Starting the node from Docker](#starting-the-node-from-docker)
     - [Starting the node from source code](#starting-the-node-from-source-code)
+    - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
-  - [Quick troubleshooting](#quick-troubleshooting)
+  - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
