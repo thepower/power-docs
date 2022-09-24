@@ -87,7 +87,7 @@ Download ThePower Node. Here you have two options:
    > $ sudo usermod -aG docker
    > ```
    
-3. Get and start the [Tea Ceremony CLient](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
+3. Get and start the [Tea Ceremony Client](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
 
    ```bash
    wget https://tea.thepower.io/teaclient
