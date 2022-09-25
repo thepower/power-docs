@@ -10,7 +10,7 @@ const config = {
   tagline: 'WEB3 Decentralized Framework',
   url: 'https://docs.thepower.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'thepower', // Usually your GitHub org/user name.
