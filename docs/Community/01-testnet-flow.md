@@ -259,7 +259,7 @@ Now you can start the node.
 
 ### Step 5: Start the client
 
-[Start the Tea Ceremony client](../Maintain/03-get-and-start-tea-ceremony-client.md#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
+[Start the Tea Ceremony client](https://testdoc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
 
 To start the client, run the following command:
 
