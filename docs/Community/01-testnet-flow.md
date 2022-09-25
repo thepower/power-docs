@@ -249,17 +249,17 @@ Now you can start the node.
    chmod +x
    ```
 
-   Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#troubleshooting) section for more details.
+   Otherwise, you will NOT be able to start the client. See the [Troubleshooting](#troubleshooting) section for more details.
 
 3. Get the Tea Ceremony token from the testnet administrators.
 
    > **Note**
    > 
-   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md).
+   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
 
 ### Step 5: Start the client
 
-[Start the Tea Ceremony client](../Maintain/03-get-and-start-tea-ceremony-client.md#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
+[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
 
 To start the client, run the following command:
 
@@ -309,18 +309,18 @@ To create directories for files:
 
 ### Step 7: Edit the file
 
-Edit `node.config` by adding the IP-address of your node. See the [example](../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md#nodeconfig-example) in [How to configure TP-Node?](../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md) guide.
+Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide.
 
 ### Step 8: Get the certificate
 
-[Obtain the SSL certificate for your node](../Maintain/build-and-start-a-node/03-ssl-certs-for-node.md) and place it into the `db` directory.
+[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
 ### Step 9: Start the node
 
 Start your node. Here you have two options:
 
-1.  Start your node using [the Docker image](../Maintain/build-and-start-a-node/05-startingTpNode_docker.md#starting-the-node), or
-2.  Start your node from the [source code](../Maintain/build-and-start-a-node/06-startingTpNode_source.md#starting-the-node).
+1.  Start your node using [the Docker image](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_docker#starting-the-node), or
+2.  Start your node from the [source code](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_source#starting-the-node).
 
 > **Note**  
 >
