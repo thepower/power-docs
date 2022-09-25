@@ -249,7 +249,7 @@ Now you can start the node.
    chmod +x
    ```
 
-   Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#quick-troubleshooting) section for more details.
+   Otherwise, you will NOT be able to start the client. See the [Quick Troubleshooting](#troubleshooting) section for more details.
 
 3. Get the Tea Ceremony token from the testnet administrators.
 
