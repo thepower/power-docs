@@ -35,7 +35,7 @@ A public testnet is a network formed by Community nodes and run by node provider
 Testnet allows you to:
 
 - deploy your DApps code (smart contracts, decentralized backend),
-- connect your DApp to the testnet and interact with it by reading and writing the DApp frontend data using the [Power API](https://doc.thepower.io/docs/api/common-terms), or
+- connect your DApp to the testnet and interact with it by reading and writing the DApp frontend data using the [Power API](../Build/api/01-common-terms.md), or
 - run autotests for your DApps.
 
 Before using the public testnet, you need to build and start the node: 
@@ -47,7 +47,7 @@ Use our [guide](02-testnet-start.md) to start your public testnet.
 
 When connecting your node to the public testnet, you connect it to either a new or an existing chain.
 
-After you've connected your node to the testnet, it starts to take part in [Consensus](https://doc.thepower.io/docs/technology/resonance-consensus). You can also connect your node as a [Seed node](../Explore/nodes-chains-description/01-nodes-shards-101.md#nodes).
+After you've connected your node to the testnet, it starts to take part in [Consensus](../Explore/technology/03-resonance-consensus.md). You can also connect your node as a [Seed node](../Explore/nodes-chains-description/01-nodes-shards-101.md#nodes).
 
 > **Note**
 >

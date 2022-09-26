@@ -26,7 +26,7 @@ There are two types of nodes:
 
 To provide communication between servers, or nodes, the servers must follow the Consensus rules.
 
-The consensus is written by developers and architects. There are a lot of implementations of consensus. The Power Ecosystem uses the [Resonance Consensus Implementation](https://doc.thepower.io/docs/technology/resonance-consensus).
+The consensus is written by developers and architects. There are a lot of implementations of consensus. The Power Ecosystem uses the [Resonance Consensus Implementation](../technology/03-resonance-consensus.md).
 
 The consensus results in a new **block** in a chain. 
 

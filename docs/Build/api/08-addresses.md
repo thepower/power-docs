@@ -14,8 +14,8 @@
 
 Currently, addresses can be represented in two following formats:
 
-[1. Human-readable representation. This representation is created to be read by a human. It will be called **textual representation** or **textual format** further herein;](#textual-representation)
-[2. Machine-readable representation. This representation is created to be read by a machine and represents addresses inside transactions or the blockchain itself. It will be called **binary representation** or **binary format** further herein.](#binary-representation)
+1. [Human-readable representation. This representation is created to be read by a human. It will be called **textual representation** or **textual format** further herein;](#textual-representation)
+2. [Machine-readable representation. This representation is created to be read by a machine and represents addresses inside transactions or the blockchain itself. It will be called **binary representation** or **binary format** further herein.](#binary-representation)
 
 > **Note**
 >

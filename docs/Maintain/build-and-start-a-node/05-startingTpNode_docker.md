@@ -31,7 +31,7 @@ Before you start a TP-Node using the Docker image:
    > $ sudo usermod -aG docker
    > ```
 
-3. Get and start the [Tea Ceremony CLient](../03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files.
+3. Get and start the [Tea Ceremony Client](../03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files.
 4. Create `db` and `log` directories in your working directory (`/opt`, for instance).
 
    > **Hint**
