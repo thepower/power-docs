@@ -115,31 +115,25 @@ Download ThePower Node. Here you have two options:
    apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
    ```
 
-2. [Generate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) an SSH key and [add](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account) it to your Github account. 
-
-   > **Attention**
-   > 
-   > If you skip this step, you will NOT be able to download and build the node from source.
-
-3. Create a directory, where Erlang will be installed to:
+2. Create a directory, where Erlang will be installed to:
 
    ```bash
    mkdir /opt/erlang
    ```
 
-4. Create a directory, where you will work with your node:
+3. Create a directory, where you will work with your node:
 
    ```bash
    mkdir /opt/<your_node>
    ```
 
-5. Go to `/opt/erlang` directory:
+4. Go to `/opt/erlang` directory:
 
    ```bash
    cd /opt/erlang
    ```
    
-6. Install Erlang. To do this, download the `kerl` script:
+5. Install Erlang. To do this, download the `kerl` script:
 
    ```bash
    curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
@@ -153,19 +147,19 @@ Download ThePower Node. Here you have two options:
    > apt purge erlang*
    > ```
 
-7. Change script mode to executable by using the following command:
+6. Change script mode to executable by using the following command:
 
    ```bash
    chmod a+x kerl
    ```
 
-8. Update the list of Erlang releases using the following command:
+7. Update the list of Erlang releases using the following command:
 
     ```bash
     ./kerl update releases
     ```
 
-9. Build the release 22.3.4.25 using the following command:
+8. Build the release 22.3.4.25 using the following command:
 
    ```bash
    ./kerl build 22.3.4.25
@@ -180,18 +174,18 @@ Download ThePower Node. Here you have two options:
     ```text
     Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
     ```
-10. Create a new subdirectory in `erlang`:
+9. Create a new subdirectory in `erlang`:
 
    ```bash
    mkdir /opt/erlang/<your_directory_name>
    ```
-11. Install Erlang to the subdirectory you've created on step 10 using the following command:
+10. Install Erlang to the subdirectory you've created on step 10 using the following command:
 
     ```bash
     ./kerl install 22.3.4.25 /opt/erlang/<your_directory_name>
     ```
 
-12. Run the following command to activate the Erlang installation:
+11. Run the following command to activate the Erlang installation:
 
     ```bash
     source /opt/erlang/<your_directory_name>/activate
@@ -207,24 +201,24 @@ Download ThePower Node. Here you have two options:
    >
    > Choose a project folder to clone your project into. Use this folder to build the node.
 
-13. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
+12. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
     ```bash
     git clone https://github.com/thepower/tpnode.git
     ```
 
-14. Go to `tpnode` directory, using the command:
+13. Go to `tpnode` directory, using the command:
 
    ```bash
    cd tpnode
    ```
    
-15. Compile the node source by running the following command:
+14. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-16. Pack the compiled node into a `tar` archive by running the following command:
+15. Pack the compiled node into a `tar` archive by running the following command:
 
     ```bash
     ./rebar3 tar
@@ -376,6 +370,8 @@ where:
 
 - `your_node.example.com` — your node address;
 - `00000` — port, that your node uses.
+
+You can also 
 
 Replace the example parameters with the ones you need.
 
