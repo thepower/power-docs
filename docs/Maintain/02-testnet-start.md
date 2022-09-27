@@ -90,19 +90,19 @@ docker-compose up -d
 After starting the testnet, node API is available under the following addresses:
 
 ```text
-http://localhost:44001/api/status
-http://localhost:44002/api/status
-http://localhost:44003/api/status
+http://<your_node_link>:44001/api/status
+http://<your_node_link>/api/status
+http://<your_node_link>/api/status
 ```
 
 To test your chain, run the following sequence of commands:
 
 ```bash
-curl http://localhost:44001/api/node/status | jq
+curl http://<your_node_link>:44001/api/node/status | jq
 ```
 
 ```bash
-curl http://localhost:44001/api/block/last | jq
+curl http://<your_node_link>:44001/api/block/last | jq
 ```
 
 ### Stopping the testnet
