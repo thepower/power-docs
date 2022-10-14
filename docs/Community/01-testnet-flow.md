@@ -274,6 +274,10 @@ After you have started the client, wait for other participants. Please, DON'T tu
 
 If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
+> **Attention**
+> 
+> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the Step 7 below.
+
 ### Step 6: Create directories and place the files
 
 To create directories for files:
@@ -303,7 +307,7 @@ To create directories for files:
 
 ### Step 7: Edit the file
 
-Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide.
+Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
 #### How to edit `node.config`?
 
