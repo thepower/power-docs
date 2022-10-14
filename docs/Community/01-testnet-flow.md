@@ -400,7 +400,7 @@ Edit the file as follows:
    ```
  
 > **Warning**
-> 
+>  
 > The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
   
 ### Step 8: Get the certificate
