@@ -33,7 +33,7 @@ Example of sending a transaction using `curl` (the transaction body in this exam
 
 To make a new transaction, you should send a `POST` request to the server using https. Request data must be `JSON`-formatted and contain the `tx` key with base64-encoded transaction container.
 
-![Example banner](./resources/tx-scheme.svg)
+![Example banner](resources/tx-scheme.svg)
 
 The transaction container is a MessagePack fixmap (first byte: `0x80- 0x8f`). It has the following structure:
 
@@ -227,7 +227,7 @@ This hash has 11 leading 0 bits, so the difficulty of preparation for this trans
 
 The BSig container is a binary data of TLV format (Tag - Length - Value).
 
-![Example banner](./resources/big-container.svg)
+![Example banner](resources/big-container.svg)
 
 Each signature may contain additional data signed with main payload (body, data to be signed).
 
@@ -316,7 +316,7 @@ Let's assume you have the private key `01020304050607080900010203040506070809000
 
 Token transfer and/or smart contract call:
 
-![generic-tx](./resources/power-generic-tx.svg)
+![generic-tx](resources/power-generic-tx.svg)
 
 Token transfer and smart contract calling transactions must contain the following mandatory keys:
 

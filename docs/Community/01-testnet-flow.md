@@ -305,6 +305,104 @@ To create directories for files:
 
 Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide.
 
+#### How to edit `node.config`?
+
+Here is the example of a chain consisting of five nodes:
+
+```erlang
+tpic, #{
+    peers => [
+        {"demonode01.thepower.io", 49003},
+        {"demonode03.thepower.io", 49003},
+        {"demonode04.thepower.io", 49003},
+        {"demonode05.thepower.io", 49003}
+        ],
+    allow_rfc1918 => true,
+    port => 49003} }.
+{discovery,
+    #{
+        addresses => [
+            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
+            #{address => "demonode02.thepower.io", port => 49004, proto => api},
+            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+        ]
+    }
+}.
+
+{hostname, "demonode02.thepower.io"}.
+{dbsuffix,"_demonode02"}.
+{loglevel, info}.
+{info_log, "log/demonode02.log"}.
+{error_log, "log/demonode02.log"}.
+{debug_log, "log/demonode02.log"}.
+{rpcsport, 49005}.
+{rpcport, 49004}.
+
+{privkey, "CC5AB2755B0D96D05E601D40CCAB9290D9D2E94A746A5E8AFE063EE73568DEFD"}.
+```
+
+Edit the file as follows:
+
+1. Specify the node addresses and port numbers you've received from the bot. You don't need to specify your own node:
+
+   ```erlang
+   tpic, #{
+    peers => [
+        {"demonode01.thepower.io", 49003},
+        {"demonode03.thepower.io", 49003},
+        {"demonode04.thepower.io", 49003},
+        {"demonode05.thepower.io", 49003}
+        ],
+   ```
+
+2. Check the `allow_rfc1918` parameter to be `true`.
+3. Check the `port` parameter. THe value of this parameter should be the same as the port value in `peers`:
+
+   ```erlang
+   port => 49003}
+   ```
+   
+4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
+
+   ```erlang
+   addresses => [
+            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
+            #{address => "demonode02.thepower.io", port => 49004, proto => api},
+            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+        ]
+   ```
+
+5. Specify your node address in `hostname` parameter:
+
+   ```erlang
+   {hostname, "demonode02.thepower.io"}.
+   ```
+
+6. Specify your node name in `dbsuffix` parameter:
+
+   ```erlang
+   {dbsuffix,"_demonode02"}.
+   ```
+
+7. Specify the `.log` files, where the logs for your node will be stored:
+
+   ```erlang
+   {info_log, "log/demonode02.log"}.
+   {error_log, "log/demonode02.log"}.
+   {debug_log, "log/demonode02.log"}.
+   ```
+
+8. Specify the ports for `rpc` and `rpcs` protocols:
+
+   ```erlang
+   {rpcsport, 49005}.
+   {rpcport, 49004}.
+   ```
+ 
+> **Warning**
+> 
+> The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
+  
 ### Step 8: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
