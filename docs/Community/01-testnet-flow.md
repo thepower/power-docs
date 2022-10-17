@@ -322,7 +322,7 @@ tpic, #{
         {"demonode04.thepower.io", 49003},
         {"demonode05.thepower.io", 49003}
         ],
-    allow_rfc1918 => true,
+    allow_rfc1918 => false,
     port => 49003} }.
 {discovery,
     #{
@@ -335,7 +335,7 @@ tpic, #{
 }.
 
 {hostname, "demonode02.thepower.io"}.
-{dbsuffix,"_demonode02"}.
+{dbsuffix,""}.
 {loglevel, info}.
 {info_log, "log/demonode02.log"}.
 {error_log, "log/demonode02.log"}.
@@ -360,14 +360,14 @@ Edit the file as follows:
         ],
    ```
 
-2. Check the `allow_rfc1918` parameter to be `true`.
-3. Check the `port` parameter. THe value of this parameter should be the same as the port value in `peers`:
+2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
+3.Check the `port` parameter. THe value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
    port => 49003}
    ```
    
-4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
+5. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
 
    ```erlang
    addresses => [
@@ -377,19 +377,19 @@ Edit the file as follows:
         ]
    ```
 
-5. Specify your node address in `hostname` parameter:
+6. Specify your node address in `hostname` parameter:
 
    ```erlang
    {hostname, "demonode02.thepower.io"}.
    ```
 
-6. Specify your node name in `dbsuffix` parameter:
+7. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
 
    ```erlang
-   {dbsuffix,"_demonode02"}.
+   {dbsuffix,""}.
    ```
 
-7. Specify the `.log` files, where the logs for your node will be stored:
+8. Specify the `.log` files, where the logs for your node will be stored:
 
    ```erlang
    {info_log, "log/demonode02.log"}.
@@ -397,7 +397,7 @@ Edit the file as follows:
    {debug_log, "log/demonode02.log"}.
    ```
 
-8. Specify the ports for `rpc` and `rpcs` protocols:
+9. Specify the ports for `rpc` and `rpcs` protocols:
 
    ```erlang
    {rpcsport, 49005}.
