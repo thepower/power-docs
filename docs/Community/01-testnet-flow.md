@@ -18,6 +18,7 @@
   - [Step 5: Start the client](#step-5-start-the-client)
   - [Step 6: Create directories and place the files](#step-6-create-directories-and-place-the-files)
   - [Step 7: Edit the file](#step-7-edit-the-file)
+    - [How to edit `node.config`?](#how-to-edit-nodeconfig)
   - [Step 8: Get the certificate](#step-8-get-the-certificate)
   - [Step 9: Start the node](#step-9-start-the-node)
     - [Starting the node from Docker](#starting-the-node-from-docker)
