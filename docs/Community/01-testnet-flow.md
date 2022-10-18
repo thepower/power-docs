@@ -525,8 +525,8 @@ Replace the example parameters with the ones you need.
 2. You get the following error when starting the Tea Ceremony client:
 
    ```bash
-    ~/tpnode# ./teaclient.uu DEE570BD76F3
-    -bash: ./teaclient.uu: Permission denied
+    ~/tpnode# ./teaclient DEE570BD76F3
+    -bash: ./teaclient: Permission denied
    ```
    
    **Reason**
@@ -540,3 +540,18 @@ Replace the example parameters with the ones you need.
    ```bash
    chmod +x tea*
    ```
+3. You get the following error when starting the Tea Ceremony client:
+
+   ```bash
+   ~# ./teaclient -n demonode05 DEE570BD76F3
+   ceremony client connecting to tea.thepower.io:443
+   Server rejects connection, reason: bad_token
+   ```
+   
+   **Reason**
+   
+   Token `DEE570BD76F3` has been used by another user.
+
+   **Solution**
+
+   Get the new token from the chain administrators.
