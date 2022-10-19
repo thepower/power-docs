@@ -555,3 +555,22 @@ Replace the example parameters with the ones you need.
    **Solution**
 
    Get the new token from the chain administrators.
+
+4. You get the following error when starting the Tea Ceremony client:
+
+   ```bash
+   ceremony client connecting to knuth.cleverfox.ru:1436
+   =WARNING REPORT==== 19-Oct-2022::14:32:54.056133 ===
+   Description: "Authenticity is not established by certificate path validation"
+   Reason: "Option {verify, verify_peer} and cacertfile/cacerts is missing"
+
+   Server rejects connection, reason: you_are_late
+   ```
+   
+   **Reason**
+
+   You are late for the tea ceremony.
+
+   **Solution**
+
+   Stick to the bot recommendations and don't be late.
