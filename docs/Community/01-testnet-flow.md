@@ -10,14 +10,15 @@
     - [Software](#software)
 - [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1: Learn](#step-1-learn)
-  - [Step 2: Register the DNS](#step-2-register-the-dns)
+  - [Step 2: IP addresses and DNS](#step-2-ip-addresses-and-dns)
   - [Step 3: Download the node](#step-3-download-the-node)
     - [Download and build the node using Docker](#download-and-build-the-node-using-docker)
     - [Download and build the node using the source code](#download-and-build-the-node-using-the-source-code)
-  - [Step 4: Get the client and token](#step-4-get-the-client-and-token)
-  - [Step 5: Start the client](#step-5-start-the-client)
+  - [Step 4: Get the Tea Ceremony client and token](#step-4-get-the-tea-ceremony-client-and-token)
+  - [Step 5: Start the Tea Ceremony client](#step-5-start-the-tea-ceremony-client)
   - [Step 6: Create directories and place the files](#step-6-create-directories-and-place-the-files)
-  - [Step 7: Edit the file](#step-7-edit-the-file)
+  - [Step 7: Edit `node.config`](#step-7-edit-nodeconfig)
+    - [How to edit `node.config`?](#how-to-edit-nodeconfig)
   - [Step 8: Get the certificate](#step-8-get-the-certificate)
   - [Step 9: Start the node](#step-9-start-the-node)
     - [Starting the node from Docker](#starting-the-node-from-docker)
@@ -57,9 +58,9 @@ To participate in ThePower testnet campaign you need to:
 
 [Learn what is a testnet in DCloud](../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
 
-### Step 2: Register the DNS
+### Step 2: IP addresses and DNS
 
-Register your DNS. ThePower will give you the third-level domain during the testnet campaign.
+You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address".
 
 ### Step 3: Download the node
 
@@ -86,26 +87,16 @@ Download ThePower Node. Here you have two options:
    > ```bash
    > $ sudo usermod -aG docker
    > ```
-   
-3. Get and start the [Tea Ceremony Client](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, run the following command:
 
-   ```bash
-   wget https://tea.thepower.io/teaclient
-   ```
-
-4. Install Erlang. To do this, run:
+3. Install Erlang. To do this, run:
 
    ```bash
    apt-get -y install erlang-base erlang-public-key erlang-ssl
    ```
 
-5. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance).
-
-   > **Hint**
-   >
-   > You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
-
-6. Place the files `genesis.txt` and `node.config` near `db` and `log` directories.
+4. Get and start the [Tea Ceremony Client](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, refer to [Step 4](#step-4-get-the-tea-ceremony-client-and-token) and [Step 5](#step-5-start-the-tea-ceremony-client).
+5. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance), and place the files `genesis.txt` and `node.config` near `db` and `log` directories into your working directory (`/opt/thepower`, for instance). To do this, refer to [Step 6](#step-6-create-directories-and-place-the-files).
+6. Refer to the following steps, beginning with [Step 7](#step-7-edit-nodeconfig) to get your node ready for start.
 
 #### Download and build the node using the source code
 
@@ -229,7 +220,7 @@ Now you can start the node.
 > 
 > The following steps 4, 5, and 6 are necessary if you are building the node from source ONLY.
 
-### Step 4: Get the client and token
+### Step 4: Get the Tea Ceremony client and token
 
 1. Get the Tea Ceremony client by running the following command:
 
@@ -251,7 +242,7 @@ Now you can start the node.
    > 
    > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
 
-### Step 5: Start the client
+### Step 5: Start the Tea Ceremony client
 
 [Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
 
@@ -274,17 +265,25 @@ After you have started the client, wait for other participants. Please, DON'T tu
 
 If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
+> **Attention**
+> 
+> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the Step 7 below.
+
 ### Step 6: Create directories and place the files
+
+> **Hint**
+>
+> You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
 
 To create directories for files:
 
 1. Go to your working directory using the following command:
 
    ```bash
-   cd <your_working_directory>
+   cd /opt/thepower
    ```
 
-2. Create `db` and `log` directories in your working directory (`/opt/my_node`, for instance) using the following command:
+2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
    mkdir db
@@ -294,17 +293,115 @@ To create directories for files:
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   mv ~/example_directory/node.config /your_working_directory/node.config
+   mv ~/example_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   mv ~/example_directory/genesis.txt /your_working_directory/genesis.txt
+   mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-### Step 7: Edit the file
+### Step 7: Edit `node.config`
 
-Edit `node.config` by adding the IP-address of your node. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide.
+Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
+#### How to edit `node.config`?
+
+Here is the example of a chain consisting of five nodes:
+
+```erlang
+tpic, #{
+    peers => [
+        {"demonode01.thepower.io", 49003},
+        {"demonode03.thepower.io", 49003},
+        {"demonode04.thepower.io", 49003},
+        {"demonode05.thepower.io", 49003}
+        ],
+    allow_rfc1918 => false,
+    port => 49003} }.
+{discovery,
+    #{
+        addresses => [
+            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
+            #{address => "demonode02.thepower.io", port => 49004, proto => api},
+            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+        ]
+    }
+}.
+
+{hostname, "demonode02.thepower.io"}.
+{dbsuffix,""}.
+{loglevel, info}.
+{info_log, "log/demonode02.log"}.
+{error_log, "log/demonode02.log"}.
+{debug_log, "log/demonode02.log"}.
+{rpcsport, 49005}.
+{rpcport, 49004}.
+
+{privkey, "CC5AB2755B0D96D05E601D40CCAB9290D9D2E94A746A5E8AFE063EE73568DEFD"}.
+```
+
+Edit the file as follows:
+
+1. Specify the node addresses and port numbers you've received from the bot. You don't need to specify your own node:
+
+   ```erlang
+   tpic, #{
+    peers => [
+        {"demonode01.thepower.io", 49003},
+        {"demonode03.thepower.io", 49003},
+        {"demonode04.thepower.io", 49003},
+        {"demonode05.thepower.io", 49003}
+        ],
+   ```
+
+2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
+3.Check the `port` parameter. THe value of this parameter should be the same as the port value in `peers`:
+
+   ```erlang
+   port => 49003}
+   ```
+   
+5. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
+
+   ```erlang
+   addresses => [
+            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
+            #{address => "demonode02.thepower.io", port => 49004, proto => api},
+            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+        ]
+   ```
+
+6. Specify your node address in `hostname` parameter:
+
+   ```erlang
+   {hostname, "demonode02.thepower.io"}.
+   ```
+
+7. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
+
+   ```erlang
+   {dbsuffix,""}.
+   ```
+
+8. Specify the `.log` files, where the logs for your node will be stored:
+
+   ```erlang
+   {info_log, "log/demonode02.log"}.
+   {error_log, "log/demonode02.log"}.
+   {debug_log, "log/demonode02.log"}.
+   ```
+
+9. Specify the ports for `rpc` and `rpcs` protocols:
+
+   ```erlang
+   {rpcsport, 49005}.
+   {rpcport, 49004}.
+   ```
+ 
+> **Warning**
+>  
+> The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
+  
 ### Step 8: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
@@ -331,9 +428,9 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
--p 43292:43292 \
--p 43392:43392 \
--p 43219:43219 \
+-p 49003:49003 \
+-p 49004:49004 \
+-p 49005:49005 \
 thepowerio/tpnode
 ```
 
@@ -347,7 +444,7 @@ where:
 | `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
 | `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                         |
-| `-p 43292:43292` <br /> `-p 43392:43392` <br /> `-p 43219:43219`                 | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
+| `-p 49003:49003` <br /> `-p 49004:49004` <br /> `-p 49005:49005`                 | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
 
 #### Starting the node from source code
@@ -369,9 +466,7 @@ curl http://your_node.example.com:00000/api/node/status | jq
 where:
 
 - `your_node.example.com` — your node address;
-- `00000` — port, that your node uses.
-
-You can also 
+- `00000` — port, that your node uses for `api`.
 
 Replace the example parameters with the ones you need.
 
@@ -430,8 +525,8 @@ Replace the example parameters with the ones you need.
 2. You get the following error when starting the Tea Ceremony client:
 
    ```bash
-    ~/tpnode# ./teaclient.uu DEE570BD76F3
-    -bash: ./teaclient.uu: Permission denied
+    ~/tpnode# ./teaclient DEE570BD76F3
+    -bash: ./teaclient: Permission denied
    ```
    
    **Reason**
@@ -445,3 +540,37 @@ Replace the example parameters with the ones you need.
    ```bash
    chmod +x tea*
    ```
+3. You get the following error when starting the Tea Ceremony client:
+
+   ```bash
+   ~# ./teaclient -n demonode05 DEE570BD76F3
+   ceremony client connecting to tea.thepower.io:443
+   Server rejects connection, reason: bad_token
+   ```
+   
+   **Reason**
+   
+   Token `DEE570BD76F3` has been used by another user.
+
+   **Solution**
+
+   Get the new token from the chain administrators.
+
+4. You get the following error when starting the Tea Ceremony client:
+
+   ```bash
+   ceremony client connecting to knuth.cleverfox.ru:1436
+   =WARNING REPORT==== 19-Oct-2022::14:32:54.056133 ===
+   Description: "Authenticity is not established by certificate path validation"
+   Reason: "Option {verify, verify_peer} and cacertfile/cacerts is missing"
+
+   Server rejects connection, reason: you_are_late
+   ```
+   
+   **Reason**
+
+   You are late for the tea ceremony.
+
+   **Solution**
+
+   Stick to the bot recommendations and don't be late.
