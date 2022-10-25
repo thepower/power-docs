@@ -101,7 +101,7 @@ After setting up the working environment, you can download and build the node:
 1. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
    ```bash
-   git clone https://github.com/thepower/tpnode/commit/23845ccab74432b2e7a85a53e036542cf774ae82
+   git clone https://github.com/thepower/tpnode.git -b e24
    ```
 
 2. Delete the previous builds (if present) in `/tpnode` by running the following command:

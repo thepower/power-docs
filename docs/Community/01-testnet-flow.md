@@ -103,7 +103,7 @@ Download ThePower Node. Here you have two options:
 1. Install the software you need to seamlessly install Erlang:
 
    ```bash
-   apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
+   apt install git libssl-dev clang cmake make curl automake autoconf libncurses5-dev gcc g++ erlang elixir
    ```
 
 2. Create a directory, where Erlang will be installed to:
@@ -150,20 +150,16 @@ Download ThePower Node. Here you have two options:
     ./kerl update releases
     ```
 
-8. Build the release 22.3.4.25 using the following command:
+8. Build the release 25.1.2 using the following command:
 
    ```bash
-   ./kerl build 22.3.4.25
+   ./kerl build 25.1.2
    ```
-
-   > **Important**
-   >
-   > You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
 
     After installation is complete, you will see the following message in the console:
   
     ```text
-    Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+    Erlang/OTP 25.1.2 (25.1.2) has been successfully built
     ```
 9. Create a new subdirectory in `erlang`:
 
@@ -173,7 +169,7 @@ Download ThePower Node. Here you have two options:
 10. Install Erlang to the subdirectory you've created on step 10 using the following command:
 
     ```bash
-    ./kerl install 22.3.4.25 /opt/erlang/<your_directory_name>
+    ./kerl install 25.1.2 /opt/erlang/<your_directory_name>
     ```
 
 11. Run the following command to activate the Erlang installation:
@@ -186,7 +182,7 @@ Download ThePower Node. Here you have two options:
    >
    > If your Erlang installation is not activated, you will NOT be able to build the node.
     
-   After setting up the working environment, you can download and build the node:
+   After setting up the working environment, you can download and build the node.
   
    > **Note**
    >
@@ -195,7 +191,7 @@ Download ThePower Node. Here you have two options:
 12. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
     ```bash
-    git clone https://github.com/thepower/tpnode.git
+    git clone https://github.com/thepower/tpnode.git -b e24
     ```
 
 13. Go to `tpnode` directory, using the command:
@@ -203,13 +199,19 @@ Download ThePower Node. Here you have two options:
    ```bash
    cd tpnode
    ```
-   
-14. Compile the node source by running the following command:
+
+14. Check and download the dependencies using the command:
+
+   ```bash
+   ./rebar3 get-deps
+   ```
+
+16. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-15. Pack the compiled node into a `tar` archive by running the following command:
+17. Pack the compiled node into a `tar` archive by running the following command:
 
     ```bash
     ./rebar3 tar
