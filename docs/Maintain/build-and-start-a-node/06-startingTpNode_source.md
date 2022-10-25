@@ -66,27 +66,22 @@ Before you start your TP-Node, you need to set up the environment:
    ./kerl update releases
    ```
 
-8. Build the release 22.3.4.25 using the following command:
+8. Build the release 25.1.2 using the following command:
 
    ```bash
-   ./kerl build 22.3.4.25
+   ./kerl build 25.1.2
    ```
-
-
-> **Important**
->
-> You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
 
 After installation is complete, you will see the following message in the console:
 
    ```text
-   Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+   Erlang/OTP 25.1.2 (25.1.2) has been successfully built
    ```
 
 8. Install Erlang using the following command:
 
    ```bash
-   ./kerl install 22.3.4.25 /opt/erlang
+   ./kerl install 25.1.2 /opt/erlang
    ```
 
 9. Run the following command to activate the Erlang installation:
@@ -106,7 +101,7 @@ After setting up the working environment, you can download and build the node:
 1. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
    ```bash
-   git clone https://github.com/thepower/tpnode.git
+   git clone https://github.com/thepower/tpnode/commit/23845ccab74432b2e7a85a53e036542cf774ae82
    ```
 
 2. Delete the previous builds (if present) in `/tpnode` by running the following command:
