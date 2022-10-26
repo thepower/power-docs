@@ -53,10 +53,10 @@ If you don't have Erlang installed on your machine, follow the steps below:
 ./kerl update releases
 ```
 
-5. Build the release 22.3.4.25 using the following command:
+5. Build the release 24 using the following command:
 
 ```bash
-./kerl build 22.3.4.25
+./kerl build 24
 ```
 
 > **Important**
@@ -66,13 +66,13 @@ If you don't have Erlang installed on your machine, follow the steps below:
 After installation is complete, you will see the following message in the console:
 
 ```text
-Erlang/OTP 22.3.4.25 (22.3.4.25) has been successfully built
+Erlang/OTP 24 (24) has been successfully built
 ```
 
 6. Install Erlang using the following command:
 
 ```bash
-./kerl install 22.3.4.25 /opt/erlang
+./kerl install 24 /opt/erlang
 ```
 
 7. Run the following command to activate the Erlang installation:
