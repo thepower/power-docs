@@ -46,7 +46,7 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 | OS               | Erlang version | Eshell version | Docker version                         | Server           |
 |------------------|----------------|----------------|----------------------------------------|------------------|
-| Ubuntu v.22.04.1 | 22 or upper    | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
+| Ubuntu v.22.04.1 | 24 or upper    | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
 
 
 
