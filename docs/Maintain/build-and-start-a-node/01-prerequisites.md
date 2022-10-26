@@ -10,6 +10,6 @@ To start a node, your machine must comply with minimal technical requirements li
 
 ## Software
 
-| OS             | Erlang version | Eshell version | Docker version                         | Server           |
-|----------------|----------------|----------------|----------------------------------------|------------------|
-| Ubuntu v.20.04 | 22 or upper    | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
+| OS               | Erlang version | Eshell version | Docker version                         | Server           |
+|------------------|----------------|----------------|----------------------------------------|------------------|
+| Ubuntu v.22.04.1 | 25.1.2         | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
