@@ -91,8 +91,10 @@ After starting the testnet, node API is available under the following addresses:
 
 ```text
 http://<your_node_link>:44001/api/status
-http://<your_node_link>/api/status
-http://<your_node_link>/api/status
+http://<your_node_link>:44002/api/status
+http://<your_node_link>:44003/api/status
+
+http://<your_node_link>:44001/api/node/status
 ```
 
 To test your chain, run the following sequence of commands:
