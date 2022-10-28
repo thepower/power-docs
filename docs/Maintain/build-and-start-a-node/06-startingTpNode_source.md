@@ -69,19 +69,19 @@ Before you start your TP-Node, you need to set up the environment:
 8. Build the release 24 using the following command:
 
    ```bash
-   ./kerl build 24
+   ./kerl build 24.0
    ```
 
 After installation is complete, you will see the following message in the console:
 
    ```text
-   Erlang/OTP 24 (24) has been successfully built
+   Erlang/OTP 24.0 (24.0) has been successfully built
    ```
 
 8. Install Erlang using the following command:
 
    ```bash
-   ./kerl install 24 /opt/erlang
+   ./kerl install 24.0 /opt/erlang
    ```
 
 9. Run the following command to activate the Erlang installation:

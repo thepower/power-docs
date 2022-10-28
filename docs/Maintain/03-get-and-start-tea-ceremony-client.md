@@ -56,13 +56,13 @@ If you don't have Erlang installed on your machine, follow the steps below:
 5. Build the release 24 using the following command:
 
 ```bash
-./kerl build 24
+./kerl build 24.0
 ```
 
 After installation is complete, you will see the following message in the console:
 
 ```text
-Erlang/OTP 24 (24) has been successfully built
+Erlang/OTP 24.0 (24.0) has been successfully built
 ```
 
 6. Install Erlang using the following command:
