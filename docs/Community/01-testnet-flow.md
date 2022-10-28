@@ -169,7 +169,7 @@ Download ThePower Node. Here you have two options:
 10. Install Erlang to the subdirectory you've created on step 10 using the following command:
 
     ```bash
-    ./kerl install 25.1.2 /opt/erlang/<your_directory_name>
+    ./kerl install 24.0 /opt/erlang/<your_directory_name>
     ```
 
 11. Run the following command to activate the Erlang installation:
@@ -233,7 +233,7 @@ Now you can start the node.
 2. Change the `teaclient` file mode to executable by running the following command:
 
    ```bash
-   chmod +x
+   chmod +x teaclient
    ```
 
    Otherwise, you will NOT be able to start the client. See the [Troubleshooting](#troubleshooting) section for more details.
