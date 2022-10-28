@@ -59,10 +59,6 @@ If you don't have Erlang installed on your machine, follow the steps below:
 ./kerl build 24
 ```
 
-> **Important**
->
-> You need to install Erlang ver. 22.3.4.25. Other versions may not work correctly.
-
 After installation is complete, you will see the following message in the console:
 
 ```text
