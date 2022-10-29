@@ -257,7 +257,7 @@ To start the client, run the following command:
 where
 
 - `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node,
+- `nickname` - The name of your node. Maximum 10 characters.
 - `token` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
