@@ -46,7 +46,7 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 | OS               | Erlang version | Eshell version | Docker version                         | Server           |
 |------------------|----------------|----------------|----------------------------------------|------------------|
-| Ubuntu v.22.04.1 | 24.0           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
+| Ubuntu v.22.04.1 | 24.3         | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
 
 
 
@@ -153,13 +153,13 @@ Download ThePower Node. Here you have two options:
 8. Build the release 24.0 using the following command:
 
    ```bash
-   ./kerl build 24.0
+   ./kerl build 24.3
    ```
 
     After installation is complete, you will see the following message in the console:
   
     ```text
-    Erlang/OTP 24.0 (24.0) has been successfully built
+    Erlang/OTP 24.3 (24.3) has been successfully built
     ```
 9. Create a new subdirectory in `erlang`:
 
@@ -169,7 +169,7 @@ Download ThePower Node. Here you have two options:
 10. Install Erlang to the subdirectory you've created on step 10 using the following command:
 
     ```bash
-    ./kerl install 24.0 /opt/erlang/<your_directory_name>
+    ./kerl install 24.3 /opt/erlang/<your_directory_name>
     ```
 
 11. Run the following command to activate the Erlang installation:
