@@ -251,13 +251,14 @@ Now you can start the node.
 To start the client, run the following command:
 
 ```erlang
-./teaclient 52E616B1B48C
+./teaclient -n nickname token
 ```
 
 where
 
 - `teaclient` — Tea Ceremony client,
-- `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
+- `nickname` - The name of your node,
+- `token` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
