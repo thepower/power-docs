@@ -115,15 +115,17 @@ After setting up the working environment, you can download and build the node:
    ```bash
    ./rebar3 compile
    ```
-4. Pack the compiled node into a `tar` by running the following command:
+4. Build the release by running the following command:
 
    ```bash
-   ./rebar3 tar
+   ./rebar3 release
    ```
 
-   > **Note**
-   >
-   > This step is optional. `tar`-package is needed to quickly transfer the compiled source code. However, it can be a good option if you need to download the source manifold.
+5. Copy the node directory from `_build/default/rel/thepower` to `/opt` by running the following command:
+
+   ```bash
+   cp -r _build/default/rel/thepower /opt
+   ```
 
 Now you can start the node.
 

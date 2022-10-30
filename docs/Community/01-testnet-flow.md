@@ -206,15 +206,23 @@ Download ThePower Node. Here you have two options:
    ./rebar3 get-deps
    ```
 
-16. Compile the node source by running the following command:
+15. Compile the node source by running the following command:
 
     ```bash
     ./rebar3 compile
     ```
-17. Pack the compiled node into a `tar` archive by running the following command:
+    
+16. Build the release by running the following command:
 
-    ```bash
-    ./rebar3 tar
+   ```bash
+   ./rebar3 release
+   ```
+
+17. Copy the node directory from `_build/default/rel/thepower` to `/opt` by running the following command:
+
+   ```bash
+   cp -r _build/default/rel/thepower /opt
+   ```
 
 Now you can start the node.
 
