@@ -44,9 +44,9 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 #### Software
 
-| OS               | Erlang version | Eshell version | Docker version                         | Server           |
-|------------------|----------------|----------------|----------------------------------------|------------------|
-| Ubuntu v.22.04.1 | 24.3         | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine  |
+| OS               | Erlang version | Eshell version | Docker version                         | Server          |
+|------------------|----------------|----------------|----------------------------------------|-----------------|
+| Ubuntu v.22.04.1 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
 
 
 
@@ -150,7 +150,7 @@ Download ThePower Node. Here you have two options:
     ./kerl update releases
     ```
 
-8. Build the release 24.0 using the following command:
+8. Build the release 24.3 using the following command:
 
    ```bash
    ./kerl build 24.3
@@ -309,38 +309,43 @@ Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain
 
 #### How to edit `node.config`?
 
-Here is the example of a chain consisting of five nodes:
+Here is the example of a chain consisting of ten nodes:
 
 ```erlang
-tpic, #{
+{tpic, #{
     peers => [
-        {"demonode01.thepower.io", 49003},
-        {"demonode03.thepower.io", 49003},
-        {"demonode04.thepower.io", 49003},
-        {"demonode05.thepower.io", 49003}
+        {"powernode01.thepower.io", 41025},
+        {"powernode02.thepower.io", 41025},
+        {"powernode03.thepower.io", 41025},
+        {"powernode04.thepower.io", 41025},
+        {"powernode05.thepower.io", 41025},
+        {"powernode06.thepower.io", 41025},
+        {"powernode07.thepower.io", 41025},
+        {"powernode08.thepower.io", 41025},
+        {"powernode09.thepower.io", 41025},
+        {"powernode10.thepower.io", 41025}
         ],
-    allow_rfc1918 => false,
-    port => 49003} }.
+    port => 41025} }.
 {discovery,
     #{
         addresses => [
-            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
-            #{address => "demonode02.thepower.io", port => 49004, proto => api},
-            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+            #{address => "<NODE_HOST_NAME>", port => 41025, proto => tpic},
+            #{address => "<NODE_HOST_NAME>", port => 1080, proto => api},
+            #{address => "<NODE_HOST_NAME>", port => 1443, proto => apis}
         ]
     }
 }.
 
-{hostname, "demonode02.thepower.io"}.
+{hostname, "<NODE_HOST_NAME>"}.
 {dbsuffix,""}.
 {loglevel, info}.
-{info_log, "log/demonode02.log"}.
-{error_log, "log/demonode02.log"}.
-{debug_log, "log/demonode02.log"}.
-{rpcsport, 49005}.
-{rpcport, 49004}.
+{info_log, "log/info.log"}.
+{error_log, "log/error.log"}.
+{debug_log, "log/debug.log"}.
+{rpcsport, 1443}.
+{rpcport, 1080}.
 
-{privkey, "CC5AB2755B0D96D05E601D40CCAB9290D9D2E94A746A5E8AFE063EE73568DEFD"}.
+{privkey, "<PRIVATE_KEY>"}.
 ```
 
 Edit the file as follows:
@@ -350,34 +355,40 @@ Edit the file as follows:
    ```erlang
    tpic, #{
     peers => [
-        {"demonode01.thepower.io", 49003},
-        {"demonode03.thepower.io", 49003},
-        {"demonode04.thepower.io", 49003},
-        {"demonode05.thepower.io", 49003}
+        {"powernode01.thepower.io", 41025},
+        {"powernode02.thepower.io", 41025},
+        {"powernode03.thepower.io", 41025},
+        {"powernode04.thepower.io", 41025},
+        {"powernode05.thepower.io", 41025},
+        {"powernode06.thepower.io", 41025},
+        {"powernode07.thepower.io", 41025},
+        {"powernode08.thepower.io", 41025},
+        {"powernode09.thepower.io", 41025},
+        {"powernode10.thepower.io", 41025}
         ],
    ```
 
 2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
-3.Check the `port` parameter. THe value of this parameter should be the same as the port value in `peers`:
+3.Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
-   port => 49003}
+   port => 41025}
    ```
    
 5. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
 
    ```erlang
    addresses => [
-            #{address => "demonode02.thepower.io", port => 49003, proto => tpic},
-            #{address => "demonode02.thepower.io", port => 49004, proto => api},
-            #{address => "demonode02.thepower.io", port => 49005, proto => apis}
+            #{address => "<NODE_HOST_NAME>", port => 41025, proto => tpic},
+            #{address => "<NODE_HOST_NAME>", port => 1080, proto => api},
+            #{address => "<NODE_HOST_NAME>", port => 1443, proto => apis}
         ]
    ```
 
 6. Specify your node address in `hostname` parameter:
 
    ```erlang
-   {hostname, "demonode02.thepower.io"}.
+   {hostname, "<NODE_HOST_NAME>"}.
    ```
 
 7. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
@@ -389,16 +400,17 @@ Edit the file as follows:
 8. Specify the `.log` files, where the logs for your node will be stored:
 
    ```erlang
-   {info_log, "log/demonode02.log"}.
-   {error_log, "log/demonode02.log"}.
-   {debug_log, "log/demonode02.log"}.
+   {loglevel, info}.
+   {info_log, "log/info.log"}.
+   {error_log, "log/error.log"}.
+   {debug_log, "log/debug.log"}.
    ```
 
 9. Specify the ports for `rpc` and `rpcs` protocols:
 
    ```erlang
-   {rpcsport, 49005}.
-   {rpcport, 49004}.
+   {rpcsport, 1443}.
+   {rpcport, 1080}.
    ```
  
 > **Warning**
@@ -413,8 +425,8 @@ Edit the file as follows:
 
 Start your node. Here you have two options:
 
-1.  Start your node using [the Docker image](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_docker#starting-the-node), or
-2.  Start your node from the [source code](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_source#starting-the-node).
+1.  Start your node using [the Docker image](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_docker), or
+2.  Start your node from the [source code](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/startingTpNode_source).
 
 > **Note**  
 >
@@ -431,9 +443,9 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
--p 49003:49003 \
--p 49004:49004 \
--p 49005:49005 \
+-p 41025:41025 \
+-p 1080:1080 \
+-p 1443:1443 \
 thepowerio/tpnode
 ```
 
@@ -447,7 +459,7 @@ where:
 | `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
 | `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                         |
-| `-p 49003:49003` <br /> `-p 49004:49004` <br /> `-p 49005:49005`                 | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
+| `-p 41025:41025` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
 
 #### Starting the node from source code
