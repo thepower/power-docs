@@ -1,13 +1,19 @@
 # How to start a TP-Node from the source?
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents**
 
-   - [Introduction](#introduction)
-   - [Setting up the environment](#setting-up-the-environment)
-   - [Downloading and building the node](#downloading-and-building-the-node)
-   - [Starting the node](#starting-the-node)
-      - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
-      - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
+- [Introduction](#introduction)
+- [Setting up the environment](#setting-up-the-environment)
+  - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
+  - [Install Erlang using `kerl`](#install-erlang-using-kerl)
+- [Downloading and building the node](#downloading-and-building-the-node)
+- [Starting the node](#starting-the-node)
+  - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
+  - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
@@ -15,15 +21,27 @@ TP-Node is the main module of The Power Ecosystem. In this manual, you'll learn 
 
 ## Setting up the environment
 
-Before you start your TP-Node, you need to set up the environment:
+Before you start your TP-Node, you need to set up the environment.
 
-1. Install the software you need to seamlessly install Erlang:
+### Install Erlang
+
+You can install Erlang either using the package manager, or using `kerl`.
+
+#### Install Erlang using the package manager
+
+If you use the recommended Ubuntu version (22.04.1), you can install Erlang using the package manager. To do this, run the following command:
 
    ```bash
-   apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
+   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
    ```
 
-2. Install Erlang. To do this, download the `kerl` script
+If you use other version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+
+#### Install Erlang using `kerl`
+
+To install Erlang using `kerl`:
+
+1. Download the `kerl` script
 
    ```bash
    curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
@@ -36,37 +54,37 @@ Before you start your TP-Node, you need to set up the environment:
    > apt purge erlang*
    > ```
 
-3. Change script mode to executable by using the following command:
+2. Change script mode to executable by using the following command:
 
    ```bash
    chmod a+x kerl
    ```
 
-4. Go to the `/opt` directory:
+3. Go to the `/opt` directory:
 
    ```bash
    cd /opt
    ```
 
-5. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+4. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
 
    ```bash
    mkdir erlang
    ```
 
-6. Go back to the root directory:
+5. Go back to the root directory:
 
    ```bash
    cd ~
    ```
 
-7. Update the list of Erlang releases using the following command:
+6. Update the list of Erlang releases using the following command:
 
    ```bash
    ./kerl update releases
    ```
 
-8. Build the release 24 using the following command:
+7. Build the release 24.3 using the following command:
 
    ```bash
    ./kerl build 24.3
