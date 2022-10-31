@@ -12,20 +12,8 @@
   - [Step 1: Learn](#step-1-learn)
   - [Step 2: IP addresses and DNS](#step-2-ip-addresses-and-dns)
   - [Step 3: Download the node](#step-3-download-the-node)
-    - [Download and build the node using Docker](#download-and-build-the-node-using-docker)
-    - [Download and build the node using the source code](#download-and-build-the-node-using-the-source-code)
-  - [Step 4: Get the Tea Ceremony client and token](#step-4-get-the-tea-ceremony-client-and-token)
-  - [Step 5: Start the Tea Ceremony client](#step-5-start-the-tea-ceremony-client)
-  - [Step 6: Create directories and place the files](#step-6-create-directories-and-place-the-files)
-  - [Step 7: Edit `node.config`](#step-7-edit-nodeconfig)
-    - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-  - [Step 8: Get the certificate](#step-8-get-the-certificate)
-  - [Step 9: Start the node](#step-9-start-the-node)
-    - [Starting the node from Docker](#starting-the-node-from-docker)
-    - [Starting the node from source code](#starting-the-node-from-source-code)
-    - [How to check, if my node works?](#how-to-check-if-my-node-works)
-- [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
-  - [Troubleshooting](#troubleshooting)
+    - [Download, build, and run the node using Docker](#download-build-and-run-the-node-using-docker)
+    - [Download, build, and run the node using the source code](#download-build-and-run-the-node-using-the-source-code)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -64,8 +52,8 @@ You need to have a public IP address to take part in the testnet campaign. You c
 
 Download ThePower Node. Here you have two options:
 
-1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode) (a recommended way), or
-2. Download the [source](../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (hardcore).
+1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode) (recommended for most users), or
+2. Download the [source](../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
 #### Download, build, and run the node using Docker
 
@@ -73,4 +61,4 @@ Use [this manual](./02-download-build-run-docker.md) to download, build, and run
 
 #### Download, build, and run the node using the source code
 
-Use [this manual](./03-download-build-run-source.md) to download, build, and run the node from the source code if you want to go through the hardcore way of building sources, but we still recommend you to use the Docker image.
+Use [this manual](./03-download-build-run-source.md) to download, build, and run the node from the source code if you want to go through the advanced way of building sources, but we still recommend you to use the Docker image.

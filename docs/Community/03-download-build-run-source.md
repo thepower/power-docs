@@ -22,7 +22,7 @@
 
 ## Introduction
 
-If you want to go through the hardcore way of building sources, this manual will help you do this.
+If you want to go through the advanced way of building sources, this manual will help you do this.
 
 ## Step 1: Set up the working environment
 
