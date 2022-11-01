@@ -23,7 +23,7 @@ Please update your nodes.
 > Please be careful with the `node.config` and `genesis.txt`, as well as the `db` directory.
 
 
-If you use the Docker image (and if your container has the name `tpnode`):
+If you use the Docker image (container name: `your_node_container`):
 
 ```bash
 https://hub.docker.com/r/thepowerio/tpnode
