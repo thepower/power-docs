@@ -44,8 +44,10 @@ Please, update your node according to the manual below.
     3. ```bash
        docker pull thepowerio/tpnode:0.13.11
        ```
+    
+    4. Run `cd /opt/thepower` and then run the command under the step 5.
        
-    4. ```bash
+    5. ```bash
        docker run -d \
        --name tpnode \
        --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
