@@ -1,31 +1,33 @@
 # Testnet News
 
-## 01/11/2022
+## 01/11/2022: Monitoring, tokens, Power Node version updated
 
 Hey Powerians!
 
 Thank you for supporting Power DCloud and participating in the testnet campaign.
 
-We have two great news:
+**We have two great news:**
 
 1. The Rover bot already started to monitor testnet nodes. It checks status every 10 min. If the node is online and synced, you will get points that will be converted to SK tokens.
 
 2. We released the Power Node v.0.13.11.
 
-What's new:
-   - Added API endpoints for node monitoring and forced sync launching.
-   - These changes help with network monitoring and support node owners in the next stages.
-   - Added detailed info about peer streams.
-   - Added the ability to get block hash by block number
+   **What's new:**
+      - Added API endpoints for node monitoring and forced sync launching.
+      - These changes help with network monitoring and support node owners in the next stages.
+      - Added detailed info about peer streams.
+      - Added the ability to get block hash by block number.
 
-Please update your nodes.
+## Power node version update
+
+Please, update your node according to the manual below.
 
 > WARNING
 > 
 > Please be careful with the `node.config` and `genesis.txt`, as well as the `db` directory.
 
 
-If you use the Docker image (container name: `your_node_container`):
+**If you use the Docker image (container name: `your_node_container`):**
 
 1. Get the release [here](https://hub.docker.com/r/thepowerio/tpnode).
 2. Stop the node.
@@ -56,7 +58,8 @@ If you use the Docker image (container name: `your_node_container`):
        thepowerio/tpnode:0.13.11
        ```
 
-If you build from source:
+**If you build the node from source code:**
+
 1. Get the release [here](https://github.com/thepower/tpnode/releases/tag/v0.13.11).
 2. Stop the node.
 3. Run the command one by one:
