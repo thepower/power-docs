@@ -67,7 +67,7 @@ Please, update your node according to the manual below.
 3. Run the command one by one:
 
     1. ```bash
-       git pull a519894f1348da267a10338d0f48fc075ed6960d
+       git checkout a519894f1348da267a10338d0f48fc075ed6960d
        ```
        
     2. ```bash
