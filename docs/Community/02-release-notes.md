@@ -1,5 +1,7 @@
 # Release Notes
 
+## 01/11/2022
+
 Hey Powerians!
 
 Thank you for supporting Power DCloud and participating in the testnet campaign.
@@ -51,7 +53,7 @@ git pull a519894f1348da267a10338d0f48fc075ed6960d
 ./rebar3 get-deps
 ./rebar3 compile
 ./rebar3 release
-cp -r _build/default/rel/thepower /opt
+cp -r _build/default/rel/thepower /opt/
 cd /opt/thepower
 ./bin/thepower foreground
 ```
