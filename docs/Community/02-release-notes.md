@@ -1,4 +1,4 @@
-# Release Notes
+# Testnet News
 
 ## 01/11/2022
 
