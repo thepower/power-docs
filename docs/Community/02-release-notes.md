@@ -23,12 +23,12 @@ Please update your nodes.
 > Please be careful with the `node.config` and `genesis.txt`, as well as the `db` directory.
 
 
-If you use the Docker image:
+If you use the Docker image (and if your container has the name `tpnode`):
 
 ```bash
 https://hub.docker.com/r/thepowerio/tpnode
-docker stop tpnode
-docker remove tpnode
+docker rm tpnode
+docker rmi thepowerio/tpnode:latest
 docker pull thepowerio/tpnode:0.13.11
 docker run -d \
 --name tpnode \
