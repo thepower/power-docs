@@ -56,7 +56,7 @@ To participate in ThePower testnet campaign you need to:
 
 ### Step 1: Learn
 
-[Learn what is a testnet in DCloud](../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
+[Learn what is a testnet in DCloud](../../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
 
 ### Step 2: IP addresses and DNS
 
@@ -67,7 +67,7 @@ You need to have a public IP address to take part in the testnet campaign. You c
 Download ThePower Node. Here you have two options:
 
 1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode), or
-2. Download the [source](../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it.
+2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it.
 
 #### Download and build the node using Docker
 
@@ -94,7 +94,7 @@ Download ThePower Node. Here you have two options:
    apt-get -y install erlang-base erlang-public-key erlang-ssl
    ```
 
-4. Get and start the [Tea Ceremony Client](../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, refer to [Step 4](#step-4-get-the-tea-ceremony-client-and-token) and [Step 5](#step-5-start-the-tea-ceremony-client).
+4. Get and start the [Tea Ceremony Client](../../Maintain/03-get-and-start-tea-ceremony-client.md) to get the actual `node.config` and `genesis.txt` files. To do this, refer to [Step 4](#step-4-get-the-tea-ceremony-client-and-token) and [Step 5](#step-5-start-the-tea-ceremony-client).
 5. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance), and place the files `genesis.txt` and `node.config` near `db` and `log` directories into your working directory (`/opt/thepower`, for instance). To do this, refer to [Step 6](#step-6-create-directories-and-place-the-files).
 6. Refer to the following steps, beginning with [Step 7](#step-7-edit-nodeconfig) to get your node ready for start.
 

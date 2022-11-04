@@ -2,7 +2,7 @@
 
 ## 04/11/2022: we have run testnet, the first chain is now online!
 
-![pic](./resources/pic2.jpg)
+![pic](resources/pic2.jpg)
 
 Hey, Powerians!
 
