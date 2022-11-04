@@ -2,7 +2,7 @@
 
 ## 01/11/2022: Monitoring, tokens, Power Node version updated
 
-Hey Powerians!
+Hey, Powerians!
 
 Thank you for supporting Power DCloud and participating in the testnet campaign.
 
@@ -93,3 +93,20 @@ Please, update your node according to the manual below.
     7. ```bash
        ./bin/thepower foreground
        ```
+
+## 04/11/2022: we have run testnet, the first chain is now online!
+
+![pic](./resources/pic2.jpg)
+
+Hey, Powerians!
+
+We are glad to announce, that we've successfully run the first chain of our testnet, yoo-hoo!
+
+You can now monitor the chain status, as well as get information about all the nodes in the chain [here](https://zabbix.thepower.io/zabbix.php?action=dashboard.view)
+
+During the launch we've worked in close cooperation with our Superpower-community, which fully consists of true crypto-enthusiasts. 
+
+Thank you for your help and great cooperation ability, our dear Powerians!
+
+Follow the news!
+
