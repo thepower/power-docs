@@ -81,7 +81,7 @@ To set up your node and get it ready to run install Erlang. You will need Erlang
 
 ## Step 4: Start the Tea Ceremony client
 
-[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
+[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the bot.
 
 To start the client, run the following command:
 
@@ -124,23 +124,28 @@ To create directories for files:
 2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
-   mkdir db
-   mkdir log
+   mkdir {db, log}
    ```
 
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   mv ~/example_directory/node.config /opt/thepower/node.config
+   cp ~/example_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
+   cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
 ## Step 6: Edit `node.config`
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
+
+> **Note**
+> 
+> Before the Tea Ceremony, the client listens to the ports that will be used on this particular chain and the server checks, if those ports are available. The Ceremony itself starts right after this check. If there will be only a ceremony token specified, without the personal one, you will not be able to participate in Tea Ceremony.
+> 
+> If you're connecting to the Ceremony that has already ended, the Tea Ceremony client will save the `node.config` file. If the `node.config` consisted only of a private key, the Tea Ceremony client will add an actual configuration right into this file. If there is something else specified in `node.config`, the configuration will be saved in `node_example.config`. After that you need to add your node private key to this file.
 
 ### How to edit `node.config`?
 
