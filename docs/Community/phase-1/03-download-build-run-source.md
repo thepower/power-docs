@@ -168,7 +168,7 @@ After setting up the working environment, you can download and build the node.
    cp -r _build/default/rel/thepower /opt
    ```
 
-## ## Step 3: Get Tea Ceremony client and token
+## Step 3: Get Tea Ceremony client and token
 
 1. Get the Tea Ceremony client by running the following command:
 
