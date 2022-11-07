@@ -53,7 +53,7 @@ You need to have a public IP address to take part in the testnet campaign. You c
 Download ThePower Node. Here you have two options:
 
 1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode) (recommended for most users), or
-2. Download the [source](../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
+2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
 #### Download, build, and run the node using Docker
 
