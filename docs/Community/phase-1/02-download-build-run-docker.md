@@ -4,12 +4,11 @@
 
 - [Introduction](#introduction)
 - [Step 1: Download the node](#step-1-download-the-node)
-- [Step 2: Set up your node](#step-2-set-up-your-node)
-- [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
-- [Step 4: Edit `node.config`](#step-4-edit-nodeconfig)
+- [Step 2: Create directories and place the files](#step-2-create-directories-and-place-the-files)
+- [Step 3: Edit `node.config`](#step-3-edit-nodeconfig)
   - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-- [Step 5: Get the certificate](#step-5-get-the-certificate)
-- [And, finally, step 6: Start the node](#and-finally-step-6-start-the-node)
+- [Step 4: Get the certificate](#step-4-get-the-certificate)
+- [And, finally, step 5: Start the node](#and-finally-step-5-start-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -43,19 +42,7 @@ To download the node using Docker:
 
 3. Download The Power node using the link to Docker image here: [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
 
-## Step 2: Set up your node
-
-To set up your node and get it ready to run install Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
-
-   ```bash
-   apt -y install erlang-base erlang-public-key erlang-ssl
-   ```
-
-   > **Note**
-   > 
-   > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
-
-## Step 3: Create directories and place the files
+## Step 2: Create directories and place the files
 
 > **Hint**
 >
@@ -85,7 +72,7 @@ To create directories for files:
    cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-## Step 4: Edit `node.config`
+## Step 3: Edit `node.config`
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
@@ -205,11 +192,11 @@ Edit the file as follows:
 >
 > The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
 
-## Step 5: Get the certificate
+## Step 4: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-## And, finally, step 6: Start the node
+## And, finally, step 5: Start the node
 
 To start the node from Docker, run:
 
