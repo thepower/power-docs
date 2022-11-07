@@ -7,13 +7,11 @@
   - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
   - [Install Erlang using `kerl`](#install-erlang-using-kerl)
 - [Step 2: Download and build the node](#step-2-download-and-build-the-node)
-- [## Step 3: Get Tea Ceremony client and token](#-step-3-get-tea-ceremony-client-and-token)
-- [Step 4: Start the Tea Ceremony client](#step-4-start-the-tea-ceremony-client)
-- [Step 5: Create directories and place the files](#step-5-create-directories-and-place-the-files)
-- [Step 6: Edit `node.config`](#step-6-edit-nodeconfig)
+- [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
+- [Step 4: Edit `node.config`](#step-4-edit-nodeconfig)
   - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-- [Step 7: Get the certificate](#step-7-get-the-certificate)
-- [And, finally, step 8: Start the node](#and-finally-step-8-start-the-node)
+- [Step 5: Get the certificate](#step-5-get-the-certificate)
+- [And, finally, step 6: Start the node](#and-finally-step-6-start-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -36,7 +34,9 @@ If you use the recommended Ubuntu version (22.04.1), you can install Erlang usin
    apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
    ```
 
-If you use other version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+> **Note**
+> 
+> If you use another version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
 
 ### Install Erlang using `kerl`
 
@@ -168,57 +168,7 @@ After setting up the working environment, you can download and build the node.
    cp -r _build/default/rel/thepower /opt
    ```
 
-## Step 3: Get Tea Ceremony client and token
-
-1. Get the Tea Ceremony client by running the following command:
-
-   ```bash
-   wget https://tea.thepower.io/teaclient
-   ```
-
-2. Change the `teaclient` file mode to executable by running the following command:
-
-   ```bash
-   chmod +x teaclient
-   ```
-
-   Otherwise, you will NOT be able to start the client. See the [Troubleshooting](#troubleshooting) section for more details.
-
-3. Get the Tea Ceremony token from the testnet administrators.
-
-   > **Note**
-   >
-   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
-
-## Step 4: Start the Tea Ceremony client
-
-[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
-
-To start the client, run the following command:
-
-```erlang
-./teaclient -n nickname token
-```
-
-where
-
-- `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node. Maximum 10 characters.
-- `token` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
-
-After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
-
-> **Note**
->
-> If the client is started without options, you will see a short reference on the command and options.
-
-If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
-
-> **Attention**
->
-> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the section below.
-
-## Step 5: Create directories and place the files
+## Step 3: Create directories and place the files
 
 > **Hint**
 >
@@ -249,7 +199,7 @@ To create directories for files:
    mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-## Step 6: Edit `node.config`
+## Step 4: Edit `node.config`
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
@@ -363,11 +313,11 @@ Edit the file as follows:
 >
 > The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
 
-## Step 7: Get the certificate
+## Step 5: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-## And, finally, step 8: Start the node
+## And, finally, step 6: Start the node
 
 To start the node from source code:
 

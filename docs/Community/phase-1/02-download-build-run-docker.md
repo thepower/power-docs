@@ -5,13 +5,11 @@
 - [Introduction](#introduction)
 - [Step 1: Download the node](#step-1-download-the-node)
 - [Step 2: Set up your node](#step-2-set-up-your-node)
-- [Step 3: Get Tea Ceremony client and token](#step-3-get-tea-ceremony-client-and-token)
-- [Step 4: Start the Tea Ceremony client](#step-4-start-the-tea-ceremony-client)
-- [Step 5: Create directories and place the files](#step-5-create-directories-and-place-the-files)
-- [Step 6: Edit `node.config`](#step-6-edit-nodeconfig)
+- [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
+- [Step 4: Edit `node.config`](#step-4-edit-nodeconfig)
   - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-- [Step 7: Get the certificate](#step-7-get-the-certificate)
-- [And, finally, step 8: Start the node](#and-finally-step-8-start-the-node)
+- [Step 5: Get the certificate](#step-5-get-the-certificate)
+- [And, finally, step 6: Start the node](#and-finally-step-6-start-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -56,58 +54,8 @@ To set up your node and get it ready to run install Erlang. You will need Erlang
    > **Note**
    > 
    > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
-   
-## Step 3: Get Tea Ceremony client and token
 
-1. Get the Tea Ceremony client by running the following command:
-
-   ```bash
-   wget https://tea.thepower.io/teaclient
-   ```
-
-2. Change the `teaclient` file mode to executable by running the following command:
-
-   ```bash
-   chmod +x teaclient
-   ```
-
-   Otherwise, you will NOT be able to start the client. See the [Troubleshooting](#troubleshooting) section for more details.
-
-3. Get the Tea Ceremony token from the testnet administrators.
-
-   > **Note**
-   >
-   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
-
-## Step 4: Start the Tea Ceremony client
-
-[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the bot.
-
-To start the client, run the following command:
-
-```erlang
-./teaclient -n nickname token
-```
-
-where
-
-- `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node. Maximum 10 characters.
-- `token` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
-
-After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
-
-> **Note**
->
-> If the client is started without options, you will see a short reference on the command and options.
-
-If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
-
-> **Attention**
->
-> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the section below.
-
-## Step 5: Create directories and place the files
+## Step 3: Create directories and place the files
 
 > **Hint**
 >
@@ -137,7 +85,7 @@ To create directories for files:
    cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-## Step 6: Edit `node.config`
+## Step 4: Edit `node.config`
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
@@ -208,14 +156,14 @@ Edit the file as follows:
         ],
    ```
 
-2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
-   3.Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
+2. Check the `allow_rfc1918` parameter to be `true`. If it is `true`, it allows nodes to work within a local network (Docker or NAT, for instance).
+3. Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
    port => 41025}
    ```
 
-5. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
+4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
 
    ```erlang
    addresses => [
@@ -225,19 +173,19 @@ Edit the file as follows:
         ]
    ```
 
-6. Specify your node address in `hostname` parameter:
+5. Specify your node address in `hostname` parameter:
 
    ```erlang
    {hostname, "<NODE_HOST_NAME>"}.
    ```
 
-7. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
+6. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
 
    ```erlang
    {dbsuffix,""}.
    ```
 
-8. Specify the `.log` files, where the logs for your node will be stored:
+7. Specify the `.log` files, where the logs for your node will be stored:
 
    ```erlang
    {loglevel, info}.
@@ -246,7 +194,7 @@ Edit the file as follows:
    {debug_log, "log/debug.log"}.
    ```
 
-9. Specify the ports for `rpc` and `rpcs` protocols:
+8. Specify the ports for `rpc` and `rpcs` protocols:
 
    ```erlang
    {rpcsport, 1443}.
@@ -257,17 +205,18 @@ Edit the file as follows:
 >
 > The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
 
-## Step 7: Get the certificate
+## Step 5: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-## And, finally, step 8: Start the node
+## And, finally, step 6: Start the node
 
 To start the node from Docker, run:
 
 ```bash
 docker run -d \
 --name tpnode \
+--restart unless-stopped\
 --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
@@ -284,6 +233,7 @@ where:
 |----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                |
 | `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                  |
+| `--restart unless-stopped\`                                                                               | Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts                                                                                 |
 | `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                               | 
 | `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
 | `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
