@@ -3,12 +3,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Introduction](#introduction)
-- [Step 1: Download and build the node](#step-1-download-and-build-the-node)
-- [Step 2: Create directories and place the files](#step-2-create-directories-and-place-the-files)
-- [Step 3: Edit `node.config`](#step-3-edit-nodeconfig)
+- [Step 1: Install Erlang](#step-1-install-erlang)
+  - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
+  - [Install Erlang using `kerl`](#install-erlang-using-kerl)
+- [Step 2: Download and build the node](#step-2-download-and-build-the-node)
+- [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
+- [Step 4: Edit `node.config`](#step-4-edit-nodeconfig)
   - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-- [Step 4: Get the certificate](#step-4-get-the-certificate)
-- [And, finally, step 5: Start the node](#and-finally-step-5-start-the-node)
+- [Step 5: Get the certificate](#step-5-get-the-certificate)
+- [And, finally, step 6: Start the node](#and-finally-step-6-start-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -19,7 +22,110 @@
 
 If you want to go through the advanced way of building sources, this manual will help you do this.
 
-## Step 1: Download and build the node
+## Step 1: Install Erlang
+
+You can install Erlang either using the package manager, or using `kerl`.
+
+### Install Erlang using the package manager
+
+If you use the recommended Ubuntu version (22.04.1), you can install Erlang using the package manager. To do this, run the following command:
+
+   ```bash
+   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
+   ```
+
+> **Note**
+>
+> If you use another version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+
+### Install Erlang using `kerl`
+
+To install erlang using `kerl`:
+
+1. Install the software you need to seamlessly install Erlang:
+
+   ```bash
+   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang-base erlang-public-key erlang-asn1 erlang-ssl erlang-dev erlang-inets erlang-eunit
+   ```
+
+2. Create a directory, where Erlang will be installed to:
+
+   ```bash
+   mkdir /opt/erlang
+   ```
+
+3. Create a directory, where you will work with your node:
+
+   ```bash
+   mkdir /opt/<your_node>
+   ```
+
+4. Go to `/opt/erlang` directory:
+
+   ```bash
+   cd /opt/erlang
+   ```
+
+5. Install Erlang. To do this, download the `kerl` script:
+
+   ```bash
+   curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
+   ```
+
+   > **Hint**
+   >
+   > If you already have Erlang installed on your machine, we strongly recommend deleting it before the new installation, using the following command:
+   >
+   > ```bash
+   > apt purge erlang*
+   > ```
+
+6. Change script mode to executable by using the following command:
+
+   ```bash
+   chmod a+x kerl
+   ```
+
+7. Update the list of Erlang releases using the following command:
+
+    ```bash
+    ./kerl update releases
+    ```
+
+8. Build the release 24.3 using the following command:
+
+   ```bash
+   ./kerl build 24.3
+   ```
+
+   After installation is complete, you will see the following message in the console:
+
+    ```text
+    Erlang/OTP 24.3 (24.3) has been successfully built
+    ```
+9. Create a new subdirectory in `erlang`:
+
+   ```bash
+   mkdir /opt/erlang/<your_directory_name>
+   ```
+10. Install Erlang to the subdirectory you've created on step 10 using the following command:
+
+    ```bash
+    ./kerl install 24.3 /opt/erlang/<your_directory_name>
+    ```
+
+11. Run the following command to activate the Erlang installation:
+
+    ```bash
+    source /opt/erlang/<your_directory_name>/activate
+    ```
+
+> **Note:**
+>
+> If your Erlang installation is not activated, you will NOT be able to run the Tea Ceremony and build the node.
+
+
+## Step 2: Download and build the node
 
 > **Note**
 >
@@ -61,7 +167,7 @@ If you want to go through the advanced way of building sources, this manual will
    cp -r _build/default/rel/thepower /opt
    ```
 
-## Step 2: Create directories and place the files
+## Step 3: Create directories and place the files
 
 > **Hint**
 >
@@ -92,7 +198,7 @@ To create directories for files:
    mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-## Step 3: Edit `node.config`
+## Step 4: Edit `node.config`
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
@@ -206,11 +312,11 @@ Edit the file as follows:
 >
 > The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
 
-## Step 4: Get the certificate
+## Step 5: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-## And, finally, step 5: Start the node
+## And, finally, step 6: Start the node
 
 To start the node from source code:
 

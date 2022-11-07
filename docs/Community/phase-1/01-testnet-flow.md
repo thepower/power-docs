@@ -12,10 +12,6 @@
   - [Step 1: Learn](#step-1-learn)
   - [Step 2: IP addresses and DNS](#step-2-ip-addresses-and-dns)
   - [Step 3: Install Erlang](#step-3-install-erlang)
-    - [Installing Erlang for building the node from Docker image](#installing-erlang-for-building-the-node-from-docker-image)
-    - [Installing Erlang for building the node from source code](#installing-erlang-for-building-the-node-from-source-code)
-      - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
-      - [Install Erlang using `kerl`](#install-erlang-using-kerl)
   - [Step 4: Get Tea Ceremony client and token](#step-4-get-tea-ceremony-client-and-token)
   - [Step 5: Start the Tea Ceremony client](#step-5-start-the-tea-ceremony-client)
   - [Step 6: Download the node](#step-6-download-the-node)
@@ -57,11 +53,7 @@ You need to have a public IP address to take part in the testnet campaign. You c
 
 ### Step 3: Install Erlang
 
-Before starting Tea Ceremony you need to set up your environment by installing Erlang. Follow the guides below.
-
-#### Installing Erlang for building the node from Docker image
-
-To set up your node and get it ready to run install Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
+Before starting Tea Ceremony you need to set up your environment by installing Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
 
    ```bash
    apt -y install erlang-base erlang-public-key erlang-ssl
@@ -70,108 +62,6 @@ To set up your node and get it ready to run install Erlang. You will need Erlang
 > **Note**
 >
 > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
-
-#### Installing Erlang for building the node from source code
-
-You can install Erlang either using the package manager, or using `kerl`.
-
-##### Install Erlang using the package manager
-
-If you use the recommended Ubuntu version (22.04.1), you can install Erlang using the package manager. To do this, run the following command:
-
-   ```bash
-   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
-   ```
-
-> **Note**
->
-> If you use another version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
-
-##### Install Erlang using `kerl`
-
-To install erlang using `kerl`:
-
-1. Install the software you need to seamlessly install Erlang:
-
-   ```bash
-   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang-base erlang-public-key erlang-asn1 erlang-ssl erlang-dev erlang-inets erlang-eunit
-   ```
-
-2. Create a directory, where Erlang will be installed to:
-
-   ```bash
-   mkdir /opt/erlang
-   ```
-
-3. Create a directory, where you will work with your node:
-
-   ```bash
-   mkdir /opt/<your_node>
-   ```
-
-4. Go to `/opt/erlang` directory:
-
-   ```bash
-   cd /opt/erlang
-   ```
-
-5. Install Erlang. To do this, download the `kerl` script:
-
-   ```bash
-   curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
-   ```
-
-   > **Hint**
-   >
-   > If you already have Erlang installed on your machine, we strongly recommend deleting it before the new installation, using the following command:
-   >
-   > ```bash
-   > apt purge erlang*
-   > ```
-
-6. Change script mode to executable by using the following command:
-
-   ```bash
-   chmod a+x kerl
-   ```
-
-7. Update the list of Erlang releases using the following command:
-
-    ```bash
-    ./kerl update releases
-    ```
-
-8. Build the release 24.3 using the following command:
-
-   ```bash
-   ./kerl build 24.3
-   ```
-
-   After installation is complete, you will see the following message in the console:
-
-    ```text
-    Erlang/OTP 24.3 (24.3) has been successfully built
-    ```
-9. Create a new subdirectory in `erlang`:
-
-   ```bash
-   mkdir /opt/erlang/<your_directory_name>
-   ```
-10. Install Erlang to the subdirectory you've created on step 10 using the following command:
-
-    ```bash
-    ./kerl install 24.3 /opt/erlang/<your_directory_name>
-    ```
-
-11. Run the following command to activate the Erlang installation:
-
-    ```bash
-    source /opt/erlang/<your_directory_name>/activate
-    ```
-
-> **Note:**
->
-> If your Erlang installation is not activated, you will NOT be able to run the Tea Ceremony and build the node.
 
 ### Step 4: Get Tea Ceremony client and token
 
