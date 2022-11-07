@@ -53,22 +53,22 @@ If you don't have Erlang installed on your machine, follow the steps below:
 ./kerl update releases
 ```
 
-5. Build the release 24 using the following command:
+5. Build the release 24.3 using the following command:
 
 ```bash
-./kerl build 24.0
+./kerl build 24.3
 ```
 
 After installation is complete, you will see the following message in the console:
 
 ```text
-Erlang/OTP 24.0 (24.0) has been successfully built
+Erlang/OTP 24.3 (24.3) has been successfully built
 ```
 
 6. Install Erlang using the following command:
 
 ```bash
-./kerl install 24 /opt/erlang
+./kerl install 24.3 /opt/erlang
 ```
 
 7. Run the following command to activate the Erlang installation:
@@ -102,7 +102,7 @@ wget https://tea.thepower.io/teaclient
    where
 
    - `teaclient` — Tea Ceremony client,
-   - `52E616B1B48C` — Tea Ceremony Token, you've got from the Tea Ceremony administrators.
+   - `52E616B1B48C` — Tea Ceremony Token, you've got from the bot.
 
 After you have started the client, you can watch the Tea Ceremony process.
 

@@ -59,7 +59,7 @@ Here is an example of a `node.config` file:
 | `dbpath`     | Path to database.                                                                                                                                                                                                                                                                                                      |
 
 
-Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need. Check out the ["How to edit `node.config`" guide](../../Community/01-testnet-flow.md#how-to-edit-nodeconfig).
+Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need. Check out the ["How to edit `node.config`" guide](../../Community/phase-1/01-testnet-flow.md#how-to-edit-nodeconfig).
 
 ## `genesis.txt` example
 

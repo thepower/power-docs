@@ -28,13 +28,13 @@ This simple guide will help you participate in The Power testnet campaign.
 
 | CPU cores | Memory       | Hard disk                     | Network    |
 |-----------|--------------|-------------------------------|------------|
-| 2         | 2 GB or more | Minimum: 20 GB, SSD preferred | 100 Mbit/s |
+| 4         | 4 GB or more | Minimum: 40 GB, SSD preferred | 100 Mbit/s |
 
 #### Software
 
-| OS               | Erlang version | Eshell version | Docker version                         | Server          |
-|------------------|----------------|----------------|----------------------------------------|-----------------|
-| Ubuntu v.22.04.1 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
+| OS           | Erlang version | Eshell version | Docker version                         | Server          |
+|--------------|----------------|----------------|----------------------------------------|-----------------|
+| Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
 
 ## What do I need to participate in testnet campaign?
 
@@ -42,7 +42,7 @@ To participate in ThePower testnet campaign you need to:
 
 ### Step 1: Learn
 
-[Learn what is a testnet in DCloud](../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
+[Learn what is a testnet in DCloud](../../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
 
 ### Step 2: IP addresses and DNS
 
