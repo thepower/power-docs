@@ -40,13 +40,13 @@ This simple guide will help you participate in ThePower testnet campaign.
 
 | CPU cores | Memory       | Hard disk                     | Network    |
 |-----------|--------------|-------------------------------|------------|
-| 2         | 2 GB or more | Minimum: 20 GB, SSD preferred | 100 Mbit/s |
+| 4         | 4 GB or more | Minimum: 40 GB, SSD preferred | 100 Mbit/s |
 
 #### Software
 
-| OS               | Erlang version | Eshell version | Docker version                         | Server          |
-|------------------|----------------|----------------|----------------------------------------|-----------------|
-| Ubuntu v.22.04.1 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
+| OS           | Erlang version | Eshell version | Docker version                         | Server          |
+|--------------|----------------|----------------|----------------------------------------|-----------------|
+| Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
 
 
 
@@ -166,7 +166,7 @@ Download ThePower Node. Here you have two options:
    ```bash
    mkdir /opt/erlang/<your_directory_name>
    ```
-10. Install Erlang to the subdirectory you've created on step 10 using the following command:
+10. Install Erlang to the subdirectory you've created on step 9 using the following command:
 
     ```bash
     ./kerl install 24.3 /opt/erlang/<your_directory_name>
@@ -274,7 +274,9 @@ After you have started the client, wait for other participants. Please, DON'T tu
 >
 > If the client is started without options, you will see a short reference on the command and options.
 
-If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
+If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. `node.config` contains your **private key**. Please, **store it securely to avoid loss of data**. You can find these files under the same directory where you have started the Tea Ceremony client.
+
+After the Tea Ceremony ends, you need to restart the Ceremony once again to generate the complete `node.config`. In this case, you will not need to edit the file.
 
 > **Attention**
 > 
@@ -297,18 +299,17 @@ To create directories for files:
 2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
-   mkdir db
-   mkdir log
+   mkdir {db,log}
    ```
 
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   mv ~/example_directory/node.config /opt/thepower/node.config
+   cp ~/example_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
+   cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
 ### Step 7: Edit `node.config`
@@ -333,6 +334,7 @@ Here is the example of a chain consisting of ten nodes:
         {"powernode09.thepower.io", 41025},
         {"powernode10.thepower.io", 41025}
         ],
+    allow_rfc1918 => true,    
     port => 41025} }.
 {discovery,
     #{
@@ -376,7 +378,7 @@ Edit the file as follows:
         ],
    ```
 
-2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
+2. Check the `allow_rfc1918` parameter to be `true`. If `true`, it allows nodes to work within a local network (Docker, NAT, for instance).
 3.Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
@@ -423,7 +425,7 @@ Edit the file as follows:
  
 > **Warning**
 >  
-> The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
+> The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
   
 ### Step 8: Get the certificate
 
@@ -447,6 +449,7 @@ To start the node from Docker, run:
 ```bash
 docker run -d \
 --name tpnode \
+--restart unless-stopped\
 --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
@@ -463,12 +466,24 @@ where:
 |----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                |
 | `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                  |
+| `--restart unless-stopped`                                                       | This options helps to avoid manual Deocker restart in case of a server restart                                                                              |
 | `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                               | 
 | `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
 | `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                         |
 | `-p 41025:41025` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
+
+#### Stopping the node in Docker
+
+To stop the node, use the following commands:
+
+1. ```bash
+   docker stop tpnode
+   ```
+2. ```bash
+   docker rm tpnode
+   ```
 
 #### Starting the node from source code
 
