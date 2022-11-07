@@ -40,8 +40,6 @@ To download the node using Docker:
    > $ sudo usermod -aG docker
    > ```
 
-3. Download The Power node using the link to Docker image here: [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
-
 ## Step 2: Create directories and place the files
 
 > **Hint**
@@ -59,7 +57,7 @@ To create directories for files:
 2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
-   mkdir {db, log}
+   mkdir {db,log}
    ```
 
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
@@ -100,6 +98,7 @@ Here is the example of a chain consisting of ten nodes:
         {"powernode09.thepower.io", 41025},
         {"powernode10.thepower.io", 41025}
         ],
+    allow_rfc1918 => true,
     port => 41025} }.
 {discovery,
     #{
@@ -190,7 +189,7 @@ Edit the file as follows:
 
 > **Warning**
 >
-> The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
+> The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
 
 ## Step 4: Get the certificate
 
@@ -228,18 +227,30 @@ where:
 | `-p 41025:41025` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
 
+## How to stop the node?
+
+To stop the node, run:
+
+1. ```bash
+   docker stop tpnode
+   ```
+
+2. ```bash
+   docker rm tpnode
+   ```
+
 ## How to check, if my node works?
 
 To check, if your node works, run:
 
 ```bash
-curl http://your_node.example.com:00000/api/node/status | jq
+curl http://your_node.example.com:1080/api/node/status | jq
 ```
 
 where:
 
 - `your_node.example.com` — your node address;
-- `00000` — port, that your node uses for `api`.
+- `1080` — port, that your node uses for `api`.
 
 Replace the example parameters with the ones you need.
 

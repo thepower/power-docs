@@ -184,18 +184,17 @@ To create directories for files:
 2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
-   mkdir db
-   mkdir log
+   mkdir {db,log}
    ```
 
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   mv ~/example_directory/node.config /opt/thepower/node.config
+   cp ~/example_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   mv ~/example_directory/genesis.txt /opt/thepower/genesis.txt
+   cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
 ## Step 4: Edit `node.config`
@@ -220,6 +219,7 @@ Here is the example of a chain consisting of ten nodes:
         {"powernode09.thepower.io", 41025},
         {"powernode10.thepower.io", 41025}
         ],
+    allow_rfc1918 => true,
     port => 41025} }.
 {discovery,
     #{
@@ -263,14 +263,14 @@ Edit the file as follows:
         ],
    ```
 
-2. Check the `allow_rfc1918` parameter to be `false`. If `true`, it allows nodes to work within a local network.
-   3.Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
+2. Check the `allow_rfc1918` parameter to be `true`. If it is `true`, it allows nodes to work within a local network (Docker or NAT, for instance). 
+3. Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
    port => 41025}
    ```
 
-5. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
+4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
 
    ```erlang
    addresses => [
@@ -280,19 +280,19 @@ Edit the file as follows:
         ]
    ```
 
-6. Specify your node address in `hostname` parameter:
+5. Specify your node address in `hostname` parameter:
 
    ```erlang
    {hostname, "<NODE_HOST_NAME>"}.
    ```
 
-7. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
+6. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
 
    ```erlang
    {dbsuffix,""}.
    ```
 
-8. Specify the `.log` files, where the logs for your node will be stored:
+7. Specify the `.log` files, where the logs for your node will be stored:
 
    ```erlang
    {loglevel, info}.
@@ -301,7 +301,7 @@ Edit the file as follows:
    {debug_log, "log/debug.log"}.
    ```
 
-9. Specify the ports for `rpc` and `rpcs` protocols:
+8. Specify the ports for `rpc` and `rpcs` protocols:
 
    ```erlang
    {rpcsport, 1443}.
@@ -310,7 +310,7 @@ Edit the file as follows:
 
 > **Warning**
 >
-> The private key you get with the `genesis.txt` file cannot be restored, if you lose it. Please, store it securely.
+> The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
 
 ## Step 5: Get the certificate
 
@@ -324,18 +324,26 @@ To start the node from source code:
    ./bin/thepower foreground
    ```
 
+## How to stop the node?
+
+To stop the node, run:
+
+```bash
+./bin/thepower stop
+```
+
 ## How to check, if my node works?
 
 To check, if your node works, run:
 
 ```bash
-curl http://your_node.example.com:00000/api/node/status | jq
+curl http://your_node.example.com:1080/api/node/status | jq
 ```
 
 where:
 
 - `your_node.example.com` — your node address;
-- `00000` — port, that your node uses for `api`.
+- `1080` — port, that your node uses for `api`.
 
 Replace the example parameters with the ones you need.
 

@@ -111,7 +111,11 @@ If you have successfully started the Tea Ceremony client, you will get `node.con
 
 > **Attention**
 >
-> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 3).
+> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6). 
+
+:: tip Tip
+You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
+::
 
 ### Step 6: Download the node
 
