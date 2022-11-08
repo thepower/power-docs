@@ -207,7 +207,10 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
--p 41026:41026 \
+
+<!--The commands below specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file.-->
+
+-p 41026:41026 \ <!--It is different for each chain-->
 -p 1080:1080 \
 -p 1443:1443 \
 thepowerio/tpnode
