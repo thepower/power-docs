@@ -87,19 +87,19 @@ Here is the example of a chain consisting of ten nodes:
 ```erlang
 {tpic, #{
     peers => [
-        {"powernode01.thepower.io", 41025},
-        {"powernode02.thepower.io", 41025},
-        {"powernode03.thepower.io", 41025},
-        {"powernode04.thepower.io", 41025},
-        {"powernode05.thepower.io", 41025},
-        {"powernode06.thepower.io", 41025},
-        {"powernode07.thepower.io", 41025},
-        {"powernode08.thepower.io", 41025},
-        {"powernode09.thepower.io", 41025},
-        {"powernode10.thepower.io", 41025}
+        {"powernode01.thepower.io", 41026},
+        {"powernode02.thepower.io", 41026},
+        {"powernode03.thepower.io", 41026},
+        {"powernode04.thepower.io", 41026},
+        {"powernode05.thepower.io", 41026},
+        {"powernode06.thepower.io", 41026},
+        {"powernode07.thepower.io", 41026},
+        {"powernode08.thepower.io", 41026},
+        {"powernode09.thepower.io", 41026},
+        {"powernode10.thepower.io", 41026}
         ],
     allow_rfc1918 => true,
-    port => 41025} }.
+    port => 41026} }.
 {discovery,
     #{
         addresses => [
@@ -146,7 +146,7 @@ Edit the file as follows:
 3. Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
 
    ```erlang
-   port => 41025}
+   port => 41026}
    ```
 
 4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
@@ -215,17 +215,17 @@ thepowerio/tpnode
 
 where:
 
-| Command                                                                          | Description                                                                                                                                                 |
-|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                |
-| `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                  |
-| `--restart unless-stopped\`                                                                               | Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts                                                                                 |
-| `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                               | 
-| `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                  |
-| `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                    |
-| `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                         |
-| `-p 41025:41025` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file |
-| `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                       |
+| Command                                                                          | Description                                                                                                                                                                                               |
+|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                                                              |
+| `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                                                                |
+| `--restart unless-stopped\`                                                      | Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts                                                               |
+| `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                             | 
+| `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                                |
+| `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                  |
+| `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                       |
+| `-p 41026:41026` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. `-p 41026:41026` is different for each chain |
+| `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
 
 ## How to stop the node?
 
