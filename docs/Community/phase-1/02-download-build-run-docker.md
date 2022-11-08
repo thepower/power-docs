@@ -202,7 +202,7 @@ To start the node from Docker, run:
 ```bash
 docker run -d \
 --name tpnode \
---restart unless-stopped\
+--restart unless-stopped \
 --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
