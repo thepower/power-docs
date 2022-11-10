@@ -25,6 +25,12 @@
 
 This simple guide will help you participate in The Power testnet campaign.
 
+::: warning Warning
+
+Please, turn off the firewall before starting your work with the node.
+
+:::
+
 ### Prerequisites for a node
 
 #### Hardware
@@ -38,6 +44,12 @@ This simple guide will help you participate in The Power testnet campaign.
 | OS           | Erlang version | Eshell version | Docker version                         | Server          |
 |--------------|----------------|----------------|----------------------------------------|-----------------|
 | Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
+
+::: tip Note
+
+You need to have a clear server to work with your node. If you have done any experiments before, please delete the previous builds.
+
+:::
 
 ## What do I need to participate in testnet campaign?
 
@@ -101,6 +113,13 @@ where
 - `nickname` - The name of your node. Maximum 10 characters.
 - `token` — Tea Ceremony Token, you've got from the Tea Ceremony bot.
 
+Token consists of two parts at the moment:
+
+1. **Public** part, that is common for all nodes in the chain, and
+2. **Private** part, that is unique for each node.
+
+If you start the Tea Ceremony with the public part of the token, you will be able to check the ports availability.
+
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
 > **Note**
@@ -116,6 +135,16 @@ If you have successfully started the Tea Ceremony client, you will get `node.con
 ::: tip Tip
 
 You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
+
+:::
+
+::: warning Nickname requirements
+
+Check out the nickname requirements:
+
+- min. 4 symbols;
+- max. 16 symbols;
+- the nickname must contain alphanumeric symbols of any case.
 
 :::
 

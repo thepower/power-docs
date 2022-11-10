@@ -19,63 +19,15 @@ This guide will help you get and start the Tea Ceremony client. You can find the
 >
 > To start the Tea ceremony client, ensure you have Erlang installed on your machine.
 
-If you don't have Erlang installed on your machine, follow the steps below:
-
-1.  Download the `kerl` script:
-
-    ```bash
-    curl -O [https://raw.githubusercontent.com/kerl/kerl/master/kerl](https://raw.githubusercontent.com/kerl/kerl/master/kerl)
-    ```
-    
-    > **Note**
-    >
-    > If you already have Erlang installed on your machine, we strongly recommend deleting it before the new installation, using the following command:
-    >
-    > ```bash
-    > apt purge erlang*
-    > ```
-
-2. Change script mode to executable by using the following command:
-
-    ```bash
-    chmod a+x kerl
-    ```
-   
-3. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+Before starting Tea Ceremony you need to set up your environment by installing Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
 
    ```bash
-   mkdir erlang
+   apt -y install erlang-base erlang-public-key erlang-ssl
    ```
 
-4. Update the list of Erlang releases using the following command:
-
-```bash
-./kerl update releases
-```
-
-5. Build the release 24.3 using the following command:
-
-```bash
-./kerl build 24.3
-```
-
-After installation is complete, you will see the following message in the console:
-
-```text
-Erlang/OTP 24.3 (24.3) has been successfully built
-```
-
-6. Install Erlang using the following command:
-
-```bash
-./kerl install 24.3 /opt/erlang
-```
-
-7. Run the following command to activate the Erlang installation:
-
-```bash
-source /opt/erlang/activate
-```
+> **Note**
+>
+> You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
 
 ## Get the Tea Ceremony client
 
@@ -93,22 +45,52 @@ wget https://tea.thepower.io/teaclient
    chmod +x tea*
    ```
 
-2. Run the following command to start the client:
+Run the following command to start Tea Ceremony client:
 
-   ```erlang
-   ./teaclient 52E616B1B48C
-   ```
+```erlang
+./teaclient -n nickname token
+```
 
-   where
+where
 
-   - `teaclient` — Tea Ceremony client,
-   - `52E616B1B48C` — Tea Ceremony Token, you've got from the bot.
+- `teaclient` — Tea Ceremony client,
+- `nickname` - The name of your node. Maximum 10 characters.
+- `token` — Tea Ceremony Token, you've got from the Tea Ceremony bot.
 
-After you have started the client, you can watch the Tea Ceremony process.
+Token consists of two parts at the moment:
+
+1. **Public** part, that is common for all nodes in the chain, and
+2. **Private** part, that is unique for each node.
+
+If you start the Tea Ceremony with the public part of the token, you will be able to check the ports availability.
+
+After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
 > **Note**
 >
 > If the client is started without options, you will see a short reference on the command and options.
+
+If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
+
+> **Attention**
+>
+> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6).
+
+::: tip Tip
+
+You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
+
+:::
+
+::: warning Nickname requirements
+
+Check out the nickname requirements:
+
+- min. 4 symbols;
+- max. 16 symbols;
+- the nickname must contain alphanumeric symbols of any case.
+
+:::
 
 ## After the client is started
 
