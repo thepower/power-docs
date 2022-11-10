@@ -25,11 +25,9 @@
 
 This simple guide will help you participate in The Power testnet campaign.
 
-::: warning Warning
-
-Please, turn off the firewall before starting your work with the node.
-
-:::
+> **Warning**
+>
+> Please, turn off the firewall before starting your work with the node.
 
 ### Prerequisites for a node
 
@@ -45,11 +43,9 @@ Please, turn off the firewall before starting your work with the node.
 |--------------|----------------|----------------|----------------------------------------|-----------------|
 | Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
 
-::: tip Note
-
-You need to have a clear server to work with your node. If you have done any experiments before, please delete the previous builds.
-
-:::
+> **Note**
+>
+> You need to have a clear server to work with your node. If you have done any experiments before, please delete the previous builds.
 
 ## What do I need to participate in testnet campaign?
 
@@ -132,21 +128,17 @@ If you have successfully started the Tea Ceremony client, you will get `node.con
 >
 > After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6). 
 
-::: tip Tip
+> **Tip**
+>
+> You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
 
-You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
-
-:::
-
-::: warning Nickname requirements
-
-Check out the nickname requirements:
-
-- min. 4 symbols;
-- max. 16 symbols;
-- the nickname must contain alphanumeric symbols of any case.
-
-:::
+> **Nickname requirements**
+>
+> Check out the nickname requirements:
+>
+> - min. 4 symbols;
+> - max. 16 symbols;
+> - the nickname must contain alphanumeric symbols of any case.
 
 ### Step 6: Download the node
 

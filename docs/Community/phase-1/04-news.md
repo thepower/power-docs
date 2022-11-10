@@ -1,15 +1,16 @@
+# Testnet News
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
-- [Testnet News](#testnet-news)
-  - [04/11/2022: we have run testnet, the first chain is now online!](#04112022-we-have-run-testnet-the-first-chain-is-now-online)
-  - [01/11/2022: Monitoring, tokens, Power Node version updated](#01112022-monitoring-tokens-power-node-version-updated)
-  - [Power node version update](#power-node-version-update)
+
+- [04/11/2022: we have run testnet, the first chain is now online!](#04112022-we-have-run-testnet-the-first-chain-is-now-online)
+- [01/11/2022: Monitoring, tokens, Power Node version updated](#01112022-monitoring-tokens-power-node-version-updated)
+- [Power node version update](#power-node-version-update)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Testnet News
 
 ## 04/11/2022: we have run testnet, the first chain is now online!
 
