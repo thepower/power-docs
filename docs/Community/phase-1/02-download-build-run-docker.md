@@ -74,11 +74,13 @@ To create directories for files:
 
 Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
 
-> **Note**
-> 
-> Before the Tea Ceremony, the client listens to the ports that will be used on this particular chain and the server checks, if those ports are available. The Ceremony itself starts right after this check. If there will be only a ceremony token specified, without the personal one, you will not be able to participate in Tea Ceremony.
-> 
-> If you're connecting to the Ceremony that has already ended, the Tea Ceremony client will save the `node.config` file. If the `node.config` consisted only of a private key, the Tea Ceremony client will add an actual configuration right into this file. If there is something else specified in `node.config`, the configuration will be saved in `node_example.config`. After that you need to add your node private key to this file.
+:::note
+
+Before the Tea Ceremony, the client listens to the ports that will be used on this particular chain and the server checks, if those ports are available. The Ceremony itself starts right after this check. If there will be only a ceremony token specified, without the personal one, you will not be able to participate in Tea Ceremony.
+ 
+If you're connecting to the Ceremony that has already ended, the Tea Ceremony client will save the `node.config` file. If the `node.config` consisted only of a private key, the Tea Ceremony client will add an actual configuration right into this file. If there is something else specified in `node.config`, the configuration will be saved in `node_example.config`. After that you need to add your node private key to this file.
+
+:::
 
 ### How to edit `node.config`?
 
@@ -187,9 +189,11 @@ Edit the file as follows:
    {rpcport, 1080}.
    ```
 
-> **Warning**
->
-> The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+:::warning
+
+The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+
+:::
 
 ## Step 4: Get the certificate
 
@@ -259,9 +263,11 @@ Replace the example parameters with the ones you need.
 
 ## What do I need to do if something goes wrong?
 
-> **Attention**
->
-> If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+:::tip
+
+If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+
+:::
 
 ### Troubleshooting
 

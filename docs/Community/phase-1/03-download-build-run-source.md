@@ -34,9 +34,11 @@ If you use the recommended Ubuntu version (22.04.1), you can install Erlang usin
    apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
    ```
 
-> **Note**
->
-> If you use another version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+:::note
+
+If you use another version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+
+:::
 
 ### Install Erlang using `kerl`
 
@@ -120,16 +122,19 @@ To install erlang using `kerl`:
     source /opt/erlang/<your_directory_name>/activate
     ```
 
-> **Note:**
->
-> If your Erlang installation is not activated, you will NOT be able to run the Tea Ceremony and build the node.
+:::note
 
+ If your Erlang installation is not activated, you will NOT be able to run the Tea Ceremony and build the node.
+
+:::
 
 ## Step 2: Download and build the node
 
-> **Note**
->
-> Choose a project folder to clone your project into. Use this folder to build the node.
+:::note
+
+Choose a project folder to clone your project into. Use this folder to build the node.
+
+:::
 
 1. Download the node sources from Github into your working directory (`your_node`, for instance), using the following command:
 
@@ -308,9 +313,11 @@ Edit the file as follows:
    {rpcport, 1080}.
    ```
 
-> **Warning**
->
-> The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+:::warning
+
+The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+
+:::
 
 ## Step 5: Get the certificate
 
@@ -349,9 +356,11 @@ Replace the example parameters with the ones you need.
 
 ## What do I need to do if something goes wrong?
 
-> **Attention**
->
-> If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+:::caution
+
+If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
+
+:::
 
 ### Troubleshooting
 

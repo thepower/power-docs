@@ -25,9 +25,10 @@
 
 This simple guide will help you participate in The Power testnet campaign.
 
-> **Warning**
->
-> Please, turn off the firewall before starting your work with the node.
+:::warning
+
+Please, turn off the firewall before starting your work with the node.
+:::
 
 ### Prerequisites for a node
 
@@ -89,9 +90,11 @@ Before starting Tea Ceremony you need to set up your environment by installing E
 
 3. Get the Tea Ceremony token from the testnet bot.
 
-   > **Note**
-   >
-   > This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
+   :::note
+   
+   This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
+   
+   :::
 
 ### Step 5: Start the Tea Ceremony client
 
@@ -118,27 +121,37 @@ If you start the Tea Ceremony with the public part of the token, you will be abl
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
-> **Note**
->
-> If the client is started without options, you will see a short reference on the command and options.
+:::note
+
+ If the client is started without options, you will see a short reference on the command and options.
+
+:::
 
 If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
-> **Attention**
->
-> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6). 
+:::caution
 
-> **Tip**
->
-> You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
+After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6). 
 
-> **Nickname requirements**
->
-> Check out the nickname requirements:
->
-> - min. 4 symbols;
-> - max. 16 symbols;
-> - the nickname must contain alphanumeric symbols of any case.
+:::
+
+:::tip
+
+You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
+
+:::
+
+:::note
+
+**Nickname requirements**
+
+Check out the nickname requirements:
+
+- min. 4 symbols;
+- max. 16 symbols;
+- the nickname must contain alphanumeric symbols of any case.
+
+:::
 
 ### Step 6: Download the node
 

@@ -15,9 +15,11 @@ This guide will help you get and start the Tea Ceremony client. You can find the
 
 ## Set up your environment
 
-> **Note**
->
-> To start the Tea ceremony client, ensure you have Erlang installed on your machine.
+:::note
+
+To start the Tea ceremony client, ensure you have Erlang installed on your machine.
+
+:::
 
 Before starting Tea Ceremony you need to set up your environment by installing Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
 
@@ -25,9 +27,11 @@ Before starting Tea Ceremony you need to set up your environment by installing E
    apt -y install erlang-base erlang-public-key erlang-ssl
    ```
 
-> **Note**
->
-> You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
+:::note
+
+You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
+
+:::
 
 ## Get the Tea Ceremony client
 
@@ -66,19 +70,19 @@ If you start the Tea Ceremony with the public part of the token, you will be abl
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
-> **Note**
->
-> If the client is started without options, you will see a short reference on the command and options.
+:::note
+
+If the client is started without options, you will see a short reference on the command and options.
+:::
 
 If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
-> **Attention**
->
-> After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6).
+:::caution
+
+After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6).
+:::
 
 :::tip
-
-**Tip**
 
 You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.
 
