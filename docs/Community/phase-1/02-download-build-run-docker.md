@@ -9,7 +9,7 @@
   - [How to edit `node.config`?](#how-to-edit-nodeconfig)
 - [Step 4: Get the certificate](#step-4-get-the-certificate)
 - [Step 5: Start the node](#step-5-start-the-node)
-- [Step 6 (optional): Automate updates for node with Watchtower](#step-6-optional-automate-updates-for-node-with-watchtower)
+- [Step 6 (optional): Automated updates for node with Watchtower](#step-6-optional-automated-updates-for-node-with-watchtower)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -235,11 +235,11 @@ where:
 | `-p 41026:41026` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. `-p 41026:41026` is different for each chain |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
 
-## Step 6 (optional): Automate updates for node with Watchtower
+## Step 6 (optional): Automated updates for node with Watchtower
 
-Every 24 hours, the [Watchtower](https://containrrr.dev/watchtower/) will check whether there is a new version of The Power Node and will update if so.
+Every 24 hours, the [Watchtower](https://containrrr.dev/watchtower/) will check if a new version of The Power Node is available and update it if so.
 
-Start a Watchtower container to automatically update node when a new version is available:
+### Start a Watchtower container to automatically update node when a new version is available:
 
 ```bash
 docker run -d \
