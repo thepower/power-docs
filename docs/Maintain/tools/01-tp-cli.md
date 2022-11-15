@@ -17,6 +17,26 @@ The `tp` CLI utility consists of two parts:
 - **generic**: this part of utility will help you work with keys and transactions;
 - **storage**: this part of utility will help you work with LStore.
 
+### Usage examples
+
+1. For example, you can use the following command to form, sign, and view a transaction:
+
+   ```bash
+   tp -k mykey.key --construct tx1.json --sign --showtx
+   ```
+
+2. If you need to sign and send a transaction, specify an address for a node you intend to work with:
+
+   ```bash
+   tp -h https://node.address.com:00000/  -k mykey.key --construct tx1.json --ss
+   ```
+
+3. `--example` key now generates three following examples:
+
+   - `example_deploy.json` — deployment of a smart contract;
+   - `example_generic.json` — generic transaction;
+   - `example_evmcall.json` — evm call example.
+
 ### Generic part commands
 
 | Command           | Description                                                                                                                                                                                                                                                                                                                                    |
@@ -69,23 +89,3 @@ The `tp` CLI utility consists of two parts:
 | `--submit`        | Send a transaction to the node                                                                                                                                                                                                                                                                                                                 |
 | `--ss`            | Sign and submit by one command                                                                                                                                                                                                                                                                                                                 |
 | `<address>` | Storage contract address |
-
-### Usage examples
-
-1. For example, you can use the following command to form, sign, and view a transaction:
-
-   ```bash
-   tp -k mykey.key --construct tx1.json --sign --showtx
-   ```
-
-2. If you need to sign and send a transaction, specify an address for a node you intend to work with:
-
-   ```bash
-   tp -h https://node.address.com:00000/  -k mykey.key --construct tx1.json --ss
-   ```
-   
-3. `--example` key now generates three following examples:
-
-   - `example_deploy.json` — deployment of a smart contract;
-   - `example_generic.json` — generic transaction;
-   - `example_evmcall.json` — evm call example.
