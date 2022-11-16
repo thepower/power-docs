@@ -129,12 +129,6 @@ After you have started the client, wait for other participants. Please, DON'T tu
 
 If you have successfully started the Tea Ceremony client, you will get `node.config` and `genesis.txt` files after the ceremony ends. You can find these files under the same directory where you have started the Tea Ceremony client.
 
-:::caution
-
-After the tea ceremony ends, you need to edit the `node.config`. To do this, refer to the guide, depending on your way of building the node (Step 6). 
-
-:::
-
 :::tip
 
 You can get a ready-to-work `node.config` file. To do this, rerun the Tea Ceremony.

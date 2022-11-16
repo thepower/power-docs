@@ -194,11 +194,11 @@ To create directories for files:
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   cp ~/example_directory/node.config /opt/thepower/node.config
+   cp ~/tea_ceremony_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
+   cp ~/tea_ceremony_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
 :::warning

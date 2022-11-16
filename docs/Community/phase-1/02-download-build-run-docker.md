@@ -62,11 +62,11 @@ To create directories for files:
 3. Place `genesis.txt` and `node.config` near these directories using the following commands:
 
    ```bash
-   cp ~/example_directory/node.config /opt/thepower/node.config
+   cp ~/tea_ceremony_directory/node.config /opt/thepower/node.config
    ```
 
    ```bash
-   cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
+   cp ~/tea_ceremony_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
 :::note
@@ -100,9 +100,11 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
 
-<!--The commands below specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file.-->
+<!--The commands below specify all necessary local ports. 
+In this examples ports `api`, `apis`, and `tpic` are used. 
+Specify the port of your chain from `node.config` file.-->
 
--p 41026:41026 \ <!--It is different for each chain-->
+-p 41027:41027 \ <!--It is different for each chain. -->
 -p 1080:1080 \
 -p 1443:1443 \
 thepowerio/tpnode
