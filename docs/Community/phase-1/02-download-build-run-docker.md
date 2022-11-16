@@ -5,10 +5,9 @@
 - [Introduction](#introduction)
 - [Step 1: Download the node](#step-1-download-the-node)
 - [Step 2: Create directories and place the files](#step-2-create-directories-and-place-the-files)
-- [Step 3: Edit `node.config`](#step-3-edit-nodeconfig)
-  - [How to edit `node.config`?](#how-to-edit-nodeconfig)
-- [Step 4: Get the certificate](#step-4-get-the-certificate)
-- [And, finally, step 5: Start the node](#and-finally-step-5-start-the-node)
+- [Step 3: Get the certificate](#step-3-get-the-certificate)
+- [Step 4: Start the node](#step-4-start-the-node)
+- [How to stop the node?](#how-to-stop-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -70,10 +69,6 @@ To create directories for files:
    cp ~/example_directory/genesis.txt /opt/thepower/genesis.txt
    ```
 
-## Step 3: Edit `node.config`
-
-Edit `node.config` file. See the [example](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#nodeconfig-example) in [How to configure TP-Node?](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration) guide, and then refer to the section below.
-
 :::note
 
 Before the Tea Ceremony, the client listens to the ports that will be used on this particular chain and the server checks, if those ports are available. The Ceremony itself starts right after this check. If there will be only a ceremony token specified, without the personal one, you will not be able to participate in Tea Ceremony.
@@ -82,124 +77,17 @@ If you're connecting to the Ceremony that has already ended, the Tea Ceremony cl
 
 :::
 
-### How to edit `node.config`?
-
-Here is the example of a chain consisting of ten nodes:
-
-```erlang
-{tpic, #{
-    peers => [
-        {"powernode01.thepower.io", 41026},
-        {"powernode02.thepower.io", 41026},
-        {"powernode03.thepower.io", 41026},
-        {"powernode04.thepower.io", 41026},
-        {"powernode05.thepower.io", 41026},
-        {"powernode06.thepower.io", 41026},
-        {"powernode07.thepower.io", 41026},
-        {"powernode08.thepower.io", 41026},
-        {"powernode09.thepower.io", 41026},
-        {"powernode10.thepower.io", 41026}
-        ],
-    allow_rfc1918 => true,
-    port => 41026} }.
-{discovery,
-    #{
-        addresses => [
-            #{address => "<NODE_HOST_NAME>", port => 41025, proto => tpic},
-            #{address => "<NODE_HOST_NAME>", port => 1080, proto => api},
-            #{address => "<NODE_HOST_NAME>", port => 1443, proto => apis}
-        ]
-    }
-}.
-
-{hostname, "<NODE_HOST_NAME>"}.
-{dbsuffix,""}.
-{loglevel, info}.
-{info_log, "log/info.log"}.
-{error_log, "log/error.log"}.
-{debug_log, "log/debug.log"}.
-{rpcsport, 1443}.
-{rpcport, 1080}.
-
-{privkey, "<PRIVATE_KEY>"}.
-```
-
-Edit the file as follows:
-
-1. Specify the node addresses and port numbers you've received from the bot. You don't need to specify your own node:
-
-   ```erlang
-   tpic, #{
-    peers => [
-        {"powernode01.thepower.io", 41025},
-        {"powernode02.thepower.io", 41025},
-        {"powernode03.thepower.io", 41025},
-        {"powernode04.thepower.io", 41025},
-        {"powernode05.thepower.io", 41025},
-        {"powernode06.thepower.io", 41025},
-        {"powernode07.thepower.io", 41025},
-        {"powernode08.thepower.io", 41025},
-        {"powernode09.thepower.io", 41025},
-        {"powernode10.thepower.io", 41025}
-        ],
-   ```
-
-2. Check the `allow_rfc1918` parameter to be `true`. If it is `true`, it allows nodes to work within a local network (Docker or NAT, for instance).
-3. Check the `port` parameter. The value of this parameter should be the same as the port value in `peers`:
-
-   ```erlang
-   port => 41026}
-   ```
-
-4. Specify your node and port to be used for `tpic`, `api`, and `apis` protocols in `addresses` parameter:
-
-   ```erlang
-   addresses => [
-            #{address => "<NODE_HOST_NAME>", port => 41025, proto => tpic},
-            #{address => "<NODE_HOST_NAME>", port => 1080, proto => api},
-            #{address => "<NODE_HOST_NAME>", port => 1443, proto => apis}
-        ]
-   ```
-
-5. Specify your node address in `hostname` parameter:
-
-   ```erlang
-   {hostname, "<NODE_HOST_NAME>"}.
-   ```
-
-6. Specify names of your nodes in `dbsuffix` parameter if you want to start multiple nodes on one machine. It creates different DB directories for each node. If you have only one node, `dbsuffix` must be empty:
-
-   ```erlang
-   {dbsuffix,""}.
-   ```
-
-7. Specify the `.log` files, where the logs for your node will be stored:
-
-   ```erlang
-   {loglevel, info}.
-   {info_log, "log/info.log"}.
-   {error_log, "log/error.log"}.
-   {debug_log, "log/debug.log"}.
-   ```
-
-8. Specify the ports for `rpc` and `rpcs` protocols:
-
-   ```erlang
-   {rpcsport, 1443}.
-   {rpcport, 1080}.
-   ```
-
 :::warning
 
 The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
 
 :::
 
-## Step 4: Get the certificate
+## Step 3: Get the certificate
 
 [Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-## And, finally, step 5: Start the node
+## Step 4: Start the node
 
 To start the node from Docker, run:
 
