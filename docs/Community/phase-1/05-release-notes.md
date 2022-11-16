@@ -13,14 +13,14 @@
    - chain state — how many nodes are behind;
    - block vote — consensus monitoring. Now you can monitor, which blocks are pending, and who signed them (node name is displayed).
 
-10. Logging fixed.
-11. `tpic` streams are now displayed in the node state.
-12. Fractional gas is added. The fractional gas is when a user receives less than 1 gas for 1 token. An exact value can be specified (common fraction).
-13. The `tp` utility can now calculate the gas and fee.
-14. `Msgpack` interface is now fixed.
-15. The node settings administration is now became simpler. The settings patch keys are now stored separately.
-16. EVM call results are now stored in the block. They are also saved into EVM logs that can be also displayed.
-17. The wallet initialization from `genesis.txt` is now possible. If there are wallets to be created specified in `genesis.txt`, they will be created.
-18. The Tea Ceremony server has been significantly refactored (approx. 50%). Waiting for all participants at stage 1, ports check (including Tea Ceremony client).
-19. Hot updates are almost done.
-20. Storage administration functionality is now separated from the core functionality in `tp` utility.
+9. Logging fixed.
+10. `tpic` streams are now displayed in the node state.
+11. Fractional gas is added. The fractional gas is when a user receives less than 1 gas for 1 token. An exact value can be specified (common fraction).
+12. The `tp` utility can now calculate the gas and fee.
+13. `Msgpack` interface is now fixed.
+14. The node settings administration is now became simpler. The settings patch keys are now stored separately.
+15. EVM call results are now stored in the block. They are also saved into EVM logs that can be also displayed.
+16. The wallet initialization from `genesis.txt` is now possible. If there are wallets to be created specified in `genesis.txt`, they will be created.
+17. The Tea Ceremony server has been significantly refactored (approx. 50%). Waiting for all participants at stage 1, ports check (including Tea Ceremony client).
+18. Hot updates are almost done.
+19. Storage administration functionality is now separated from the core functionality in `tp` utility.
