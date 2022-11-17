@@ -3,7 +3,7 @@
 If you need an SSL certificate for your node, follow the steps below:
 
 1. Ensure that you use `root` account. It is necessary for further steps.
-2. Install `acme.sh` by running the following command:
+2. Install `acme.sh` by running the following command. Please, specify your real e-mail address:
 
    ```bash
    apt-get install socat
@@ -14,24 +14,29 @@ If you need an SSL certificate for your node, follow the steps below:
 5. Obtain the certificate. To do this, run the following command:
 
    ```bash
-   acme.sh --issue --standalone -d your_node.example.com \
-   --renew-hook "docker restart tpnode" <!-- Use this if you run with docker -->
-   --renew-hook "./bin/thepower stop && ./bin/thepower foreground" <!-- Use this if you run from source code -->
+   acme.sh --issue --standalone -d your_node.example.com
    ```
    
-   :::info
+   ::: warning
 
-   Use only one `--renew-hook`, depending on the run option (from docker / from source code)
+   `your_node.example.com` is an example. **Replace it** with your node link.
 
    :::
 
 6. Install the certificate by running the following command:
 
    ```bash
-   acme.sh --install-cert -d your_node.example.com \
-   --fullchain-file /opt/thepower/db/cert/your_node.example.com.crt \
-   --key-file /opt/thepower/db/cert/your_node.example.com.key
+   acme.sh --install-cert -d your_node.example.com --cert-file \
+   /opt/thepower/db/cert/your_node.example.com.crt --key-file \
+   /opt/thepower/db/cert/your_node.example.com.key --ca-file \
+   /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
    ```
+
+   ::: warning
+   
+   `your_node.example.com` is an example. **Replace it** with your node link.
+   
+   :::
 
 You can add Telegram notifications to promptly get information about Acme script actions. To do this, run:
 

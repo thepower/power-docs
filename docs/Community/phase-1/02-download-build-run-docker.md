@@ -90,6 +90,12 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 ## Step 4: Start the node
 
+::: warning
+
+The command below is an example. Please, **don't copy** the comments inside the command.
+
+:::
+
 To start the node from Docker, run:
 
 ```bash
