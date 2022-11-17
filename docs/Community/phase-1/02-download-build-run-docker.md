@@ -7,6 +7,7 @@
 - [Step 2: Create directories and place the files](#step-2-create-directories-and-place-the-files)
 - [Step 3: Get the certificate](#step-3-get-the-certificate)
 - [Step 4: Start the node](#step-4-start-the-node)
+- [Step 5 (optional): Automated updates for node with Watchtower](#step-5-optional-automated-updates-for-node-with-watchtower)
 - [How to stop the node?](#how-to-stop-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
@@ -123,6 +124,21 @@ where:
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                       |
 | `-p 41026:41026` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                       | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. `-p 41026:41026` is different for each chain |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
+
+## Step 5 (optional): Automated updates for node with Watchtower
+
+Every 24 hours, the [Watchtower](https://containrrr.dev/watchtower/) will check if a new version of The Power Node is available and update it if so.
+
+### Start a Watchtower container to automatically update node when a new version is available:
+
+```bash
+docker run -d \
+--name watchtower \
+--restart unless-stopped \
+-e WATCHTOWER_CLEANUP=true -e WATCHTOWER_TIMEOUT=60s \
+-v /var/run/docker.sock:/var/run/docker.sock \
+containrrr/watchtower
+```
 
 ## How to stop the node?
 
