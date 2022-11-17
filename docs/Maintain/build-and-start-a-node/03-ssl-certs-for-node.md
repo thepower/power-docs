@@ -15,17 +15,22 @@ If you need an SSL certificate for your node, follow the steps below:
 
    ```bash
    acme.sh --issue --standalone -d your_node.example.com \
-   --renew-hook "cd /opt/your_node; ./stop.sh; ./start.sh"
+   --renew-hook "docker restart tpnode" <!-- Use this if you run with docker -->
+   --renew-hook "./bin/thepower stop && ./bin/thepower foreground" <!-- Use this if you run from source code -->
    ```
+   
+   :::info
+   Use only one `--renew-hook`, depending on the run option (from docker / from source code)
+   :::
 
 6. Install the certificate by running the following command:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \
-   --fullchain-file /opt/your_node/db/cert_your_node/your_node.example.com.crt \
-   --key-file /opt/your_node/db/cert_your_node/your_node.example.com.key
+   --fullchain-file /opt/thepower/db/cert/your_node.example.com.crt \
+   --key-file /opt/thepower/db/cert/your_node.example.com.key
    ```
-   
+
 You can add Telegram notifications to promptly get information about Acme script actions. To do this, run:
 
 ```bash
