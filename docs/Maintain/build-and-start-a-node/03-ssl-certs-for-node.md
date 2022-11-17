@@ -20,7 +20,9 @@ If you need an SSL certificate for your node, follow the steps below:
    ```
    
    :::info
+
    Use only one `--renew-hook`, depending on the run option (from docker / from source code)
+
    :::
 
 6. Install the certificate by running the following command:
