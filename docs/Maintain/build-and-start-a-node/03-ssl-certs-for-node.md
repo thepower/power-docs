@@ -26,10 +26,10 @@ If you need an SSL certificate for your node, follow the steps below:
 6. Install the certificate by running the following command:
 
    ```bash
-   acme.sh --install-cert -d your_node.example.com --cert-file \
-   /opt/thepower/db/cert/your_node.example.com.crt --key-file \
-   /opt/thepower/db/cert/your_node.example.com.key --ca-file \
-   /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
+   acme.sh --install-cert -d your_node.example.com \
+   --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
+   --key-file /opt/thepower/db/cert/your_node.example.com.key \
+   --ca-file /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
    ```
 
    ::: warning
