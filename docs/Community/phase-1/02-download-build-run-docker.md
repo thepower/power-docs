@@ -159,6 +159,10 @@ To stop the node, run:
    docker rm tpnode
    ```
 
+3. ```bash
+   docker rmi thepowerio/tpnode
+   ```
+
 ## How to check, if my node works?
 
 To check, if your node works, run:
