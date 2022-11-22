@@ -1,20 +1,19 @@
 # How to install and start a testnet?
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-   - [Introduction](#introduction)
-   - [Testnet installation](#testnet-installation)
-      - [Prerequisites](#prerequisites)
-      - [Installation](#installation)
-      - [Starting the testnet](#starting-the-testnet)
-      - [Stopping the testnet](#stopping-the-testnet)
-   - [Setting up the environment and starting the testnet using Vagrant](#setting-up-the-environment-and-starting-the-testnet-using-vagrant)
-      - [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
-      - [Setting up the environment](#setting-up-the-environment)
-      - [Compiling and starting the node](#compiling-and-starting-the-node)
-      - [Stopping the testnet](#stopping-the-testnet-1)
-      - [Using Makefile targets](#using-makefile-targets)
-      - [Using API](#using-api)
+
+- [Introduction](#introduction)
+- [Testnet installation](#testnet-installation)
+   - [Prerequisites](#prerequisites)
+   - [Starting the testnet](#starting-the-testnet)
+   - [Stopping the testnet](#stopping-the-testnet)
+   - [How to delete a Docker image?](#how-to-delete-a-docker-image)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Introduction
 
@@ -71,16 +70,6 @@ To start a testnet, run:
 ```bash
 docker pull thepowerio/tpnode \
 docker run -d  -p 44000:44000 --rm --name tptest thepowerio/tpnode
-```
-
-After starting the testnet, node API is available under the following addresses:
-
-```text
-http://<your_node_link>:44001/api/status
-http://<your_node_link>:44002/api/status
-http://<your_node_link>:44003/api/status
-
-http://<your_node_link>:44001/api/node/status
 ```
 
 To test your chain, run the following sequence of commands:

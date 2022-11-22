@@ -10,6 +10,34 @@ The `tp` CLI utility will help you to:
 - form the transactions from a JSON-formatted template;
 - signing (including signing using multiple keys).
 
+## Prerequisites
+
+You need to have Erlang version 24 installed on your machine, and `escript` interpreter should be included into paths.
+
+## Installation
+
+To install `tp` CLI:
+
+1. [Download the tool](https://tea.thepower.io/tp).
+
+   ::: caution
+
+   Please, ensure that you have the latest version of the tool.
+
+   :::
+
+2. Move the file to `/usr/local/bin`:
+
+   ```bash
+   mv /usr/local/bin
+   ```
+
+3. Change the file execution mode:
+
+   ```bash
+   chmod a+x
+   ```
+
 ## Utility description and usage
 
 The `tp` CLI utility consists of two parts:
@@ -71,21 +99,21 @@ The `tp` CLI utility consists of two parts:
 
 ### Storage part commands
 
-| Command            | Description                                                                                                                                                                                                                                                                                   |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -h, --host         | Tpnode's base address, use `httpsi` as a protocol for ssl without certificate verification [default: `http://127.0.0.1:49841`]                                                                                                                                                                |
-| `--hexkey`         | Keyfile. You can specifiy a key in `HEX` format (as it is stored in the keyfile) in the command line                                                                                                                                                                                          |
-| `-k`, `--keyfile`  | Path to a key file                                                                                                                                                                                                                                                                            |
-| `--mkmanifest`     | Make `manifest.json` for a specified directory                                                                                                                                                                                                                                                |
-| `--newstoragetask` | Create a new storage task `<bucket name>` (specify a contract name to work with)                                                                                                                                                                                                              |
-| `--manifest`       | Specify another manifest filename [default: manifest.json]                                                                                                                                                                                                                                    |
+| Command            | Description                                                                                                                                                                                                                                                                                          |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -h, --host         | Tpnode's base address, use `httpsi` as a protocol for ssl without certificate verification [default: `http://127.0.0.1:49841`]                                                                                                                                                                       |
+| `--hexkey`         | Keyfile. You can specifiy a key in `HEX` format (as it is stored in the keyfile) in the command line                                                                                                                                                                                                 |
+| `-k`, `--keyfile`  | Path to a key file                                                                                                                                                                                                                                                                                   |
+| `--mkmanifest`     | Make `manifest.json` for a specified directory                                                                                                                                                                                                                                                       |
+| `--newstoragetask` | Create a new storage task `<bucket name>` (specify a contract name to work with)                                                                                                                                                                                                                     |
+| `--manifest`       | Specify another manifest filename [default: manifest.json]                                                                                                                                                                                                                                           |
 | `--interval`       | Store interval for a `newstoragetask` [default: 1 year]. The following intervals are supported:<br/>- year (365 days);<br/>- mon (30 days);<br/>- week (7 days);<br/>- day;<br/>- hour;<br/>- min;<br/>- sec.<br/>You can group several intervals into one, for example: `1 year 3 mon 2 week 3 min` |
-| `--transfer`       | Transfer amount and currency for a `newstoragetask`, for example: `10 SK`                                                                                                                                                                                                                     |
-| `--gas`            | Specify gas manually                                                                                                                                                                                                                                                                          |
-| `--get_task`       | Get task info for a task by `<task id>`                                                                                                                                                                                                                                                       |
-| `--newprovider`    | Create new storage provider with `<baseurl>` or `<baseurl,uploadurl>` as arguments                                                                                                                                                                                                            |
-| `--showtx`        | Display a `tx`                                                                                                                                                                                                                                                                                                                                 |
-| `--sign`          | Sign a transaction                                                                                                                                                                                                                                                                                                                             |
-| `--submit`        | Send a transaction to the node                                                                                                                                                                                                                                                                                                                 |
-| `--ss`            | Sign and submit by one command                                                                                                                                                                                                                                                                                                                 |
-| `<address>` | Storage contract address |
+| `--transfer`       | Transfer amount and currency for a `newstoragetask`, for example: `10 SK`                                                                                                                                                                                                                            |
+| `--gas`            | Specify gas manually                                                                                                                                                                                                                                                                                 |
+| `--get_task`       | Get task info for a task by `<task id>`                                                                                                                                                                                                                                                              |
+| `--newprovider`    | Create new storage provider with `<baseurl>` or `<baseurl,uploadurl>` as arguments                                                                                                                                                                                                                   |
+| `--showtx`         | Display a `tx`                                                                                                                                                                                                                                                                                       |
+| `--sign`           | Sign a transaction                                                                                                                                                                                                                                                                                   |
+| `--submit`         | Send a transaction to the node                                                                                                                                                                                                                                                                       |
+| `--ss`             | Sign and submit by one command                                                                                                                                                                                                                                                                       |
+| `<address>`        | Storage contract address                                                                                                                                                                                                                                                                             |
