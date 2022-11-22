@@ -68,7 +68,7 @@ sudo apt-get -y install docker.io jq curl
 To start a testnet, run:
 
 ```bash
-docker pull thepowerio/tpnode \
+docker pull thepowerio/tpnode 
 docker run -d  -p 44000:44000 --rm --name tptest thepowerio/tpnode
 ```
 

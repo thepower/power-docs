@@ -213,10 +213,45 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 ## Step 5: Start the node
 
-To start the node from source code:
+Start the node using `systemd`. To do this:
+
+1. Create a file `tpnode.service` under `/etc/systemd/system` directory.
+2. The file must contain the following:
 
    ```bash
-   ./bin/thepower foreground
+   [Unit]
+   Description=tpnode service
+   Requires=network.target
+   After=network.target
+
+   [Service]
+   Type=forking
+   ExecStart=/opt/thepower/bin/thepower start
+   ExecStop=/opt/thepower/bin/thepower stop
+   User=root
+   Group=root
+   Restart=on-failure
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+3. Run the following command to rerun all generators , reload all unit files, and recreate the entire dependency tree. While the daemon is being reloaded, all sockets systemd listens on behalf of user configuration will stay accessible:
+
+   ```bash
+   systemctl daemon-reload
+   ```
+
+4. Run the following command to enable the service after reboot:
+
+   ```bash
+   systemctl enable --now tpnode.service
+   ```
+
+5. Start the node using the following command:
+
+   ```bash
+   systemctl start tpnode.service
    ```
 
 ## How to stop the node?
@@ -224,7 +259,7 @@ To start the node from source code:
 To stop the node, run:
 
 ```bash
-./bin/thepower stop
+systemctl stop tpnode.service
 ```
 
 ## How to check, if my node works?
@@ -232,15 +267,8 @@ To stop the node, run:
 To check, if your node works, run:
 
 ```bash
-curl http://your_node.example.com:1080/api/node/status | jq
+systemctl status tpnode.service
 ```
-
-where:
-
-- `your_node.example.com` — your node address;
-- `1080` — port, that your node uses for `api`.
-
-Replace the example parameters with the ones you need.
 
 ## What do I need to do if something goes wrong?
 
