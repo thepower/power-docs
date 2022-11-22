@@ -20,7 +20,7 @@ To install `tp` CLI:
 
 1. [Download the tool](https://tea.thepower.io/tp).
 
-   ::: caution
+   :::caution
 
    Please, ensure that you have the latest version of the tool.
 

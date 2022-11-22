@@ -90,7 +90,7 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 ## Step 4: Start the node
 
-::: warning
+:::warning
 
 The command below is an example. Please, **don't copy** the comments inside the command.
 
