@@ -245,7 +245,7 @@ Start the node using `systemd`. To do this:
 4. Run the following command to enable the service after reboot:
 
    ```bash
-   systemctl enable --now tpnode.service
+   systemctl enable tpnode.service
    ```
 
 5. Start the node using the following command:
@@ -267,8 +267,15 @@ systemctl stop tpnode.service
 To check, if your node works, run:
 
 ```bash
-systemctl status tpnode.service
+curl http://your_node.example.com:1080/api/node/status | jq
 ```
+
+where:
+
+- `your_node.example.com` — your node address;
+- `1080` — port, that your node uses for `api`.
+
+Replace the example parameters with the ones you need.
 
 ## What do I need to do if something goes wrong?
 

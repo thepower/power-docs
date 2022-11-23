@@ -149,29 +149,67 @@ Now you can start the node.
 
 ## Starting the node
 
-You can start a node in two different modes:
+Start the node using `systemd`. To do this:
 
-- Dev Mode. In this mode, you can start a node without building a release.
-- Release Mode. In this mode, you must build the release before starting the node.
-
-### Starting the node in Dev Mode
-
-1. Before starting the node in Dev Mode, start a `tmux` session:
-
-```bash
-tmux
-```
-
-To start the node in Dev Mode, run:
-
-```bash
-./rebar3 shell
-```
-### Starting the node in Release Mode
-
-1. Refer to ["Downloading and building the node"](#downloading-and-building-the-node) section above to build the node.
-2. To start the node, run:
+1. Create a file `tpnode.service` under `/etc/systemd/system` directory.
+2. The file must contain the following:
 
    ```bash
-   ./bin/thepower foreground
+   [Unit]
+   Description=tpnode service
+   Requires=network.target
+   After=network.target
+
+   [Service]
+   Type=forking
+   ExecStart=/opt/thepower/bin/thepower start
+   ExecStop=/opt/thepower/bin/thepower stop
+   User=root
+   Group=root
+   Restart=on-failure
+
+   [Install]
+   WantedBy=multi-user.target
    ```
+
+3. Run the following command to rerun all generators , reload all unit files, and recreate the entire dependency tree. While the daemon is being reloaded, all sockets systemd listens on behalf of user configuration will stay accessible:
+
+   ```bash
+   systemctl daemon-reload
+   ```
+
+4. Run the following command to enable the service after reboot:
+
+   ```bash
+   systemctl enable tpnode.service
+   ```
+
+5. Start the node using the following command:
+
+   ```bash
+   systemctl start tpnode.service
+   ```
+
+## How to stop the node?
+
+To stop the node, run:
+
+```bash
+systemctl stop tpnode.service
+```
+
+## How to check, if my node works?
+
+To check, if your node works, run:
+
+```bash
+curl http://your_node.example.com:1080/api/node/status | jq
+```
+
+where:
+
+- `your_node.example.com` — your node address;
+- `1080` — port, that your node uses for `api`.
+
+Replace the example parameters with the ones you need.
+
