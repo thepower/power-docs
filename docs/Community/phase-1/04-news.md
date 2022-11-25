@@ -19,7 +19,7 @@ We are glad to announce the new Tea Ceremony series.
 
 - The **personal** Tea Ceremony tokens were assigned to those, who were on the whitelist till November, 24.
 
-- **The next Tea Ceremony will be this Monday 1 pm GMT**.
+- **The next Tea Ceremony will be on Monday, November, 28, 1 pm GMT**.
 
 The dates of other Ceremonies will be determined by **vote**. Follow our chat.
 
