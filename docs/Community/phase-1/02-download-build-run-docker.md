@@ -259,7 +259,7 @@ If something goes wrong, go to the `log` folder, and read the logs. If there are
 
    **Solution**
 
-   Get the new token from the chain administrators.
+   Get the new token from the Telegram bot.
 
 4. You get the following error when starting the Tea Ceremony client:
 
