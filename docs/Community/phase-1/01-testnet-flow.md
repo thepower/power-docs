@@ -109,15 +109,16 @@ To start the client, run the following command:
 where
 
 - `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node. Maximum 10 characters.
-- `aaaaa.bbbbb` — Tea Ceremony Token, you've got from the Tea Ceremony bot.
+- `nickname` - The name of your node. Maximum 10 characters,
+- `aaaaa.bbbbb` — Tea Ceremony Token, you've got from the Tea Ceremony bot,
+- `-n` is used with a minus sign, not with a dash.
 
 The token (`aaaaa.bbbbb`) consists of two parts:
 
 1. `aaaaa` — **chain token**. It is common for all nodes in the chain, and
 2. `bbbbb` — **personal token**. It can't be expired until it is used, but you can use it only once. 
 
-If you start the Tea Ceremony with the public part of the token, you will be able to check the ports availability.
+If you start the Tea Ceremony with the chain part of the token, you will be able to check the ports availability.
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 

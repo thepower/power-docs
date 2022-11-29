@@ -49,24 +49,25 @@ wget https://tea.thepower.io/teaclient
    chmod +x tea*
    ```
 
-Run the following command to start Tea Ceremony client:
+To start the client, run the following command:
 
 ```erlang
-./teaclient -n nickname token
+./teaclient -n nickname aaaaa.bbbbb
 ```
 
 where
 
 - `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node. Maximum 10 characters.
-- `token` — Tea Ceremony Token, you've got from the Tea Ceremony bot.
+- `nickname` - The name of your node. Maximum 10 characters,
+- `aaaaa.bbbbb` — Tea Ceremony Token, you've got from the Tea Ceremony bot,
+- `-n` is used with a minus sign, not with a dash.
 
-Token consists of two parts at the moment:
+The token (`aaaaa.bbbbb`) consists of two parts:
 
-1. **Public** part, that is common for all nodes in the chain, and
-2. **Private** part, that is unique for each node.
+1. `aaaaa` — **chain token**. It is common for all nodes in the chain, and
+2. `bbbbb` — **personal token**. It can't be expired until it is used, but you can use it only once.
 
-If you start the Tea Ceremony with the public part of the token, you will be able to check the ports availability.
+If you start the Tea Ceremony with the chain part of the token, you will be able to check the ports availability.
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
 
