@@ -9,9 +9,14 @@ If you need an SSL certificate for your node, follow the steps below:
    apt-get install socat
    curl https://get.acme.sh | sh -s email=my@example.com
    ```
-3. Log out of the system.
-4. Log in again.
-5. Obtain the certificate. To do this, run the following command:
+   
+   where
+
+   `my@example.com` — your active e-mail. Make sure, you have replaced it with your e-mail address.
+
+4. Log out of the system.
+5. Log in again.
+6. Obtain the certificate. To do this, run the following command:
 
    ```bash
    acme.sh --issue --standalone -d your_node.example.com
@@ -23,7 +28,7 @@ If you need an SSL certificate for your node, follow the steps below:
 
    :::
 
-6. Install the certificate by running the following command:
+7. Install the certificate by running the following command:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \
@@ -51,4 +56,8 @@ After you've installed the certificate, you can get the certificate status by ru
 ```bash
 acme.sh --info -d your_node.example.com
 ```
+
+where
+
+`your_node.example.com` — your node address link. Replace it with your node link.
 

@@ -98,7 +98,21 @@ Before starting Tea Ceremony you need to set up your environment by installing E
 
 ### Step 5: Start the Tea Ceremony client
 
-[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet administrators.
+[Start the Tea Ceremony client](https://doc.thepower.io/docs/Maintain/get-and-start-tea-ceremony-client/#start-the-tea-ceremony-client) using the token you've got from the testnet [Telegram bot](https://t.me/thepowerio_bot).
+
+:::warning
+
+Before starting the Tea Ceremony, make sure you've opened the ports `1800`, `1443`, and `1080` like this:
+
+```bash
+ufw allow 22
+ufw allow 1800
+ufw allow 1443
+ufw allow 10800
+ufw enable
+```
+
+:::
 
 To start the client, run the following command:
 
