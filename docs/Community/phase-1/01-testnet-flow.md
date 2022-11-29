@@ -102,14 +102,14 @@ Before starting Tea Ceremony you need to set up your environment by installing E
 
 To start the client, run the following command:
 
-```erlang
+```bash
 ./teaclient -n nickname aaaaa.bbbbb
 ```
 
 where
 
 - `teaclient` — Tea Ceremony client,
-- `nickname` - The name of your node. Maximum 10 characters,
+- `nickname` — The name of your node. Maximum 10 characters,
 - `aaaaa.bbbbb` — Tea Ceremony Token, you've got from the Tea Ceremony bot,
 - `-n` is used with a minus sign, not with a dash.
 
