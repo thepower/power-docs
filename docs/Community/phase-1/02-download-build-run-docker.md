@@ -1,4 +1,5 @@
 # Downloading, building, and running the node using Docker
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -11,7 +12,7 @@
 - [How to stop the node?](#how-to-stop-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
-  - [Troubleshooting](#troubleshooting)
+    - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -73,7 +74,7 @@ To create directories for files:
 :::note
 
 Before the Tea Ceremony, the client listens to the ports that will be used on this particular chain and the server checks, if those ports are available. The Ceremony itself starts right after this check. If there will be only a ceremony token specified, without the personal one, you will not be able to participate in Tea Ceremony.
- 
+
 If you're connecting to the Ceremony that has already ended, the Tea Ceremony client will save the `node.config` file. If the `node.config` consisted only of a private key, the Tea Ceremony client will add an actual configuration right into this file. If there is something else specified in `node.config`, the configuration will be saved in `node_example.config`. After that you need to add your node private key to this file.
 
 :::
@@ -156,6 +157,10 @@ To stop the node, run:
 
 2. ```bash
    docker rm tpnode
+   ```
+
+3. ```bash
+   docker rmi thepowerio/tpnode
    ```
 
 ## How to check, if my node works?
