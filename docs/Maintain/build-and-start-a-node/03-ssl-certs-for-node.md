@@ -59,14 +59,6 @@ If you need an SSL certificate for your node, follow the steps below:
    
    :::
 
-You can add Telegram notifications to promptly get information about Acme script actions. To do this, run:
-
-```bash
-export TELEGRAM_BOT_CHATID=Your Telegram ID \
-export TELEGRAM_BOT_APITOKEN=Chatbot token \
-acme.sh --set-notify --notify-hook telegram
-```
-
 After you've installed the certificate, you can get the certificate status by running the following command:
 
 ```bash
