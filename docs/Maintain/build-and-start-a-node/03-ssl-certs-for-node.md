@@ -14,21 +14,37 @@ If you need an SSL certificate for your node, follow the steps below:
 
    `my@example.com` — your active e-mail. Make sure, you have replaced it with your e-mail address.
 
-4. Log out of the system.
-5. Log in again.
-6. Obtain the certificate. To do this, run the following command:
+3. Log out of the system.
+4. Log in again.
+5. Obtain the certificate. To do this, run the following command:
 
    ```bash
    acme.sh --issue --standalone -d your_node.example.com
    ```
    
-   ::: warning
+   :::tip
+
+   If you have the following error:
+  
+   ```bash
+   acme.sh: command not found
+   ```
+   
+   Run:
+
+   ```bash
+   source ~/.bashrc
+   ```
+   
+   :::
+
+   :::warning
 
    `your_node.example.com` is an example. **Replace it** with your node link.
 
    :::
 
-7. Install the certificate by running the following command:
+8. Install the certificate by running the following command:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \
@@ -37,7 +53,7 @@ If you need an SSL certificate for your node, follow the steps below:
    --ca-file /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
    ```
 
-   ::: warning
+   :::warning
    
    `your_node.example.com` is an example. **Replace it** with your node link.
    
