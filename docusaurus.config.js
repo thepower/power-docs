@@ -8,13 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Power Ecosystem',
   tagline: 'WEB3 Decentralized Framework',
-  url: 'https://docs.thepower.io',
+  url: 'https://doc.thepower.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'thepower', // Usually your GitHub org/user name.
-  projectName: 'power-docs', // Usually your repo name.
+  organizationName: 'thepower',
+  projectName: 'power-docs',
+  themes: ['docusaurus-theme-search-typesense'],
 
   presets: [
     [
@@ -23,12 +24,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
         },
         theme: {
@@ -60,7 +59,6 @@ const config = {
             position: 'left',
             label: 'API',
           },
-          // { to: '/blog', label: 'How-to', position: 'left' },
           {
             label: 'Power_hub',
             href: 'https://hub.thepower.io',
@@ -111,23 +109,6 @@ const config = {
               },
             ],
           },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
           {
             title: 'Tools',
             items: [
@@ -143,10 +124,6 @@ const config = {
                 label: 'Power_faucet',
                 href: 'https://faucet.thepower.io',
               },
-              // {
-              //   label: 'How-to',
-              //   to: '/blog',
-              // },
             ],
           },
           {
@@ -169,7 +146,26 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      typesense: {
+        typesenseCollectionName: 'power_doc',
+
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'search.thepower.io',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: 'r5kZbUv7QOQaCBJPPy2beA9GHgLda3bw',
+        },
+
+        typesenseSearchParameters: {},
+
+        contextualSearch: true,
+      },
     }),
 };
 
 module.exports = config;
+

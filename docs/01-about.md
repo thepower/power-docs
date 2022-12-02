@@ -59,21 +59,23 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
   
 ## Where to start learning?
-[Find more](https://doc.thepower.io/docs/technology/abstract) about the core technology 
+[Find more](./Explore/technology/01-abstract.md) about the core technology 
 
-[Find more](https://doc.thepower.io/docs/technology/resonance-consensus) about Resonance consensus 
+[Find more](./Explore/technology/03-resonance-consensus.md) about Resonance consensus 
 
-[Find more](https://doc.thepower.io/docs/smart-contracts/environment) about smart contracts 
+[Find more](./Build/smart-contracts/01-environment.md) about smart contracts 
 
-[Find more](https://doc.thepower.io/docs/technology/scalable-architecture) about scalable architecture
+[Find more](./Explore/technology/04-scalable-architecture.md) about scalable architecture
 
-[Find more](https://doc.thepower.io/docs/technology/management-layer) about Management layer
+[Find more](./Explore/technology/07-management-layer.md) about Management layer
 
-[Find more](https://doc.thepower.io/docs/technology/shards-layer) about Shard layer
+[Find more](./Explore/technology/08-shards-layer.md) about Shard layer
 
 ## How-tos
 
-[How to run a node](https://doc.thepower.io/docs/build-and-start-a-node/tpNodeConfiguration)
+[How to run a node from Docker image](./Community/phase-1/02-download-build-run-docker.md)
+
+[How to run a node from source code](./Community/phase-1/03-download-build-run-source.md)
 
 [How to run a local testnet](https://doc.thepower.io/docs/devGuide/testnet-start)
 

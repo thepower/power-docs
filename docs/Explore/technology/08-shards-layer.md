@@ -1,6 +1,6 @@
-# Shards Layer
+# Chains Layer
 
-All platform nodes, in accordance with the sharding idea, are divided into separate mini- blockchains called shards. The combined set of shards and their interaction in Power_blockhain performs transactions, just like in a classic blockchain.
+All platform nodes, in accordance with the chaining idea, are divided into separate mini-blockchains called chains. The combined set of shards and their interaction in Power_blockhain performs transactions, just like in a classic blockchain.
 Shard is a blockchain with a small number of nodes operating based on the Resonance consensus algorithm. We call it a mini- blockchain to emphasize that its size is small compared to the Management layer blockchain.
 Assume that the system includes n shards, system users are distributed evenly across all shards. Then the number of users in every shard will cshard = cusers_total / n. Let the user may choose a shard to send a transaction with equal probability among the shards. Then the probability that the transaction will be sent to itsownshardwillbe1/n.Givenn=3,weget the probability that the transaction will not leave the sender shard = 33%, and if n = 100, the probability of it becomes 1%. As can be seen for systems such as The Power (with a large number of parallel running Blockchains), a top priority is to ensure effective and safe inter-chain interaction.
 For the purpose of all the shards together to perform as a single platform, the shards operate in a standardized way that allows for fast and reliable inter-chain interaction.
