@@ -6,13 +6,13 @@
 There are two types of nodes used in The Power Ecosystem:
 
 1. **Consensus node**. It is a node that connects to a chain and participates in Consensus along with other Consensus nodes.
-2. **Seed node**. It is a project node that connects to a chain of nodes, receives a copy of a blockchain data, and provides it to the users upon a request. As opposed to Consensus nodes, Seed nodes don't participate in Consensus.
+2. **Seed node**. It is a node that connects to a chain of nodes, receives a copy of a blockchain data, and provides it to the users upon a request. As opposed to Consensus nodes, Seed nodes don't participate in Consensus.
 
 ## Seed nodes theory
 
 As determined above, Seed nodes store and spread the copy of blockchain data, but don't participate in Consensus on creating new blocks.
 
-**Seed nodes** are necessary to **undertake** the extra-load caused by the increased quantity of users from the Consensus nodes, as well as **minimize** the risk of **DDoS-attacks**. So, the users connect to Seed nodes, receive their copy of blockchain data needed, and send their transaction into the blockchain.
+**Seed nodes** are necessary to **undertake** the extra-load caused by the increased quantity of users from the Consensus nodes, as well as **minimize** the security risks. So, the users connect to Seed nodes, receive their copy of blockchain data needed, and send their transaction into the blockchain.
 
 ## How to use the Seed node?
 
@@ -77,7 +77,7 @@ To use the Seed node:
    3. You will receive `node.config` file with the private key. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
 
       ```erlang
-      {tpic,#{peers => [],port => 43314}}.
+      {tpic,#{peers => [],port => 1800}}.
       {discovery,#{addresses => []}}.
 
       {privkey,"302E020100300506032B6570042204200011223344556677001122334455667700112233445566770011223344556677"}.
@@ -109,7 +109,7 @@ To use the Seed node:
 
       - `privkey` with your private key; 
       - `hostname` with your hostname;
-      - `upstream`. It is obtained from address.
+      - `upstream`. It is obtained from The Power Ecosystem administrators.
 
       :::
    
