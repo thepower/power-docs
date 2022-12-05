@@ -1,6 +1,6 @@
 # How to obtain an SSL certificate for a node?
 
-If you need an SSL certificate for your node, follow the steps below:
+Congratulations! Now you have a started and functional node, responding by `http`. Now, let's set up https! Follow the steps below:
 
 1. Ensure that you use `root` account. It is necessary for further steps.
 2. Install `acme.sh` by running the following command. Please, specify your real e-mail address:
@@ -17,6 +17,20 @@ If you need an SSL certificate for your node, follow the steps below:
 3. Log out of the system.
 4. Log in again.
 5. Obtain the certificate. To do this, run the following command:
+
+   :::tip
+
+   If you have reached the threshold, try another server. Use the [link](https://github.com/acmesh-official/acme.sh/wiki/Server) for more information.
+
+   :::
+
+   :::warning
+
+   Here you may receive the **"Timeout"** error.
+
+   The reason is in closed `tcp/80` port.
+
+   The solution is to open this port or turn the firewall off.
 
    ```bash
    acme.sh --issue --standalone -d your_node.example.com
@@ -44,7 +58,7 @@ If you need an SSL certificate for your node, follow the steps below:
 
    :::
 
-8. Install the certificate by running the following command:
+7. Install the certificate by running the following command:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \

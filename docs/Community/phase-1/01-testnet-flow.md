@@ -112,6 +112,10 @@ ufw allow 10800
 ufw enable
 ```
 
+:::attention
+
+We strongly recommend you to start the Tea Ceremony in `screen` mode.
+
 :::
 
 To start the client, run the following command:

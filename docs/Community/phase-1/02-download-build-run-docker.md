@@ -284,3 +284,47 @@ If something goes wrong, go to the `log` folder, and read the logs. If there are
    **Solution**
 
    Stick to the bot recommendations and don't be late.
+
+5. You see different ports displayed in server control panel and written in firewall rules.
+
+   **Reason**
+
+   Problems with ports. 
+
+   **Solution**
+
+   Check your `iptables` rules:
+
+   ```bash
+   iptables -L -nv
+   ```
+   
+   Find the rules for all three ports among the entries:
+
+      1. If the rules are absent, please contact or tech support in our [Telegram chat](https://t.me/thepower_chat).
+      2. If you've found a corrupted port, try to recreate rule using the server control panel.
+   
+      :::warning
+   
+      **The Power Ecosystem is not responsible for the result of actions described below!** These actions can lead to loss of access to the server.
+
+      :::
+
+   Another way of addressing the problem is to:
+
+      1. Save the rules into a file using the following command:
+      
+         ```bash
+         iptables-save -f iptables.save
+         ```
+      2. Edit the corrupted port:
+         
+         ```bash
+         vim iptables.save
+         ```
+      
+      3. Restore the rules from the file:
+      
+         ```bash
+         iptables-restore iptables.save
+         ```
