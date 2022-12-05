@@ -30,7 +30,7 @@ As we discussed above, LStore is a compact hierarchic key-value DB. Due to the h
 LStore allows the user to:
 
 1. Easily store the structured data in blockchain by sending the data to the user account.
-2. Easily read the data. The user can read either all the data contained in LStore, or a specific batch of data, that can be received by a specific key.
+2. Easily read the data. All users can read either all the data contained in LStore, or a specific batch of data, that can be received by a specific key.
 
 The only disadvantage of LStore at the moment is that only a user that owns the account key can send the data into the account.
 
@@ -68,11 +68,10 @@ LStore writing operation is performed according to the following algorithm:
 
 LStore reading operation is performed according to the following algorithm:
 
-1. Account address is sent to Power API.
-2. LStore endpoint is sent to Power API.
-3. User receives all needed LStore information. 
+1. Account address and LStore endpoint are sent to Power API.
+2. User receives all needed LStore information. 
 
-## LStore transaction code examples
+## LStore transaction examples
 
 You can find an example of code by running the following command in `tp` CLI:
 
@@ -86,7 +85,7 @@ The result will be a list of examples. You need to open `example_lstore.json` by
 % cat example_lstore.json
 ```
 
-**Code example**
+**Example**
 
 ```json
 {
@@ -111,3 +110,9 @@ where
 - `"p"` — path. Here the levels in DB hierarchy must be specified;
 - `"t"` — action. You can use `set`, `list_add`, `list_del`, `lists_cleanup`, and other;
 - `"v"` — value.
+
+:::note
+
+In order to receive the data as specified above, just the account data needs to be read using its [endpoint](https://doc.thepower.io/docs/Build/api/api-reference/#addressaddress).
+
+:::
