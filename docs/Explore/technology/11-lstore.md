@@ -73,6 +73,8 @@ LStore reading operation is performed according to the following algorithm:
 
 ## LStore transaction examples
 
+You'll need to use the [`tp` CLI](../../Maintain/tools/01-tp-cli.md). Use [this](https://tea.thepower.io/tp) link to download it.
+
 You can find an example of code by running the following command in `tp` CLI:
 
 ```bash
