@@ -100,7 +100,7 @@ To use the Seed node:
       
       :::warning
 
-      Use [this]() guide for more information on `node.config`.
+      Use [this](./02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
       :::
 
       :::attention
