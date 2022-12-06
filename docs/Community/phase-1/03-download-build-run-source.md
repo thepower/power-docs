@@ -8,9 +8,9 @@
   - [Install Erlang using `kerl`](#install-erlang-using-kerl)
 - [Step 2: Download and build the node](#step-2-download-and-build-the-node)
 - [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
-- [Step 4: Get the certificate](#step-4-get-the-certificate)
-- [Step 5: Start the node](#step-5-start-the-node)
+- [Step 4: Start the node](#step-4-start-the-node)
 - [How to stop the node?](#how-to-stop-the-node)
+- [Step 5: Get the certificate](#step-5-get-the-certificate)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
   - [Troubleshooting](#troubleshooting)
@@ -207,11 +207,7 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 :::
 
-## Step 4: Get the certificate
-
-[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
-
-## Step 5: Start the node
+## Step 4: Start the node
 
 Start the node using `systemd`. To do this:
 
@@ -261,6 +257,10 @@ To stop the node, run:
 ```bash
 systemctl stop tpnode.service
 ```
+
+## Step 5: Get the certificate
+
+[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
 ## How to check, if my node works?
 

@@ -6,13 +6,14 @@
 - [Introduction](#introduction)
 - [Step 1: Download the node](#step-1-download-the-node)
 - [Step 2: Create directories and place the files](#step-2-create-directories-and-place-the-files)
-- [Step 3: Get the certificate](#step-3-get-the-certificate)
-- [Step 4: Start the node](#step-4-start-the-node)
+- [Step 3: Start the node](#step-3-start-the-node)
+- [Step 4: Get the certificate](#step-4-get-the-certificate)
 - [Step 5 (optional): Automated updates for node with Watchtower](#step-5-optional-automated-updates-for-node-with-watchtower)
+  - [Start a Watchtower container to automatically update node when a new version is available:](#start-a-watchtower-container-to-automatically-update-node-when-a-new-version-is-available)
 - [How to stop the node?](#how-to-stop-the-node)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
 - [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
-    - [Troubleshooting](#troubleshooting)
+  - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -85,11 +86,7 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 :::
 
-## Step 3: Get the certificate
-
-[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
-
-## Step 4: Start the node
+## Step 3: Start the node
 
 :::warning
 
@@ -109,7 +106,7 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
 
 <!--The commands below specify all necessary local ports. 
-In this examples ports `api`, `apis`, and `tpic` are used. 
+In this example ports `api`, `apis`, and `tpic` are used. 
 Specify the port of your chain from `node.config` file.-->
 
 -p 1800:1800 \
@@ -131,6 +128,10 @@ where:
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                       |
 | `-p 1800:1800` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                         | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
+
+## Step 4: Get the certificate
+
+[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
 ## Step 5 (optional): Automated updates for node with Watchtower
 

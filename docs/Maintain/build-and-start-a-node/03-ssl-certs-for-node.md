@@ -85,3 +85,81 @@ where
 
 `your_node.example.com` — your node address link. Replace it with your node link.
 
+8. Stop your node and restart it:
+
+   1. **Docker:**
+
+      1. ```bash
+         docker stop tpnode
+         ```
+
+      2. ```bash
+         docker rm tpnode
+         ```
+
+      3. ```bash
+         docker rmi thepowerio/tpnode
+         ```
+      
+      4. ```bash
+         docker run -d \
+         --name tpnode \
+         --restart unless-stopped \
+         --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
+         --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
+         --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
+         --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
+   
+         <!--The commands below specify all necessary local ports. 
+         In this example ports `api`, `apis`, and `tpic` are used. 
+         Specify the port of your chain from `node.config` file.-->
+   
+         -p 1800:1800 \
+         -p 1080:1080 \
+         -p 1443:1443 \
+         thepowerio/tpnode
+         ```
+         
+   2. **Source:**
+
+      1. ```bash
+         systemctl stop tpnode.service
+         ```
+      2. Create a file `tpnode.service` under `/etc/systemd/system` directory. The file must contain the following:
+
+         ```bash
+         [Unit]
+         Description=tpnode service
+         Requires=network.target
+         After=network.target
+
+         [Service]
+         Type=forking
+         ExecStart=/opt/thepower/bin/thepower start
+         ExecStop=/opt/thepower/bin/thepower stop
+         User=root
+         Group=root
+         Restart=on-failure
+
+         [Install]
+         WantedBy=multi-user.target
+         ```
+
+      3. Run the following command to rerun all generators , reload all unit files and recreate the entire dependency tree. While the daemon is being reloaded, all sockets `systemd` listens to on behalf of user configuration will stay accessible:
+
+         ```bash
+         systemctl daemon-reload
+         ```
+
+      4. Run the following command to enable the service after reboot:
+
+         ```bash
+         systemctl enable tpnode.service
+         ```
+
+      5. Start the node using the following command:
+
+         ```bash
+         systemctl start tpnode.service
+         ```
+
