@@ -111,10 +111,11 @@ ufw allow 1443
 ufw allow 10800
 ufw enable
 ```
+:::
 
-:::attention
+:::important
 
-We strongly recommend you to start the Tea Ceremony in `screen` mode.
+We strongly recommend you to start the Tea Ceremony in `screen`.
 
 :::
 

@@ -24,13 +24,15 @@ Congratulations! Now you have a started and functional node, responding by `http
 
    :::
 
-   :::warning
+   :::important
 
    Here you may receive the **"Timeout"** error.
 
    The reason is in closed `tcp/80` port.
 
    The solution is to open this port or turn the firewall off.
+
+   :::
 
    ```bash
    acme.sh --issue --standalone -d your_node.example.com
