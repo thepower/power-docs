@@ -108,7 +108,7 @@ Before starting the Tea Ceremony, make sure you've opened the ports `1800`, `144
 ufw allow 22
 ufw allow 1800
 ufw allow 1443
-ufw allow 10800
+ufw allow 1080
 ufw enable
 ```
 :::
