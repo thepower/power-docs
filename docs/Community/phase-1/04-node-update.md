@@ -72,7 +72,7 @@ To update your node:
    systemctl stop tpnode.service
    ```
    
-5. Replace your node code by deleting and copying the new versions of directories:
+5. Replace your node code by rewriting the versions of directories:
 
    ```bash
    bin
