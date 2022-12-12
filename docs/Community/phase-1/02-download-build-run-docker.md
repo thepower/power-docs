@@ -329,3 +329,15 @@ If something goes wrong, go to the `log` folder, and read the logs. If there are
          ```bash
          iptables-restore iptables.save
          ```
+         
+6. You see the following error:
+
+   ![erl_err](./resources/erl_error.jpeg)
+
+   **Reason**
+
+   Wrong Erlang version is installed.
+
+   **Solution**
+
+   Install the recommended Ubuntu version, or try to install right Erlang version using the third party repositories or the source code.

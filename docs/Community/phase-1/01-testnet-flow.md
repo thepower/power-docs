@@ -44,9 +44,17 @@ Please, turn off the firewall before starting your work with the node.
 |--------------|----------------|----------------|----------------------------------------|-----------------|
 | Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
 
-> **Note**
->
-> You need to have a clear server to work with your node. If you have done any experiments before, please delete the previous builds.
+:::note
+
+You need to have a clear server to work with your node. If you have done any experiments before, please delete the previous builds.
+
+:::
+
+:::warning
+
+If you use other versions of Ubuntu, you'll have to resolve the Erlang dependencies manually.
+
+:::
 
 ## What do I need to participate in testnet campaign?
 
