@@ -41,4 +41,4 @@ wget https://tea.thepower.io/teaclient
 chmod +x teaclient
 ```
 
-<p align="center"><b>Done ; Easy Full Guide Tutorial [Here](https://github.com/DaddyUnikii/Deinfra-Testnet)</b></p>
+[Here](https://github.com/DaddyUnikii/Deinfra-Testnet) you can find the full Easy Testnet Guide.
