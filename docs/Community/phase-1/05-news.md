@@ -1,5 +1,46 @@
 # Testnet News
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [24/11/2022: The New Tea Ceremony Series](#24112022-the-new-tea-ceremony-series)
+- [04/11/2022: we have run testnet, the first chain is now online!](#04112022-we-have-run-testnet-the-first-chain-is-now-online)
+- [01/11/2022: Monitoring, tokens, Power Node version updated](#01112022-monitoring-tokens-power-node-version-updated)
+- [Power node version update](#power-node-version-update)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 24/11/2022: The New Tea Ceremony Series
+
+Hey, Powerians!
+
+We are glad to announce the new Tea Ceremony series.
+
+- The **personal** Tea Ceremony tokens were assigned to those, who were on the whitelist till November, 24.
+
+- **The next Tea Ceremony will be on Monday, November, 28, 1 pm GMT**.
+
+The dates of other Ceremonies will be determined by **vote**. Follow our chat.
+
+We have performed a popular time slot vote, and here are the results:
+
+![timeslots](./resources/timeslots.png)
+
+The chain Tea Ceremony token will be published on our [News channel](https://t.me/thepowerio).
+
+_There will be a 10-node chain started for the first 10 participants, who will successfully pass the test assignment. The next chain will be started on the next day after the first one. We are ready to give our Powerians a possibility to pass the chain themselves, because the project team was constantly supporting our Community members during the first three chains. Now, we have improved **node configuration software** and **docs**._
+
+At this stage, we have not only the Project team, but 30 node owners, who could help the users to start the nodes.
+
+For example, the first chain was started in a week, the third one — in just ONE day!
+
+If our dear Powerians will start the new chain in one day as well, the next chain will be started on the next day (Tuesday), and the other chains will be started chain by the chain in the second most popular (according to the vote, look above) time slot. So, enjoy your weekend, get your servers ready, and carefully read the docs, preparing yourself for the next start.
+
+The new whitelist will be formed out of those Powerians, who joined in after November, 24.
+
+So, you can continue doing your test assignment. All Powerians, who are now on their way to pass the test, will get the tokens during the next give-out that will happen right after the already tokenised Powerians pass. Follow the news!
+
 ## 04/11/2022: we have run testnet, the first chain is now online!
 
 ![pic](resources/pic2.jpg)

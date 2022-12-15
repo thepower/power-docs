@@ -1,13 +1,19 @@
 # How to start a TP-Node from the source?
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents**
 
-   - [Introduction](#introduction)
-   - [Setting up the environment](#setting-up-the-environment)
-   - [Downloading and building the node](#downloading-and-building-the-node)
-   - [Starting the node](#starting-the-node)
-      - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
-      - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
+- [Introduction](#introduction)
+- [Setting up the environment](#setting-up-the-environment)
+  - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
+  - [Install Erlang using `kerl`](#install-erlang-using-kerl)
+- [Downloading and building the node](#downloading-and-building-the-node)
+- [Starting the node](#starting-the-node)
+  - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
+  - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
@@ -15,15 +21,27 @@ TP-Node is the main module of The Power Ecosystem. In this manual, you'll learn 
 
 ## Setting up the environment
 
-Before you start your TP-Node, you need to set up the environment:
+Before you start your TP-Node, you need to set up the environment.
 
-1. Install the software you need to seamlessly install Erlang:
+### Install Erlang
+
+You can install Erlang either using the package manager, or using `kerl`.
+
+#### Install Erlang using the package manager
+
+If you use the recommended Ubuntu version (22.04.1), you can install Erlang using the package manager. To do this, run the following command:
 
    ```bash
-   apt install git libssl-dev clang cmake make automake autoconf libncurses5-dev gcc g++
+   apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
    ```
 
-2. Install Erlang. To do this, download the `kerl` script
+If you use other version of Ubuntu (20.04, for instance), refer to the section below to install Erlang using `kerl`.
+
+#### Install Erlang using `kerl`
+
+To install Erlang using `kerl`:
+
+1. Download the `kerl` script
 
    ```bash
    curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
@@ -36,37 +54,37 @@ Before you start your TP-Node, you need to set up the environment:
    > apt purge erlang*
    > ```
 
-3. Change script mode to executable by using the following command:
+2. Change script mode to executable by using the following command:
 
    ```bash
    chmod a+x kerl
    ```
 
-4. Go to the `/opt` directory:
+3. Go to the `/opt` directory:
 
    ```bash
    cd /opt
    ```
 
-5. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
+4. Create a new directory in `/opt`. You can choose any name for this directory. Noteworthy is that the name should be descriptive for you:
 
    ```bash
    mkdir erlang
    ```
 
-6. Go back to the root directory:
+5. Go back to the root directory:
 
    ```bash
    cd ~
    ```
 
-7. Update the list of Erlang releases using the following command:
+6. Update the list of Erlang releases using the following command:
 
    ```bash
    ./kerl update releases
    ```
 
-8. Build the release 24 using the following command:
+7. Build the release 24.3 using the following command:
 
    ```bash
    ./kerl build 24.3
@@ -131,29 +149,67 @@ Now you can start the node.
 
 ## Starting the node
 
-You can start a node in two different modes:
+Start the node using `systemd`. To do this:
 
-- Dev Mode. In this mode, you can start a node without building a release.
-- Release Mode. In this mode, you must build the release before starting the node.
-
-### Starting the node in Dev Mode
-
-1. Before starting the node in Dev Mode, start a `tmux` session:
-
-```bash
-tmux
-```
-
-To start the node in Dev Mode, run:
-
-```bash
-./rebar3 shell
-```
-### Starting the node in Release Mode
-
-1. Refer to ["Downloading and building the node"](#downloading-and-building-the-node) section above to build the node.
-2. To start the node, run:
+1. Create a file `tpnode.service` under `/etc/systemd/system` directory.
+2. The file must contain the following:
 
    ```bash
-   ./bin/thepower foreground
+   [Unit]
+   Description=tpnode service
+   Requires=network.target
+   After=network.target
+
+   [Service]
+   Type=forking
+   ExecStart=/opt/thepower/bin/thepower start
+   ExecStop=/opt/thepower/bin/thepower stop
+   User=root
+   Group=root
+   Restart=on-failure
+
+   [Install]
+   WantedBy=multi-user.target
    ```
+
+3. Run the following command to rerun all generators , reload all unit files, and recreate the entire dependency tree. While the daemon is being reloaded, all sockets systemd listens on behalf of user configuration will stay accessible:
+
+   ```bash
+   systemctl daemon-reload
+   ```
+
+4. Run the following command to enable the service after reboot:
+
+   ```bash
+   systemctl enable tpnode.service
+   ```
+
+5. Start the node using the following command:
+
+   ```bash
+   systemctl start tpnode.service
+   ```
+
+## How to stop the node?
+
+To stop the node, run:
+
+```bash
+systemctl stop tpnode.service
+```
+
+## How to check, if my node works?
+
+To check, if your node works, run:
+
+```bash
+curl http://your_node.example.com:1080/api/node/status | jq
+```
+
+where:
+
+- `your_node.example.com` — your node address;
+- `1080` — port, that your node uses for `api`.
+
+Replace the example parameters with the ones you need.
+

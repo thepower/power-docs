@@ -42,4 +42,3 @@ chmod +x teaclient
 ```
 
 <p align="center"><b>Done ; Easy Full Guide Tutorial [Here](https://github.com/DaddyUnikii/Deinfra-Testnet)</b></p>
-
