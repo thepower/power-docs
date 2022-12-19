@@ -58,6 +58,11 @@ Here is an example of a `node.config` file:
 | `dbsuffix`   | This parameter is used to avoid using DockerID in the directory name when using Docker.                                                                                                                                                                                                                                |
 | `dbpath`     | Path to database.                                                                                                                                                                                                                                                                                                      |
 
+> **Attention**
+> 
+> In `tpic` section you need to specify the addresses, which will be used by the nodes to interconnect, and if the nodes are started in a local network, you need to specify the local addresses of your nodes.
+> 
+> But the problem is that one of addresses in `discovery` section (`tpic` address) should  also be local, if the chain is started in a local network.
 
 Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need. Check out the "How to edit `node.config`" guide for [Docker](../../Community/phase-1/02-download-build-run-docker.md#how-to-edit-nodeconfig) and for built from [sources](../../Community/phase-1/03-download-build-run-source.md#how-to-edit-nodeconfig).
 
