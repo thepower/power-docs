@@ -72,7 +72,7 @@ To use the Seed node:
 
    **Backup the file and continue.**
 
-8. Rename the file `tpcli.key` to `node.config`.
+6. Rename the file `tpcli.key` to `node.config`.
 
 
    :::caution
@@ -121,7 +121,7 @@ To use the Seed node:
       :::
    
 
-7. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
+8. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
    1. Use [this guide](../../Community/phase-1/02-download-build-run-docker.md) to build and start the node from Docker image.
    2. Use [this guide](../../Community/phase-1/03-download-build-run-source.md) to build and start the node from sources.
