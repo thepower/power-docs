@@ -36,45 +36,52 @@ To use the Seed node:
    >
    > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
 
-4. Get Tea Ceremony client and token
+4. Get the power CLI:
 
-   1. Get the Tea Ceremony client by running the following command:
-
-      ```bash
-      wget https://tea.thepower.io/teaclient
-      ```
-
-   2. Change the `teaclient` file mode to executable by running the following command:
+   1. Get the power cli by running the following command:
 
       ```bash
-      chmod +x teaclient
+      wget https://tea.thepower.io/tp
       ```
-
-      Otherwise, you will NOT be able to start the client.
-
-   3. Get the Tea Ceremony token from the testnet bot.
-
-      :::note
-
-      This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
-
-      :::
-
-5. Generate private key with **wrong** token:
-
-   1. Start the Tea Ceremony client with wrong token:
+      
+   2. Change the `tp` file mode to executable by running the following command:
 
       ```bash
-      ./teaclient 123456
+      chmod +x tp
       ```
+      
+5. Generate private key by running the following command:
 
-   2. The Client will respond:
+   ```bash
+   ./tp --genkey --ed25519
+   ```
    
-      ```text
-      Server rejects connection, reason: bad_token
-      ```
+   As a result of this action, you will get the `tpcli.key` file. This file contains your private and public keys. Here is an example of this file. **DON'T use the keys specified in this example**:
 
-   3. You will receive `node.config` file with the private key. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
+   ```bash
+   % cat tpcli.key
+   {privkey,"302E020100300506032B6570042204204B1F52826447066469E7DBCA4E95CB0A03A2998D268C27885364D4AD7B7B0A8E"}.
+   {pubkey,"302A300506032B6570032100667C84FB1195C73F97AE14430C2024490C0EA6490F6EC0C1DE3FAEB4B6B32251"}.
+   ```
+
+   :::caution
+
+   You may share your public key when necessary, but never share your private key.
+
+   :::
+
+   **Backup the file and continue.**
+
+8. Rename the file `tpcli.key` to `node.config`.
+
+
+   :::caution
+
+   This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
+
+   :::
+
+7. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
 
       ```erlang
       {tpic,#{peers => [],port => 1800}}.
@@ -103,7 +110,7 @@ To use the Seed node:
       Use [this](./02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
       :::
 
-      :::attention
+      :::caution
 
       You need to replace:
 
