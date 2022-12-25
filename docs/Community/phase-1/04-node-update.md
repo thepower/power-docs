@@ -1,12 +1,40 @@
 # Node update
 
-:::note
+## Before the update
 
-Before updating your node, please, back up your `node.config` and `genesis.txt`.
+1. Check out the Power Telegram chat, the Power news, or information about the problems with the node in [Zabbix](https://zabbix.thepower.io/zabbix.php?action=dashboard.view#). There you will find information about the necessity of update.
 
-:::
+2. Back up your `node.config` and `genesis.txt`.
+
+3. Check your node version by running the following command:
+
+   ```bash
+   curl -s http://{your_node_hostname}:1080/api/node/status | jq .status.ver
+   ```
+
+   :::note
+
+   Your node may have automatic updates. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
+
+   Read [this](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker#step-5-optional-automated-updates-for-node-with-watchtower) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
+
+   :::
 
 ## Updating your node built from Docker image
+
+Check your node version by running the following command:
+
+   ```bash
+   curl -s http://{your_node_hostname}:1080/api/node/status | jq .status.ver
+   ```
+
+:::note
+
+Your node may have automatic updates. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
+
+Read [this](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker#step-5-optional-automated-updates-for-node-with-watchtower) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
+
+:::
 
 To update your node:
 
