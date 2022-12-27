@@ -14,9 +14,9 @@
 
    :::note
 
-   Your node may have automatic updates. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
+   Your node may have automatic updates configured previously. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
 
-   Read [this](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker#step-5-optional-automated-updates-for-node-with-watchtower) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
+   Read [this](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker#step-5-optional-automated-updates-for-node-with-watchtower) manual to learn how to configure automatic node updates using Watchtower (only for nodes started from the Docker image).
 
    :::
 
