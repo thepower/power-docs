@@ -88,12 +88,6 @@ The private key you get with the `node.config` file cannot be restored, if you l
 
 ## Step 3: Start the node
 
-:::warning
-
-The command below is an example. Please, **don't copy** the comments inside the command.
-
-:::
-
 To start the node from Docker, run:
 
 ```bash
@@ -104,7 +98,6 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
-
 -p 1800:1800 \
 -p 1080:1080 \
 -p 1443:1443 \
@@ -121,9 +114,7 @@ The commands
 -p 1443:1443 \
 ```
 
-specify all necessary local ports. 
-In this example ports `api`, `apis`, and `tpic` are used. 
-Specify the port of your chain from `node.config` file.
+specify all necessary local ports. In this example ports `api`, `apis`, and `tpic` are used. Specify the port of your chain from `node.config` file.
 
 :::
 
