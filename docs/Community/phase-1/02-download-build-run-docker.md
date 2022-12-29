@@ -105,15 +105,27 @@ docker run -d \
 --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
 --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
 
-<!--The commands below specify all necessary local ports. 
-In this example ports `api`, `apis`, and `tpic` are used. 
-Specify the port of your chain from `node.config` file.-->
-
 -p 1800:1800 \
 -p 1080:1080 \
 -p 1443:1443 \
 thepowerio/tpnode
 ```
+
+:::tip
+
+The commands
+
+```bash
+-p 1800:1800 \
+-p 1080:1080 \
+-p 1443:1443 \
+```
+
+specify all necessary local ports. 
+In this example ports `api`, `apis`, and `tpic` are used. 
+Specify the port of your chain from `node.config` file.
+
+:::
 
 where:
 
@@ -126,7 +138,7 @@ where:
 | `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                                |
 | `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                  |
 | `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                       |
-| `-p 1800:1800` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                         | These commands specify all necessary local ports. In this examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. |
+| `-p 1800:1800` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                         | These commands specify all necessary local ports. In these examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. |
 | `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
 
 ## Step 4: Get the certificate
