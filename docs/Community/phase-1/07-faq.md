@@ -6,7 +6,7 @@
 
 After the node is launched, you should send the bot a link to it. After that, the bot will check uptime every 10 minutes and give you testnet points.
 
-It will be the last step in the [Rover bot](@thepowerio_bot) flow.
+It will be the last step in the [Rover bot](https://t.me/thepowerio_bot) flow.
 
 ## How to check my ports?
 
