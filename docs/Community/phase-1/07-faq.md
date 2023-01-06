@@ -1,14 +1,12 @@
 # FAQ
 
-
-
 ## Can I change the node link after the launch?
 
 **Yes.**
 
 After the node is launched, you should send the bot a link to it. After that, the bot will check uptime every 10 minutes and give you testnet points.
 
-It will be the last step in the Rover bot flow.
+It will be the last step in the [Rover bot](@thepowerio_bot) flow.
 
 ## How to check my ports?
 
@@ -26,7 +24,7 @@ The Power Node requires four opened ports:
 where
 
 - `1080` — HTTP / API;
-- `1443` — HTTPS / API;
+- `1443` — HTTPS / APIS;
 - `1800` — TPIC;
 - `80` — SSL.
 
