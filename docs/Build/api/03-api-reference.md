@@ -7,11 +7,11 @@
 - `nodeid` — the identifier of the node that has issued the signature. The signature is calculated from public key;
 - `signature` — a signature.
 
-## /api/address/<ADDRESS>/code
+## /api/address/\<\ADDRESS\>\/code
 
-`/api/address/<ADDRESS>/code` allows users to see the smart contract code and storage content. 
+`/api/address/\<\ADDRESS\>\/code` allows users to see the smart contract code and storage content. 
 
-The difference between `/api/address/<ADDRESS>` and `/api/address/<ADDRESS>/code` is that if the smart contract is deployed on an address, `/api/address/<ADDRESS>` will show only the code length and won't show the storage content.
+The difference between `/api/address/\<\ADDRESS\>\` and `/api/address/\<\ADDRESS\>\/code` is that if the smart contract is deployed on an address, `/api/address/\<\ADDRESS\>\` will show only the code length and won't show the storage content.
 
 **Example**
 
@@ -31,9 +31,9 @@ Content-Type: binary/octet-stream
 
 If there is no key or code, error 404 will appear.
 
-## /api/address/<ADDRESS>/state/0x<HEX KEY>
+## /api/address/\<\ADDRESS\>\/state/0x<HEX KEY>
 
-`/api/address/<ADDRESS>/state/0x<HEX KEY>` is an endpoint for showing the data according to the `0x<HEX KEY>`.
+`/api/address/\<\ADDRESS\>\/state/0x<HEX KEY>` is an endpoint for showing the data according to the `0x\<\HEX KEY\>\`.
 
 **Example**
 
