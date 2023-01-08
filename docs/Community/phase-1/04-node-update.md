@@ -62,15 +62,10 @@ To update your node:
     docker run -d \
     --name tpnode \
     --restart unless-stopped \
-    --mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
-    --mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
-    --mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
-    --mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
-    
-    <!--The commands below specify all necessary local ports. 
-    In this example ports `api`, `apis`, and `tpic` are used. 
-    Specify the port of your chain from `node.config` file.-->
-    
+    --mount type=bind,source=/opt/thepower/db,target=/opt/thepower/db \
+    --mount type=bind,source=/opt/thepower/log,target=/opt/thepower/log \
+    --mount type=bind,source=/opt/thepower/node.config,target=/opt/thepower/node.config \
+    --mount type=bind,source=/opt/thepower/genesis.txt,target=/opt/thepower/genesis.txt \
     -p 1800:1800 \
     -p 1080:1080 \
     -p 1443:1443 \
