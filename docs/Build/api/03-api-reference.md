@@ -7,24 +7,171 @@
 - `nodeid` — the identifier of the node that has issued the signature. The signature is calculated from public key;
 - `signature` — a signature.
 
-## /status
+## /api/address/<ADDRESS>/code
 
-| Purpose        | Request type | Response                              |
-|----------------|--------------|---------------------------------------|
-| The IP address | `GET`        | `client (string)` — ip client address |
+`/api/address/<ADDRESS>/code` allows users to see the smart contract code and storage content. 
 
-Example of use:
+The difference between `/api/address/<ADDRESS>` and `/api/address/<ADDRESS>/code` is that if the smart contract is deployed on an address, `/api/address/<ADDRESS>` will show only the code length and won't show the storage content.
 
-```bash
-~ curl http://c103n10.thepower.io:49841/api/status -s |jq
+**Example**
+
+`https://testnet2.thepower.io:45011/api/address/AA100000003355443673/code`
+
+where
+
+- `testnet2.thepower.io` — testnet address;
+- `45011` — port;
+- `AA100000003355443673` — smart contract address.
+
+Response type — binary: 
+
 ```
+Content-Type: binary/octet-stream
+```
+
+If there is no key or code, error 404 will appear.
+
+## /api/address/<ADDRESS>/state/0x<HEX KEY>
+
+`/api/address/<ADDRESS>/state/0x<HEX KEY>` is an endpoint for showing the data according to the `0x<HEX KEY>`.
+
+**Example**
+
+`https://testnet2.thepower.io:45011/api/address/AA100000003355443673/state/0x00`
+
+where
+
+- `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+- `45011` — port. Replace it with your port;
+- `AA100000003355443673` — smart contract address. Replace it with your smart contract address;
+- `0x00` — HEX key. Replace it with your HEX key.
+
+## /api/binblock/{hash}
+
+`/api/binblock/{hash}` is a verifiable block in binary format, where:
+
+- `{hash}` — block hash. Replace it with your hash.
+
+Instead of block hash you can also use:
+
+- `genesis` — defines the first block;
+- `last` — defines the last block.
+
+**Examples**
+
+- `https://testnet2.thepower.io:45011/api/binblock/{hash}`
+
+   where
+
+   - `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+   - `45011` — port. Replace it with your port;
+   - `{hash}` — block hash. Replace it with your block hash.
+
+- `https://testnet2.thepower.io:45011/api/binblock/genesis`
+
+   where
+
+   - `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+   - `45011` — port. Replace it with your port;
+
+- `https://testnet2.thepower.io:45011/api/binblock/genesis`
+
+   where
+
+    - `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+    - `45011` — port. Replace it with your port;
+
+## /api/blockhash/{height}
+
+With `/api/blockhash/{height}` you'll get  a `.json` file with the hash of the block with the specified `{height}`.
+
+**Example**
+
+`https://testnet2.thepower.io:45011/api/blockhash/17`
+
+where
+
+- `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+- `45011` — port. Replace it with your port;
+- `17` — height.
+
+## api/nodes/{chain}
+
+`api/nodes/{chain}` will show you the nodes of the specified `{chain}`.
+
+**Example**
+
+`http://c1025n09.thepower.io:1080/api/nodes/1029`
+
+where
+
+- `testnet2.thepower.io` — testnet address. Replace it with your testnet address;
+- `45011` — port. Replace it with your port;
+- `1029` — chain number. Replace it with your chain number.
+
+:::note
+
+The response data format for this endpoint will be changed to signed soon.
+
+:::
+
+## /api/node/chainstate
+
+`/api/node/chainstate` shows the chain state (how many nodes contain a specific block). The new version shows, which nodes contain a specific block. Response format — `*.json`
+
+**Example**
 
 ```json
 {
-  "client": "88.21.110.20",
-  "ok": true
+"chainstate": [
+[
+6,
+"C6F434C0239CD7F1EA985CE25B908C0E9BCDB7FBF6C0BDB3BA347F5352AE9E8E",
+"247F30E647FA5A02572FDD303C752D2B990EE4F59C21ACD38DEA911CF7F6CE36",
+171083,
+7,
+[
+"c1031.monikazylastia",
+"c1031.xzackcrew",
+"c1031.andi",
+"c1031.star5",
+"c1031.grezisuzaku",
+"c1031.amiraxuana",
+"c1031.rizky"
+]
+],
+[
+0,
+"DAD1EDC28C8BF401E2FEF6524D5081567854265335F0E5A16B53CB8FCB490DD1",
+"0000000000000000",
+false,
+1,
+["c1031.cryptinf"]
+]
+],
+"result": "ok",
+"ok": true
 }
 ```
+
+where
+
+- `chainstate` field contains the following arrays:
+
+   - height;
+   - block hash;
+   - parent block hash;
+   - temporary block number or `false` if the block is permanent;
+   - a number of nodes with such block;
+   - nodes list.
+
+## /api/address/0x{HEX}/verify
+
+With `/api/address/0x{HEX}/verify` you can verify the smart contract address.
+
+## /api/tx/status/{txid}
+
+`/api/tx/status/{txid}` is the transaction status. It appears right after the transaction has been included into the block and 
 
 ## /node/status
 
@@ -32,7 +179,7 @@ Example of use:
 |--------------------------------------|--------------|------------------------------------------------------------|
 | Current status of the addressed node | `GET`        | status (object): An object with a current node work report |
 
-Fields of the object status:
+Fields of the `status` object:
 
 - `blockchain (Object)`;
 - `nodeid (String)` — node identifier;
@@ -203,6 +350,35 @@ Example of use:
   "address": "0x800140006700002D",
   "ok": true,
   "txtaddress": "AA100000172805329312"
+}
+```
+
+If the smart contract is used, you will also see the VM it is working on, as well as the code length:
+
+```json
+{
+"info": {
+"amount": {
+"SK": 989650000
+},
+"code": 25,
+"contract": [
+"evm",
+"EVM"
+],
+"lastblk": "D616BEBFA5E06ADBFFD888DFC8D1816E518FC72BD6C06A66E59747824CAF8517",
+"preblk": "3F45AC21E44D36E369C329206C697A764F7F93B0D11337C34149FD2370A439C8",
+"pubkey": "03E72DB57E9086FAF3862E581D0810F496662A0880E6283E3B5C4B97BCD5464E29",
+"seq": 1,
+"state": 1,
+"t": 1671974412091,
+"usk": 1,
+"vm": "evm"
+},
+"result": "ok",
+"address": "0x8001400002000004",
+"ok": true,
+"txtaddress": "AA100000003355443673"
 }
 ```
 
