@@ -109,6 +109,10 @@ where
 - `45011` — port. Replace it with your port;
 - `1029` — chain number. Replace it with your chain number.
 
+```json
+{"chain_nodes":{"2MHg8z8cd93FyHdchXLSzaioXKhC":{"host":["http://c1029n1.thepower.io:1080","https://c1029n1.thepower.io:1443"],"ip":["http://185.193.17.204:1080","https://c1029n1.thepower.io:1443"]},"2ccmDKSrocgh5aGUUfY2DRLYSZFT":{"host":["http://c1029n6.thepower.io:1080","https://c1029n6.thepower.io:1443"],"ip":["http://135.181.248.48:1080","https://c1029n6.thepower.io:1443"]},"2fgPLTgnqx4geWaSBVApAdbDzqvY":{"host":["https://c1029n8.thepower.io:1443"],"ip":["https://c1029n8.thepower.io:1443"]},"36Lt8n1N85iid2cyRpafcyTtFaBD":{"host":["http://c1029n5.thepower.io:1080","https://c1029n5.thepower.io:1443"],"ip":["http://149.102.153.49:1080","https://c1029n5.thepower.io:1443"]},"Q6LpS7eMWyXyzJyJ5Qt7sosSZ1e":{"host":["http://c1029n10.thepower.io:1080","https://c1029n10.thepower.io:1443"],"ip":["http://65.109.133.153:1080","https://c1029n10.thepower.io:1443"]},"kRimF7wjfLwdKY7nRPbkbHH13np":{"host":["http://c1029n9.thepower.io:1080","https://c1029n9.thepower.io:1443"],"ip":["http://167.86.96.173:1080","https://c1029n9.thepower.io:1443"]},"n6Sia6Csp16oX1UoGUX1ffJNi48":{"host":["http://c1029n7.thepower.io:1080","https://c1029n7.thepower.io:1443"],"ip":["http://116.203.146.71:1080","https://c1029n7.thepower.io:1443"]}},"ok":true}
+```
+
 :::note
 
 The response data format for this endpoint will be changed to signed soon.
@@ -171,7 +175,20 @@ With `/api/address/0x{HEX}/verify` you can verify the smart contract address.
 
 ## /api/tx/status/{txid}
 
-`/api/tx/status/{txid}` is the transaction status. It appears right after the transaction has been included into the block and 
+`/api/tx/status/{txid}` is the transaction status. It appears right after the transaction has been included into the block and is present there only for a few minutes.
+
+## /api/logs
+
+`/api/logs/{blkid}` and `/api/logs_height/{blk_height}` contain smart contract logs.
+
+where
+
+- `{blkid}` — block ID;
+- `{blk_height}` — block height.
+
+## /api/tx/new
+
+`/api/tx/new` is the place, where the transactions are sent to. Request type — `POST`.
 
 ## /node/status
 
