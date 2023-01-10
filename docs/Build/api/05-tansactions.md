@@ -66,10 +66,32 @@ For the best scaling, transaction type number is unique for each type of transac
     "17": ["register", 2],
     "18": ["deploy", 2],
     "19": ["patch", 2],
-    "20": ["block", 2]
+    "20": ["block", 2],
+    "22": ["lstore", 2],
+    "23": ["notify", 2],
+    "24": ["chkey", 2]
+
   }
 }
 ```
+
+where
+
+- "16": ["generic", 2] — a simple transaction between accounts. It is necessary for native tokens and information transmission;
+- "17": ["register", 2] — account registration transaction;
+- "18": ["deploy", 2] — smart contract deploy transaction;
+- "19": ["patch", 2] — chain settings appliance transaction;
+- "20": ["block", 2] — service-type transaction for cross-chain transactions packing;
+
+   :::note
+
+   This transaction is mostly internal.
+   
+   :::
+
+- "22": ["lstore", 2] — LStore data update transaction;
+- "23": ["notify", 2] — transaction announcing interactive actions outside the blockchain;
+- "24": ["chkey", 2] — account key update transaction.
 
 The value of the `sig` key is MessagePack array (types `0x90-0x9f` or `0xdc-0xdc`). Each array item contains signature for one key. Signature format (`BSig`) is described below. A transaction might have multiple signatures.
 
