@@ -685,6 +685,29 @@ where
 
 `/api/tx/status/{txid}` is the transaction status. It appears right after the transaction has been included into the block and is present there only for a few minutes.
 
+**Example**
+
+```bash
+curl https://thepower.cloudchitect.com:1443/api/tx/status/3VV9YvPDKr3Q428Yd-c1026.luknode | jq
+```
+
+Response:
+
+```bash
+~ % curl https://thepower.cloudchitect.com:1443/api/tx/status/3VV9YvPDKr3Q428Yd-c1026.luknode | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   115  100   115    0     0    192      0 --:--:-- --:--:-- --:--:--   194
+{
+  "res": {
+    "block": "F9EBCF5740DBB968790C74685EBEFE0EA350BBC07F5EEB7DBAC6BAE396E6C295",
+    "ok": true,
+    "res": "ok"
+  },
+  "ok": true
+}
+```
+
 ## /api/logs
 
 `/api/logs/{blkid}` and `/api/logs_height/{blk_height}` contain smart contract logs.
@@ -1273,9 +1296,9 @@ Example of use:
 
 ## /settings
 
-| Purpose                  | Request type | Input parameters | Response                                                                                                                                                   |
-|--------------------------|--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Current chain parameters | `GET`        | -                | You can find information about the fields structure and purpose [here](../../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md#genesistxt-example) |
+| Purpose                  | Request type | Input parameters | Response                                                                                                                                                                    |
+|--------------------------|--------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Current chain parameters | `GET`        | -                | You can find information about the fields structure and purpose [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration#genesistxt-example) |
 
 ```bash
 % curl http://c103n10.thepower.io:49841/api/settings -s | jq
