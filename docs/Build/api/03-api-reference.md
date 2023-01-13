@@ -721,6 +721,52 @@ where
 
 `/api/tx/new` is the place, where the transactions are sent to. Request type — `POST`.
 
+You can code the transaction either in binary, or in base64 format.
+
+**Example**
+
+Let's generate a transaction and save it to a file using `tp` CLI by running the following command:
+
+```bash
+tp -k tpcli1026.key --construct tx1.json --sign --save 1.bin
+```
+
+After the transaction is generated, you have two options to send it:
+
+1. **Binary.**
+
+   To send a binary transaction, run:
+
+   ```bash
+   curl -v https://power.idekubagus.com:1443/api/tx/new.bin -T 1.bin -X POST
+   ```
+
+   In this case you'll get the following answer:
+
+   ```bash
+   {"result":"ok","txid":"3VV9fSNhvGzZjA1hD-c1026.idekubagus","ok":true}
+   ```
+
+2. **Base64.**
+
+   To send a base64 transaction, run:
+
+   ```bash
+   curl -v https://power.idekubagus.com:1443/api/tx/new -d '{"tx":"g6Rib2R5xF2HoWWBxANtc2fEEVByZXZlZCBtZWR2ZWQgOi0poWbECIABQAQCAAACoWsQoXCSkwCiU0vOAJiWgJMBolNLzgCYloChcwKhdM8AAAGFqtVFUKJ0b8QIgAFABAEAAAOjc2lnkcRt/0gwRgIhAKLbV4J778hNgFFFmOvczOxRf7MwMUKNOFToke5PArtAAiEAhMH4/M8sRs7BaU2WNPa7H9yNIdl/bSCi5ZIceta8UOkCIQLJy/4ulv8ndhDNB2svQqTPlyB1UUxppEaaFedmMC6r7KN2ZXIC"}'
+   ```
+
+   In this case you'll get the following answer:
+
+   ```bash
+   {"result":"ok","txid":"3VV9ihNTDKBkgE1om-c1026.idekubagus","ok":true}
+   ```
+
+   :::warning
+
+   This transaction is made for illustration ONLY and will not work in real life.
+
+   :::
+
 ## /node/status
 
 | Purpose                              | Request type | Response                                                   |
