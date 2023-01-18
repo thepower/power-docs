@@ -130,7 +130,7 @@ First, you need to prepare your project. To do this, follow the steps:
 2. Start up this code in terminal using the following command:
 
    ```bash
-   >node index.js
+   node index.js
    ```
    
    The information about the registered account will be displayed in the terminal (console), and the file `example.pem` will appear in the `dcloud_example` directory.
@@ -142,7 +142,7 @@ Follow the steps below to upload the account data and then display the account s
 1. Delete or comment the current `index.js` file content.
 2. Copy the following code into the file:
 
-   ```Javascript
+   ```javascript
    import { NetworkApi, WalletApi } from '@thepowereco/tssdk';
    import {readFileSync} from 'fs';
    //load account data from file
@@ -174,13 +174,13 @@ Follow the steps below to upload the account data and then display the account s
 
 The part of `NetworkApi` library can be used differently in the code above. Let's check out the usages of this library part:
 
-1. ```Javascript
+1. ```javascript
    const importNetworkApi = new NetworkApi(1025);
    ```
    
    This constant creates an instance of `NetworkApi` and uses 1025 chain parameter (chain 1025 is one of the first chains in the testnet).
 
-   ```Javascript
+   ```javascript
    const importWalletApi = new WalletApi(importNetworkApi);
    ```
    
@@ -188,31 +188,31 @@ The part of `NetworkApi` library can be used differently in the code above. Let'
 
    Here you don't need to think of what number of chain to use. The most important is that it is valid. The point is that `importWalletApi` is used only for processing the local file that contains the account data. That is why, there is no need in full network library initialization.
 
-2. ```Javascript
+2. ```javascript
    const letNetworkApi = new NetworkApi(1025);
    ```
 
    This constant creates an instance of `NetworkApi` and uses 1025 chain parameter (chain 1025 is one of the first chains in the testnet).
 
-   ```Javascript
+   ```javascript
    await letNetworkApi.bootstrap();
    ```
    
    This method initializes the network library by uploading information about the nodes of chain 1025.
 
-   ```Javascript
+   ```javascript
    let subChain = await letNetworkApi.getAddressChain(importedWallet.address);
    ```
    
    This method invokes chain 1025 API and requests to search the chain, to which the account imported from file belongs.
 
-3. ```Javascript
+3. ```javascript
    const networkApi = new NetworkApi(subChain.chain);
    ```
    
    This constant creates an instance of `NetworkApi` with the chain parameter that conforms the account, about which the data will be received in the future.
 
-   ```Javascript
+   ```javascript
    await networkApi.bootstrap();
    ```
    
