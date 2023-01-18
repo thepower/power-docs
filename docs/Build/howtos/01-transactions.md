@@ -167,7 +167,7 @@ Follow the steps below to upload the account data and then display the account s
 3. Run this code in the terminal by running the following command:
 
    ```bash
-   >node index.js
+   node index.js
    ```
 
    The account information loaded from the file, and then from the blockchain will be displayed in the terminal subsequently.
