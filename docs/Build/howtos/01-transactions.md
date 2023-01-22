@@ -1,4 +1,4 @@
-# Transactions
+# Transactions: the guide
 
 ## Table of contents
 
@@ -8,8 +8,10 @@
 - [Introduction](#introduction)
 - [Prerequisisites](#prerequisisites)
 - [Preparing the project](#preparing-the-project)
-- [Write the code that will register an account](#write-the-code-that-will-register-an-account)
-- [Account data uploading and displaying account state](#account-data-uploading-and-displaying-account-state)
+- [Working with the accounts](#working-with-the-accounts)
+  - [Write the code that will register an account](#write-the-code-that-will-register-an-account)
+  - [Account data uploading and displaying account state](#account-data-uploading-and-displaying-account-state)
+  - [Sending a transaction to another account](#sending-a-transaction-to-another-account)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -80,7 +82,7 @@ First, you need to prepare your project. To do this, follow the steps:
    "type": "module"
    ```
    
-   The file will then look as folllows:
+   The file will then look as follows:
 
    ```json
    {
@@ -97,13 +99,21 @@ First, you need to prepare your project. To do this, follow the steps:
    }
    ```
 
+   :::info
+
+   Don't forget to add a comma after `"license": "ISC"` when copying `"type": "module"`.
+
+   :::
+
 5. Add `tssdk` library to the project by running the following command:
 
    ```bash
    npm install @thepowereco/tssdk
    ```
 
-## Write the code that will register an account
+## Working with the accounts
+
+### Write the code that will register an account
 
 1. Create an `index.js` file in the `dcloud_example` directory in any editor you use and copy the following code there:
 
@@ -133,9 +143,19 @@ First, you need to prepare your project. To do this, follow the steps:
    node index.js
    ```
    
-   The information about the registered account will be displayed in the terminal (console), and the file `example.pem` will appear in the `dcloud_example` directory.
+   The information about the registered account will be displayed in the terminal (console), and the file `example.pem` will appear in the `dcloud_example` directory:
 
-## Account data uploading and displaying account state
+   ```bash
+   dcloud_example % node index.js
+   register data {
+   chain: 1033,
+   wif: 'KywHx4qhG49JEms15jmgXDGMq7xKkmhQSpiZihWi5bbvL8QvjyUD',
+   address: 'AA100001733086414002',
+   seed: 'resource butter table ivory try churn banner toilet depart camera peace decide'
+   }
+   ```
+
+### Account data uploading and displaying account state
 
 Follow the steps below to upload the account data and then display the account state:
 
@@ -170,7 +190,20 @@ Follow the steps below to upload the account data and then display the account s
    node index.js
    ```
 
-   The account information loaded from the file, and then from the blockchain will be displayed in the terminal subsequently.
+   The account information loaded from the file, and then from the blockchain will be displayed in the terminal subsequently:
+
+   ```bash
+   dcloud_example % node index.js
+   import data {
+   address: 'AA100001733086414002',
+   wif: 'KywHx4qhG49JEms15jmgXDGMq7xKkmhQSpiZihWi5bbvL8QvjyUD'
+   }
+   accountData {
+   amount: {},
+   lastblk: 'CF298CFA64D7CD1FB420034E19BE2C1AD1BAE59610AEA51F3061E0ADEFAFC8B0',
+   pubkey: '0207FE4A91CE18E398B8BF7DF7B3BF13D99712C1DB8F3FA856E43C9839452424E1'
+   }
+   ```
 
 The part of `NetworkApi` library can be used differently in the code above. Let's check out the usages of this library part:
 
@@ -217,3 +250,34 @@ The part of `NetworkApi` library can be used differently in the code above. Let'
    ```
    
    Initialize the chain described above and receive data about the nodes it contains.
+
+### Sending a transaction to another account
+
+To send a transaction within the system you need to: 
+
+1. Pay commission. That is why, you need to have sufficient amount of tokens to send the transaction. The code `console.log('accountData',accountData)` from the example in the code snippet above outputs the account data. The `amount` field will also display the tokens assigned to the account.
+
+2. Add the following code to the code example specified in paragraph 2 of [the section above](#account-data-uploading-and-displaying-account-state):
+
+   ```javascript
+   //send 10 tokens to another account
+   let to='AA100001733086413603';
+   let amount=10;
+   let comment='test';
+   let res= await walletApi.makeNewTx (importedWallet.wif,importedWallet.address,to,'SK',amount,comment,new Date().getTime());
+   console.log(res);
+   ```
+
+   :::warning
+   
+   The account address
+
+   ```javascript
+   let to='AA100001733086413603';
+   ```
+
+   is an example address. Please, replace it with your actual destination address.
+
+   :::
+
+Check out the next document to learn how to work with the transactions.
