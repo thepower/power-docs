@@ -160,7 +160,7 @@ accountData {
 { txId: '3VWq91nneRZR5uXcR-c1033.gemsfinder', res: 'ok' }
 ```
 
-:::attention
+:::caution
 
 The contract must be deployed on an address, specified by the first parameter of the `composeDeployTX` function. In the case described in these docs, the contract is now at the following address:
 
@@ -169,3 +169,4 @@ The contract must be deployed on an address, specified by the first parameter of
    ```
 
 :::
+
