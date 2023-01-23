@@ -121,7 +121,7 @@ First, you need to prepare your project. To do this, follow the steps:
    import { NetworkApi, WalletApi } from '@thepowereco/tssdk';
    import {writeFileSync} from 'fs';
 
-   //register in cahin number 1033
+   //register in chain number 1033
    let acc = await WalletApi.registerCertainChain(1033);
    console.log('register data',acc);
 
