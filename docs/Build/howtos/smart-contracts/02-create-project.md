@@ -55,13 +55,13 @@ First of all, you need to create and prepare your smart contract to work with it
 
     1. ```solidity
          solcjs --bin greeter.sol
-         ```
+       ```
 
        As a result you will get a `greeter_sol_Greeter.bin` file.
 
     2. ```solidity
          solcjs --abi greeter.sol
-         ```
+       ```
 
        As a result you will get a `greeter_sol_Greeter.abi` file.
 
