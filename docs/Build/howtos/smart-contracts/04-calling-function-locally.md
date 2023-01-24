@@ -2,7 +2,7 @@
 
 You can call EVM smart contract function locally to get the data from contract. To do this:
 
-1. Revert the `index.js` file to its initial state, described [here](../transactions/01-intro.md#account-data-uploading-and-displaying-account-state).
+1. Revert the `index.js` file to its initial state, described [here](../transactions/working-with-accounts/02-upload-account-data-display-state.md).
 2. Replace the first line in the file:
 
    ```javascript

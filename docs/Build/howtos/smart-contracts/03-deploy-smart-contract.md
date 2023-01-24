@@ -4,7 +4,7 @@ EVM smart contract deployment also requires tokens. Moreover, you have to pay mo
 
 To deploy an EVM smart contract:
 
-1. Revert the `index.js` file to its initial state, described [here](../transactions/01-intro.md#account-data-uploading-and-displaying-account-state).
+1. Revert the `index.js` file to its initial state, described [here](../transactions/working-with-accounts/02-upload-account-data-display-state.md).
 2. Replace the first line in the file:
 
    ```javascript
