@@ -1,5 +1,14 @@
 # Phase I Testneter Guide
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of contents**
+
+- [Install Erlang on Ubuntu 20 Tea Ceremony](#install-erlang-on-ubuntu-20-tea-ceremony)
+- [Install Deinfra Tea Ceremony](#install-deinfra-tea-ceremony)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 :::warning
 
 This option is used for Ubuntu 20.04 and was originally proposed by the Community. This option was not either tested or supported. The Power Ecosystem is not responsible for the results of using this option.

@@ -1,27 +1,20 @@
+# Starting the node using `docker-compose`
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
-- [Starting the node using `docker-compose`](#starting-the-node-using-docker-compose)
-  - [Table of contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Setting up the environment](#setting-up-the-environment)
-  - [Starting the node](#starting-the-node)
-  - [Stopping the node](#stopping-the-node)
+   - [Table of contents](#table-of-contents)
+   - [Introduction](#introduction)
+   - [Setting up the environment](#setting-up-the-environment)
+   - [Starting the node](#starting-the-node)
+   - [Stopping the node](#stopping-the-node)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Starting the node using `docker-compose`
-
-
-## Table of contents
-
-<!--START DOCTOC-->
-<!--END DOCTOC-->
-
 ## Introduction
 
-You can also start your node using `docker-compose`, which is even easier than starting your node using conventional Docker commands described [here](./05-startingTpNode_docker.md).
+You can also start your node using `docker-compose`, which is even easier than starting your node using conventional Docker commands described [here](./02-download-build-run-docker.md).
 
 ## Setting up the environment
 

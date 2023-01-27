@@ -1,5 +1,20 @@
 # FAQ
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of contents**
+
+- [Can I change the node link after the launch?](#can-i-change-the-node-link-after-the-launch)
+- [How to check my ports?](#how-to-check-my-ports)
+- [How to open my ports](#how-to-open-my-ports)
+- [How to solve problem with TPIC port?](#how-to-solve-problem-with-tpic-port)
+- [How to solve the problem if the APIS interface is not available?](#how-to-solve-the-problem-if-the-apis-interface-is-not-available)
+- [How to install SSL?](#how-to-install-ssl)
+- [How to find my hostname?](#how-to-find-my-hostname)
+- [Is it possible to run the node on another server after the Tea Ceremony?](#is-it-possible-to-run-the-node-on-another-server-after-the-tea-ceremony)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Can I change the node link after the launch?
 
 **Yes.**

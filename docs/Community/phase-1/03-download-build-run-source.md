@@ -1,6 +1,7 @@
 # Downloading, building, and running the node from source code
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
 
 - [Introduction](#introduction)
 - [Step 1: Install Erlang](#step-1-install-erlang)

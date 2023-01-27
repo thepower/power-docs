@@ -1,5 +1,15 @@
 # Node update
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of contents**
+
+- [Before the update](#before-the-update)
+- [Updating your node built from Docker image](#updating-your-node-built-from-docker-image)
+- [Updating your node built from sources](#updating-your-node-built-from-sources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Before the update
 
 1. Check out the Power Telegram chat, the Power news, or information about the problems with the node in [Zabbix](https://zabbix.thepower.io/zabbix.php?action=dashboard.view#). There you will find information about the necessity of update.
