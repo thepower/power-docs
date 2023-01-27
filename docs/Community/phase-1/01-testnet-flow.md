@@ -16,6 +16,7 @@
   - [Step 5: Start the Tea Ceremony client](#step-5-start-the-tea-ceremony-client)
   - [Step 6: Download the node](#step-6-download-the-node)
     - [Download, build, and run the node using Docker](#download-build-and-run-the-node-using-docker)
+    - [Download, build, and run the node using `docker-compose`](#download-build-and-run-the-node-using-docker-compose)
     - [Download, build, and run the node using the source code](#download-build-and-run-the-node-using-the-source-code)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -185,6 +186,11 @@ Download ThePower Node. Here you have two options:
 #### Download, build, and run the node using Docker
 
 Use [this manual](./02-download-build-run-docker.md) to download, build, and run the node using Docker. It is a fast and easy way to build and run the Power Node. Recommended to the most of testneters.
+
+#### Download, build, and run the node using `docker-compose`
+
+Use [this manual](./04-download-build-run-compose.md) to download, build, and run the node using Docker. It is even easier than running a node using Docker image. Recommended to the new testneters.
+
 
 #### Download, build, and run the node using the source code
 
