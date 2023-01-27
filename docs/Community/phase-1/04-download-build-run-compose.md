@@ -41,7 +41,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
     - SSL keys,
     - `db` and `log` folders
 
-   are present and stored in `/opt/thepower/` like described in [Docker](./05-startingTpNode_docker.md) and [source](./06-startingTpNode_source.md) manuals.
+   are present and stored in `/opt/thepower/` like described in [Docker](./02-startingTpNode_docker.md) and [source](./03-startingTpNode_source.md) manuals.
 
    :::
 
