@@ -4,7 +4,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-   - [Table of contents](#table-of-contents)
    - [Introduction](#introduction)
    - [Setting up the environment](#setting-up-the-environment)
    - [Starting the node](#starting-the-node)
