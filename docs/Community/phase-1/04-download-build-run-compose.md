@@ -45,7 +45,9 @@ You need to have `docker-compose` package installed on your machine. If you don'
    The following tree describes the directories and files in them:
 
    ![tree](./resources/compose_tree.png)
-   
+
+   `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
+
    :::
 
 3. Go to `/opt/thepower`:

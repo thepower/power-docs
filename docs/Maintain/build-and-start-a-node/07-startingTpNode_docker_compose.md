@@ -40,11 +40,13 @@ You need to have `docker-compose` package installed on your machine. If you don'
    - SSL keys,
    - `db` and `log` directories
 
-   are present and stored in `/opt/thepower/` like described in [Docker](./02-download-build-run-docker.md) and [source](./03-download-build-run-source.md) manuals.
+   are present and stored in `/opt/thepower/` like described in [Docker](./05-startingTpNode_docker.md) and [source](./06-startingTpNode_source.md) manuals.
 
    The following tree describes the directories and files in them:
 
-   ![tree](./resources/compose_tree.png)
+   ![tree](../../Community/phase-1/resources/compose_tree.png)
+
+   `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
    :::
 
