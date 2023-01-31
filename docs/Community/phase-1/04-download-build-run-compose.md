@@ -58,7 +58,7 @@ cd /opt/thepower
 
 4. Create `docker-compose.yml` file with the following code:
 
-```yaml
+```bash title="docker-compose.yml"
 version: "3.3"
 
 services:
