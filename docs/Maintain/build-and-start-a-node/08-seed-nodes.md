@@ -41,19 +41,19 @@ To use the Seed node:
    1. Get the power cli by running the following command:
 
       ```bash
-      wget https://tea.thepower.io/tp
+      sudo wget https://tea.thepower.io/tp -O /usr/local/bin/tp
       ```
       
    2. Change the `tp` file mode to executable by running the following command:
 
       ```bash
-      chmod +x tp
+      sudo chmod a+x /usr/local/bin/tp
       ```
       
 5. Generate private key by running the following command:
 
    ```bash
-   ./tp --genkey --ed25519
+   tp --genkey --ed25519
    ```
    
    As a result of this action, you will get the `tpcli.key` file. This file contains your private and public keys. Here is an example of this file. **DON'T use the keys specified in this example**:
