@@ -33,14 +33,18 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
    :::info Attention
 
-   By implementing this way of starting the node we assume that 
+   By implementing this way of starting the node we assume that
 
    - `node.config`,
    - `genesis.txt`,
    - SSL keys,
-   - `db` and `log` folders
+   - `db` and `log` directories
 
-   are present and stored in `/opt/thepower/` like described in [Docker](./05-startingTpNode_docker.md) and [source](./06-startingTpNode_source.md) manuals.
+   are present and stored in `/opt/thepower/` like described in [Docker](./02-download-build-run-docker.md) and [source](./03-download-build-run-source.md) manuals.
+
+   The following tree describes the directories and files in them:
+
+   ![tree](./resources/compose_tree.png)
 
    :::
 
