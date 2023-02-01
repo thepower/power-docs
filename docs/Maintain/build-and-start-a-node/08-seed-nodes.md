@@ -1,5 +1,15 @@
 # Seed node: theory and starting
 
+**Table of contents**
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Seed nodes theory](#seed-nodes-theory)
+- [How to use the Seed node?](#how-to-use-the-seed-node)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
@@ -19,10 +29,11 @@ As determined above, Seed nodes store and spread the copy of blockchain data, bu
 To use the Seed node:
 
 1. Check the prerequisites [here](./01-prerequisites.md).
-2. Download the node. Here you have two options:
+2. Download the node. Here you have three options:
 
-   1. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
-   2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
+   1. 
+   2. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
+   3. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
 3. Install Erlang (this step is applicable for Docker installation **ONLY**):
 
@@ -74,7 +85,6 @@ To use the Seed node:
 
 6. Rename the file `tpcli.key` to `node.config`.
 
-
    :::caution
 
    This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
@@ -105,9 +115,10 @@ To use the Seed node:
       {rpcport, 1080}.
       ```
       
-      :::warning
+      :::caution Note
 
       Use [this](./02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
+
       :::
 
       :::caution
@@ -116,13 +127,13 @@ To use the Seed node:
 
       - `privkey` with your private key; 
       - `hostname` with your hostname;
-      - `upstream`. It is obtained from The Power Ecosystem administrators.
+      - `upstream`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
 
       :::
-   
 
 8. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
-   1. Use [this guide](../../Community/phase-1/02-download-build-run-docker.md) to build and start the node from Docker image.
-   2. Use [this guide](../../Community/phase-1/03-download-build-run-source.md) to build and start the node from sources.
+   1. Use [this guide](../../Community/phase-2/02-download-build-run-compose.md) to build and start the node using `docker-compose` (**recommended**).
+   2. Use [this guide](../../Community/phase-2/03-download-build-run-docker.md) to build and start the node from Docker image.
+   3. Use [this guide](../../Community/phase-2/04-download-build-run-source.md) to build and start the node from sources (for advanced users **ONLY**).
 

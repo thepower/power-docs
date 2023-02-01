@@ -40,8 +40,9 @@ Testnet allows you to:
 
 Before using the public testnet, you need to build and start the node: 
 
-- from [source code](build-and-start-a-node/06-startingTpNode_source.md), or 
-- from [Docker image](build-and-start-a-node/05-startingTpNode_docker.md).
+- from [source code](build-and-start-a-node/06-startingTpNode_source.md) (for advanced users only), 
+- from [Docker image](build-and-start-a-node/05-startingTpNode_docker.md), or
+- using [`docker-compose`](build-and-start-a-node/07-startingTpNode_docker_compose.md) (recommended).
 
 Use our [guide](02-testnet-start.md) to start your public testnet.
 
