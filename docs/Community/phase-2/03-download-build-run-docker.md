@@ -344,7 +344,7 @@ If something goes wrong, go to the `log` folder, and read the logs. If there are
          
 6. You see the following error:
 
-   ![erl_err](./resources/erl_error.jpeg)
+   ![erl_err](../phase-1/resources/erl_error.jpeg)
 
    **Reason**
 
