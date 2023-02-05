@@ -21,80 +21,81 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
 1. `root` user:
 
-   ```bash
-   apt-get -y install docker-compose
-   ```
+```bash
+apt-get -y install docker-compose
+```
 
 2. Normal user:
 
-   ```bash
-   sudo apt-get -y install docker-compose
-   ```
+```bash
+sudo apt-get -y install docker-compose
+```
 
-   :::info Attention
+:::info Attention
 
-   By implementing this way of starting the node we assume that
+By implementing this way of starting the node we assume that
 
-   - `node.config`,
-   - `genesis.txt`,
-   - SSL keys,
-   - `db` and `log` directories
+- `node.config`,
+- `genesis.txt`,
+- SSL keys,
+- `db` and `log` directories
 
-   are present and stored in `/opt/thepower/` like described in [Docker](./05-startingTpNode_docker.md) and [source](./06-startingTpNode_source.md) manuals.
+are present and stored in `/opt/thepower/` like described in [Docker](./05-startingTpNode_docker.md) and [source](./06-startingTpNode_source.md) manuals.
 
-   The following tree describes the directories and files in them:
+The following tree describes the directories and files in them:
 
-   ![tree](../../Community/phase-1/resources/compose_tree.png)
+![tree](../../Community/phase-1/resources/compose_tree.png)
 
-   `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
+`hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
-   :::
+:::
 
 3. Go to `/opt/thepower`:
 
-   ```bash
-   cd /opt/thepower
-   ```
+```bash
+cd /opt/thepower
+```
 
 4. Create `docker-compose.yml` file with the following code:
 
-   ```text
-   version: "3.3"
+```yaml title="docker-compose.yml"
+version: "3.3"
 
-   services:
+services:
 
-   tpnode:
-   restart: unless-stopped
-   container_name: tpnode
-   image: thepowerio/tpnode:latest
-   volumes:
-   - type: bind
-     source: /opt/thepower/node.config
-     target: /opt/thepower/node.config
-     read_only: true
-   - type: bind
-     source: /opt/thepower/genesis.txt
-     target: /opt/thepower/genesis.txt
-     read_only: true
-   - type: bind
-     source: /opt/thepower/db
-     target: /opt/thepower/db
-   - type: bind
-     source: /opt/thepower/log
-     target: /opt/thepower/log
-     ports:
-   - 1080:1080
-   - 1443:1443
-   - 1800:1800
+  tpnode:
+    restart: unless-stopped
+    container_name: tpnode
+    image: thepowerio/tpnode
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    network_mode: 'host'
+    volumes:
+      - type: bind
+        source: /opt/thepower/node.config
+        target: /opt/thepower/node.config
+        read_only: true
+      - type: bind
+        source: /opt/thepower/genesis.txt
+        target: /opt/thepower/genesis.txt
+        read_only: true
+      - type: bind
+        source: /opt/thepower/db
+        target: /opt/thepower/db
+      - type: bind
+        source: /opt/thepower/log
+        target: /opt/thepower/log
 
-   watchtower:
-   restart: unless-stopped
-   container_name: watchtower
-   image: containrrr/watchtower
-   volumes:
-   - /var/run/docker.sock:/var/run/docker.sock
-   command: --interval 3600 --cleanup
-   ```
+  watchtower:
+    restart: unless-stopped
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 3600 --cleanup
+```
 
    :::tip Note
 
