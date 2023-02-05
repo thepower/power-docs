@@ -36,15 +36,14 @@ You need to have `docker-compose` package installed on your machine. If you don'
    By implementing this way of starting the node we assume that
 
    - `node.config`,
-   - `genesis.txt`,
-   - SSL keys,
-   - `db` and `log` directories
+   - `db` and `log` directories,
+   - SSL keys
 
    are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) and [source](./04-download-build-run-source.md) manuals.
 
    The following tree describes the directories and files in them:
 
-   ![tree](../phase-1/resources/compose_tree.png)
+   ![tree](../phase-2/resources/seed_compose_tree.png)
 
    `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
@@ -105,26 +104,26 @@ To start the node:
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 
-   ```bash
-   cd /opt/thepower
-   ```
+```bash
+cd /opt/thepower
+```
 
 2. Run the following command:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
 ## Stopping the node
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 
-   ```bash
-   cd /opt/thepower
-   ```
+```bash
+cd /opt/thepower
+```
 
 2. Run the following command:
 
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
