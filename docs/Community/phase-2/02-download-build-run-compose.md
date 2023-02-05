@@ -58,43 +58,40 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
 4. Create `docker-compose.yml` file with the following code:
 
-   ```yaml
-   version: "3.3"
-   
-   services:
-   
-     tpnode:
-       restart: unless-stopped
-       container_name: tpnode
-       image: thepowerio/tpnode
-       volumes:
-         - type: bind
-           source: /opt/thepower/node.config
-           target: /opt/thepower/node.config
-           read_only: true
-         - type: bind
-           source: /opt/thepower/genesis.txt
-           target: /opt/thepower/genesis.txt
-           read_only: true
-         - type: bind
-           source: /opt/thepower/db
-           target: /opt/thepower/db
-         - type: bind
-           source: /opt/thepower/log
-           target: /opt/thepower/log
-       ports:
-         - 1080:1080
-         - 1443:1443
-         - 1800:1800
-   
-     watchtower:
-       restart: unless-stopped
-       container_name: watchtower
-       image: containrrr/watchtower
-       volumes:
-         - /var/run/docker.sock:/var/run/docker.sock
-       command: --interval 3600 --cleanup
-   ```
+```yaml title="docker-compose.yml"
+version: "3.3"
+
+services:
+
+  tpnode:
+    restart: unless-stopped
+    container_name: tpnode
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    image: thepowerio/tpnode
+    volumes:
+      - type: bind
+        source: /opt/thepower/node.config
+        target: /opt/thepower/node.config
+        read_only: true
+      - type: bind
+        source: /opt/thepower/db
+        target: /opt/thepower/db
+      - type: bind
+        source: /opt/thepower/log
+        target: /opt/thepower/log
+    network_mode: 'host'
+
+  watchtower:
+    restart: unless-stopped
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 3600 --cleanup
+```
 
    :::tip Note
 
