@@ -97,11 +97,11 @@ services:
     command: --interval 3600 --cleanup
 ```
 
-   :::tip Note
+:::tip Note
 
-   This file also allows `watchtower` to automatically update the node.
+This file also allows `watchtower` to automatically update the node.
 
-   :::
+:::
 
 ## Starting the node
 
@@ -109,26 +109,26 @@ To start the node:
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 
-   ```bash
-   cd /opt/thepower
-   ```
+```bash
+cd /opt/thepower
+```
 
 2. Run the following command:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
 ## Stopping the node
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 
-   ```bash
-   cd /opt/thepower
-   ```
+```bash
+cd /opt/thepower
+```
 
 2. Run the following command:
 
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
