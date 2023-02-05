@@ -31,7 +31,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
    sudo apt-get -y install docker-compose
    ```
 
-   :::info Attention
+:::info Attention
 
    By implementing this way of starting the node we assume that
 
@@ -48,7 +48,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
    `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
-   :::
+:::
 
 3. Go to `/opt/thepower`:
 
@@ -93,11 +93,11 @@ services:
     command: --interval 3600 --cleanup
 ```
 
-   :::tip Note
+:::tip Note
 
    This file also allows `watchtower` to automatically update the node.
 
-   :::
+:::
 
 ## Starting the node
 
