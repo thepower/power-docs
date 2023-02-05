@@ -94,30 +94,30 @@ To use the Seed node:
 7. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
 
 ```erlang title="node.config"
-      {tpic,#{peers => [],port => 1800}}.
-      {discovery,#{addresses => []}}.
+{tpic,#{peers => [],port => 1800}}.
+{discovery,#{addresses => []}}.
 
-      {privkey,"302E020100300506032B6570042204200011223344556677001122334455667700112233445566770011223344556677"}.
+{privkey,"302E020100300506032B6570042204200011223344556677001122334455667700112233445566770011223344556677"}.
 
-      {replica, true}.
-      {upstream, [
-         <PEER_ADDRESS>
-      ]}.
+{replica, true}.
+{upstream, [
+   <PEER_ADDRESS>
+]}.
 
-      {hostname, <Hostname>}.
+{hostname, <Hostname>}.
 
-      {dbsuffix,""}.
-      {loglevel, info}.
-      {info_log, "log/info.log"}.
-      {error_log, "log/error.log"}.
-      {debug_log, "log/debug.log"}.
-      {rpcsport, 1443}.
-      {rpcport, 1080}.
+{dbsuffix,""}.
+{loglevel, info}.
+{info_log, "log/info.log"}.
+{error_log, "log/error.log"}.
+{debug_log, "log/debug.log"}.
+{rpcsport, 1443}.
+{rpcport, 1080}.
 ```
       
 :::caution Note
 
-      Use [this](./02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
+Use [this](./02-tpNodeConfiguration.md#nodeconfig-description) guide for more information on `node.config`.
 
 :::
 
