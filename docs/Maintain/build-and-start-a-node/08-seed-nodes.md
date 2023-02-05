@@ -75,25 +75,25 @@ To use the Seed node:
    {pubkey,"302A300506032B6570032100667C84FB1195C73F97AE14430C2024490C0EA6490F6EC0C1DE3FAEB4B6B32251"}.
    ```
 
-   :::caution
+:::caution
 
    You may share your public key when necessary, but never share your private key.
 
-   :::
+:::
 
    **Backup the file and continue.**
 
 6. Rename the file `tpcli.key` to `node.config`.
 
-   :::caution
+:::caution
 
-   This and the following steps are crucial because you will NOT be able to start your node without `genesis.txt` and `node.config` files. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
+   This and the following steps are crucial because you will NOT be able to start your node without `node.config` file. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
 
-   :::
+:::
 
 7. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
 
-      ```erlang
+```erlang title="node.config"
       {tpic,#{peers => [],port => 1800}}.
       {discovery,#{addresses => []}}.
 
@@ -113,15 +113,15 @@ To use the Seed node:
       {debug_log, "log/debug.log"}.
       {rpcsport, 1443}.
       {rpcport, 1080}.
-      ```
+```
       
-      :::caution Note
+:::caution Note
 
       Use [this](./02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
 
-      :::
+:::
 
-      :::caution
+:::caution
 
       You need to replace:
 
@@ -129,7 +129,7 @@ To use the Seed node:
       - `hostname` with your hostname;
       - `upstream`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
 
-      :::
+:::
 
 8. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
