@@ -17,10 +17,11 @@ Let's assume, there are several servers with the same software configuration, ex
 
 Three or more nodes form a chain, or a shard. The terms "chain" and "shard" mean the same, but "chain" is more often to hear in the blockchain community. We can also say that the nodes form a network. The network consists of chains of three or more nodes.
 
-There are two types of nodes:
+There are three types of nodes:
 
-1. **Consensus node**. It is a node that connects to a chain and participate in Consensus with other Consensus nodes.
-2. **Seed node**. It is a node that connects to a chain of nodes, receives a copy of a blockchain, and can provide it to the users upon request.
+1. **Consensus nodes** are an essential component of the Power DCloud infrastructure that connects to a chain and participates in consensus with other nodes to build blocks and perform computations of smart contracts and decentralized backend.
+2. **Seed nodes** are the nodes that connect to a chain and provide a copy of the blockchain to users upon request, like a CDN network of decentralized RPC providers. Seed nodes serve as a network of decentralized RPC providers, connecting to a chain and providing a copy of the blockchain to users upon request, much like a CDN network. This ensures that users have access to a reliable copy of the blockchain for their needs.
+3. **Storage nodes** are the nodes that store frontend code, NFT data, or files in a decentralized way. Decentralized Storage (DStorage) allows users to store files in a truly decentralized manner, eliminating the need for centralized Web2 Clouds, and giving the user control over the number of copies of the file that should be created. The files are stored with access through HTTP standards, allowing users to reach them through different software such as browsers.
 
 ### Power Node Consensus
 
@@ -42,13 +43,13 @@ There are four different types of chains:
 
    The only way for node providers to participate in network consensus is to lock a number of native utility tokens (tokens giving the right for a future product or service) and mint NFT.
 
-- **Project chains**. These chains work same as the community chains, but the project in this type of chain has the right to deploy smart contracts in the project chain. 
+- **AppChains**. These chains work same as the community chains, but the app in this type of chain has the right to deploy smart contracts in the AppChain. 
 
-  To get the right to form a chain in a public network and give the right to node providers to connect and maintain it, a project must lock a number of native utility tokens and mint NFT. Only NFT owners in a project chain have the right to deploy DApps to it.
+  To get the right to form a chain in a public network and give the right to node providers to connect and maintain it, a project must lock a number of native utility tokens and mint NFT. Only NFT owners in an AppChain have the right to deploy DApps to it.
   
-  The project chain is a chain that has special purposes: it serves DAO, DEX, GameFi, Metaverse, and a broad variety of other decentralized services.
+  The AppChain is a chain that has special purposes: it serves DAO, DEX, GameFi, Metaverse, and a broad variety of other decentralized services.
 
-  The project chain is supported by the Power Ecosystem community of node providers.
+  The AppChain is supported by the Power Ecosystem community of node providers.
 
 - **Satellite chains**. These are public chains supported by external node provider communities. They have a special native token instead of ours. They are connected to the Power Ecosystem network. This means that the transactions from the Power Ecosystem network are anchored there.
 
