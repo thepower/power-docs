@@ -34,8 +34,9 @@ To use the Seed node:
 1. Check the prerequisites [here](./01-prerequisites.md).
 2. Download the node. Here you have the following options:
 
-   1. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
-   2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
+   1. Download the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md).
+   2. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
+   3. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
 3. Install Erlang (this step is applicable for Docker installation **ONLY**):
 
@@ -143,7 +144,7 @@ To use the Seed node:
 
    :::info Note
 
-   We strongly recommend you to start the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md). It will help you eliminate the possible errors and make it easier for you to build your node.
+   We strongly recommend you to build and run the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md). It will help you eliminate the possible errors and make it easier for you to build your node.
 
    :::
 

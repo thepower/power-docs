@@ -81,26 +81,25 @@ Before starting Tea Ceremony you need to set up your environment by installing E
 >
 > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
 
-### Step 4: Start a seed node
-
-Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to learn how to start a seed node.
-
-### Step 5: Download the node
+### Step 4: Download the node
 
 Download ThePower Node. Here you have two options:
 
 1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode) (recommended for most users), or
 2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
+#### Download, build, and run the node using `docker-compose`
+
+Use [this manual](./02-download-build-run-compose.md) to download, build, and run the node using Docker. It is even easier than running a node using Docker image. Recommended to the all users.
+
 #### Download, build, and run the node using Docker
 
 Use [this manual](./03-download-build-run-docker.md) to download, build, and run the node using Docker. It is a fast and easy way to build and run the Power Node. Recommended to the most of testneters.
 
-#### Download, build, and run the node using `docker-compose`
-
-Use [this manual](./02-download-build-run-compose.md) to download, build, and run the node using Docker. It is even easier than running a node using Docker image. Recommended to the new testneters.
-
-
 #### Download, build, and run the node using the source code
 
 Use [this manual](./04-download-build-run-source.md) to download, build, and run the node from the source code if you want to go through the advanced way of building sources, but we still recommend you to use the Docker image.
+
+### Step 5: Start a seed node
+
+Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to learn how to start a seed node.
