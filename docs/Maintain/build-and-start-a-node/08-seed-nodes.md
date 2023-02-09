@@ -13,10 +13,13 @@
 
 ## Introduction
 
-There are two types of nodes used in The Power Ecosystem:
+There are three types of nodes used in The Power Ecosystem:
 
-1. **Consensus node**. It is a node that connects to a chain and participates in Consensus along with other Consensus nodes.
-2. **Seed node**. It is a node that connects to a chain of nodes, receives a copy of a blockchain data, and provides it to the users upon a request. As opposed to Consensus nodes, Seed nodes don't participate in Consensus.
+1. **Consensus nodes** are an essential component of the Power DCloud infrastructure that connects to a chain and participates in consensus with other nodes to build blocks and perform computations of smart contracts and decentralized backend.
+2. **Seed nodes** are the nodes that connect to a chain and provide a copy of the blockchain to users upon request, like a CDN network of decentralized RPC providers. Seed nodes serve as a network of decentralized RPC providers, connecting to a chain and providing a copy of the blockchain to users upon request, much like a CDN network. This ensures that users have access to a reliable copy of the blockchain for their needs.
+3. **Storage nodes** are the nodes that store frontend code, NFT data, or files in a decentralized way. Decentralized Storage (DStorage) allows users to store files in a truly decentralized manner, eliminating the need for centralized Web2 Clouds, and giving the user control over the number of copies of the file that should be created. The files are stored with access through HTTP standards, allowing users to reach them through different software such as browsers.
+
+Go to [Nodes and chains basics](../../Explore/nodes-chains-description/01-nodes-shards-101.md) page to get more information on types of nodes and chains.
 
 ## Seed nodes theory
 
@@ -29,11 +32,10 @@ As determined above, Seed nodes store and spread the copy of blockchain data, bu
 To use the Seed node:
 
 1. Check the prerequisites [here](./01-prerequisites.md).
-2. Download the node. Here you have three options:
+2. Download the node. Here you have the following options:
 
-   1. 
-   2. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
-   3. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
+   1. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
+   2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
 
 3. Install Erlang (this step is applicable for Docker installation **ONLY**):
 
@@ -75,65 +77,73 @@ To use the Seed node:
    {pubkey,"302A300506032B6570032100667C84FB1195C73F97AE14430C2024490C0EA6490F6EC0C1DE3FAEB4B6B32251"}.
    ```
 
-:::caution
+   :::caution
 
    You may share your public key when necessary, but never share your private key.
 
-:::
+   :::
 
    **Backup the file and continue.**
 
-6. Rename the file `tpcli.key` to `node.config`.
+6. Delete all the contents of the file and copy the following:
 
-:::caution
-
-   This and the following steps are crucial because you will NOT be able to start your node without `node.config` file. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
-
-:::
-
-7. Delete all the contents of the file except the key (`privkey` line) (if any content present) and copy the following:
-
-```erlang title="node.config"
-{tpic,#{peers => [],port => 1800}}.
-{discovery,#{addresses => []}}.
-
-{privkey,"302E020100300506032B6570042204200011223344556677001122334455667700112233445566770011223344556677"}.
-
-{replica, true}.
-{upstream, [
-   <PEER_ADDRESS>
-]}.
-
-{hostname, <Hostname>}.
-
-{dbsuffix,""}.
-{loglevel, info}.
-{info_log, "log/info.log"}.
-{error_log, "log/error.log"}.
-{debug_log, "log/debug.log"}.
-{rpcsport, 1443}.
-{rpcport, 1080}.
-```
+   ```erlang title="node.config"
+   {tpic,#{peers => [],port => 1800}}.
+   {discovery,#{addresses => []}}.
+   
+   {replica, true}.
+   {upstream, [
+      <PEER_ADDRESS>
+   ]}.
+   
+   {hostname, <Hostname>}.
+   
+   {dbsuffix,""}.
+   {loglevel, info}.
+   {info_log, "log/info.log"}.
+   {error_log, "log/error.log"}.
+   {debug_log, "log/debug.log"}.
+   {rpcsport, 1443}.
+   {rpcport, 1080}.
+   ```
       
-:::caution Note
+   :::caution Note
 
-Use [this](./02-tpNodeConfiguration.md#nodeconfig-description) guide for more information on `node.config`.
+   Use [this](./02-tpNodeConfiguration.md#nodeconfig-description) guide for more information on `node.config`.
 
-:::
+   :::
 
-:::caution
+   :::caution
 
-      You need to replace:
+   You need to replace:
 
-      - `privkey` with your private key; 
       - `hostname` with your hostname;
       - `upstream`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
+      - `<PEER_ADDRESS>`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
 
-:::
+   :::
+   
+7. Run the following command:
+
+   ```bash
+   grep priv tpcli.key >> node.config
+   ```
+
+   :::caution
+   
+   This and the following steps are crucial because you will NOT be able to start your node without `node.config` file. You can find more information about these files [here](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/tpNodeConfiguration).
+   
+   :::
 
 8. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
-   1. Use [this guide](../../Community/phase-2/02-download-build-run-compose.md) to build and start the node using `docker-compose` (**recommended**).
+   1. Use [this guide](../../Community/phase-2/02-download-build-run-compose.md) to build and start the node using `docker-compose` (**recommended for most users**).
    2. Use [this guide](../../Community/phase-2/03-download-build-run-docker.md) to build and start the node from Docker image.
    3. Use [this guide](../../Community/phase-2/04-download-build-run-source.md) to build and start the node from sources (for advanced users **ONLY**).
+
+   :::info Note
+
+   We strongly recommend you to start the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md). It will help you eliminate the possible errors and make it easier for you to build your node.
+
+   :::
 
