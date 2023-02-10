@@ -15,7 +15,7 @@
 
 You can also start your node using `docker-compose`, which is even easier than starting your node using conventional Docker commands described [here](./03-download-build-run-docker.md).
 
-This option is based on Docker installation. So, please, read and go through three first steps [here](./03-download-build-run-docker.md) before you run your node.
+This option is based on Docker installation. So, please, read and go through three first steps described [here](./03-download-build-run-docker.md) before running your node.
 
 ## Step 1: Set up your environment
 
@@ -106,17 +106,17 @@ To start the node:
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 
-```bash
-cd /opt/thepower
-```
+   ```bash
+   cd /opt/thepower
+   ```
 
 2. Run the following command:
 
-```bash
-docker-compose up -d
-```
+   ```bash
+   docker-compose up -d
+   ```
 
-## Stopping the node
+## How to stop the node?
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
 

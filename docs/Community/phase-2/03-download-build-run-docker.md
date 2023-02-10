@@ -19,7 +19,7 @@
 
 We recommend you to use the simple way of building and running the node using [**`docker-compose`**](./02-download-build-run-compose.md). 
 
-Though, if you have multiple operations running in Docker, this manual will help you to build and run the node using Docker. Follow the steps below.
+Though, if you have multiple operations running in Docker, this manual will help you to build and run the node using Docker image. Follow the steps below.
 
 ## Step 1: Set up your environment
 
@@ -28,25 +28,29 @@ To download the node using Docker:
 1. Ensure you have Docker installed on your machine.
 2. If not, refer to [Docker Installation Guide](https://docs.docker.com/engine/install/).
 
-   > **Hint:**
-   >
-   > If you don't use `root` account, run the following command to ensure you belong the user group `docker`:
-   >
-   > ```bash
-   > $ groups
-   > ```
-   >
-   > If you don't belong to the user group `docker`, run the following command:
-   >
-   > ```bash
-   > $ sudo usermod -aG docker
-   > ```
+   :::tip Hint
+
+   If you don't use `root` account, run the following command to ensure you belong to user group `docker`:
+
+   ```bash
+   $ groups
+   ```
+
+   If you don't belong to user group `docker`, run the following command:
+
+   ```bash
+   $ sudo usermod -aG docker
+   ```
+
+   :::
 
 ## Step 2: Create directories and place the files
 
-> **Hint**
->
-> You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
+:::tip Hint
+
+You can create an additional directory named `thepower`, for example, and place `db` and `log` as subdirectories there.
+
+:::
 
 To create directories for files:
 
