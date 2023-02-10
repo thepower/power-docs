@@ -21,7 +21,7 @@ We recommend you to use the simple way of building and running the node using [*
 
 Though, if you have multiple operations running in Docker, this manual will help you to build and run the node using Docker. Follow the steps below.
 
-## Step 1: Download the node
+## Step 1: Set up your environment
 
 To download the node using Docker:
 
@@ -108,33 +108,21 @@ docker run -d \
 thepowerio/tpnode
 ```
 
-:::tip
-
-The commands
-
-```bash
--p 1800:1800 \
--p 1080:1080 \
--p 1443:1443 \
-```
-
-specify all necessary local ports. In this example ports `api`, `apis`, and `tpic` are used. Specify the port of your chain from `node.config` file.
-
-:::
-
 where:
 
-| Command                                                                          | Description                                                                                                                                                                                               |
-|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `docker run -d`                                                                  | This command starts Docker in the background                                                                                                                                                              |
-| `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                                                                                |
-| `--restart unless-stopped\`                                                      | Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts                                                               |
-| `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                             | 
-| `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                                |
-| `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                  |
-| `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                                                                       |
-| `-p 1800:1800` <br/> `-p 1080:1080` <br/> `-p 1443:1443`                         | These commands specify all necessary local ports. In these examples ports `api`, `apis`, and `tpic` are used. You can specify any port in `node.config` file. |
-| `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                                                                                     |
+| Command                                                                          | Description                                                                                                                                 |
+|----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `docker run -d`                                                                  | This command starts Docker in the background                                                                                                |
+| `--name tpnode`                                                                  | This command specifies the name (optional)                                                                                                  |
+| `--restart unless-stopped\`                                                      | Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts |
+| `--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db`                   | Path to the database. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                               | 
+| `--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log`                 | Path to log files. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                                  |
+| `--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config` | Path to your `node.config` file. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                    |
+| `--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt` | Path to your `genesis.txt`. Bound to Docker. `/opt` here is mandatory, because it is the path inside the container.                         |
+| `--cap-add=NET_ADMIN`                                                            | Add Linux capabilities                                                                                                                      |
+| `--device=/dev/net/tun`                                                          | Add a host device to the container                                                                                                          |
+| `--network=host`                                                                 | Connect a container to a network                                                                                                            |
+| `thepowerio/tpnode`                                                              | Path to Docker image.                                                                                                                       |
 
 ## Step 5 (optional): Automated updates for node with Watchtower
 

@@ -15,6 +15,8 @@
 
 You can also start your node using `docker-compose`, which is even easier than starting your node using conventional Docker commands described [here](./03-download-build-run-docker.md).
 
+This option is based on Docker installation. So, please, read and go through three first steps [here](./03-download-build-run-docker.md) before you run your node.
+
 ## Step 1: Set up your environment
 
 You need to have `docker-compose` package installed on your machine. If you don't have this package installed, run the following command in terminal for:

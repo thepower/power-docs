@@ -83,10 +83,17 @@ Before starting Tea Ceremony you need to set up your environment by installing E
 
 ### Step 4: Download the node
 
-Download ThePower Node. Here you have two options:
+Download ThePower Node. Here you have three options:
 
-1. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode) (recommended for most users), or
-2. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
+1. Download ThePower node using [`docker-compose`](./02-download-build-run-compose.md) (recommended for all users).
+2. Download ThePower node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
+3. Download the [source](https://github.com/thepower/tpnode) code and build it (only for advanced users).
+
+:::info Note
+
+The first two options are almost the same, but we recommend you to use the `docker-compose` option to make the process faster and easier for you.
+
+:::
 
 #### Download, build, and run the node using `docker-compose`
 
