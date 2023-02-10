@@ -5,8 +5,8 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
-- [Setting up the environment](#setting-up-the-environment)
-- [Starting the node](#starting-the-node)
+- [Step 1: Set up your environment](#step-1-set-up-your-environment)
+- [Step 2: Start the node](#step-2-start-the-node)
 - [Stopping the node](#stopping-the-node)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -15,7 +15,7 @@
 
 You can also start your node using `docker-compose`, which is even easier than starting your node using conventional Docker commands described [here](./03-download-build-run-docker.md).
 
-## Setting up the environment
+## Step 1: Set up your environment
 
 You need to have `docker-compose` package installed on your machine. If you don't have this package installed, run the following command in terminal for:
 
@@ -31,7 +31,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
    sudo apt-get -y install docker-compose
    ```
 
-:::info Attention
+   :::info Attention
 
    By implementing this way of starting the node we assume that
 
@@ -47,7 +47,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
    `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
-:::
+   :::
 
 3. Go to `/opt/thepower`:
 
@@ -98,7 +98,7 @@ services:
 
 :::
 
-## Starting the node
+## Step 2: Start the node
 
 To start the node:
 

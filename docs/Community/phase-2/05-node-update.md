@@ -4,11 +4,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
 
+- [Disclaimer](#disclaimer)
 - [Before the update](#before-the-update)
 - [Updating your node built from Docker image](#updating-your-node-built-from-docker-image)
 - [Updating your node built from sources](#updating-your-node-built-from-sources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Disclaimer
+
+We recommend to use [**`docker-compose`**](02-download-build-run-compose.md) to build, run, and update the node. `docker-compose` option allows you to automatically update your node without doing anything.
 
 ## Before the update
 
@@ -69,18 +74,17 @@ To update your node:
 4. Restart your node by running the starting command:
 
    ```bash
-    docker run -d \
-    --name tpnode \
-    --restart unless-stopped \
-    --mount type=bind,source=/opt/thepower/db,target=/opt/thepower/db \
-    --mount type=bind,source=/opt/thepower/log,target=/opt/thepower/log \
-    --mount type=bind,source=/opt/thepower/node.config,target=/opt/thepower/node.config \
-    --mount type=bind,source=/opt/thepower/genesis.txt,target=/opt/thepower/genesis.txt \
-    -p 1800:1800 \
-    -p 1080:1080 \
-    -p 1443:1443 \
-    thepowerio/tpnode
-    ```
+   docker run -d \
+   --name tpnode \
+   --restart unless-stopped \
+   --cap-add=NET_ADMIN \
+   --device=/dev/net/tun \
+   --network=host \
+   --mount type=bind,source=/opt/thepower/db,target=/opt/thepower/db \
+   --mount type=bind,source=/opt/thepower/log,target=/opt/thepower/log \
+   --mount type=bind,source=/opt/thepower/node.config,target=/opt/thepower/node.config \
+   thepowerio/tpnode
+   ```
    
 ## Updating your node built from sources
 

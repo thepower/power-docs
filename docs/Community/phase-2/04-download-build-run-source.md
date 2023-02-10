@@ -9,12 +9,10 @@
   - [Install Erlang using `kerl`](#install-erlang-using-kerl)
 - [Step 2: Download and build the node](#step-2-download-and-build-the-node)
 - [Step 3: Create directories and place the files](#step-3-create-directories-and-place-the-files)
-- [Step 4: Start the node](#step-4-start-the-node)
+- [Step 4: Get the certificate](#step-4-get-the-certificate)
+- [Step 5: Start the node](#step-5-start-the-node)
 - [How to stop the node?](#how-to-stop-the-node)
-- [Step 5: Get the certificate](#step-5-get-the-certificate)
 - [How to check, if my node works?](#how-to-check-if-my-node-works)
-- [What do I need to do if something goes wrong?](#what-do-i-need-to-do-if-something-goes-wrong)
-  - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -189,26 +187,38 @@ To create directories for files:
 2. Create `db` and `log` directories in your working directory (`/opt/thepower`, for instance) using the following command:
 
    ```bash
-   mkdir {db,log}
+   mkdir -p {db/cert,log}
    ```
 
-3. Place `genesis.txt` and `node.config` near these directories using the following commands:
+   :::info Attention
+
+   By implementing this way of starting the node we assume that
+
+   - `node.config`,
+   - `db` and `log` directories,
+   - SSL keys
+
+   are present and stored in `/opt/thepower/`.
+
+   The following tree describes the directories and files in them:
+
+   ![tree](./resources/seed_compose_tree.png)
+
+   `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
+
+   :::
+
+3. Go to `/opt/thepower`:
 
    ```bash
-   cp ~/tea_ceremony_directory/node.config /opt/thepower/node.config
+   cd /opt/thepower
    ```
 
-   ```bash
-   cp ~/tea_ceremony_directory/genesis.txt /opt/thepower/genesis.txt
-   ```
+## Step 4: Get the certificate
 
-:::warning
+[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
 
-The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
-
-:::
-
-## Step 4: Start the node
+## Step 5: Start the node
 
 Start the node using `systemd`. To do this:
 
@@ -259,10 +269,6 @@ To stop the node, run:
 systemctl stop tpnode.service
 ```
 
-## Step 5: Get the certificate
-
-[Obtain the SSL certificate for your node](https://doc.thepower.io/docs/Maintain/build-and-start-a-node/ssl-certs-for-node) and place it into the `db` directory.
-
 ## How to check, if my node works?
 
 To check, if your node works, run:
@@ -277,154 +283,3 @@ where:
 - `1080` — port, that your node uses for `api`.
 
 Replace the example parameters with the ones you need.
-
-## What do I need to do if something goes wrong?
-
-:::caution
-
-If something goes wrong, go to the `log` folder, and read the logs. If there are errors, write to Power Ecosystem Telegram chat: `https://t.me/thepower_chat`.
-
-:::
-
-### Troubleshooting
-
-1. You get the following error:
-
-    ```bash
-    ===> Failed to boot tpnode for reason {{{badmatch,undefined},
-    [{nodekey,get_priv,0,
-    [{file,
-    "/home/thepower/tpnode/apps/tpnode/src/nodekey.erl"},
-    {line,26}]},
-    {tpic2,certificate,0,
-    [{file,
-    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
-    {line,196}]},
-    {tpic2,
-    '-childspec/0-fun-0-',2,
-    [{file,
-    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
-    {line,217}]},
-    {tpic2,childspec,0,
-    [{file,
-    "/home/thepower/tpnode/apps/tpic2/src/tpic2.erl"},
-    {line,229}]},
-    {tpnode_sup,init,1,
-    [{file,
-    "/home/thepower/tpnode/apps/tpnode/src/tpnode_sup.erl"},
-    {line,88}]},
-    {supervisor,init,1,
-    [{file,"supervisor.erl"},
-    {line,295}]},
-    {gen_server,init_it,2,
-    [{file,"gen_server.erl"},
-    {line,374}]},
-    {gen_server,init_it,6,
-    [{file,"gen_server.erl"},
-    {line,342}]}]},
-    {tpnode,start,[normal,[]]}}
-    ```
-   **Reason**
-
-   You don't have `genesis.txt` and `node.config` files.
-
-   **Solution**
-
-   Start the Tea Ceremony client **BEFORE** starting the node. It will get proper `genesis.txt` and `node.config`.
-
-2. You get the following error when starting the Tea Ceremony client:
-
-   ```bash
-    ~/tpnode# ./teaclient DEE570BD76F3
-    -bash: ./teaclient: Permission denied
-   ```
-
-   **Reason**
-
-   Probably, you haven't changed `teaclient` file mode to executable.
-
-   **Solution**
-
-   Change `teaclient` file mode to executable by running the following command:
-
-   ```bash
-   chmod +x tea*
-   ```
-3. You get the following error when starting the Tea Ceremony client:
-
-   ```bash
-   ~# ./teaclient -n demonode05 DEE570BD76F3
-   ceremony client connecting to tea.thepower.io:443
-   Server rejects connection, reason: bad_token
-   ```
-
-   **Reason**
-
-   Token `DEE570BD76F3` has been used by another user.
-
-   **Solution**
-
-   Get the new token from the Telegram bot.
-
-4. You get the following error when starting the Tea Ceremony client:
-
-   ```bash
-   ceremony client connecting to knuth.cleverfox.ru:1436
-   =WARNING REPORT==== 19-Oct-2022::14:32:54.056133 ===
-   Description: "Authenticity is not established by certificate path validation"
-   Reason: "Option {verify, verify_peer} and cacertfile/cacerts is missing"
-
-   Server rejects connection, reason: you_are_late
-   ```
-
-   **Reason**
-
-   You are late for the tea ceremony.
-
-   **Solution**
-
-   Stick to the bot recommendations and don't be late.
-
-5. You see different ports displayed in server control panel and written in firewall rules.
-
-   **Reason**
-
-   Problems with ports.
-
-   **Solution**
-
-   Check your `iptables` rules:
-
-   ```bash
-   iptables -L -nv
-   ```
-
-   Find the rules for all three ports among the entries:
-
-   1. If the rules are absent, please contact or tech support in our [Telegram chat](https://t.me/thepower_chat).
-   2. If you've found a corrupted port, try to recreate rule using the server control panel.
-
-   :::warning
-
-   **The Power Ecosystem is not responsible for the result of actions described below!** These actions can lead to loss of access to the server.
-
-   :::
-
-   Another way of addressing the problem is to:
-
-   1. Save the rules into a file using the following command:
-
-      ```bash
-      iptables-save -f iptables.save
-      ```
-   2. Edit the corrupted port:
-
-      ```bash
-      vim iptables.save
-      ```
-
-   3. Restore the rules from the file:
-
-      ```bash
-      iptables-restore iptables.save
-      ```
