@@ -65,6 +65,8 @@ To participate in ThePower testnet campaign you need to:
 
 [Learn what is a testnet in DCloud](../../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
 
+Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to learn how to start a seed node.
+
 ### Step 2: Get IP addresses and DNS
 
 You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address".
@@ -81,7 +83,7 @@ Before start working with the node you need to set up your environment by instal
 >
 > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
 
-### Step 4: Download the node
+### Step 4: Download and start a seed node
 
 Download ThePower Node. Here you have three options:
 
@@ -106,7 +108,3 @@ Use [this manual](./03-download-build-run-docker.md) to download, build, and run
 #### Download, build, and run the node using the source code
 
 Use [this manual](./04-download-build-run-source.md) to download, build, and run the node from the source code if you want to go through the advanced way of building sources, but we still recommend you to use the `docker-compose`.
-
-### Step 5: Start a seed node
-
-Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to learn how to start a seed node.

@@ -32,13 +32,8 @@ As determined above, Seed nodes store and spread the copy of blockchain data, bu
 To use the Seed node:
 
 1. Check the prerequisites [here](./01-prerequisites.md).
-2. Download the node. Here you have the following options:
 
-   1. Download the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md).
-   2. Download the node using the [Docker image](https://hub.docker.com/r/thepowerio/tpnode).
-   3. Download the [source](../../Maintain/build-and-start-a-node/06-startingTpNode_source.md#downloading-and-building-the-node) code and build it (only for advanced users).
-
-3. Install Erlang (this step is applicable for Docker installation **ONLY**):
+2. Install Erlang (this step is applicable for Docker installation **ONLY**):
 
    Before starting Tea Ceremony you need to set up your environment by installing Erlang. You will need Erlang to run the Tea Ceremony client. You will not be able to start the node and connect to the chain without Tea Ceremony. To install Erlang, run:
 
@@ -50,7 +45,7 @@ To use the Seed node:
    >
    > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
 
-4. Get the power CLI:
+3. Get the power CLI:
 
    1. Get the power cli by running the following command:
 
@@ -64,7 +59,7 @@ To use the Seed node:
       sudo chmod a+x /usr/local/bin/tp
       ```
       
-5. Generate private key by running the following command:
+4. Generate private key by running the following command:
 
    ```bash
    tp --genkey --ed25519
@@ -86,7 +81,7 @@ To use the Seed node:
 
    **Backup the file and continue.**
 
-6. Delete all the contents of the file and copy the following:
+5. Delete all the contents of the file and copy the following:
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
@@ -124,7 +119,7 @@ To use the Seed node:
 
    :::
    
-7. Run the following command:
+6. Run the following command:
 
    ```bash
    grep priv tpcli.key >> node.config
@@ -136,7 +131,7 @@ To use the Seed node:
    
    :::
 
-8. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
+7. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
    1. Use [this guide](../../Community/phase-2/02-download-build-run-compose.md) to build and start the node using `docker-compose` (**recommended for most users**).
    2. Use [this guide](../../Community/phase-2/03-download-build-run-docker.md) to build and start the node from Docker image.
