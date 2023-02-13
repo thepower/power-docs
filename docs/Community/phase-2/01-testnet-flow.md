@@ -10,12 +10,11 @@
     - [Software](#software)
 - [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1: Learn](#step-1-learn)
-  - [Step 2: IP addresses and DNS](#step-2-ip-addresses-and-dns)
+  - [Step 2: Get IP addresses and DNS](#step-2-get-ip-addresses-and-dns)
   - [Step 3: Install Erlang](#step-3-install-erlang)
-  - [Step 4: Start a seed node](#step-4-start-a-seed-node)
-  - [Step 5: Download the node](#step-5-download-the-node)
-    - [Download, build, and run the node using Docker](#download-build-and-run-the-node-using-docker)
+  - [Step 4: Download and start a seed node](#step-4-download-and-start-a-seed-node)
     - [Download, build, and run the node using `docker-compose`](#download-build-and-run-the-node-using-docker-compose)
+    - [Download, build, and run the node using Docker](#download-build-and-run-the-node-using-docker)
     - [Download, build, and run the node using the source code](#download-build-and-run-the-node-using-the-source-code)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
