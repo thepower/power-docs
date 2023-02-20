@@ -24,3 +24,12 @@ The Power SDK contains the following modules:
 - SC Loader;
 - transactions;
 - wallet.
+
+## Installation
+
+Intallation is described [**here**](./02-isntallation.md).
+
+## Useful links
+
+- [**Working with transactions**](./transactions/01-intro.md);
+- [**Working with smart-contracts**](./smart-contracts/01-intro.md).

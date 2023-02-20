@@ -63,7 +63,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
 [Find more](./Explore/technology/03-resonance-consensus.md) about Resonance consensus 
 
-[Find more](./Build/smart-contracts/01-environment.md) about smart contracts 
+[Find more](./Build/development/smart-contracts/01-intro.md) about smart contracts 
 
 [Find more](./Explore/technology/04-scalable-architecture.md) about scalable architecture
 
@@ -81,7 +81,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
 How to set up EVM *(coming soon)*
 
-How to set up WASM VM *(coming soon)*  
+<!--How to set up WASM VM *(coming soon)*-->  
 
 ## Resources
 
