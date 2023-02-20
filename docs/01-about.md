@@ -80,8 +80,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 [How to run a local testnet](./Build/local-testnet/01-local-testnet.md)
 
 How to set up EVM *(coming soon)*
-
-<!--- How to set up WASM VM *(coming soon)* -->  
+ 
 
 ## Resources
 
