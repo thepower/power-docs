@@ -77,7 +77,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
 [How to run a node from source code](./Community/phase-1/03-download-build-run-source.md)
 
-[How to run a local testnet](https://doc.thepower.io/docs/devGuide/testnet-start)
+[How to run a local testnet](./Build/local-testnet/01-local-testnet.md)
 
 How to set up EVM *(coming soon)*
 
