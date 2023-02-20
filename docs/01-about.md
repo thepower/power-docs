@@ -81,7 +81,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
 How to set up EVM *(coming soon)*
 
-<!-- How to set up WASM VM *(coming soon)* -->  
+<!--- How to set up WASM VM *(coming soon)* --->  
 
 ## Resources
 
