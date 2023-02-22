@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Power Ecosystem',
-  tagline: 'WEB3 Decentralized Framework',
+  title: 'Power DCloud',
+  tagline: 'Fast & Low-cost On-Chain Web3 Platform',
   url: 'https://doc.thepower.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -65,15 +65,6 @@ const config = {
             position: 'right',
           },
           {
-            label: 'Power_explorer',
-            href: 'https://explorer.thepower.io',
-            position: 'right',
-          },
-          {
-            label: 'Power_faucet',
-            href: 'https://faucet.thepower.io',
-            position: 'right',
-          },
           {
             href: 'https://github.com/thepower',
             label: 'GitHub',
@@ -116,14 +107,6 @@ const config = {
                 label: 'Power_hub',
                 href: 'https://hub.thepower.io',
               },
-              {
-                label: 'Power_explorer',
-                href: 'https://explorer.thepower.io',
-              },
-              {
-                label: 'Power_faucet',
-                href: 'https://faucet.thepower.io',
-              },
             ],
           },
           {
@@ -140,7 +123,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Power Ecosystem`,
+        copyright: `Copyright © ${new Date().getFullYear()} Power DCloud`,
       },
       prism: {
         theme: lightCodeTheme,

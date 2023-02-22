@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}: Documentation`}
-      description='Documentation for WEB3 Decentralized Framework. API, Dapps, Smart Contracts, and Virtual Machine.'
+      description='Documentation for a full-fledged web3 infrastructure platform for full-stack, really decentralized applications.'
     >
       <HomepageHeader />
       <main>

@@ -25,7 +25,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'WASM Virtual Machine',
+    title: 'Multi Virtual Machine',
     Svg: require('../../static/img/vm.svg').default,
     description: (
       <>
