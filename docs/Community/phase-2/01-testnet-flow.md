@@ -70,6 +70,8 @@ Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to
 
 You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address".
 
+### Step 3: Install 
+
 ### Step 3: Install Erlang and get keys
 
 Before start working with the node you need to set up your environment by installing Erlang, getting `tpcli`, and SSL keys. Follow the steps below:
@@ -201,7 +203,7 @@ You need to have `docker-compose` package installed on your machine. If you don'
   - `db` and `log` directories,
   - SSL keys
 
-   are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) and [source](./04-download-build-run-source.md) manuals.
+   are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) manual.
 
    The following tree describes the directories and files in them:
 
