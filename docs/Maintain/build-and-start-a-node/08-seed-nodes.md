@@ -81,19 +81,23 @@ To use the Seed node:
 
    **Backup the file and continue.**
 
-5. Delete all the contents of the file and copy the following:
+5. Replace the `node.config` file content with the following:
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
    {discovery,#{addresses => []}}.
    
    {replica, true}.
-   {upstream, [
-      <PEER_ADDRESS>
-   ]}.
+   % ====== [ here is an example of upstream configuration ] ======
+   % {upstream, [                                                                               [ uncomment this line after copying ]
+   %   "http://c1038n3.deinfra.net:1080/?genesis=4InSbdZywQX8ySEHoKdZis5ghsA2oakfL7fegeOgM3U",  [ uncomment this line and replace with proper data ]
+   %   "http://c1038n5.deinfra.net:1080/?genesis=4InSbdZywQX8ySEHoKdZis5ghsA2oakfL7fegeOgM3U"   [ uncomment this line and replace with proper data ]
+   % ]}.                                                                                        [ uncomment this line after copying ]
+   % ======= [ end of example ] =========
    
-   {hostname, <Hostname>}.
-   
+   % ====== [ here is an example of hostname configuration ] ======
+   % {hostname, <Hostname>}. [ Uncomment this line and replace with proper data ]
+   % ======= [ end of example ] =========
    {dbsuffix,""}.
    {loglevel, info}.
    {info_log, "log/info.log"}.
@@ -102,20 +106,19 @@ To use the Seed node:
    {rpcsport, 1443}.
    {rpcport, 1080}.
    ```
-      
-   :::caution Note
-
-   Use [this](./02-tpNodeConfiguration.md#nodeconfig-description) guide for more information on `node.config`.
-
-   :::
 
    :::caution
 
    You need to replace:
 
       - `hostname` with your hostname;
-      - `upstream`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
       - `<PEER_ADDRESS>`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
+
+   :::
+
+   :::caution Note
+
+   Use [this](../../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
 
    :::
    
