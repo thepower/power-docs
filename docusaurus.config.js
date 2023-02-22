@@ -65,7 +65,6 @@ const config = {
             position: 'right',
           },
           {
-          {
             href: 'https://github.com/thepower',
             label: 'GitHub',
             position: 'right',
