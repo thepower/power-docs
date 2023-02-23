@@ -11,11 +11,14 @@
 - [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1: Learn](#step-1-learn)
   - [Step 2: Get IP addresses and DNS](#step-2-get-ip-addresses-and-dns)
-  - [Step 3: Install Erlang](#step-3-install-erlang)
-  - [Step 4: Download and start a seed node](#step-4-download-and-start-a-seed-node)
-    - [Download, build, and run the node using `docker-compose`](#download-build-and-run-the-node-using-docker-compose)
-    - [Download, build, and run the node using Docker](#download-build-and-run-the-node-using-docker)
-    - [Download, build, and run the node using the source code](#download-build-and-run-the-node-using-the-source-code)
+  - [Step 3: Set up your environment](#step-3-set-up-your-environment)
+  - [Step 4: Set up SSL](#step-4-set-up-ssl)
+  - [Step 5: Start a seed node](#step-5-start-a-seed-node)
+    - [Step 1: Set up your environment](#step-1-set-up-your-environment)
+    - [Step 2: Start the node](#step-2-start-the-node)
+    - [How to stop the node?](#how-to-stop-the-node)
+    - [How to check, that the node works?](#how-to-check-that-the-node-works)
+    - [Node update](#node-update)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -64,22 +67,18 @@ To participate in ThePower testnet campaign you need to:
 
 [Learn what is a testnet in DCloud](../../Maintain/01-testnets-intro.md). This guide will help you understand what ThePower Testnet is.
 
-Use [**this manual**](../../Maintain/build-and-start-a-node/08-seed-nodes.md) to learn how to start a seed node.
-
 ### Step 2: Get IP addresses and DNS
 
-You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address".
+You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address". The Power DCloud team is not responsible for assignment or registration of IP addresses or DNS.
 
-### Step 3: Install 
+### Step 3: Set up your environment
 
-### Step 3: Install Erlang and get keys
-
-Before start working with the node you need to set up your environment by installing Erlang, getting `tpcli`, and SSL keys. Follow the steps below:
+Before start working with the node you need to set up your environment by installing Erlang, getting `tpcli`, and keys. Follow the steps below:
 
 1. To install Erlang, run:
 
    ```bash
-   apt -y install erlang-base erlang-public-key erlang-ssl
+   apt -y install erlang-base erlang-public-key erlang-ssl docker-compose
    ```
 
    > **Note**
@@ -100,7 +99,19 @@ Before start working with the node you need to set up your environment by instal
       sudo chmod a+x /usr/local/bin/tp
       ```
 
-3. Generate private key by running the following command:
+3. Create `/opt/thepower/db/cert` and `/opt/thepower/log` directories by running the following command:
+
+   ```bash
+   mkdir -p {/opt/thepower/db/cert,/opt/thepower/log}
+   ```
+
+4. Go to `/opt/thepower` by running the following command:
+
+   ```bash
+   cd /opt/thepower
+   ```
+
+5. Generate private key by running the following command:
 
    ```bash
    tp --genkey --ed25519
@@ -122,7 +133,7 @@ Before start working with the node you need to set up your environment by instal
 
    **Backup the file and continue.**
 
-4. Replace the `node.config` file content with the following:
+4. Create the `node.config` file and copy the following content into it:
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
@@ -175,29 +186,70 @@ Before start working with the node you need to set up your environment by instal
 
    :::
 
-### Step 4: Start a seed node
+### Step 4: Set up SSL
+
+Follow the steps below to set up SSL:
+
+1. Ensure that you use `root` account. It is necessary for further steps.
+2. Install `acme.sh` by running the following command. Please, specify your real e-mail address:
+
+   ```bash
+   apt-get install socat
+   curl https://get.acme.sh | sh -s email=my@example.com
+   ```
+
+   where
+
+   `my@example.com` — your active e-mail. Make sure, you have replaced it with your e-mail address.
+
+3. Log out of the system.
+4. Log in again.
+5. Obtain the certificate. To do this, run the following command:
+
+   ```bash
+   acme.sh --issue --standalone -d your_node.example.com
+   ```
+
+   :::warning
+
+   `your_node.example.com` is an example. **Replace it** with your node link.
+
+   :::
+
+6. Install the certificate by running the following command:
+
+   ```bash
+   acme.sh --install-cert -d your_node.example.com \
+   --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
+   --key-file /opt/thepower/db/cert/your_node.example.com.key \
+   --ca-file /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
+   ```
+
+   :::warning
+
+   `your_node.example.com` is an example. **Replace it** with your node link.
+
+   :::
+
+   After you've installed the certificate, you can get the certificate status by running the following command:
+
+   ```bash
+   acme.sh --info -d your_node.example.com
+   ```
+
+   where
+
+   `your_node.example.com` — your node address link. Replace it with your node link.
+
+### Step 5: Start a seed node
 
 Follow the steps below to start your seed node.
 
 #### Step 1: Set up your environment
 
-You need to have `docker-compose` package installed on your machine. If you don't have this package installed, run the following command in terminal for:
-
-1. `root` user:
-
-   ```bash
-   apt-get -y install docker-compose
-   ```
-
-2. Normal user:
-
-   ```bash
-   sudo apt-get -y install docker-compose
-   ```
-
    :::info Attention
 
-   By implementing this way of starting the node we assume that
+   By starting the node we assume that
 
   - `node.config`,
   - `db` and `log` directories,
@@ -209,17 +261,19 @@ You need to have `docker-compose` package installed on your machine. If you don'
 
    ![tree](./resources/seed_compose_tree.png)
 
+   We assume you have the same tree.
+
    `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
 
    :::
 
-3. Go to `/opt/thepower`:
+1. Go to `/opt/thepower`:
 
    ```bash
    cd /opt/thepower
    ```
 
-4. Create `docker-compose.yml` file with the following code:
+2. Create `docker-compose.yml` file with the following code:
 
 ```yaml title="docker-compose.yml"
 version: "3.3"
@@ -291,3 +345,17 @@ cd /opt/thepower
 ```bash
 docker-compose down
 ```
+
+#### How to check, that the node works?
+
+Check, if your node work properly by running the following command:
+
+```bash
+curl https://your_node.example.com:1443/api/node/status | jq
+```
+
+The command above returns `.json` with actual info about the node.
+
+#### Node update
+
+If you went through all the steps thoroughly, your node will be updated automatically.

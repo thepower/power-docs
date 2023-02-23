@@ -60,7 +60,7 @@ Congratulations! Now you have a started and functional node, responding by `http
 
    :::
 
-7. Install the certificate by running the following command:
+6. Install the certificate by running the following command:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \
@@ -85,7 +85,7 @@ where
 
 `your_node.example.com` — your node address link. Replace it with your node link.
 
-8. Stop your node and restart it:
+7. Stop your node and restart it:
 
    1. **Docker:**
 
