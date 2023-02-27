@@ -303,13 +303,20 @@ services:
 ```
 
 
+:::tip Note
+
+This file also allows `watchtower` to automatically update the node.
+
+:::
+
 :::info Attention
 
 By starting the node we assume that
 
 - `node.config`,
 - `db` and `log` directories,
-- SSL keys
+- SSL keys, and
+- `docker-compose.yml`
 
 are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) manual.
 
@@ -331,12 +338,6 @@ The following tree describes the directories and files in them:
 We assume you have the same tree.
 
 `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
-
-:::
-
-:::tip Note
-
-This file also allows `watchtower` to automatically update the node.
 
 :::
 
