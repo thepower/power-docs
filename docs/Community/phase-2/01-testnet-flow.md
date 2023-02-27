@@ -71,6 +71,18 @@ To participate in ThePower testnet campaign you need to:
 
 You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address". The Power DCloud team is not responsible for assignment or registration of IP addresses or DNS.
 
+Here you have the following options:
+
+1. You may have your own domain name (**recommended**).
+2. You may use the VPS-generated domain name. You can check your domain name at your VPS. Here is the examples for Hetzner and Scaleway:
+
+   ![Hetzner](./resources/Hetzner.jpg)
+
+   ![Scaleway](./resources/Scaleway.jpg)   
+
+3. You may use free services, like [FreeDNS](https://freedns.afraid.org).
+4. **If none of the options above didn't work,** submit a request for a domain name in our Discord chat.
+
 ### Step 3: Set up your environment
 
 Before start working with the node you need to set up your environment by installing Erlang, getting `tpcli`, and keys. Follow the steps below:
@@ -133,7 +145,7 @@ Before start working with the node you need to set up your environment by instal
 
    **Backup the file and continue.**
 
-4. Create the `node.config` file and copy the following content into it:
+6. Create the `node.config` file and copy the following content into it:
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
@@ -163,8 +175,8 @@ Before start working with the node you need to set up your environment by instal
 
    You need to replace:
 
-  - `hostname` with your hostname;
-  - `<PEER_ADDRESS>`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
+   - `hostname` with your hostname;
+   - `<PEER_ADDRESS>`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
 
    :::
 
@@ -174,7 +186,7 @@ Before start working with the node you need to set up your environment by instal
 
    :::
 
-5. Run the following command:
+7. Run the following command:
 
    ```bash
    grep priv tpcli.key >> node.config
@@ -247,33 +259,13 @@ Follow the steps below to start your seed node.
 
 #### Step 1: Set up your environment
 
-   :::info Attention
-
-   By starting the node we assume that
-
-  - `node.config`,
-  - `db` and `log` directories,
-  - SSL keys
-
-   are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) manual.
-
-   The following tree describes the directories and files in them:
-
-   ![tree](./resources/seed_compose_tree.png)
-
-   We assume you have the same tree.
-
-   `hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
-
-   :::
-
 1. Go to `/opt/thepower`:
 
    ```bash
    cd /opt/thepower
    ```
 
-2. Create `docker-compose.yml` file with the following code:
+2. Download `docker-compose.yml` file under the [link](./resources/docker-compose.yml). Here is the example of code:
 
 ```yaml title="docker-compose.yml"
 version: "3.3"
@@ -310,6 +302,38 @@ services:
     command: --interval 3600 --cleanup
 ```
 
+
+:::info Attention
+
+By starting the node we assume that
+
+- `node.config`,
+- `db` and `log` directories,
+- SSL keys
+
+are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) manual.
+
+The following tree describes the directories and files in them:
+
+```text
+/opt/thepower/
+├── db
+│   └── cert
+│       ├── hostname.crt
+│       ├── hostname.crt.ca.crt
+│       └── hostname.key
+├── log
+├── docker-compose.yml   
+├── node.config  
+└── tpcli.key  
+```
+
+We assume you have the same tree.
+
+`hostname` here is an example. Please, **replace** it with the hostname specified in your `node.config` file.
+
+:::
+
 :::tip Note
 
 This file also allows `watchtower` to automatically update the node.
@@ -332,6 +356,32 @@ To start the node:
    docker-compose up -d
    ```
 
+#### How to check, that the node works?
+
+Check, if your node work properly by running the following command:
+
+```bash
+curl https://your_node.example.com:1443/api/node/status | jq
+```
+
+The command above returns `.json` with actual info about the node.
+
+:::info
+
+`https` is essential for normal operation of your node. Though, if you experience problems when connecting to your node via `https`, you can also check your node status via `http` using the following command:
+
+```bash
+curl http://your_node.example.com:1080/api/node/status | jq
+```
+
+You can also look through the logs by running the following command:
+
+```bash
+docker logs tpnode
+```
+
+:::
+
 #### How to stop the node?
 
 1. Ensure, that you are in `/opt/thepower` directory. If not, run:
@@ -345,16 +395,6 @@ cd /opt/thepower
 ```bash
 docker-compose down
 ```
-
-#### How to check, that the node works?
-
-Check, if your node work properly by running the following command:
-
-```bash
-curl https://your_node.example.com:1443/api/node/status | jq
-```
-
-The command above returns `.json` with actual info about the node.
 
 #### Node update
 
