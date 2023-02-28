@@ -152,23 +152,32 @@ Before start working with the node you need to set up your environment by instal
 
    **Backup the file and continue.**
 
-6. Create the `node.config` file and copy the following content into it:
+6. Download the `node.config` file using the [link](./resources/node.config). Here is the example of code:
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
-   {discovery,#{addresses => []}}.
-   
+
+
+   % ====== [ here is an example of configuration ] ======
+
+   {discovery,#{addresses =>[
+   #{address => "replace_with_your_hostname", port => 1800, proto => tpic},
+   #{address => "replace_with_your_hostname", port => 1443, proto => apis},
+   #{address => "replace_with_your_hostname", port => 1080, proto => api}
+   ]}}.
+
    {replica, true}.
-   % ====== [ here is an example of upstream configuration ] ======
-   % {upstream, [                                                                               [ uncomment this line after copying ]
-   %   "http://c1038n3.deinfra.net:1080/?genesis=4InSbdZywQX8ySEHoKdZis5ghsA2oakfL7fegeOgM3U",  [ uncomment this line and replace with proper data ]
-   %   "http://c1038n5.deinfra.net:1080/?genesis=4InSbdZywQX8ySEHoKdZis5ghsA2oakfL7fegeOgM3U"   [ uncomment this line and replace with proper data ]
-   % ]}.                                                                                        [ uncomment this line after copying ]
+
+   {hostname, "replace_with_your_hostname"}.
+
+   {upstream, [
+   "Insert_here_your_upstream_link1",
+   "Insert_here_your_upstream_link2"
+   ]}.
+
    % ======= [ end of example ] =========
    
-   % ====== [ here is an example of hostname configuration ] ======
-   % {hostname, <Hostname>}. [ Uncomment this line and replace with proper data ]
-   % ======= [ end of example ] =========
+   
    {dbsuffix,""}.
    {loglevel, info}.
    {info_log, "log/info.log"}.
