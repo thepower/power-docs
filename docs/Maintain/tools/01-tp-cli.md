@@ -43,7 +43,7 @@ To install `tp` CLI:
 The `tp` CLI utility consists of two parts:
 
 - **generic**: this part of utility will help you work with keys and transactions;
-- **storage**: this part of utility will help you work with LStore.
+- **storage**: this part of utility will help you work with smart contracts.
 
 ### Usage examples
 

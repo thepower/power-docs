@@ -80,8 +80,15 @@ Here you have the following options:
 
    ![Scaleway](./resources/Scaleway.jpg)   
 
+   You can also use the following hosting services from the list below:
+
+   - https://www.noip.com;
+   - https://dns.he.net/;
+   - https://www.dynu.com/;
+   - https://entrydns.net/;
+
 3. You may use free services, like [FreeDNS](https://freedns.afraid.org).
-4. **If none of the options above didn't work,** submit a request for a domain name in our Discord chat.
+4. **If none of the options above didn't work,** submit a request for a domain name in our [Discord chat](https://discord.com/channels/966339938960412723/1035928948669947946).
 
 ### Step 3: Set up your environment
 
