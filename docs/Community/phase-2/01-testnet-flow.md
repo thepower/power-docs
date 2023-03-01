@@ -188,9 +188,17 @@ Before start working with the node you need to set up your environment by instal
 
    :::caution
    
-   You need to replace:
+   You need to replace the following:
    
-   - `hostname` with your hostname;
+   - ```erlang
+     #{address => "replace_with_your_hostname", port => 1800, proto => tpic},
+     #{address => "replace_with_your_hostname", port => 1443, proto => apis},
+     #{address => "replace_with_your_hostname", port => 1080, proto => api}
+     ```
+   - ```erlang 
+     {hostname, "replace_with_your_hostname"}.
+     ```
+     
    - `"Insert_here_your_upstream_link1", "Insert_here_your_upstream_link2"`. The links are obtained from The Power DCloud [**bot**](https://t.me/thepowerio_bot).
    
    :::
