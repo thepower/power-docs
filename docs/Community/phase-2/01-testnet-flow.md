@@ -211,6 +211,8 @@ Before start working with the node you need to set up your environment by instal
    curl -s http://upstream_host:1080/api/node/status | jq .result
    ```
 
+   If the command returns `ok` it means that no problems were discovered. If there is an **error**, then change the upstream links order in `node.config` file.
+
    :::
 
 7. Run the following command:
