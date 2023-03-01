@@ -78,16 +78,15 @@ Here you have the following options:
 
    ![Hetzner](./resources/Hetzner.jpg)
 
-   ![Scaleway](./resources/Scaleway.jpg)   
+   ![Scaleway](./resources/Scaleway.jpg)
 
-   You can also use the following hosting services from the list below:
+3. You may use free services, like [FreeDNS](https://freedns.afraid.org). You can also use the following hosting services from the list below:
 
    - https://www.noip.com;
    - https://dns.he.net/;
    - https://www.dynu.com/;
-   - https://entrydns.net/;
+   - https://entrydns.net/.
 
-3. You may use free services, like [FreeDNS](https://freedns.afraid.org).
 4. **If none of the options above didn't work,** submit a request for a domain name in our [Discord chat](https://discord.com/channels/966339938960412723/1035928948669947946).
 
 ### Step 3: Set up your environment
@@ -156,25 +155,25 @@ Before start working with the node you need to set up your environment by instal
 
    ```erlang title="node.config"
    {tpic,#{peers => [],port => 1800}}.
-
-
+   
+   
    % ====== [ here is an example of configuration ] ======
-
+   
    {discovery,#{addresses =>[
    #{address => "replace_with_your_hostname", port => 1800, proto => tpic},
    #{address => "replace_with_your_hostname", port => 1443, proto => apis},
    #{address => "replace_with_your_hostname", port => 1080, proto => api}
    ]}}.
-
+   
    {replica, true}.
-
+   
    {hostname, "replace_with_your_hostname"}.
-
+   
    {upstream, [
    "Insert_here_your_upstream_link1",
    "Insert_here_your_upstream_link2"
    ]}.
-
+   
    % ======= [ end of example ] =========
    
    
@@ -188,17 +187,29 @@ Before start working with the node you need to set up your environment by instal
    ```
 
    :::caution
-
+   
    You need to replace:
-
+   
    - `hostname` with your hostname;
-   - `<PEER_ADDRESS>`. It is obtained from The Power Ecosystem [**bot**](https://t.me/thepowerio_bot).
-
+   - `"Insert_here_your_upstream_link1", "Insert_here_your_upstream_link2"`. The links are obtained from The Power DCloud [**bot**](https://t.me/thepowerio_bot).
+   
    :::
 
    :::caution Note
-
+   
    Use [this](../../Maintain/build-and-start-a-node/02-tpNodeConfiguration.md#nodeconfig-example) guide for more information on `node.config`.
+   
+   :::
+
+   :::info Note
+
+   The first upstream node in the link must be active. Otherwise, the `node.config` will not work properly.
+
+   You can check the upstream node status by running the following command:
+
+   ```bash
+   curl -s http://upstream_host:1080/api/node/status | jq .result
+   ```
 
    :::
 
