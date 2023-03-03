@@ -89,6 +89,12 @@ Here you have the following options:
 
 4. **If none of the options above didn't work,** submit a request for a domain name in our [Discord chat](https://discord.com/channels/966339938960412723/1035928948669947946).
 
+   :::info Note
+
+   This option takes much more time, then the others, due to manual proccessing of submitted requests by the team.
+
+   :::
+
 ### Step 3: Set up your environment
 
 Before start working with the node you need to set up your environment by installing Erlang, getting `tpcli`, and keys. Follow the steps below:
