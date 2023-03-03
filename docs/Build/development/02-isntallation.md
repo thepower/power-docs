@@ -20,6 +20,12 @@ npm install @thepowereco/tssdk
 
 ## Install The Power SDK from code
 
+:::caution Disclaimer
+
+This option is recommended only for **experienced users**, who understand how to build complex projects in `node.js`.
+
+:::
+
 Follow the steps below to install The Power SDK from code:
 
 1. Download the project using the **[link](https://github.com/thepower/PowerTools)**.
