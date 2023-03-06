@@ -13,7 +13,7 @@
 
 ## Disclaimer
 
-We recommend to use [**`docker-compose`**](02-download-build-run-compose.md) to build, run, and update the node. `docker-compose` option allows you to automatically update your node without doing anything.
+We recommend to use [**`docker-compose`**](./07-startingTpNode_docker_compose.md) to build, run, and update the node. `docker-compose` option allows you to automatically update your node without doing anything.
 
 ## Before the update
 
@@ -102,7 +102,7 @@ To update your node:
    git pull 
    ```
 
-3. Build your node according to [this](./04-download-build-run-source.md) guide.
+3. Build your node according to [this](./06-startingTpNode_source.md) guide.
 4. Stop your node after it is built:
 
    ```bash

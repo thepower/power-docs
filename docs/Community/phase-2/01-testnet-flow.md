@@ -361,7 +361,7 @@ By starting the node we assume that
 - SSL keys, and
 - `docker-compose.yml`
 
-are present and stored in `/opt/thepower/` like described in [Docker](./03-download-build-run-docker.md) manual.
+are present and stored in `/opt/thepower/` like described in [Docker](../../Maintain/build-and-start-a-node/05-startingTpNode_docker.md) manual.
 
 The following tree describes the directories and files in them:
 

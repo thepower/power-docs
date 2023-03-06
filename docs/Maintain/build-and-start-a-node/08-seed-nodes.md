@@ -136,13 +136,13 @@ To use the Seed node:
 
 7. Build and run the node using the following guides. Which guide to use depends on the way you've downloaded the node:
 
-   1. Use [this guide](../../Community/phase-2/02-download-build-run-compose.md) to build and start the node using `docker-compose` (**recommended for most users**).
-   2. Use [this guide](../../Community/phase-2/03-download-build-run-docker.md) to build and start the node from Docker image.
-   3. Use [this guide](../../Community/phase-2/04-download-build-run-source.md) to build and start the node from sources (for advanced users **ONLY**).
+   1. Use [this guide](./07-startingTpNode_docker_compose.md) to build and start the node using `docker-compose` (**recommended for most users**).
+   2. Use [this guide](./05-startingTpNode_docker.md) to build and start the node from Docker image.
+   3. Use [this guide](./06-startingTpNode_source.md) to build and start the node from sources (for advanced users **ONLY**).
 
    :::info Note
 
-   We strongly recommend you to build and run the node using [`docker-compose`](../../Community/phase-2/02-download-build-run-compose.md). It will help you eliminate the possible errors and make it easier for you to build your node.
+   We strongly recommend you to build and run the node using [`docker-compose`](./07-startingTpNode_docker_compose.md). It will help you eliminate the possible errors and make it easier for you to build your node.
 
    :::
 
