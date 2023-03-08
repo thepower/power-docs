@@ -102,7 +102,7 @@ Before start working with the node you need to set up your environment by instal
 1. To install Erlang, run:
 
    ```bash
-   apt -y install erlang-base erlang-public-key erlang-ssl docker-compose
+   apt -y install erlang-base erlang-public-key erlang-ssl docker-compose jq
    ```
 
    > **Note**
