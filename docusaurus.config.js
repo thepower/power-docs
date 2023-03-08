@@ -60,6 +60,11 @@ const config = {
             label: 'API',
           },
           {
+          label: 'SDK',
+          href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
+          position: 'right',
+          },
+          {
             label: 'Power_hub',
             href: 'https://hub.thepower.io',
             position: 'right',
