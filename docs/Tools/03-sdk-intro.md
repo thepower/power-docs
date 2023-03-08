@@ -27,9 +27,9 @@ The Power SDK contains the following modules:
 
 ## Installation
 
-Intallation is described [**here**](./02-isntallation.md).
+Intallation is described [**here**](04-sdk-installation.md).
 
 ## Useful links
 
-- [**Working with transactions**](./transactions/01-intro.md);
-- [**Working with smart-contracts**](./smart-contracts/01-intro.md).
+- [**Working with transactions**](../Build/development/transactions/01-intro.md);
+- [**Working with smart-contracts**](../Build/development/smart-contracts/01-intro.md).
