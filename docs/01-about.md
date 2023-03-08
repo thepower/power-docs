@@ -1,6 +1,6 @@
 # Getting started
 
-### Welcome to the Power Ecosystem documentation! 
+### Welcome to the Power DCloud documentation! 
 
 *:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as    a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
 <!---

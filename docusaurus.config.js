@@ -43,7 +43,7 @@ const config = {
       navbar: {
         title: 'Power_docs',
         logo: {
-          alt: 'Power Ecosystem',
+          alt: 'Power DCloud',
           src: 'img/logo.svg',
         },
         items: [
@@ -97,6 +97,10 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/thepower',
               },
+              {
+              label: 'DockerHub',
+              href: 'https://hub.docker.com/r/thepowerio/tpnode',
+              },
             ],
           },
           {
@@ -106,18 +110,58 @@ const config = {
                 label: 'Power_hub',
                 href: 'https://hub.thepower.io',
               },
+              {
+              label: 'Power SDK',
+              href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
+              },
+              {
+              label: 'Power CLI (TS)',
+              href: 'https://github.com/thepower/PowerTools/blob/master/packages/cli/README.md',
+              },
+              {
+              label: 'Power CLI (Erl)',
+              href: 'https://github.com/thepower/tpcli',
+              },
+              {
+              label: 'Network monitoring',
+              href: 'https://zabbix.thepower.io/zabbix.php?action=dashboard.view'
+              },
             ],
           },
           {
-            title: 'SDK',
+            title: 'Social',
             items: [
               {
-                label: 'JavaScript',
-                href: 'https://github.com/thepower/tp_sdk_js',
+              label: 'Discord',
+              href: 'https://discord.gg/P6fxM4CCkb'
               },
               {
-                label: 'Rust',
-                href: 'https://github.com/thepower/tp_rust_lib',
+              label: 'Telegram Chat',
+              href: 'https://t.me/thepower_chat'
+              },
+              {
+              label: 'Twitter',
+              href: 'https://twitter.com/intent/follow?screen_name=thepowerio'
+              },
+              {
+              label: 'GitHub',
+              href: 'https://github.com/thepower'
+              },
+              {
+              label: 'Medium',
+              href: 'https://medium.com/the-power-official-blog'
+              },
+              {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/thepowerio'
+              },
+              {
+              label: 'Telegram News Channel',
+              href: 'https://t.me/thepowerio'
+              },
+              {
+              label: 'Community Page',
+              href: 'https://thepower.io/community_page'
               },
             ],
           },
