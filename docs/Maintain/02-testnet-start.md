@@ -40,28 +40,30 @@ To start the testnet, ensure you have installed Docker. Run the following comman
 sudo apt-get -y install docker.io jq curl
 ```
 
-> **Hint**
-> 
-> If you use Unix, you must be included into the user group `docker` to use `docker`.
->
-> To check the groups, you are included into, run:
-> 
-> ```bash
-> $ groups
-> ```
-> To include your account into the group `docker`, run:
-> 
-> ```bash
-> usermod -aG docker user
-> ```
-> 
-> > where:
->
-> -  -G, --groups GROUPS — new list of supplementary `GROUPS`
-> -  -a, --append — append the user to the supplemental `GROUPS`. Mentioned by the `-G` option without removing
-     the user from other groups.
-> 
-> This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.
+:::tip Hint
+
+If you use Unix, you must be included into the user group `docker` to use `docker`.
+
+To check the groups, you are included into, run:
+ 
+```bash
+$ groups
+```
+To include your account into the group `docker`, run:
+
+```bash
+usermod -aG docker user
+```
+
+where:
+
+-  -G, --groups GROUPS — new list of supplementary `GROUPS`
+-  -a, --append — append the user to the supplemental `GROUPS`. Mentioned by the `-G` option without removing
+   the user from other groups.
+ 
+This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.
+
+:::
 
 ### Starting the testnet
 
@@ -69,7 +71,7 @@ To start a testnet, run:
 
 ```bash
 docker pull thepowerio/tpnode 
-docker run -d  -p 44000:44000 --rm --name tptest thepowerio/tpnode
+docker run -d  -p 1080:1080 --rm --name tptest thepowerio/tpnode
 ```
 
 To test your chain, run the following sequence of commands:

@@ -1,4 +1,4 @@
-# How to start a TP-Node from a Docker image?
+# Starting the node from Docker
 
 **Table of Contents**
 
