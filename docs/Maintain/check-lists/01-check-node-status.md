@@ -17,8 +17,8 @@ curl https://<DNS or IP>:<apis port from node.config>/api/node/status
 
 Replace
 
-- <DNS or IP>, and
-- <apis port from node.config>
+- `<DNS or IP>`, and
+- `<apis port from node.config>`
 
 with your data.
 
