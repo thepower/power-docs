@@ -31,6 +31,12 @@ To create a wallet on PowerHub:
 
    To create new account:
 
+   :::warning Attention
+
+   First two steps are optional and only recommended for users, who understand the difference between the chains.
+
+   :::
+
    1. Tick the checkbox **If you need a specific chain, check the box and select the chain**. Otherwise, the wallet will be created in a random chain:
    
       ![checkbox](./resources/checkbox.jpg)
