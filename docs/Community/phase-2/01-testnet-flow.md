@@ -443,3 +443,9 @@ docker-compose down
 #### Node update
 
 If you went through all the steps thoroughly, your node will be updated automatically.
+
+:::caution Attention
+
+After you start a node, please, send your node link to [RoverBot](https://t.me/thepowerio_bot). Otherwise, you won't get points.
+
+:::
