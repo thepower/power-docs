@@ -8,23 +8,26 @@ First of all, you need to create and prepare your smart contract to work with it
    npm install -g solc
    ```
 
-2. Create a smart contract file `greeter.sol`, which contains the following code:
+2. Ensure you are in `dcloud_example` directory.
+3. Open a smart contract file `greeter.sol`, which contains the following code:
 
    ```solidity
    //SPDX-License-Identifier: Unlicense
-   pragma solidity ^0.8.13;
-   contract Greeter {
-   string private greeting;
+    pragma solidity ^0.8.13;
+    contract Greeter {
+    string private greeting;
 
-    constructor() {
-        greeting = 'Hello World!';
-    }
-   function greet() public view returns (string memory) {
-   return greeting;
-   }
-   function setGreeting(string memory _greeting) public {
-   greeting = _greeting;
-   }
+	constructor() {
+		greeting = 'Hello World!';
+	}
+
+	function greet() public view returns (string memory) {
+		return greeting;
+	}
+	
+	function setGreeting(string memory _greeting) public {
+		greeting = _greeting;
+	}
    }
    ```
 
@@ -49,7 +52,7 @@ First of all, you need to create and prepare your smart contract to work with it
     3. The `greet()` function returns the current greeting.
     4. The `setGreeting()` function replaces the current greeting with a new one.
 
-3. Compile the given code. You will receive an `.abi` file:
+4. Compile the given code. You will receive an `.abi` file:
 
    Run the following commands in the directory, where the `greeter.sol` file is stored:
 
@@ -59,10 +62,4 @@ First of all, you need to create and prepare your smart contract to work with it
 
        As a result you will get a `greeter_sol_Greeter.bin` file.
 
-    2. ```solidity
-         solcjs --abi greeter.sol
-       ```
-
-       As a result you will get a `greeter_sol_Greeter.abi` file.
-
-4. Replace the `greeter_sol_Greeter.abi` file extension from `.abi` to `.json` to let the code recognize it right.
+    2. You can also find `greeter_sol_Greeter.json` that you will need in further steps.

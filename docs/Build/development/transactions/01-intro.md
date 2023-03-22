@@ -1,10 +1,16 @@
 # Working with transactions
 
+:::info
+
+This section is currently under development.
+
+:::
+
 ## Introduction
 
 This manual will help you understand, how the transactions work.
 
-## Prerequisisites
+## Prerequisites
 
 You need the last version of `nodejs` to be installed on your machine.
 

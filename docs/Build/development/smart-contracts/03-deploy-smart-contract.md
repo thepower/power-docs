@@ -4,74 +4,33 @@ EVM smart contract deployment also requires tokens. Moreover, you have to pay mo
 
 To deploy an EVM smart contract:
 
-1. Revert the `index.js` file to its initial state, described [here](../transactions/working-with-accounts/02-upload-account-data-display-state.md).
-2. Replace the first line in the file:
-
-   ```javascript
-   import { NetworkApi, WalletApi } from '@thepowereco/tssdk';
-   ```
-
-   with:
-
-   ```javascript
-   import { NetworkApi, WalletApi, TransactionsApi, EvmApi } from '@thepowereco/tssdk';
-   ```
-
-   The file will look like this:
-
-   ```javascript
-   import { NetworkApi, WalletApi, TransactionsApi, EvmApi } from '@thepowereco/tssdk';
-   import {readFileSync} from 'fs';
-   //load account data from file
-   const importNetworkApi = new NetworkApi(1025);
-   const importWalletApi = new WalletApi(importNetworkApi);
-   let password='111';
-   const importedData = readFileSync("example.pem");
-   const importedWallet = await importWalletApi.parseExportData(importedData.toString(), password);
-   console.log('import data',importedWallet);
-
-   //load balance for account
-   const letNetworkApi = new NetworkApi(1025);
-   await letNetworkApi.bootstrap();
-   let subChain = await letNetworkApi.getAddressChain(importedWallet.address);
-   const networkApi = new NetworkApi(subChain.chain);
-   await networkApi.bootstrap();
-   const walletApi = new WalletApi(networkApi);
-   const accountData= await walletApi.loadBalance(importedWallet.address);
-   console.log('accountData',accountData);
-   ```
-
-3. Add the following code to the file:
-
-   ```javascript
-   //deploy smart-contract
-   const code = readFileSync("greeter_sol_Greeter.bin");
-   let deployTX= TransactionsApi.composeDeployTX(importedWallet.address,code.toString(),[],'',0,importedWallet.wif,"evm",networkApi.feeSettings,networkApi.gasSettings);
-   let resDeploy=await networkApi.sendPreparedTX(deployTX);
-   console.log(resDeploy);
-   ```
-
-4. Start this code from the terminal using the following command:
+1. Ensure you are in `dcloud_example` directory.
+2. Start `deploySc.js` from the terminal using the following command:
 
    ```bash
-   node index.js
+   node deploySc.js
    ```
 
-As a result you will see a deploy contract transaction:
+As a result you will see a contract deployment transaction:
 
 ```bash
-dcloud_example % node index.js
+node deploySc.js       
 import data {
-  address: 'AA100001733086414002',
-  wif: 'KywHx4qhG49JEms15jmgXDGMq7xKkmhQSpiZihWi5bbvL8QvjyUD'
+  address: 'AA100001733086416001',
+  wif: 'L12trJ1suQMKCEWfTC6Ng5pn8mRwjaTBuwTN2K1M9tEF4y39sY9t'
 }
 accountData {
-  amount: { SK: 110100000 },
-  lastblk: '82C1D404FEBC267FCDE33252F9965D7836934B755BC17E6D7AB9D763BDE5A37D',
-  preblk: 'CC0F76855B346A53AC8FA04F033B8150D92087AF98795ADBDAE8EA4CA7A57FD5',
-  pubkey: '0207FE4A91CE18E398B8BF7DF7B3BF13D99712C1DB8F3FA856E43C9839452424E1'
+  amount: { SK: 15 },
+  lastblk: 'C277BE883DC6E934E8EEDFACCF6D04EFCAD4EFFC4954BC12C137069C7B99D937',
+  preblk: 'D28DDE54D920F67D430E2EAA0B90A94077907AD6EBC6F5ED3219C61E57949182',
+  pubkey: '034589D99AF47F882DE1C53B53C9A53F1C53F2D7B1E0DA28F07C6D9D50DC7C9BA5'
 }
-{ txId: '3VWq91nneRZR5uXcR-c1033.gemsfinder', res: 'ok' }
+{
+  txId: '3VWtEEYrVKRDbZQNE-c1033.debobus',
+  res: 'ok',
+  block: 'E1833D1BB436257C88CC9083214B2CA58AE841F8DA627BAD14227D0FE60A1A04'
+}
+
 ```
 
 :::caution Attention
