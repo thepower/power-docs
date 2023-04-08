@@ -1,7 +1,14 @@
 # Power SDK installation
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Install The Power SDK using `npm`](#install-the-power-sdk-using-npm)
+- [Install The Power SDK from code](#install-the-power-sdk-from-code)
+- [Connect SDK to your project code](#connect-sdk-to-your-project-code)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

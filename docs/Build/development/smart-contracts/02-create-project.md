@@ -8,7 +8,7 @@ First of all, you need to create and prepare your smart contract to work with it
    npm install -g solc
    ```
 
-2. Ensure you are in `dcloud_example` directory.
+2. Ensure you are in `dcloud_example` directory, you've created on step 1 [here](../transactions/02-preparing-the-projects.md), or create this directory, if you haven't done it yet.
 3. Open a smart contract file `greeter.sol`, which contains the following code:
 
    ```solidity
