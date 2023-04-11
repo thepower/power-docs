@@ -7,7 +7,7 @@ First, you need to prepare your project. To do this, follow the steps:
 3. Clone the `tssdkExamples` repository:
 
    ```bash
-   git clone git@github.com:thepower/tssdkExamples.git
+   git clone https://github.com/thepower/tssdkExamples.git
    ```
 
    :::info
