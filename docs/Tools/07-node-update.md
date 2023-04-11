@@ -42,7 +42,7 @@ Check your node version by running the following command:
 
 Your node may have automatic updates. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
 
-Read [this](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker#step-5-optional-automated-updates-for-node-with-watchtower) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
+Read [this](./06-auto-update-node.md) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
 
 :::
 
@@ -98,7 +98,7 @@ To update your node:
    git pull 
    ```
 
-3. Build your node according to [this](./03-download-build-run-source.md) guide.
+3. Build your node according to [this](../Maintain/build-and-start-a-node/06-startingTpNode_source.md) guide.
 4. Stop your node after it is built:
 
    ```bash
