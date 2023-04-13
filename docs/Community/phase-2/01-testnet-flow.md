@@ -442,7 +442,7 @@ docker-compose down
 
 #### Node update
 
-If you went through all the steps thoroughly, your node will be updated automatically.
+Your node will be updated automatically.
 
 :::caution Attention
 

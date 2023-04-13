@@ -1,0 +1,72 @@
+version: "3.3"
+
+services:
+  nginx:
+    container_name: nginx
+    restart: unless-stopped
+    image: nginx
+    volumes:
+      - type: bind
+        source: ./ssl/ssl.key
+        target: /etc/nginx/ssl.key
+        read_only: true
+      - type: bind
+        source: ./ssl/ssl.crt
+        target: /etc/nginx/ssl.crt
+        read_only: true
+      - type: bind
+        source: ./storage.conf
+        target: /etc/nginx/conf.d/storage.conf
+        read_only: true
+      - type: bind
+        source: ./html
+        target: /var/www/html
+        read_only: true
+      - type: bind
+        source: ./nginx_log
+        target: /var/log/nginx
+
+
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - "rhea"
+    networks:
+      - storage.network
+
+  rhea:
+    container_name: rhea
+    restart: unless-stopped
+    image: thepowerio/rhea:dev
+    volumes:
+      - type: bind
+        source: ./rhea.config
+        target: /opt/rhea/rhea.config
+        read_only: true
+      - type: bind
+        source: ./rhea_db
+        target: /opt/rhea/db
+      - type: bind
+        source: ./rhea_log
+        target: /opt/rhea/log
+      - type: bind
+        source: ./html
+        target: /opt/rhea/html
+    expose:
+      - "30081"
+    networks:
+      - storage.network
+
+  watchtower:
+    restart: unless-stopped
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 3600 --cleanup
+
+
+networks:
+  storage.network:
+    driver: bridge
