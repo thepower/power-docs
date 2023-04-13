@@ -1,7 +1,27 @@
 # Testnet Campaign Flow (Phase 3)
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+:::warning
+
+This section is under development. Any actions with this document are not recommended.
+
+:::
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+  - [Prerequisites for a node](#prerequisites-for-a-node)
+    - [Hardware](#hardware)
+    - [Software](#software)
+- [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
+  - [Step 1: Prepare your directory structure](#step-1-prepare-your-directory-structure)
+  - [Step 2: Download `docker-compose.yaml`](#step-2-download-docker-composeyaml)
+  - [Step 3: Download the configuration files](#step-3-download-the-configuration-files)
+  - [Step 4: Set up the configs](#step-4-set-up-the-configs)
+  - [Step 5: Set up SSL](#step-5-set-up-ssl)
+  - [Step 6: Start the node](#step-6-start-the-node)
+    - [How to stop the node?](#how-to-stop-the-node)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
