@@ -42,3 +42,5 @@
 :::info
 
 You can find your actual account address in `address` field. You will need it in the next tasks.
+
+Now you can work with [transactions](03-register-an-account.md) and [smart contracts](../smart-contracts/01-intro.md).

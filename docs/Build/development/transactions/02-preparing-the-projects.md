@@ -21,5 +21,3 @@ First, you need to prepare your project. To do this, follow the steps:
    ```bash
    npm install @thepowereco/tssdk
    ```
-
-Now you can work with [transactions](./working-with-accounts/01-register-an-account.md) and [smart contracts](../smart-contracts/01-intro.md).
