@@ -83,7 +83,7 @@ If you're connecting to the Ceremony that has already ended, the Tea Ceremony cl
 
 :::warning
 
-The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely: place a backup onto your local machine.
 
 :::
 

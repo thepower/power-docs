@@ -204,7 +204,7 @@ To create directories for files:
 
 :::warning
 
-The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely.
+The private key you get with the `node.config` file cannot be restored, if you lose it. Please, store it securely: place a backup onto your local machine.
 
 :::
 
