@@ -142,9 +142,9 @@ Follow the steps below to set up SSL:
 
    ```bash
    acme.sh --install-cert -d your_node.example.com \
-   --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
-   --key-file /opt/thepower/db/cert/your_node.example.com.key \
-   --ca-file /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
+   --key-file       /opt/storage/ssl/ssl.key  \
+   --fullchain-file /opt/storage/ssl/ssl.crt \
+   --reloadcmd     "docker reload nginx"
    ```
 
    :::warning
