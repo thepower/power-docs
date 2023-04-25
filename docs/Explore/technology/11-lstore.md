@@ -1,5 +1,16 @@
 # Ledger Store
 
+**Table of Contents**
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [LStore advantages](#lstore-advantages)
+- [Use-cases](#use-cases)
+- [LStore working algorithm](#lstore-working-algorithm)
+- [LStore transaction examples](#lstore-transaction-examples)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
