@@ -65,22 +65,38 @@ To participate in ThePower testnet campaign you need to:
 
 ### Step 1: Prepare your directory structure
 
-Ensure you've created the following directories:
+1. Ensure you've created the following directories:
 
-- `ssl`,
-- `html`,
-- `nginx_log`,
-- `rhea_log`,
+   - `ssl`,
+   - `html`,
+   - `nginx_log`,
+   - `rhea_log`,
 
-or create these using the following command:
+    or create these using the following command:
 
-```bash
-mkdir -p {ssl,html,nginx_log,rhea_log}
-```
+    ```bash
+    mkdir -p /opt/storage/{ssl,data/{db,html,tmp},log/{nginx,rhea}} 
+    ```
+
+2. Check that you are in the `storage` directory, or go to this directory using the following command:
+
+   ```bash
+   cd /opt/storage/
+   ```
 
 ### Step 2: Download `docker-compose.yaml`
 
-Use [this](./resources/docker-compose.yaml) link to download `docker-compose.yaml`.
+:::warning
+
+See the link below!
+
+:::
+
+Use [this](./resources/docker-compose.yaml) link to download `docker-compose.yaml`, or use the following command:
+
+```bash
+wget <link to docker-compose.yml, see above> -O /opt/storage/docker-compose.yml
+```
 
 :::caution Attention
 
@@ -90,23 +106,80 @@ When downloading the file, please, ensure that it has the proper name: `docker-c
 
 ### Step 3: Download the configuration files
 
-Download [storage.conf](./resources/storage.conf) and [rhea.config](./resources/rhea.config) using the links.
+Download [storage.conf](./resources/storage.conf) and [rhea.config](./resources/rhea.config) using the links, or use the following command:
+
+```bash
+wget <link to storage.conf, see above> -O /opt/storage/storage.conf
+wget <link to rhea.config see above> -O /opt/storage/rhea.config
+```
 
 ### Step 4: Set up the configs
 
-You need to set up the configuration files you've downloaded on the previous step:
+:::warning
 
-1. `/var/www/html;` in `storage.conf` and `{http_dir,"/opt/rhea/html"}.` should have the same value.
-2. `temp_dir` and `http_dir` in `rhea.config` should be mounted into Docker using one mounting point and should exist without the same file system.
-3. Fill your data into the following fields of `rhea.config`:
+The configs are under development. Some features may not work correctly.
+
+:::
+
+You need to set up the configuration files you've downloaded on the previous step.
+
+Fill your data into the following fields of `rhea.config`:
 
    ```nginx configuration
-   {blockchain_node,"https://c1n2.thepower.io:1444/"}.
-   {main_hostname,"storage12.thepower.io"}.
    {contract_address,"AA1000000016xxxxxx63"}.
    {my_address,"AA1000000016xxxxxx41"}.
-   {my_privkey,"A5B277FCC00391D067A1C509EA96ExxxxxxxxxxxxxxxxxxxxxxxxxxxxxA79544"}.
+   {my_privkey,"A5B277FCC00391D067A1C509EA96ExxxxxxxxxxxxxxxxxxxxxxxxxxxxxA79544"}. //Generate the key using tp_cli.
    ```
+
+#### How to generate the private key
+
+1. Get the power CLI:
+
+    1. Get the power cli by running the following command:
+
+       ```bash
+       sudo wget https://tea.thepower.io/tp -O /usr/local/bin/tp
+       ```
+
+    2. Change the `tp` file mode to executable by running the following command:
+
+       ```bash
+       sudo chmod a+x /usr/local/bin/tp
+       ```
+
+2. Create `/opt/thepower/db/cert` and `/opt/thepower/log` directories by running the following command:
+
+   ```bash
+   mkdir -p {/opt/thepower/db/cert,/opt/thepower/log}
+   ```
+
+3. Go to `/opt/thepower` by running the following command:
+
+   ```bash
+   cd /opt/thepower
+   ```
+
+4. Generate private key by running the following command:
+
+   ```bash
+   tp --genkey --ed25519
+   ```
+
+   As a result of this action, you will get the `tpcli.key` file. This file contains your private and public keys. Here is an example of this file. **DON'T use the keys specified in this example**:
+
+   ```bash
+   cat tpcli.key
+   {privkey,"302E020100300506032B6570042204204B1F52826447066469E7DBCA4E95CB0A03A2998D268C27885364D4AD7B7B0A8E"}.
+   {pubkey,"302A300506032B6570032100667C84FB1195C73F97AE14430C2024490C0EA6490F6EC0C1DE3FAEB4B6B32251"}.
+   ```
+
+   :::caution
+
+   You may share your public key when necessary, but never share your private key.
+
+   :::
+
+5. Copy `privkey` into `my_privkey` field of `rhea.config` file.
 
 ### Step 5: Set up SSL
 
@@ -129,19 +202,19 @@ Follow the steps below to set up SSL:
 5. Obtain the certificate. To do this, run the following command:
 
    ```bash
-   acme.sh --issue --standalone -d your_node.example.com
+   acme.sh --issue --standalone -d your_storage_node.example.com
    ```
 
    :::warning
 
-   `your_node.example.com` is an example. **Replace it** with your node link.
+   `your_storage_node.example.com` is an example. **Replace it** with your node link.
 
    :::
 
 6. Install the certificate by running the following command:
 
    ```bash
-   acme.sh --install-cert -d your_node.example.com \
+   acme.sh --install-cert -d your_storage_node.example.com \
    --key-file       /opt/storage/ssl/ssl.key  \
    --fullchain-file /opt/storage/ssl/ssl.crt \
    --reloadcmd     "docker reload nginx"
@@ -149,19 +222,19 @@ Follow the steps below to set up SSL:
 
    :::warning
 
-   `your_node.example.com` is an example. **Replace it** with your node link.
+   `your_storage_node.example.com` is an example. **Replace it** with your node link.
 
    :::
 
    After you've installed the certificate, you can get the certificate status by running the following command:
 
    ```bash
-   acme.sh --info -d your_node.example.com
+   acme.sh --info -d your_storage_node.example.com
    ```
 
    where
 
-   `your_node.example.com` — your node address link. Replace it with your node link.
+   `your_storage_node.example.com` — your node address link. Replace it with your node link.
 
 ### Step 6: Start the node
 
