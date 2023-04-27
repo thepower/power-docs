@@ -84,6 +84,20 @@ To participate in ThePower testnet campaign you need to:
    cd /opt/storage/
    ```
 
+The following directory tree describes the directories and files in them:
+
+```text
+/opt/storage/
+├── data
+│   ├── db
+│   ├── html
+│   └── tmp
+├── log
+│   ├── nginx
+│   └── rhea
+└── ssl
+```
+
 ### Step 2: Download `docker-compose.yaml`
 
 :::warning
