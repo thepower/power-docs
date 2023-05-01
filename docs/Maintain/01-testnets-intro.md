@@ -48,7 +48,7 @@ Use our [guide](02-testnet-start.md) to start your public testnet.
 
 When connecting your node to the public testnet, you connect it to either a new or an existing chain.
 
-After you've connected your node to the testnet, it starts to take part in [Consensus](../Explore/technology/03-resonance-consensus.md). You can also connect your node as a [Seed node](../Explore/nodes-chains-description/01-nodes-shards-101.md#nodes).
+After you've connected your node to the testnet, it starts to take part in [Consensus](../Explore/technology/03-resonance-consensus.md). You can also connect your node as a [Seed node](../Explore/basic-terms/01-101.md#nodes).
 
 > **Note**
 >
