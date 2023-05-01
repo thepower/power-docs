@@ -128,6 +128,11 @@ Fill your data into the following fields of `rhea.config`:
 
    ```nginx configuration
    {contract_address,"AA1000000016xxxxxx63"}.
+   {contract_gas, 1000000}.
+   {temp_dir,"/opt/storage/data/tmp"}.
+   {http_dir,"/opt/storage/data/html"}.
+   {db_dir,"/opt/storage/data/db"}.
+   
    {my_address,"AA1000000016xxxxxx41"}.
    {my_privkey,"A5B277FCC00391D067A1C509EA96ExxxxxxxxxxxxxxxxxxxxxxxxxxxxxA79544"}. //Generate the key using tp_cli.
    ```
