@@ -65,25 +65,6 @@ To participate in ThePower testnet campaign you need to:
 
 ### Step 1: Prepare your directory structure
 
-1. Ensure you've created the following directories:
-
-   - `ssl`,
-   - `html`,
-   - `nginx_log`,
-   - `rhea_log`,
-
-    or create these using the following command:
-
-    ```bash
-    mkdir -p /opt/storage/{ssl,data/{db,html,tmp},log/{nginx,rhea}} 
-    ```
-
-2. Check that you are in the `storage` directory, or go to this directory using the following command:
-
-   ```bash
-   cd /opt/storage/
-   ```
-
 The following directory tree describes the directories and files in them:
 
 ```text
@@ -98,6 +79,18 @@ The following directory tree describes the directories and files in them:
 └── ssl
 ```
 
+1. Create the directories using the following command:
+
+    ```bash
+    mkdir -p /opt/storage/{ssl,data/{db,html,tmp},log/{nginx,rhea}} 
+    ```
+
+2. Check that you are in the `storage` directory, or go to this directory using the following command:
+
+   ```bash
+   cd /opt/storage/
+   ```
+
 ### Step 2: Download `docker-compose.yaml`
 
 :::warning
@@ -111,12 +104,6 @@ Use [this](./resources/docker-compose.yaml) link to download `docker-compose.yam
 ```bash
 wget <link to docker-compose.yml, see above> -O /opt/storage/docker-compose.yml
 ```
-
-:::caution Attention
-
-When downloading the file, please, ensure that it has the proper name: `docker-compose.yaml`.
-
-:::
 
 ### Step 3: Download the configuration files
 
@@ -147,7 +134,19 @@ Fill your data into the following fields of `rhea.config`:
 
 #### How to generate the private key
 
-1. Get the power CLI:
+Before getting the keys you need to set up your environment by installing Erlang and getting `tpcli`. Follow the steps below:
+
+1. To install Erlang, run:
+
+   ```bash
+   apt -y install erlang-base erlang-public-key erlang-ssl docker-compose jq
+   ```
+
+   > **Note**
+   >
+   > You need to install `erlang-public key` and `erlang-ssl`. Otherwise, Erlang will not operate properly!
+
+2. Get the power CLI:
 
     1. Get the power cli by running the following command:
 
@@ -161,19 +160,19 @@ Fill your data into the following fields of `rhea.config`:
        sudo chmod a+x /usr/local/bin/tp
        ```
 
-2. Create `/opt/thepower/db/cert` and `/opt/thepower/log` directories by running the following command:
+3. Create `/opt/thepower/db/cert` and `/opt/thepower/log` directories by running the following command:
 
    ```bash
    mkdir -p {/opt/thepower/db/cert,/opt/thepower/log}
    ```
 
-3. Go to `/opt/thepower` by running the following command:
+4. Go to `/opt/thepower` by running the following command:
 
    ```bash
    cd /opt/thepower
    ```
 
-4. Generate private key by running the following command:
+5. Generate private key by running the following command:
 
    ```bash
    tp --genkey --ed25519
@@ -193,7 +192,7 @@ Fill your data into the following fields of `rhea.config`:
 
    :::
 
-5. Copy `privkey` into `my_privkey` field of `rhea.config` file.
+6. Copy `privkey` into `my_privkey` field of `rhea.config` file.
 
 ### Step 5: Set up SSL
 

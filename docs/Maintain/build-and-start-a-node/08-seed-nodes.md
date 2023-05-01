@@ -19,7 +19,7 @@ There are three types of nodes used in The Power Ecosystem:
 2. **Seed nodes** are the nodes that connect to a chain and provide a copy of the blockchain to users upon request, like a CDN network of decentralized RPC providers. Seed nodes serve as a network of decentralized RPC providers, connecting to a chain and providing a copy of the blockchain to users upon request, much like a CDN network. This ensures that users have access to a reliable copy of the blockchain for their needs.
 3. **Storage nodes** are the nodes that store frontend code, NFT data, or files in a decentralized way. Decentralized Storage (DStorage) allows users to store files in a truly decentralized manner, eliminating the need for centralized Web2 Clouds, and giving the user control over the number of copies of the file that should be created. The files are stored with access through HTTP standards, allowing users to reach them through different software such as browsers.
 
-Go to [Nodes and chains basics](../../Explore/nodes-chains-description/01-nodes-shards-101.md) page to get more information on types of nodes and chains.
+Go to [Nodes and chains basics](../../Explore/basic-terms/01-101.md) page to get more information on types of nodes and chains.
 
 ## Seed nodes theory
 

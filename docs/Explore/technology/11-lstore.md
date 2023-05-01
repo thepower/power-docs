@@ -8,7 +8,9 @@
 - [LStore advantages](#lstore-advantages)
 - [Use-cases](#use-cases)
 - [LStore working algorithm](#lstore-working-algorithm)
+- [LStore Transaction](#lstore-transaction)
 - [LStore transaction examples](#lstore-transaction-examples)
+  - [Possible patch commands](#possible-patch-commands)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -32,7 +34,7 @@ A blockchain is literally a database. But due to the complexity of usage of such
 
 3. **LStore.** 
 
-   It is an exclusive approach, invented by The Power Ecosystem. The idea of this approach is quite similar to that of working with smart contract, but the smart contract here is not used. LStore is a compact hierarchic kay-value DB bound to the user account, but when compared to the above-mentioned approach, the user doesn't need to have a VM and to use gas for smart contracts.
+   It is an exclusive approach, invented by The Power DCloud. The idea of this approach is quite similar to that of working with smart contract, but the smart contract here is not used. LStore is a compact hierarchic kay-value DB bound to the user account, but when compared to the above-mentioned approach, the user doesn't need to have a VM and to use gas for smart contracts.
 
 ## LStore advantages
 
@@ -82,6 +84,44 @@ LStore reading operation is performed according to the following algorithm:
 1. Account address and LStore endpoint are sent to Power API.
 2. User receives all needed LStore information. 
 
+## LStore Transaction
+
+**LStore Transaction** is a transaction without a destination address. It contains only the sender address.
+
+This transaction writes transaction state information into LStore or updates the current information in LStore.
+
+LStore transaction is a tree-sctructured transaction where the following information can be specified:
+
+- path to data,
+- variable name,
+- variable content.
+
+So, the following content can be written into LStore:
+
+```text
+"School 51, address",
+"School 52, address".
+```
+
+The changes are written in patches that consist of a path in the tree, a value, and an action.
+
+The following actions are available:
+
+- define a value,
+- delete a value.
+
+The following actions are available for a variable:
+
+- define a variable,
+- delete a variable,
+- compare variables,
+- operations with lists:
+
+   - add an item,
+   - delete an item.
+
+LStore transactions may be used, for example, to save encoded passwords in LStorea. Data is encoded on the user's side before uploading to LStore.
+
 ## LStore transaction examples
 
 You'll need to use the [`tp` CLI](../../Tools/01-tp-cli.md). Use [this](https://tea.thepower.io/tp) link to download it.
@@ -129,3 +169,25 @@ where
 In order to receive the data as specified above, just the account data needs to be read using its [endpoint](https://doc.thepower.io/docs/Build/api/api-reference/#addressaddress).
 
 :::
+
+### Possible patch commands
+
+The possible patch commands for lists:
+
+```erlang
+action(<<"list_add">>) -> add;
+action(<<"list_del">>) -> remove;
+action(<<"lists_cleanup">>) -> lcleanup;
+action(<<"member">>) -> {member, true};
+action(<<"nonmember">>) -> {member, false};
+```
+
+The possible patch commands for other types:
+
+```erlang
+action(<<"set">>) -> set;
+action(<<"delete">>) -> delete;
+action(<<"compare">>) -> compare;
+action(<<"exist">>) -> {exist, true};
+action(<<"nonexist">>) -> {exist, false};
+```
