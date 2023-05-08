@@ -174,20 +174,16 @@ In order to receive the data as specified above, just the account data needs to 
 
 The possible patch commands for lists:
 
-```erlang
-action(<<"list_add">>) -> add;
-action(<<"list_del">>) -> remove;
-action(<<"lists_cleanup">>) -> lcleanup;
-action(<<"member">>) -> {member, true};
-action(<<"nonmember">>) -> {member, false};
-```
+- `list_add` — add a list;
+- `list_del` — delete a list;
+- `lists_cleanup` — clean up all lists;
+- `member` — check if the specified element is a member of the list;
+- `nonmember` - check if the specified element is not a member of the list.
 
 The possible patch commands for other types:
 
-```erlang
-action(<<"set">>) -> set;
-action(<<"delete">>) -> delete;
-action(<<"compare">>) -> compare;
-action(<<"exist">>) -> {exist, true};
-action(<<"nonexist">>) -> {exist, false};
-```
+- `set` — set or replace an element value;
+- `delete` — delete an element;
+- `compare` — check if the value equals to the specified one;
+- `exist` — check if the path exists;
+- `nonexist` — check if the path does not exist.
