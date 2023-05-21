@@ -68,7 +68,7 @@ When using transaction library, please make sure the `js-sha512/sha512.min.js` f
 
 1. Visit our Hello World apps section to learn how to work with our 
 
-   - [transactions](./first-actions/transactions/01-intro.md),
-   - [smart contracts](./first-actions/smart-contracts/01-intro.md).
+   - [transactions](./transactions/01-intro.md),
+   - [smart contracts](./smart-contracts/01-intro.md).
 
 2. Go get information about The Power libraries to dive into the development [here](./02-lib-description.md).
