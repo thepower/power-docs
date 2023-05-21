@@ -31,5 +31,5 @@ Intallation is described [**here**](04-sdk-installation.md).
 
 ## Useful links
 
-- [**Working with transactions**](../Build/development/transactions/01-intro.md);
-- [**Working with smart-contracts**](../Build/development/smart-contracts/01-intro.md).
+- [**Working with transactions**](../Build/development/first-actions/transactions/01-intro.md);
+- [**Working with smart-contracts**](../Build/development/first-actions/smart-contracts/01-intro.md).

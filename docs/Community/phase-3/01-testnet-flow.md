@@ -43,9 +43,9 @@ Please, turn off the firewall before you start working with the node.
 
 #### Software
 
-| OS           | Erlang version | Eshell version | Docker version                         | Server          |
-|--------------|----------------|----------------|----------------------------------------|-----------------|
-| Ubuntu 22.04 | 24.3           | 10.4           | latest (20.10.18 as of September 2022) | Virtual machine |
+| OS           | Erlang version | Docker version                         | Server                      |
+|--------------|----------------|----------------------------------------|-----------------------------|
+| Ubuntu 22.04 | 24.3           | latest (20.10.18 as of September 2022) | Virtual machine or hardware |
 
 :::note
 
@@ -110,8 +110,8 @@ wget <link to docker-compose.yml, see above> -O /opt/storage/docker-compose.yml
 Download [storage.conf](./resources/storage.conf) and [rhea.config](./resources/rhea.config) using the links, or use the following command:
 
 ```bash
-wget <link to storage.conf, see above> -O /opt/storage/storage.conf
-wget <link to rhea.config see above> -O /opt/storage/rhea.config
+wget <link to storage.conf, see above, right click and copy> -O /opt/storage/storage.conf
+wget <link to rhea.config see above, right click and copy> -O /opt/storage/rhea.config
 ```
 
 ### Step 4: Set up the configs
