@@ -91,7 +91,36 @@ The following directory tree describes the directories and files in them:
    cd /opt/storage/
    ```
 
-### Step 2: Download `docker-compose.yaml`
+### Step 2: Get IP addresses and DNS
+
+You need to have a public IP address to take part in the testnet campaign. You can register a DNS for your server, if you want. The word "domain" will be used in the text below with the meaning of "domain", or of "IP address". The Power DCloud team is not responsible for assignment or registration of IP addresses or DNS.
+
+Here you have the following options:
+
+1. You may have your own domain name (**recommended**).
+2. You may use the VPS-generated domain name. You can check your domain name at your VPS. Here is the examples for Hetzner and Scaleway:
+
+   ![Hetzner](./resources/Hetzner.jpg)
+
+   ![Scaleway](./resources/Scaleway.jpg)
+
+3. You may use free services, like [FreeDNS](https://freedns.afraid.org). You can also use the following hosting services from the list below:
+
+    - https://www.noip.com;
+    - https://dns.he.net/;
+    - https://www.dynu.com/;
+    - https://entrydns.net/.
+
+4. **If none of the options above didn't work,** submit a request for a domain name in our [Discord chat](https://discord.com/channels/966339938960412723/1035928948669947946).
+
+   :::info Note
+
+   This option takes much more time, then the others, due to manual proccessing of submitted requests by the team.
+
+   :::
+
+
+### Step 3: Download `docker-compose.yml`
 
 :::warning
 
@@ -99,22 +128,22 @@ See the link below!
 
 :::
 
-Use [this](./resources/docker-compose.yaml) link to download `docker-compose.yaml`, or use the following command:
+Use [this](./resources/docker-compose.yml) link to download `docker-compose.yml`, or use the following command:
 
 ```bash
 wget <link to docker-compose.yml, see above> -O /opt/storage/docker-compose.yml
 ```
 
-### Step 3: Download the configuration files
+### Step 4: Download the configuration files
 
-Download [storage.conf](./resources/storage.conf) and [rhea.config](./resources/rhea.config) using the links, or use the following command:
+Download [storage.conf.template](./resources/storageconf.template), [env](./resources/env.env), and [rhea.config](./resources/rhea.config) using the links, or use the following command:
 
 ```bash
-wget <link to storage.conf, see above, right click and copy> -O /opt/storage/storage.conf
+wget <link to storage.conf.template, see above, right click and copy> -O /opt/storage/storage.conf.template
 wget <link to rhea.config see above, right click and copy> -O /opt/storage/rhea.config
 ```
 
-### Step 4: Set up the configs
+### Step 5: Set up the configs
 
 :::warning
 
@@ -122,9 +151,9 @@ The configs are under development. Some features may not work correctly.
 
 :::
 
-You need to set up the configuration files you've downloaded on the previous step.
+You need to set up the configuration files you've downloaded on the previous step:
 
-Fill your data into the following fields of `rhea.config`:
+1. Fill your data into the following fields of `rhea.config`:
 
    ```nginx configuration
    {contract_address,"AA1000000016xxxxxx63"}.
@@ -136,6 +165,8 @@ Fill your data into the following fields of `rhea.config`:
    {my_address,"AA1000000016xxxxxx41"}.
    {my_privkey,"A5B277FCC00391D067A1C509EA96ExxxxxxxxxxxxxxxxxxxxxxxxxxxxxA79544"}. //Generate the key using tp_cli.
    ```
+
+2. Fill in your hostname into `HOSTNAME` field of `env.env` file. Go back to [Step 2](#step-2-get-ip-addresses-and-dns) to get information about how to get your IP addresses and DNS names.
 
 #### How to generate the private key
 
@@ -165,19 +196,13 @@ Before getting the keys you need to set up your environment by installing Erlang
        sudo chmod a+x /usr/local/bin/tp
        ```
 
-3. Create `/opt/thepower/db/cert` and `/opt/thepower/log` directories by running the following command:
+3. Go to `/opt/storage` by running the following command:
 
    ```bash
-   mkdir -p {/opt/thepower/db/cert,/opt/thepower/log}
+   cd /opt/storage
    ```
 
-4. Go to `/opt/thepower` by running the following command:
-
-   ```bash
-   cd /opt/thepower
-   ```
-
-5. Generate private key by running the following command:
+4. Generate private key by running the following command:
 
    ```bash
    tp --genkey --ed25519
@@ -199,7 +224,23 @@ Before getting the keys you need to set up your environment by installing Erlang
 
 6. Copy `privkey` into `my_privkey` field of `rhea.config` file.
 
-### Step 5: Set up SSL
+### Step 5: Start the node
+
+Start your node using the following command:
+
+```bash
+docker-compose up -d
+```
+
+#### How to stop the node?
+
+To stop the node run the following command:
+
+```bash
+docker-compose down
+```
+
+### Step 6: Set up SSL
 
 Follow the steps below to set up SSL:
 
@@ -217,10 +258,10 @@ Follow the steps below to set up SSL:
 
 3. Log out of the system.
 4. Log in again.
-5. Obtain the certificate. To do this, run the following command:
+5. Issue the certificate. To do this, run the following command:
 
    ```bash
-   acme.sh --issue --standalone -d your_storage_node.example.com
+   acme.sh --issue -d your_storage_node.example.com -w /opt/storage/data/html/ --keylength ec-256
    ```
 
    :::warning
@@ -232,7 +273,7 @@ Follow the steps below to set up SSL:
 6. Install the certificate by running the following command:
 
    ```bash
-   acme.sh --install-cert -d your_storage_node.example.com \
+   acme.sh --install-cert --ecc -d your_storage_node.example.com \
    --key-file       /opt/storage/ssl/ssl.key  \
    --fullchain-file /opt/storage/ssl/ssl.crt \
    --reloadcmd     "docker reload nginx"
@@ -254,19 +295,4 @@ Follow the steps below to set up SSL:
 
    `your_storage_node.example.com` — your node address link. Replace it with your node link.
 
-### Step 6: Start the node
-
-Start your node using the following command:
-
-```bash
-docker-compose up -d
-```
-
-#### How to stop the node?
-
-To stop the node run the following command:
-
-```bash
-docker-compose down
-```
 

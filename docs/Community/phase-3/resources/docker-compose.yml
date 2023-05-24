@@ -7,8 +7,8 @@ services:
     image: nginx
     volumes:
       - type: bind
-        source: /opt/storage/storage.conf
-        target: /etc/nginx/conf.d/storage.conf
+        source: /opt/storage/storage.conf.template
+        target: /etc/nginx/templates/storage.conf.template
         read_only: true
       - type: bind
         source: /opt/storage/ssl
@@ -24,6 +24,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - NGINX_HOST=${HOSTNAME}
     links:
       - "rhea"
     networks:

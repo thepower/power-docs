@@ -1,4 +1,3 @@
-log_format alogformat "$time_local $scheme://$host:$server_port$request_uri $user $bucket";
 server {
     listen 80;
     listen [::]:80;
@@ -7,7 +6,7 @@ server {
 
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
-    server_name <storage_hostname>;
+    server_name ${NGINX_HOST};
 
     ssl_certificate     /etc/nginx/ssl/ssl.crt;
     ssl_certificate_key /etc/nginx/ssl/ssl.key;
@@ -19,6 +18,7 @@ server {
     ssl_session_cache shared:SSL:50m;
     ssl_session_timeout 5m;
     ssl_session_tickets off;
+
 # OCSP stapling
     ssl_stapling on;
     ssl_stapling_verify on;
@@ -36,10 +36,10 @@ server {
 
     index index.html;
 
-    location /upload {
-            proxy_pass http://rhea:30081;
-            client_max_body_size 50m;
-    }
+	location /upload {
+		proxy_pass http://rhea:30081;
+        client_max_body_size 50m;
+	}
 
     error_log /var/log/nginx/storage_error.log;
     access_log /var/log/nginx/storage_access.log;
