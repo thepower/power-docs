@@ -14,12 +14,14 @@ This section is under development. Any actions with this document are not recomm
     - [Software](#software)
 - [What do I need to participate in testnet campaign?](#what-do-i-need-to-participate-in-testnet-campaign)
   - [Step 1: Prepare your directory structure](#step-1-prepare-your-directory-structure)
-  - [Step 2: Download `docker-compose.yaml`](#step-2-download-docker-composeyaml)
-  - [Step 3: Download the configuration files](#step-3-download-the-configuration-files)
-  - [Step 4: Set up the configs](#step-4-set-up-the-configs)
-  - [Step 5: Set up SSL](#step-5-set-up-ssl)
+  - [Step 2: Get IP addresses and DNS](#step-2-get-ip-addresses-and-dns)
+  - [Step 3: Download `docker-compose.yml`](#step-3-download-docker-composeyml)
+  - [Step 4: Download the configuration files](#step-4-download-the-configuration-files)
+  - [Step 5: Set up the configs](#step-5-set-up-the-configs)
+    - [How to generate the private key](#how-to-generate-the-private-key)
   - [Step 6: Start the node](#step-6-start-the-node)
     - [How to stop the node?](#how-to-stop-the-node)
+  - [Step 7: Set up SSL](#step-7-set-up-ssl)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -224,7 +226,7 @@ Before getting the keys you need to set up your environment by installing Erlang
 
 6. Copy `privkey` into `my_privkey` field of `rhea.config` file.
 
-### Step 5: Start the node
+### Step 6: Start the node
 
 Start your node using the following command:
 
@@ -240,7 +242,7 @@ To stop the node run the following command:
 docker-compose down
 ```
 
-### Step 6: Set up SSL
+### Step 7: Set up SSL
 
 Follow the steps below to set up SSL:
 
