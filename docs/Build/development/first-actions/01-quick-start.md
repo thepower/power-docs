@@ -1,4 +1,4 @@
-# Power SDK JavaScript libraries
+# Power SDK Quick Start Guide
 
 **Table of Contents**
 

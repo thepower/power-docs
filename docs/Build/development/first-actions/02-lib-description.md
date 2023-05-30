@@ -9,6 +9,7 @@
 - [Transactions Lib](#transactions-lib)
 - [Network Lib](#network-lib)
 - [scLoader Lib](#scloader-lib)
+- [What's next?](#whats-next)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -86,3 +87,10 @@ The `sc_loader.js` file contains implementation of the instantiation of smart co
 | `instantiateSC` | `async instantiateSC(address, chain)`               | Use this method to instantiate remote SC. This method returns an object with instantiated smart contract. The returned object exposes `executeMethod`           | `address` — text representation of smart contract address;<br/> `chain` — chain number                                                                                                    |
 | `loadScLocal`   | `async loadScLocal(code, state = {}, balance = {})` | Use this method to locally load smart contract from. This method returns an object with an instantiated smart contract. Returned object exposes `executeMethod` | `code` — typed array (`Uint8Array`), containing the smart contract code;<br/>`state` — object containing smart contract state. <br/>`balance` — object containing smart contract balance. |
 | `executeMethod` |                                                     | Use this method to execute method of a smart contract. This method asynchronously executes specified smart contract method                                      | `method` — method name<br/>`params` — array with method parameters                                                                                                                        |
+
+## What's next?
+
+Visit our Hello World apps section to learn how to work with our
+
+- [transactions](./transactions/01-intro.md),
+- [smart contracts](./smart-contracts/01-intro.md).
