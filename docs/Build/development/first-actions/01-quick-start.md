@@ -18,7 +18,7 @@ The API description can be found [here](https://doc.thepower.io/docs/Build/api/c
 
 ## Quick start
 
-To start using Power SDK just execute the following commands:
+To start using to start using the JavaScript implementation of The Power API:
 
 1. Clone `tp_sdk_js` repository into desired working directory:
 

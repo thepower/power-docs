@@ -12,7 +12,7 @@ Before you start working with the smart contracts, please, go through the steps 
 
 ## Next steps
 
-- [**Create your project**](02-create-project.md);
-- [**Deploy smart contract**](03-deploy-smart-contract.md);
-- [**Call EVM smart contract function locally**](04-calling-function-locally.md);
-- [**Send the EVM smart contract function call via a transaction**](05-send-function-call-transaction.md).
+- [**Create Smart Contract**](02-create-project.md);
+- [**Deploy Smart Contract**](03-deploy-smart-contract.md);
+- [**Call EVM Smart Contract function locally**](04-calling-function-locally.md);
+- [**Send the EVM Smart Contract function call via a transaction**](05-send-function-call-transaction.md).
