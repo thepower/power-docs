@@ -130,19 +130,20 @@ See the link below!
 
 :::
 
-Use [this](./resources/docker-compose.yml) link to download `docker-compose.yml`, or use the following command:
+Use the following command to download `docker-compose.yml`:
 
 ```bash
-wget <link to docker-compose.yml, see above> -O /opt/storage/docker-compose.yml
+wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community/phase-3/resources/docker-compose.yml -O /opt/storage/docker-compose.yml
 ```
 
 ### Step 4: Download the configuration files
 
-Download [storage.conf.template](./resources/storageconf.template), [env](./resources/env.env), and [rhea.config](./resources/rhea.config) using the links, or use the following command:
+Download `storage.conf.template`, [env](./resources/env.env), and `rhea.config` using the following commands:
 
 ```bash
-wget <link to storage.conf.template, see above, right click and copy> -O /opt/storage/storage.conf.template
-wget <link to rhea.config see above, right click and copy> -O /opt/storage/rhea.config
+wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community/phase-3/resources/storageconf.template -O /opt/storage/storage.conf.template
+
+wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community/phase-3/resources/rhea.config -O /opt/storage/rhea.config
 ```
 
 ### Step 5: Set up the configs
@@ -224,7 +225,17 @@ Before getting the keys you need to set up your environment by installing Erlang
 
    :::
 
-6. Copy `privkey` into `my_privkey` field of `rhea.config` file.
+5. Copy `privkey` into `my_privkey` field of `rhea.config` file. You can also use the following command:
+
+   ```bash
+   grep privkey tpcli.key >> rhea.config
+   ```
+   
+   :::caution Note
+
+   Delete the second `{my_privkey,"..."}` string from `rhea.config` file after using the command.
+
+   :::
 
 ### Step 6: Start the node
 
@@ -278,7 +289,7 @@ Follow the steps below to set up SSL:
    acme.sh --install-cert --ecc -d your_storage_node.example.com \
    --key-file       /opt/storage/ssl/ssl.key  \
    --fullchain-file /opt/storage/ssl/ssl.crt \
-   --reloadcmd     "docker reload nginx"
+   --reloadcmd     "docker restart nginx"
    ```
 
    :::warning
