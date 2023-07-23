@@ -1,4 +1,4 @@
-# Testnet Campaign Flow (Phase 3)
+# Long-Lived Testnet Flow
 
 :::warning
 
