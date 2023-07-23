@@ -1,6 +1,6 @@
 # How to transfer a node into another chain?
 
-:::info
+:::info Note
 
 You can use either `docker` or `docker-compose` commands.
 
@@ -8,7 +8,7 @@ You can use either `docker` or `docker-compose` commands.
 
 To transfer your node into another chain:
 
-1. Stop your node by using the following command:
+1. Stop your node by using one of the following commands:
 
    ```bash
    docker stop tpnode && docker rm tpnode
@@ -26,7 +26,7 @@ To transfer your node into another chain:
    tar -cvjf /opt/thepower ~/thepower_before.tar.bz2
    ```
 
-3. Delete the database and logs using the dollowing command:
+3. Delete the database and logs using the following command:
 
    ```bash
    find /opt/thepower/db ! -path "*/db/cert/*" -exec rm {} \; && rm /opt/thepower/log/*	
@@ -57,7 +57,7 @@ To transfer your node into another chain:
 
       :::caution Attention
 
-      Take the upstream links from the file.
+      Take the upstream links from the [file](./resources/upstream.txt).
 
       :::
 
@@ -90,4 +90,4 @@ To transfer your node into another chain:
    
    where
 
-   `<hostname>` is your node name.
+   - `<hostname>` is your node name.
