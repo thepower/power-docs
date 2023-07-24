@@ -29,7 +29,7 @@ To transfer your node into another chain:
 2. Back up your node by using the following command:
 
    ```bash
-   tar -cvjf /opt/thepower ~/thepower_before.tar.bz2
+   tar -cvjf ~/thepower_before.tar.bz2 /opt/thepower
    ```
 
 3. Delete the database and logs using the following command:
@@ -91,10 +91,11 @@ To transfer your node into another chain:
 6. After going through the steps above, make sure that all works correctly:
 
    ```bash
-   curl http://<hostname>:1443/api/node/status	
+   curl -s https://<hostname>:1443/api/node/status | jq .status.blockchain.chain,.status.blockchain.header.chain
    ```
    
    where
 
    - `<hostname>` is your node name.
 
+   There you will get two numbers: zero and a new chain number.
