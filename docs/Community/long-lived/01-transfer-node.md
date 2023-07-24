@@ -6,6 +6,12 @@ You can use either `docker` or `docker-compose` commands.
 
 :::
 
+:::caution Attention
+
+Before you start, please, find your node and a chain you intend to move your node into in [this file](https://tea.thepower.io/move.csv).
+
+:::
+
 To transfer your node into another chain:
 
 1. Stop your node by using one of the following commands:
@@ -57,7 +63,7 @@ To transfer your node into another chain:
 
       :::caution Attention
 
-      Take the upstream links from the [file](./resources/upstream.txt).
+      Take the upstream links from the [file](https://tea.thepower.io/upstream.txt).
 
       :::
 
@@ -91,3 +97,4 @@ To transfer your node into another chain:
    where
 
    - `<hostname>` is your node name.
+

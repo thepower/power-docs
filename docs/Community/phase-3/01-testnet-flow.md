@@ -1,4 +1,4 @@
-# Long-Lived Testnet Flow
+# Testnet Campaign Flow (Phase 3)
 
 :::warning
 
@@ -102,9 +102,9 @@ Here you have the following options:
 1. You may have your own domain name (**recommended**).
 2. You may use the VPS-generated domain name. You can check your domain name at your VPS. Here is the examples for Hetzner and Scaleway:
 
-   ![Hetzner](./resources/Hetzner.jpg)
+   ![Hetzner](resourcesetzner.jpg)
 
-   ![Scaleway](./resources/Scaleway.jpg)
+   ![Scaleway](resourcescaleway.jpg)
 
 3. You may use free services, like [FreeDNS](https://freedns.afraid.org). You can also use the following hosting services from the list below:
 
@@ -138,7 +138,7 @@ wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community
 
 ### Step 4: Download the configuration files
 
-Download `storage.conf.template`, [env](./resources/env.env), and `rhea.config` using the following commands:
+Download `storage.conf.template`, [env](resourcesnv.env), and `rhea.config` using the following commands:
 
 ```bash
 wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community/phase-3/resources/storageconf.template -O /opt/storage/storage.conf.template
