@@ -138,7 +138,7 @@ wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community
 
 ### Step 4: Download the configuration files
 
-Download `storage.conf.template`, [env](resourcesnv.env), and `rhea.config` using the following commands:
+Download `storage.conf.template`, [env](./resources/env.env), and `rhea.config` using the following commands:
 
 ```bash
 wget https://raw.githubusercontent.com/thepower/power-docs/master/docs/Community/phase-3/resources/storageconf.template -O /opt/storage/storage.conf.template
