@@ -100,11 +100,11 @@ You need to have a public IP address to take part in the testnet campaign. You c
 Here you have the following options:
 
 1. You may have your own domain name (**recommended**).
-2. You may use the VPS-generated domain name. You can check your domain name at your VPS. Here is the examples for Hetzner and Scaleway:
+2. You may use the VPS-generated domain name. You can check your domain name at your VPS. Here are the examples for Hetzner and Scaleway:
 
-   ![Hetzner](resourcesetzner.jpg)
+   ![Hetzner](./resources/Hetzner.jpg)
 
-   ![Scaleway](resourcescaleway.jpg)
+   ![Scaleway](./resources/Scaleway.jpg)
 
 3. You may use free services, like [FreeDNS](https://freedns.afraid.org). You can also use the following hosting services from the list below:
 
