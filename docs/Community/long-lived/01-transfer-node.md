@@ -123,7 +123,13 @@ To transfer your node into another chain:
       
          - for chains `1025`, `1026`, `1027` actual ports are `41025`, `41026`,`41027`.  
          - for chains `1037` and `1038` actual port is `1800`.
+
+         :::caution Attention
       
+         Please, specify these ports in node start-up command or in `docker-compose.yml`.
+         
+         :::
+
       - Save changes.
       - If you had a **Consensus Node**, exclude `genesis.txt` from start-up command or from `docker-compose.yml`.
       - Start the node.
