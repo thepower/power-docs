@@ -98,4 +98,37 @@ To transfer your node into another chain:
 
    - `<hostname>` is your node name.
 
-   There you will get two numbers: zero and a new chain number.
+   :::info Note
+
+   If the above-mentioned command returns two indifferent values, it means that the node has become a **Consensus Node** in a new chain. It must be reflected in configuration. To do this:
+
+   1. Stop the node.
+   2. Back it up.
+   3. Open `node.config` file in editing mode and make the following changes:
+   
+      - Delete `{upstream ...}.` line,
+      - Delete `{replica, true}` line,
+      - Delete `db/peers` file,
+      - Replace `{tpic,#{peers ... }}.` with a line from the table below, according to your chain number:
+
+         | Chain number | Line   |
+         |--------------|--------|
+         | 1025         |`{tpic,#{peers => [{"c1025n02.thepower.io", 41025},{"c1025n04.thepower.io", 41025},{"http://c1025n05.thepower.io", 41025}], port => 41025, allow_rfc1918 => true}}.`|
+         | 1026         |`{tpic,#{peers => [{"c1026n8.thepower.io", 41026},{"c1026n10.thepower.io", 41026},{"power-node.allsteeply.com", 41026}], port => 41026, allow_rfc1918 => true}}.`|
+         | 1027         |`{tpic,#{peers => [{"c1027n7.thepower.io", 41027},{"thepower.lefey.ru", 41027},{"c1027n10.thepower.io", 41027}], port => 41027, allow_rfc1918 => true}}.`|
+         | 1037         |`{tpic,#{peers => [{"c1037n2.deinfra.net", 1800},{"tpnode.nova-network.systems", 1800}], port => 1800, allow_rfc1918 => true}}.`|
+         | 1038         |`{tpic,#{peers => [{"c1038n5.deinfra.net", 1800},{"c1038n6.deinfra.net", 1800},{"c1038n12.deinfra.net", 1800}], port => 1800, allow_rfc1918 => true}}.`|
+
+      - Check `tpic` ports: 
+      
+         - for chains `1025`, `1026`, `1027` actual ports are `41025`, `41026`,`41027`.  
+         - for chains `1037` and `1038` actual port is `1800`.
+      
+      - Save changes.
+      - If you had a **Consensus Node**, exclude `genesis.txt` from start-up command or from `docker-compose.yml`.
+      - Start the node.
+      - Check that your node is working. The above-mentioned command must return same chain numbers, and a temporary must change.
+
+  :::
+
+  There you will get two numbers: zero and a new chain number. As a first value, you'll get zero for **Seed Nodes** and an old chain number for **COnsensus Nodes**.
