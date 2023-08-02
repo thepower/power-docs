@@ -98,7 +98,7 @@ To transfer your node into another chain:
 
    - `<hostname>` is your node name.
 
-   :::info Note
+:::info Note
 
    If the above-mentioned command returns two indifferent values, it means that the node has become a **Consensus Node** in a new chain. It must be reflected in configuration. To do this:
 
@@ -129,6 +129,6 @@ To transfer your node into another chain:
       - Start the node.
       - Check that your node is working. The above-mentioned command must return same chain numbers, and a temporary must change.
 
-  :::
+:::
 
-  There you will get two numbers: zero and a new chain number. As a first value, you'll get zero for **Seed Nodes** and an old chain number for **COnsensus Nodes**.
+  There you will get two numbers: zero and a new chain number. As a first value, you'll get zero for **Seed Nodes** and an old chain number for **Consensus Nodes**.
