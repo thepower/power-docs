@@ -43,7 +43,7 @@ To transfer your node into another chain:
    1. Delete all data in square brackets in the following line:
 
       ```erlang
-      {tpic,#{peers => [{"node2", 43218},{"node3", 43219}], port => 43217, allow_rfc1918 => true}}.
+      {tpic,#{peers => [], port => 1800, allow_rfc1918 => true}}.
       ```
 
    2. Add the following line:
