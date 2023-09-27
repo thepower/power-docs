@@ -1,11 +1,5 @@
 # Creating a wallet on PowerHub
 
-:::caution Attention
-
-This section is under development at the moment.
-
-:::
-
 To create a wallet on PowerHub:
 
 1. Go to [PowerHub website](https://hub.thepower.io/signup).
