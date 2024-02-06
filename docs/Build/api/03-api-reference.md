@@ -35,7 +35,7 @@ Response type — binary (`binary/octet-stream`):
 
 If there is no key or code, error 404 will appear.
 
-## /api/address/{address}/state/0x{hex key}
+## ## `/api/address/{address}/state/0x{hex key}`
 
 `/api/address/{address}/state/0x{hex key}` is an endpoint for showing the data according to the `0x{hex key}` in smart-contract state.
 
@@ -1084,6 +1084,10 @@ Example of use:
 ## /api/address/`{address}`
 
 | Purpose                                         | Request type | Input parameters                                                                                       | Response                                                                                                                                                                                                                   |
+|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state;  `address (String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
+|-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The definition of chain belonging to address     | -            | `{address}` `(string)` — the address of the wallet in textual or binary representation in hex format | `chain (int)` — the number of the wallet-related chain address; `(String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation                                     |
 |-------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Information about a wallet with a given address | `GET`        | `{address}` `(string)` — the address of the wallet in a textual or binary representation in hex format | `info (Object)` — an object with information about the current wallet state;  `address (String)` — the address converted to binary representation; `txtaddress (String)` — the address converted to textual representation |
 
