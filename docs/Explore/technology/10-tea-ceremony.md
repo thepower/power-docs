@@ -1,9 +1,9 @@
 # Tea Ceremony algorithm
 
-**Table of contents**
+## Table of contents
 
-   - [Introduction](#introduction)
-   - [Algorithm work scheme](#algorithm-work-scheme)
+- [Introduction](#introduction)
+- [Algorithm work scheme](#algorithm-work-scheme)
 
 ## Introduction
 
@@ -28,6 +28,7 @@ Tea Ceremony algorithm works as follows:
    ```bash
    curl -d '{"chain_number":666,"nodes":3,"settings":[{"p":["current","chain","blocktime"],"v":2},{"p":["current","chain","minsig"],"v":2},{"p":["current","chain","allowempty"],"v":0},{"p":["current","chain","patchsigs"],"v":2},{"p":["current","allocblock","block"],"v":666},{"p":["current","allocblock","group"],"v":10},{"p":["current","allocblock","last"],"v":0},{"p":["current","endless",["!bin","800140029A000001"],"SK"],"v":true},{"p":["current","endless",["!bin","800140029A000001"],"TST"],"v":true},{"p":["current","freegas"],"v":2000000},{"p":["current","something_left"],"v":["!bin","01020304"]},{"p":["current","gas","SK"],"v":1000},{"p":["current","nosk"],"v":1}]}' https://tea.thepower.io/api/new_ceremony -H "content-type: application/json"
    ```
+
    where
 
    - parameters in `''` are `json`-formatted;
@@ -35,7 +36,7 @@ Tea Ceremony algorithm works as follows:
 
 2. The request returns a Ceremony token.
 3. The users start the Tea Ceremony client on each node in a chain. All node providers in the chain must start the Tea Ceremony client on their nodes to initiate generation of `genesis txt`. Otherwise, the node public keys will not be added into `genesis.txt` and will not be trusted.
-4. The Tea Ceremony client [generates the private keys](../../Maintain/build-and-start-a-node/03-ssl-certs-for-node.md#private-key-generation) for nodes.
+4. The Tea Ceremony client [generates the private keys](../../Maintain/build-and-start-a-node/03-ssl-certs-for-node.md) for nodes.
 5. The Tea Ceremony client waits for `genesis.txt` to sign it.
 6. The Tea Ceremony client sends the signed `genesis.txt` back to the node, where the client was started.
 7. The Tea Ceremony client creates the node configuration files.

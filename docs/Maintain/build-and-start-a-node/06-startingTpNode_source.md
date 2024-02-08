@@ -10,8 +10,6 @@
   - [Install Erlang using `kerl`](#install-erlang-using-kerl)
 - [Downloading and building the node](#downloading-and-building-the-node)
 - [Starting the node](#starting-the-node)
-  - [Starting the node in Dev Mode](#starting-the-node-in-dev-mode)
-  - [Starting the node in Release Mode](#starting-the-node-in-release-mode)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

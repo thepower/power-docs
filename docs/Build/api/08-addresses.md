@@ -1,21 +1,21 @@
 # Addresses
 
-**Table of Contents**
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Address structure in textual and binary representation](#address-structure-in-textual-and-binary-representation)
-    - [Address structure in binary representation](#address-structure-in-binary-representation)
-    - [Address structure in textual representation](#address-structure-in-textual-representation)
+  - [Address structure in binary representation](#address-structure-in-binary-representation)
+  - [Address structure in textual representation](#address-structure-in-textual-representation)
 - [Conversion of public and private addresses](#conversion-of-public-and-private-addresses)
-    - [Public address conversion](#public-address-conversion)
-    - [Private address conversion](#private-address-conversion)
+  - [Public address conversion](#public-address-conversion)
+  - [Private address conversion](#private-address-conversion)
 
 ## Introduction
 
 Currently, addresses can be represented in two following formats:
 
-1. [Human-readable representation. This representation is created to be read by a human. It will be called **textual representation** or **textual format** further herein;](#textual-representation)
-2. [Machine-readable representation. This representation is created to be read by a machine and represents addresses inside transactions or the blockchain itself. It will be called **binary representation** or **binary format** further herein.](#binary-representation)
+1. [Human-readable representation. This representation is created to be read by a human. It will be called **textual representation** or **textual format** further herein](#address-structure-in-textual-representation)
+2. [Machine-readable representation. This representation is created to be read by a machine and represents addresses inside transactions or the blockchain itself. It will be called **binary representation** or **binary format** further herein.](#address-structure-in-binary-representation)
 
 > **Note**
 >

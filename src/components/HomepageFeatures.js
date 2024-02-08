@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
-  {
-    title: 'Native Node API',
-    Svg: require('../../static/img/api.svg').default,
+    {
+    title: 'Power EVM',
+    Svg: require('../../static/img/vm.svg').default,
     description: (
       <>
-        The user-friendly interface for developers that do not require special
-        skills allows integrating blockchain in the classic, generic
-        applications and making them decentralized.
+        Serverless backend for Dapps - censorship and downtime tolerance. Real
+        dapps are executed in a decentralized power network and have no single
+        point of failure.
       </>
     ),
   },
@@ -19,19 +19,18 @@ const FeatureList = [
     Svg: require('../../static/img/sdk.svg').default,
     description: (
       <>
-        JavaScript SDK for creating decentralized applications and Rust
-        libraries for smart contracts and decentralized backend.
+        Frontend SDK for creating decentralized applications, smart contracts and decentralized backends.
       </>
     ),
   },
   {
-    title: 'Multi Virtual Machine',
-    Svg: require('../../static/img/vm.svg').default,
+    title: 'Power API',
+    Svg: require('../../static/img/api.svg').default,
     description: (
       <>
-        Serverless backend for Dapps - censorship and downtime tolerance. Real
-        dapps are executed in a decentralized power network and have no single
-        point of failure.
+        Decentralized RPC API for developers that do not require special
+        skills allows integrating blockchain in the classic, generic
+        applications and making them decentralized.
       </>
     ),
   },

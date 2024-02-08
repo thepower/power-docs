@@ -86,7 +86,7 @@ The public key is required to verify that the private key signature conforms wit
 
 ### Data Signature
 
-On the line 6 of the example given in [How the cryptography works](#how-the-cryptography-works) section, a `textfile.txt` file is created with the contents of `test123` (on some operating systems this command could add a newline character):
+On the line 6 of the example given in [How the cryptography works](#full-example-of-private-and-public-key-generation-process) section, a `textfile.txt` file is created with the contents of `test123` (on some operating systems this command could add a newline character):
 
 ```bash
 ~ echo 'test123' > textfile.txt

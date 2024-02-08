@@ -60,13 +60,13 @@ const config = {
             label: 'API',
           },
           {
-          label: 'SDK',
+          label: 'Power SDK',
           href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
           position: 'right',
           },
           {
-            label: 'Power_hub',
-            href: 'https://hub.thepower.io',
+            label: 'Power Wallet',
+            href: 'https://wallet.thepower.io',
             position: 'right',
           },
           {
@@ -112,8 +112,16 @@ const config = {
             title: 'Tools',
             items: [
               {
-                label: 'Power_hub',
+                label: 'Power Wallet',
+                href: 'https://wallet.thepower.io',
+              },
+              {
+                label: 'Power Hub',
                 href: 'https://hub.thepower.io',
+              },
+              {
+                label: 'Power Explorer',
+                href: 'https://explorer.thepower.io',
               },
               {
               label: 'Power SDK',

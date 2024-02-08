@@ -162,4 +162,3 @@ where
          ```bash
          systemctl start tpnode.service
          ```
-

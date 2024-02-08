@@ -3,7 +3,7 @@
 ## Table of Contents
 
    - [What is `node.config` and `genesis.txt`?](#what-is-nodeconfig-and-genesistxt)
-   - [`node.config` example](#nodeconfig-description)
+   - [`node.config` example](#nodeconfig-example)
    - [`genesis.txt` example](#genesistxt-example)
    - [Generation of `genesis.txt`](#generation-of-genesistxt)
 
@@ -64,7 +64,7 @@ Here is an example of a `node.config` file:
 > 
 > But the problem is that one of addresses in `discovery` section (`tpic` address) should  also be local, if the chain is started in a local network.
 
-Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need. Check out the "How to edit `node.config`" guide for [Docker](../../Community/phase-1/02-download-build-run-docker.md#how-to-edit-nodeconfig) and for built from [sources](../../Community/phase-1/03-download-build-run-source.md#how-to-edit-nodeconfig).
+Edit the file, when you get it. Just replace node names, ports and addresses with the ones you need. Check out the "How to edit `node.config`" guide for [Docker](../../Community/phase-1/02-download-build-run-docker.md) and for built from [sources](../../Community/phase-1/03-download-build-run-source.md).
 
 ## `genesis.txt` example
 

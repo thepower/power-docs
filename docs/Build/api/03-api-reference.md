@@ -7,7 +7,7 @@
 - `nodeid` — the identifier of the node that has issued the signature. The signature is calculated from public key;
 - `signature` — a signature.
 
-## /api/address/{address}/code
+## `/api/address/{address}/code`
 
 `/api/address/{address}/code` allows users to obtain the smart contract code.
 
@@ -63,7 +63,7 @@ Response type — binary:
 0000001
 ```
 
-## /api/binblock/{hash}
+## `/api/binblock/{hash}`
 
 `/api/binblock/{hash}` gets a verifiable block in binary format, where:
 
@@ -416,7 +416,7 @@ Try the following links to see how it works:
   
   :::
 
-## /api/blockhash/{height}
+## `/api/blockhash/{height}`
 
 With `/api/blockhash/{height}` you'll get  a `.json` file with the hash of the block with the specified `{height}`.
 
@@ -444,7 +444,7 @@ where
 }
 ```
 
-## api/nodes/{chain}
+## `api/nodes/{chain}`
 
 `api/nodes/{chain}` will show you the nodes of the specified `{chain}`.
 
@@ -630,7 +630,7 @@ where
    - a number of nodes with such block;
    - nodes list.
 
-## /api/address/0x{HEX}/verify and /api/address/{address}/verify
+## `/api/address/0x{HEX}/verify and /api/address/{address}/verify`
 
 With `/api/address/0x{HEX}/verify` and `/api/address/{address}/verify` you can get the smart contract address with a verifiable proof.
 
@@ -856,7 +856,7 @@ where
 }
 ```
 
-## /api/tx/status/{txid}
+## `/api/tx/status/{txid}`
 
 `/api/tx/status/{txid}` is the transaction status. It appears right after the transaction has been included into the block and is present there only for a few minutes.
 

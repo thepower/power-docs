@@ -81,7 +81,7 @@ New hello!
 
 :::info Note
 
-If you try to repeat the code described in the section [**above**](#calling-evm-smart-contract-function-locally), in the console you will see the following output:
+If you try to repeat the code described in the section above, in the console you will see the following output:
 
 ```bash
  % node callScTx.js 
