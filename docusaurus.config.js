@@ -7,7 +7,7 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Power DCloud',
-  tagline: 'Fast & Low-cost On-Chain Web3 Platform',
+  tagline: 'Decentralized Web Services',
   url: 'https://doc.thepower.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -25,10 +25,16 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],        
         },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],        
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

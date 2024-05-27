@@ -22,9 +22,9 @@ To start using the JavaScript implementation of The Power API:
 
 1. Install the `@thepowereco/tssdk` package:
 
-   ```bash
-   npm i @thepowereco/tssdk
-   ```
+```bash npm2yarn
+npm i @thepowereco/tssdk
+```
 
 This package now contains the necessary libraries for The Power API.
 
@@ -43,4 +43,4 @@ import { AddressLib, TransactionsLib } from '@thepowereco/tssdk';
 
 2. Go get information about The Power libraries to dive into the development [here](./02-lib-description.md).
 
-For more detailed information about the API and its usage, please refer to the [official API documentation](https://doc.thepower.io/docs/Build/api/api-reference/).
+For more detailed information about the API and its usage, please refer to the [API refference documentation](https://doc.thepower.io/docs/Build/api/api-reference/).
