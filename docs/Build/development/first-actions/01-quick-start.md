@@ -18,51 +18,21 @@ The API description can be found [here](https://doc.thepower.io/docs/Build/api/c
 
 ## Quick start
 
-To start using to start using the JavaScript implementation of The Power API:
+To start using the JavaScript implementation of The Power API:
 
-1. Clone `tp_sdk_js` repository into desired working directory:
-
-   ```bash
-   git clone https://github.com/thepower/tp_sdk_js.git
-   ```
-
-2. Go to `tp_sdk_js` directory:
+1. Install the `@thepowereco/tssdk` package:
 
    ```bash
-   cd tp_sdk_js
+   npm i @thepowereco/tssdk
    ```
 
-3. Register the `tp_msgpack` submodule:
+This package now contains the necessary libraries for The Power API.
 
-   ```bash
-   git submodule init
-   ```
+You can import the necessary libraries directly from the package. For example, if you need the address library or the transaction library, you can import them as follows:
 
-4. Update the submodule:
-
-   ```bash
-   git submodule update
-   ```
-5. Install the library:
-
-   ```bash
-   npm install
-   ```
-6. Build the library:
-
-   ```bash
-   npm run build
-   ```
-
-`tp_sdk_js/build` directory now contains `tp-sdk.min.js` file. This file can be included into your HTML page. Global object tpSdk will be available for you. It contains libraries for The Power API.
-
-As another option, you may simply import `address-lib.js` (address library) or `transactions-lib.js` (transaction library) files directly.
-
-:::caution Attention
-
-When using transaction library, please make sure the `js-sha512/sha512.min.js` file is accessible via root-relative link `/sha512.min.js`.
-
-:::
+```javascript
+import { AddressLib, TransactionsLib } from '@thepowereco/tssdk';
+```
 
 ## What's next?
 
@@ -72,3 +42,5 @@ When using transaction library, please make sure the `js-sha512/sha512.min.js` f
    - [smart contracts](./smart-contracts/01-intro.md).
 
 2. Go get information about The Power libraries to dive into the development [here](./02-lib-description.md).
+
+For more detailed information about the API and its usage, please refer to the [official API documentation](https://doc.thepower.io/docs/Build/api/api-reference/).
