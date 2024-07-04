@@ -1,4 +1,4 @@
-# Starting up EVM code without deployment
+# Running EVM code without deployment
 
 ## Introduction
 
