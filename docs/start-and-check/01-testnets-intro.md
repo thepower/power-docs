@@ -1,10 +1,18 @@
-# What is a testnet in DCloud?
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-**Table of Contents**
-
+- [What is a testnet in DCloud?](#what-is-a-testnet-in-dcloud)
   - [Introduction](#introduction)
   - [Terminology](#terminology)
   - [Public testnet](#public-testnet)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# What is a testnet in DCloud?
+
+<!-- start DOCTOC -->
+<!-- end DOCTOC -->
 
 ## Introduction
 

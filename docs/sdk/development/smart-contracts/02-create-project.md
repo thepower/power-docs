@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Create and prepare a smart contract](#create-and-prepare-a-smart-contract)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Create and prepare a smart contract
 
 First of all, you need to create and prepare your smart contract to work with it. To do this:

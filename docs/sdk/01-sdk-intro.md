@@ -1,4 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Power SDK](#power-sdk)
+  - [Features](#features)
+  - [SDK Modules](#sdk-modules)
+  - [Installation](#installation)
+  - [Useful links](#useful-links)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Power SDK
+
+<!-- start DOCTOC -->
+<!-- end DOCTOC -->
 
 The Power SDK is the SDK for developing decentralized applications of the Power DCloud platform.
 

@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Getting started](#getting-started)
+    - [Welcome to the Power DCloud documentation!](#welcome-to-the-power-dcloud-documentation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Getting started
 
 ### Welcome to the Power DCloud documentation! 

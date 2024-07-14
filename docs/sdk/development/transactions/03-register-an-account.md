@@ -1,9 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Register an account](#register-an-account)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Register an account
 
-1. Ensure you are in `dcloud_example` directory.
-2. Start up `register.js` in terminal using the following command to register an account:
+1. Ensure you are in `dcloud_example` directory, and you have [installed the Power SDK](../02-quick-start.md).
+2. Execute the following command:
 
    ```bash
+   yarn
+   ```
+
+3. Start up `register.js` in terminal using the following command to register an account:
+
+   ```bash npm2yarn
    node register.js
    ```
 
@@ -43,4 +57,4 @@
 
 You can find your actual account address in `address` field. You will need it in the next tasks.
 
-Now you can work with [transactions](03-register-an-account.md) and [smart contracts](../smart-contracts/01-intro.md).
+Now you can work with [transactions](01-intro.md) and [smart contracts](../smart-contracts/01-intro.md).

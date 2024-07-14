@@ -1,4 +1,4 @@
-# How to Deploy Files to a Decentralized Storage (DStorage)
+# The tpe CLI
 
 **Table of contents**
 
@@ -6,76 +6,47 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Deploy the files](#deploy-the-files)
+- [`tpe` usage](#tpe-usage)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
-Power Storage is a revolutionary decentralized storage platform that offers you a fast, secure, and reliable way to store and distribute your data.
+The tpe CLI (Command Line Interface) is a tool that has a goal of facilitation the management and deployment of decentralized applications and services.
 
-## Prerequisites
+## `tpe` usage
 
-Make sure you have `npm` installed on your machine.
+There is how you may utilize the `tpe` CLI:
 
-## Deploy the files
+1. **Account Management:**
 
-Follow the steps below to deploy files to a decentralized storage:
+   - **tpe acc get-balance:** Retrieve the balance of a wallet address, essential for managing funds within the platform.
+   - **tpe acc register:** Register a new account on the specified blockchain or network, allowing users to create and set up new accounts.
+   - **tpe acc send-sk:** Send SK tokens to a specified address, enabling transactions and the transfer of assets.
 
-1. Install the `@thepowereco/cli` package globally using npm: 
+2. **Container Management:**
 
-   ```bash
-   npm install -g @thepowereco/cli
-   ```
+   - **tpe container actions:** Perform various actions on containers, such as starting, stopping, or getting logs, crucial for managing deployed services.
+   - **tpe container create:** Create new containers, facilitating the deployment of applications in isolated environments.
+   - **tpe container list:** List containers owned by a user, providing an overview of deployed services.
+   - **tpe container update:** Update container details, allowing for the modification and maintenance of deployed applications.
+   - **tpe container upload:** Upload files to a container, necessary for deploying and updating application content.
 
-2. Register an account with `tpe`: 
+3. **Smart Contract Management:**
 
-   ```bash
-   tpe register
-   ```
+   - **tpe contract deploy:** Deploy smart contracts to the blockchain, a key feature for launching decentralized applications.
+   - **tpe contract get:** Call methods on deployed smart contracts, allowing users to interact with and query contract data.
+   - **tpe contract set:** Execute methods on smart contracts, enabling the update and execution of contract functions.
 
-3. Select the `devnet` option and make a note of the provided information, as it will be needed later. Here is the example:
+4. **Storage Management:**
 
-   ```bash
-   ✔ Please, select the network: · devnet
-   Loading... done
-   Network: devnet
-   Chain number: 1
-   Account address: AA100000001677740890
-   Account seed phrase: peanut shadow approve put grain outdoor hand program angry tiger cry diary
-   Account wif: L2NzLJEtduehhwxT7cidd13tNDmsnZn9neoYa9wRg9W89gDcdeVu
-   To replenish the balance of your account please visit: https://faucet.thepower.io
-   ```
+   - **tpe storage tasklist:** Show the list of all tasks for the current account, providing insights into ongoing operations.
+   - **tpe storage upload:** Upload application files to the storage, essential for maintaining and updating application data.
 
-4. Go to the [**Faucet**](https://faucet.thepower.io/). 
-5. Select the chain 1 option:
- 
-   ![chain](../tools/resources/chain.jpg)
-   
-6. Copy the provided address into the information from step 3. 
-7. Click **Send tokens**:
+5. **General Utilities:**
 
-   ![send_tokens](../tools/resources/send_tokens.jpg)
+   - **tpe update [CHANNEL]:** Update the tpe CLI itself, keeping the tool up-to-date with the latest improvements.
+   - **tpe help [COMMAND]:** Display help for specific commands, aiding users in understanding and using the CLI effectively.
+   - **tpe autocomplete [SHELL]:** Display autocomplete installation instructions, improving command entry efficiency.
 
-8. Navigate to the folder one level above the folder you want to upload. For example, if you want to upload the `/home/app` folder, navigate to the `/home` folder. 
-9. Run the following command:
-   
-   ```bash
-   tpe upload 
-   ```
-    
-   and specify the folder you want to upload, for example `./app`. 
-10. Enter the `address` and `wif` from step 3. The files will be uploaded.
-11. After the files are uploaded, the location where they will be stored will be indicated.
-
-:::info Note
-
-To deploy a basic `create-react-app` template, modify the paths so that they start from the root domain. 
-
-For example, replace all instances of `="/` with `="./`.
-
-:::
-
-Result will be like this:
-https://storage11.thepower.io/AA100000001677739053/testapp2/
+By leveraging these commands, you can effectively manage decentralized applications, ensuring smooth operation and deployment within a Web3 environment.

@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Sending the EVM smart contract function call via a transaction](#sending-the-evm-smart-contract-function-call-via-a-transaction)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Sending the EVM smart contract function call via a transaction
 
 You can send the EVM smart contract function call via a transaction. To do this:

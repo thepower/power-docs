@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Working with the API](#working-with-the-api)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Working with the API
 
 Work with the API is supported by https protocol using `GET` or `POST` requests (there are different request types for different APIs). Thus, it is possible for you to send data to the server in one of the following ways:

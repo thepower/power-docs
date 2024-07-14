@@ -1,14 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Addresses](#addresses)
+  - [Introduction](#introduction)
+  - [Address structure in textual and binary representation](#address-structure-in-textual-and-binary-representation)
+    - [Address structure in binary representation](#address-structure-in-binary-representation)
+    - [Address structure in textual representation](#address-structure-in-textual-representation)
+  - [Conversion of public and private addresses](#conversion-of-public-and-private-addresses)
+    - [Public address conversion](#public-address-conversion)
+    - [Private address conversion](#private-address-conversion)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Addresses
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Address structure in textual and binary representation](#address-structure-in-textual-and-binary-representation)
-  - [Address structure in binary representation](#address-structure-in-binary-representation)
-  - [Address structure in textual representation](#address-structure-in-textual-representation)
-- [Conversion of public and private addresses](#conversion-of-public-and-private-addresses)
-  - [Public address conversion](#public-address-conversion)
-  - [Private address conversion](#private-address-conversion)
+<!-- start DOCTOC -->
+<!-- end DOCTOC -->
 
 ## Introduction
 

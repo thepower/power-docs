@@ -1,4 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Transactions](#transactions)
+  - [Description of transaction API](#description-of-transaction-api)
+  - [Dive into transaction format](#dive-into-transaction-format)
+  - [Registration Transaction](#registration-transaction)
+  - [Example of calculating the value of the key 'h'](#example-of-calculating-the-value-of-the-key-h)
+  - [PoW difficulty of the registration transaction](#pow-difficulty-of-the-registration-transaction)
+  - [BSig container and signature format](#bsig-container-and-signature-format)
+  - [Generic transactions](#generic-transactions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Transactions
+
+<!-- start DOCTOC -->
+<!-- end DOCTOC -->
 
 Any changes you want to make in the state of the blockchain can be done using transactions. There are two main types of transactions: 
 

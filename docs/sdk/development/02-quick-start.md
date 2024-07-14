@@ -18,9 +18,7 @@ The API description can be found [here](https://doc.thepower.io/docs/Build/api/c
 
 ## Quick start
 
-To start using the JavaScript implementation of The Power API:
-
-1. Install the `@thepowereco/tssdk` package:
+To start using the JavaScript implementation of The Power API install the `@thepowereco/tssdk` package:
 
 ```bash npm2yarn
 npm i @thepowereco/tssdk

@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Deploy EVM smart contract](#deploy-evm-smart-contract)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Deploy EVM smart contract
 
 EVM smart contract deployment also requires tokens. Moreover, you have to pay more expensive commission for such kind of action.

@@ -4,13 +4,12 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-
 - [Introduction](#introduction)
 - [Testnet installation](#testnet-installation)
-   - [Prerequisites](#prerequisites)
-   - [Starting the testnet](#starting-the-testnet)
-   - [Stopping the testnet](#stopping-the-testnet)
-   - [How to delete a Docker image?](#how-to-delete-a-docker-image)
+  - [Prerequisites](#prerequisites)
+  - [Starting the testnet](#starting-the-testnet)
+  - [Stopping the testnet](#stopping-the-testnet)
+  - [How to delete a Docker image?](#how-to-delete-a-docker-image)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

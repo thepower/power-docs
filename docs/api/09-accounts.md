@@ -5,19 +5,19 @@
 **Table of Contents**
 
 - [Request examples](#request-examples)
-   - [Valid request](#valid-request)
-      - [API request](#api-request)
-      - [API response](#api-response)
-   - [Invalid address](#invalid-address)
-       - [API request](#api-request-1)
-       - [API response](#api-response-1)
-   - [Non-existent address](#non-existent-address)
-       - [API request](#api-request-2)
-       - [API response](#api-response-2)
-   - [Description of info block fields](#description-of-info-block-fields)
-       - [Conversion of a public key into PEM format](#conversion-of-a-public-key-into-pem-format)
-       - [Working example](#working-example)
-   - [Obtaining a public key via API](#obtaining-a-public-key-via-api)
+  - [Valid request](#valid-request)
+    - [API request](#api-request)
+    - [API response](#api-response)
+  - [Invalid address](#invalid-address)
+    - [API request](#api-request-1)
+    - [API response](#api-response-1)
+  - [Non-existent address](#non-existent-address)
+    - [API request](#api-request-2)
+    - [API response](#api-response-2)
+- [Description of info block fields](#description-of-info-block-fields)
+  - [Conversion of a public key into PEM format](#conversion-of-a-public-key-into-pem-format)
+  - [Working example](#working-example)
+- [Obtaining a public key via API](#obtaining-a-public-key-via-api)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

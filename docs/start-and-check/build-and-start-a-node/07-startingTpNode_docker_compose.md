@@ -4,10 +4,10 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-   - [Introduction](#introduction)
-   - [Setting up the environment](#setting-up-the-environment)
-   - [Starting the node](#starting-the-node)
-   - [Stopping the node](#stopping-the-node)
+- [Introduction](#introduction)
+- [Setting up the environment](#setting-up-the-environment)
+- [Starting the node](#starting-the-node)
+- [Stopping the node](#stopping-the-node)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

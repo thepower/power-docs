@@ -1,15 +1,17 @@
 # Starting the node from source
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents**
-
 - [Introduction](#introduction)
 - [Setting up the environment](#setting-up-the-environment)
-  - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
-  - [Install Erlang using `kerl`](#install-erlang-using-kerl)
+  - [Install Erlang](#install-erlang)
+    - [Install Erlang using the package manager](#install-erlang-using-the-package-manager)
+    - [Install Erlang using `kerl`](#install-erlang-using-kerl)
 - [Downloading and building the node](#downloading-and-building-the-node)
 - [Starting the node](#starting-the-node)
+- [How to stop the node?](#how-to-stop-the-node)
+- [How to check, if my node works?](#how-to-check-if-my-node-works)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
