@@ -1,22 +1,17 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [The Power CLI](#the-power-cli)
-  - [Introduction](#introduction)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Utility description and usage](#utility-description-and-usage)
-    - [Usage examples](#usage-examples)
-    - [Generic part commands](#generic-part-commands)
-    - [Storage part commands](#storage-part-commands)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # The Power CLI
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Utility description and usage](#utility-description-and-usage)
+  - [Usage examples](#usage-examples)
+  - [Generic part commands](#generic-part-commands)
+  - [Storage part commands](#storage-part-commands)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

@@ -1,21 +1,16 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [How to start a client?](#how-to-start-a-client)
-  - [Introduction](#introduction)
-  - [Set up your environment](#set-up-your-environment)
-  - [Get the Tea Ceremony client](#get-the-tea-ceremony-client)
-  - [Start the Tea Ceremony client](#start-the-tea-ceremony-client)
-  - [After the client is started](#after-the-client-is-started)
-  - [After the successful ceremony](#after-the-successful-ceremony)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to start a client?
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Set up your environment](#set-up-your-environment)
+- [Get the Tea Ceremony client](#get-the-tea-ceremony-client)
+- [Start the Tea Ceremony client](#start-the-tea-ceremony-client)
+- [After the client is started](#after-the-client-is-started)
+- [After the successful ceremony](#after-the-successful-ceremony)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

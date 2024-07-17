@@ -1,23 +1,18 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Cryptography](#cryptography)
-  - [Introduction](#introduction)
-  - [Full example of private and public key generation process](#full-example-of-private-and-public-key-generation-process)
-    - [Private key generation](#private-key-generation)
-    - [Public key generation](#public-key-generation)
-    - [Data Signature](#data-signature)
-      - [Signature verification](#signature-verification)
-  - [Wallet Import Format](#wallet-import-format)
-  - [Key Conversion to DER format](#key-conversion-to-der-format)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Cryptography
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Full example of private and public key generation process](#full-example-of-private-and-public-key-generation-process)
+  - [Private key generation](#private-key-generation)
+  - [Public key generation](#public-key-generation)
+  - [Data Signature](#data-signature)
+    - [Signature verification](#signature-verification)
+- [Wallet Import Format](#wallet-import-format)
+- [Key Conversion to DER format](#key-conversion-to-der-format)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

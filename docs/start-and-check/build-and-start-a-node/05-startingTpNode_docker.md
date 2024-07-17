@@ -1,19 +1,7 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Starting the node from Docker](#starting-the-node-from-docker)
-  - [Introduction](#introduction)
-  - [Setting up the environment](#setting-up-the-environment)
-  - [Starting the node](#starting-the-node)
-  - [Stopping the node in Docker](#stopping-the-node-in-docker)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Starting the node from Docker
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## Introduction
 

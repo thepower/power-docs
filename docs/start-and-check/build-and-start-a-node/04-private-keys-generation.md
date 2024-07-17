@@ -1,21 +1,16 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [How to generate the private and public keys?](#how-to-generate-the-private-and-public-keys)
-  - [Introduction](#introduction)
-  - [Private key generation](#private-key-generation)
-  - [Calculation of a public key out of a private key](#calculation-of-a-public-key-out-of-a-private-key)
-  - [Extraction of the private key (HEX)](#extraction-of-the-private-key-hex)
-  - [Extraction of the public key (HEX)](#extraction-of-the-public-key-hex)
-  - [Extraction of the public key (DEC)](#extraction-of-the-public-key-dec)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to generate the private and public keys?
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Private key generation](#private-key-generation)
+- [Calculation of a public key out of a private key](#calculation-of-a-public-key-out-of-a-private-key)
+- [Extraction of the private key (HEX)](#extraction-of-the-private-key-hex)
+- [Extraction of the public key (HEX)](#extraction-of-the-public-key-hex)
+- [Extraction of the public key (DEC)](#extraction-of-the-public-key-dec)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

@@ -1,19 +1,14 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [How to configure TP-Node?](#how-to-configure-tp-node)
-  - [What is `node.config` and `genesis.txt`?](#what-is-nodeconfig-and-genesistxt)
-  - [`node.config` example](#nodeconfig-example)
-  - [`genesis.txt` example](#genesistxt-example)
-  - [Generation of `genesis.txt`](#generation-of-genesistxt)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to configure TP-Node?
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [What is `node.config` and `genesis.txt`?](#what-is-nodeconfig-and-genesistxt)
+- [`node.config` example](#nodeconfig-example)
+- [`genesis.txt` example](#genesistxt-example)
+- [Generation of `genesis.txt`](#generation-of-genesistxt)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## What is `node.config` and `genesis.txt`?
 

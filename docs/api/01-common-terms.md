@@ -1,18 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Common Terms](#common-terms)
-  - [Introduction](#introduction)
-  - [Native node API](#native-node-api)
-  - [API features](#api-features)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Common Terms
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Introduction](#introduction)
+- [Native node API](#native-node-api)
+- [API features](#api-features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 

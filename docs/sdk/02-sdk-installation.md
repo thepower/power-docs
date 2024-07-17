@@ -21,7 +21,7 @@ You have two options to install The Power SDK:
 
 To install The Power SDK using `npm`, run the following command:
 
-```bash
+```bash npm2yarn
 npm install @thepowereco/tssdk
 ```
 
@@ -51,13 +51,13 @@ Follow the steps below to install The Power SDK from code:
    
 5. To install SDK, run:
 
-   ```bash
+   ```bash npm2yarn
    npm install
    ```
 
 6. To build SDK, run:
 
-   ```bash
+   ```bash npm2yarn
    npm build
    ```
    

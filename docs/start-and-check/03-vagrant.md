@@ -1,21 +1,16 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Setting up the environment and starting the testnet using Vagrant](#setting-up-the-environment-and-starting-the-testnet-using-vagrant)
-  - [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
-  - [Setting up the environment](#setting-up-the-environment)
-  - [Compiling and starting the node](#compiling-and-starting-the-node)
-  - [Stopping the testnet](#stopping-the-testnet)
-  - [Using Makefile targets](#using-makefile-targets)
-  - [Using API](#using-api)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Setting up the environment and starting the testnet using Vagrant
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installation and setting up Vagrant](#installation-and-setting-up-vagrant)
+- [Setting up the environment](#setting-up-the-environment)
+- [Compiling and starting the node](#compiling-and-starting-the-node)
+- [Stopping the testnet](#stopping-the-testnet)
+- [Using Makefile targets](#using-makefile-targets)
+- [Using API](#using-api)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 As an option, you can use Vagrant to setup development environment.
 

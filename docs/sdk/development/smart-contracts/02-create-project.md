@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Create and prepare a smart contract](#create-and-prepare-a-smart-contract)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Create and prepare a smart contract
 
 First of all, you need to create and prepare your smart contract to work with it. To do this:
@@ -66,7 +58,7 @@ First of all, you need to create and prepare your smart contract to work with it
 
 4. Compile the given code. You will receive an `.abi` file:
 
-   Run the following commands in the directory, where the `greeter.sol` file is stored:
+   Run the following command in the directory, where the `greeter.sol` file is stored:
 
     1. ```solidity
          solcjs --bin greeter.sol

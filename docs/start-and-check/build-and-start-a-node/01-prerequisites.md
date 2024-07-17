@@ -1,17 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Prerequisites for a node](#prerequisites-for-a-node)
-  - [Hardware](#hardware)
-  - [Software](#software)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Prerequisites for a node
-
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
 
 To start a node, your machine must comply with minimal technical requirements listed below.
 

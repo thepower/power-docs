@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Calling EVM smart contract function locally](#calling-evm-smart-contract-function-locally)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Calling EVM smart contract function locally
 
 You can call EVM smart contract function locally to get the data from contract. To do this:

@@ -1,32 +1,27 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [API reference](#api-reference)
-  - [The main terms](#the-main-terms)
-  - [`/api/address/{address}/code`](#apiaddressaddresscode)
-  - [## `/api/address/{address}/state/0x{hex key}`](#-apiaddressaddressstate0xhex-key)
-  - [`/api/binblock/{hash}`](#apibinblockhash)
-  - [`/api/blockhash/{height}`](#apiblockhashheight)
-  - [`api/nodes/{chain}`](#apinodeschain)
-  - [/api/node/chainstate](#apinodechainstate)
-  - [`/api/address/0x{HEX}/verify and /api/address/{address}/verify`](#apiaddress0xhexverify-and-apiaddressaddressverify)
-  - [`/api/tx/status/{txid}`](#apitxstatustxid)
-  - [/api/logs](#apilogs)
-  - [/api/tx/new](#apitxnew)
-  - [/api/node/status](#apinodestatus)
-  - [/api/where/`{address}`](#apiwhereaddress)
-  - [/api/address/`{address}`](#apiaddressaddress)
-  - [/api/blockinfo/`{hash}`](#apiblockinfohash)
-  - [/api/block/`{hash}`](#apiblockhash)
-  - [/api/settings](#apisettings)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # API reference
 
-<!-- start DOCTOC -->
-<!-- end DOCTOC -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [The main terms](#the-main-terms)
+- [`/api/address/{address}/code`](#apiaddressaddresscode)
+- [## `/api/address/{address}/state/0x{hex key}`](#-apiaddressaddressstate0xhex-key)
+- [`/api/binblock/{hash}`](#apibinblockhash)
+- [`/api/blockhash/{height}`](#apiblockhashheight)
+- [`api/nodes/{chain}`](#apinodeschain)
+- [/api/node/chainstate](#apinodechainstate)
+- [`/api/address/0x{HEX}/verify and /api/address/{address}/verify`](#apiaddress0xhexverify-and-apiaddressaddressverify)
+- [`/api/tx/status/{txid}`](#apitxstatustxid)
+- [/api/logs](#apilogs)
+- [/api/tx/new](#apitxnew)
+- [/api/node/status](#apinodestatus)
+- [/api/where/`{address}`](#apiwhereaddress)
+- [/api/address/`{address}`](#apiaddressaddress)
+- [/api/blockinfo/`{hash}`](#apiblockinfohash)
+- [/api/block/`{hash}`](#apiblockhash)
+- [/api/settings](#apisettings)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## The main terms
 

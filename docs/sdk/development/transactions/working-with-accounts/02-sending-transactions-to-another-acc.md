@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Sending a transaction to another account](#sending-a-transaction-to-another-account)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Sending a transaction to another account
 
 To send a transaction within the system you need to pay commission. That is why, you need to have sufficient amount of tokens to send the transaction. The code `console.log('accountData',accountData)` from the `showAccountInfo.js` example above outputs the account data. The `amount` field in the output will also display the tokens assigned to the account.

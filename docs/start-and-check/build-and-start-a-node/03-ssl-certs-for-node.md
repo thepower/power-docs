@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [How to obtain an SSL certificate for a node?](#how-to-obtain-an-ssl-certificate-for-a-node)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to obtain an SSL certificate for a node?
 
 Congratulations! Now you have a started and functional node, responding by `http`. Now, let's set up https! Follow the steps below:
