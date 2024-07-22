@@ -1,15 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Getting started](#getting-started)
-    - [Welcome to the Power DCloud documentation!](#welcome-to-the-power-dcloud-documentation)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Getting started
 
-### Welcome to the Power DCloud documentation! 
+## Welcome to the Power DCloud documentation! 
 
 *:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
 <!---
@@ -26,7 +17,7 @@
 ### Our Mission
 To make web3 completely decentralized and community-driven. To do this we aim to develop decentralized infrastructure so web3 developers would build full-stack real web3 apps (with no centralized parts ever).
 
-### The Problem we solve
+## The Problem we solve
 
 99% of all so-called dApps are not really decentralized. You can find either centralized parts in almost every decentralized application or it’s utilizing centralized services for decentralized stuff.
 
