@@ -17,6 +17,8 @@ const config = {
   projectName: 'power-docs',
   themes: ['docusaurus-theme-search-typesense'],
 
+  trailingSlash: false,
+
   presets: [
     [
       'classic',
