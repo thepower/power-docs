@@ -63,7 +63,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'Build/api/common-terms',
+            docId: 'api/common-terms',
             position: 'left',
             label: 'API',
           },
@@ -92,7 +92,7 @@ const config = {
             items: [
               {
                 label: 'API',
-                to: '/docs/Build/api/common-terms',
+                to: '/docs/api/common-terms',
               },
               {
                 label: 'Technology',
