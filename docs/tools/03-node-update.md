@@ -42,7 +42,7 @@ Check your node version by running the following command:
 
 Your node may have automatic updates. In this case, you don't need to update your node manually (only for nodes started from the Docker image).
 
-Read [this](./06-auto-update-node.md) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
+Read [this](./02-auto-update-node.md) manual to learn how to configure automatic node updates (only for nodes started from the Docker image).
 
 :::
 

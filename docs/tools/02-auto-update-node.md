@@ -6,7 +6,7 @@ If configured, every 24 hours the [Watchtower](https://containrrr.dev/watchtower
 
 If you haven't configured automatic updates, DO NOT follow this step.
 
-Use [this guide](./07-node-update.md) instead.
+Use [this guide](./03-node-update.md) instead.
 
 :::
 
