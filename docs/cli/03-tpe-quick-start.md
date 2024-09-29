@@ -176,6 +176,41 @@ Hey, Powerian! Welcome to the Power DCloud CLI! This guide will help you get sta
    - `keyFilePath` — path to your key file,
    - `--password` — your key file password.
 
+4. Update your files in the container:
+
+   ```bash
+   tpe container update -k ./key.pem -p mypassword -i 123 -n "New Container Name" -f ./containerKey.pem -s containerpassword
+   ```
+   
+   Keys:
+
+   - `-k` — path to the key file.
+   - `-p` — key file password.
+   - `-i` — container ID.
+   - `-n` — container name.
+   - `-f` — path to the container key file.
+   - `-s` — container key file password.
+
+5. Perform container actions:
+
+   - `container_start` — start the container.
+   - `container_stop` — stop the container.
+   - `container_destroy` — destroy the container.
+   - `container_handover` — handover the container.
+   - `container_getPort` — get the container port.
+   - `container_getLogs` — get container logs.
+
+   ```bash
+   tpe container actions -m "container_getPort" -p "1 web 5000" -f ./path/to/keyfile.pem -s mypassword
+   ```
+   
+   Keys:
+
+   - `-m` — action (method),
+   - `-p` — action parameters,
+   - `-f` — path to container key file,
+   - `-s` — container password.
+
 ### Smart Contract Management
 
 1. Deploy a smart contract:
@@ -234,6 +269,57 @@ Hey, Powerian! Welcome to the Power DCloud CLI! This guide will help you get sta
    tpe storage tasklist --configPath /path/to/config.json
    ```
 
+### Provider management
+
+1. Create a new provider with a given name and key pair:
+
+   ```bash
+   tpe provider create -k ./key.pem -p mypassword -n "NewProvider" -s containerpassword
+   ```
+
+   Keys:
+
+   - `-a` — provider smart contract address,
+   - `-k` — path to your key file,
+   - `-n` — provider name,
+   - `-p` — key file password,
+   - `-r` — sponsor address.
+
+2. List all providers or filter by key file or address:
+
+   ```bash
+   tpe provider list -k ./key.pem -p mypassword
+   ```
+
+   Keys:
+
+   - `-a` — provider smart contract address,
+   - `-k` — key file password,
+   - `-o` — order smart contract address,
+   - `-p` — key file password,
+   - `-r` — filter by address.
+
+3. Set or update the URL for a specific provider using the provider ID. 
+
+   :::note
+   
+   Requires a key file for authentication.
+
+   :::
+
+   ```bash
+   tpe provider set-url -k ./key.pem -p mypassword -i 123 -u "https://provider.example.com"
+   ```
+
+   Keys:
+
+   - `-a` — order smart contract address,
+   - `-i` — provider ID,
+   - `-k` — path to the key file,
+   - `-p` — key file password,
+   - `-r` — sponsor address,
+   - `-u` — provider URL.
+
 ### Additional Commands
 
 1. View all available commands:
@@ -247,3 +333,14 @@ Hey, Powerian! Welcome to the Power DCloud CLI! This guide will help you get sta
    ```bash
    tpe update
    ```
+   
+3. Display autocomplete installation instructions:
+
+   ```bash
+   tpe autocomplete [SHELL] [-r]
+   ```
+   
+   where
+
+   - [SHELL] — shell type (zsh, bash, or powershell)
+   - `-r` — refresh cache. This option ignores displaying instructions.
