@@ -2,7 +2,7 @@
 
 ### Welcome to the Power DCloud documentation! 
 
-*:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as    a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
+*:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
 <!---
 **The documentation portal has the following main sections**
 **General:** Basics - how to get started, basic terms, answers to basic questions
@@ -35,7 +35,7 @@ This is the next stage in the natural evolution of the Web3 world. It's time to 
 
 **Power DCloud** is the world’s first DeInfra, which completely beats the problem of inability to build really decentralized dApps without centralized parts or the necessity to use centralized services.
 
-Based on blockchain platform DCloud combines a universal set of services: multi virtual machines, decentralized storage, sophisticated tokenomisc, nodes and chains, with [Power Hub](https://hub.thepower.io/) as one-stop entry for developers, users, node providers and projects.
+Based on blockchain platform DCloud combines a universal set of services: multi virtual machines, decentralized storage, sophisticated tokenomics, nodes and chains, with [Power Hub](https://hub.thepower.io/) as one-stop entry for developers, users, node providers and projects.
 
 ## About us
 
