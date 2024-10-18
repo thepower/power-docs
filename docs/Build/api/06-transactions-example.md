@@ -452,7 +452,7 @@ function get_endpoint_settings()
 
 }
 
-// prints curl command with all nessesary parameter
+// prints curl command with all necessary parameter
 function curlify_transaction($transaction)
 {
     $data = json_encode(

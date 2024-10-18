@@ -47,7 +47,7 @@ We are a team of developers, enthusiasts of blockchain technology and the ideolo
 
 One of the crucial stages of DCloud's development is the establishing of DAO that will govern it, own and be in charge of future development.
 
-One of the key elements of the go-to-market strategy is the involvement of strong community of developers, network maintainers, entrepreneurs, researchers, and development of transparent and scalable tools to help them govern and manage DCloud and to bring them all equal opportunities to contribute and to evolve web3.
+One of the key elements of the go-to-market strategy is the involvement of a strong community of developers, network maintainers, entrepreneurs, researchers, and development of transparent and scalable tools to help them govern and manage DCloud and to bring them all equal opportunities to contribute and to evolve web3.
 
 ## How to become an active member of the community?
 
