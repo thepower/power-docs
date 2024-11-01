@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Power DCloud's documentation portal, built with Docusaurus](#power-dclouds-documentation-portal-built-with-docusaurus)
+  - [Installation](#installation)
+    - [Local Development](#local-development)
+    - [Build](#build)
+    - [Deployment](#deployment)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Power DCloud's documentation portal, built with Docusaurus
 
 Explore the docs at [docs.thepower.io](https://docs.thepower.io).
