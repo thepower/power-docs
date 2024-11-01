@@ -7,7 +7,7 @@ Work with the API is supported by https protocol using `GET` or `POST` requests 
 
 If the API is accessed using the `POST` request method, then the data is encoded into `*.json` format and placed in the request body. 
 
-You can combine the both transfer methods. For different API data is transmitted in different ways, and for each specific endpoint information on how to pass arguments will be given.
+You can combine both transfer methods. For different API data is transmitted in different ways, and for each specific endpoint information on how to pass arguments will be given.
 
 The result of a query is always placed in the server response body in `*.json` format. There are several mandatory fields that will always be present in the response. The following table describes these fields: 
 

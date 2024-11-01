@@ -126,7 +126,7 @@ where
 - `sig` — an object in which the public key of the wallet that created the transaction is used as the field title and the signature of this transaction is used as the field value;
 - `sigverify` — an object containing the number of invalid signatures in the invalid fields, and the number of valid signatures in valid fields;
 - `timestamp` — the timestamp for creating a transaction in milliseconds;
-- `to` — the transaction recipient wallet address;
+- `to` — the transaction recipient's wallet address;
 - `type:tx` — a transaction characteristic.
 
 The array of the block signatures contains objects with the following structure:

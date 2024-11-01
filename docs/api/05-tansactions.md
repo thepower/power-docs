@@ -279,7 +279,7 @@ Here are the predefined fields:
 
 The public key is mandatory. Every BSig should contain the public key tag.
 
-Let's look at the signing procedure by an example.
+Let's look at the signing procedure as an example.
 
 Let's assume you have the private key `0102030405060708090001020304050607080900010203040506070809000102`, and you want to sign the 'Hello, world!' string.
 
@@ -355,7 +355,7 @@ Token transfer and/or smart contract call:
 
 Token transfer and smart contract calling transactions must contain the following mandatory keys:
 
-| Key | Meaning   | Descripton                                                                                        |
+| Key | Meaning   | Description                                                                                        |
 |-----|-----------|---------------------------------------------------------------------------------------------------|
 | f   | from      | Source address, must be 8 byte binary (`0xc4` MessagePack type)                                   |
 | to  | to        | Destination address, must be 8 byte binary (`0xc4` MessagePack type)                              |
