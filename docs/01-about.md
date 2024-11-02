@@ -1,10 +1,9 @@
 # Getting started
 
-## Welcome to the Power DCloud documentation! 
+## Welcome to the Power DCloud documentation!
 
-*:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
+_:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund._
 
-*:grey_exclamation: This is one of the most crucial parts of this website. The documentation portal needs to be a shared brainchild of the core team and the community. We highly appreciate any contribution from you as a part of the dev community. Such commits will be rewarded by tokens from the dedicated fund.*
 <!---
 
 **The documentation portal has the following main sections**
@@ -54,21 +53,22 @@ One of the crucial stages of DCloud's development is the establishing of DAO tha
 
 One of the key elements of the go-to-market strategy is the involvement of strong community of developers, network maintainers, entrepreneurs, researchers, and development of transparent and scalable tools to help them govern and manage DCloud and to bring them all equal opportunities to contribute and to evolve web3.
 -->
+
 ## How to become an active member of the community?
 
-Join our [chat](https://t.me/thepower_chat) and give us your insightful feedback 
+Join our [chat](https://t.me/thepower_chat) and give us your insightful feedback
 
-OR participate in one of [community incentives](https://thepower.io/community_page) 
+OR participate in one of [community incentives](https://thepower.io/community_page)
 
 OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
-  
 ## Where to start learning?
-[Find more](terms_technologies/technology/01-abstract.md) about the core technology 
 
-[Find more](terms_technologies/technology/03-resonance-consensus.md) about Resonance consensus 
+[Find more](terms_technologies/technology/01-abstract.md) about the core technology
 
-[Find more](sdk/development/smart-contracts/01-intro.md) about smart contracts 
+[Find more](terms_technologies/technology/03-resonance-consensus.md) about Resonance consensus
+
+[Find more](sdk/development/smart-contracts/01-intro.md) about smart contracts
 
 [Find more](terms_technologies/technology/04-scalable-architecture.md) about scalable architecture
 
@@ -84,8 +84,7 @@ OR write to us: [partner@thepower.io](mailto:partner@thepower.io)
 
 [How to run a local testnet](testnet/local-testnet/01-local-testnet.md)
 
-How to set up EVM *(coming soon)*
- 
+How to set up EVM _(coming soon)_
 
 ## Resources
 

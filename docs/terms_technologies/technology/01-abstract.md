@@ -1,3 +1,8 @@
+---
+id: 01-abstract
+title: Abstract
+---
+
 # Abstract
 
 Since 2008, Blockchain technology has continually evolved, becoming more versatile to use and cost effective. Today, however, despite all the diversity found within the Blockchain space, most business problems remain unsolved or at best partially solved. Examples of such problems in modern organizations include:

@@ -28,15 +28,15 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],        
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+          ],
         },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/thepower/power-docs/tree/master/',
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],        
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -68,9 +68,9 @@ const config = {
             label: 'API',
           },
           {
-          label: 'Power SDK',
-          href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
-          position: 'right',
+            label: 'Power SDK',
+            href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
+            position: 'right',
           },
           {
             label: 'Power Wallet',
@@ -96,7 +96,7 @@ const config = {
               },
               {
                 label: 'Technology',
-                to: '/docs/Explore/technology/abstract',
+                to: '/docs/terms_technologies/technology/01-abstract',
               },
               {
                 label: 'About',
@@ -111,8 +111,8 @@ const config = {
                 href: 'https://github.com/thepower',
               },
               {
-              label: 'DockerHub',
-              href: 'https://hub.docker.com/r/thepowerio/tpnode',
+                label: 'DockerHub',
+                href: 'https://hub.docker.com/r/thepowerio/tpnode',
               },
             ],
           },
@@ -132,20 +132,20 @@ const config = {
                 href: 'https://explorer.thepower.io',
               },
               {
-              label: 'Power SDK',
-              href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
+                label: 'Power SDK',
+                href: 'https://github.com/thepower/PowerTools/blob/master/packages/tssdk/README.md',
               },
               {
-              label: 'Power CLI (TS)',
-              href: 'https://github.com/thepower/PowerTools/blob/master/packages/cli/README.md',
+                label: 'Power CLI (TS)',
+                href: 'https://github.com/thepower/PowerTools/blob/master/packages/cli/README.md',
               },
               {
-              label: 'Power CLI (Erl)',
-              href: 'https://github.com/thepower/tpcli',
+                label: 'Power CLI (Erl)',
+                href: 'https://github.com/thepower/tpcli',
               },
               {
-              label: 'Network monitoring',
-              href: 'https://zabbix.thepower.io/zabbix.php?action=dashboard.view'
+                label: 'Network monitoring',
+                href: 'https://zabbix.thepower.io/zabbix.php?action=dashboard.view',
               },
             ],
           },
@@ -153,36 +153,36 @@ const config = {
             title: 'Social',
             items: [
               {
-              label: 'Discord',
-              href: 'https://discord.gg/P6fxM4CCkb'
+                label: 'Discord',
+                href: 'https://discord.gg/P6fxM4CCkb',
               },
               {
-              label: 'Telegram Chat',
-              href: 'https://t.me/thepower_chat'
+                label: 'Telegram Chat',
+                href: 'https://t.me/thepower_chat',
               },
               {
-              label: 'Twitter',
-              href: 'https://twitter.com/intent/follow?screen_name=thepowerio'
+                label: 'Twitter',
+                href: 'https://twitter.com/intent/follow?screen_name=thepowerio',
               },
               {
-              label: 'GitHub',
-              href: 'https://github.com/thepower'
+                label: 'GitHub',
+                href: 'https://github.com/thepower',
               },
               {
-              label: 'Medium',
-              href: 'https://medium.com/the-power-official-blog'
+                label: 'Medium',
+                href: 'https://medium.com/the-power-official-blog',
               },
               {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/thepowerio'
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/thepowerio',
               },
               {
-              label: 'Telegram News Channel',
-              href: 'https://t.me/thepowerio'
+                label: 'Telegram News Channel',
+                href: 'https://t.me/thepowerio',
               },
               {
-              label: 'Community Page',
-              href: 'https://thepower.io/community_page'
+                label: 'Community Page',
+                href: 'https://thepower.io/community_page',
               },
             ],
           },
@@ -215,4 +215,3 @@ const config = {
 };
 
 module.exports = config;
-
