@@ -12,7 +12,7 @@
 
 # Power DCloud's documentation portal, built with Docusaurus
 
-Explore the docs at [docs.thepower.io](https://docs.thepower.io).
+Explore the docs at [doc.thepower.io](https://doc.thepower.io).
 
 The Power Blockchain Ecosystem is a new generation blockchain network that forms a new layer of the whole worldwide Internet with real WEB3 cloud with decentralized services.
 
