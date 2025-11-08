@@ -91,7 +91,7 @@ Here you have the following options:
 
    :::info Note
 
-   This option takes much more time, then the others, due to manual proccessing of submitted requests by the team.
+   This option takes much more time, then the others, due to manual processing of submitted requests by the team.
 
    :::
 
